@@ -5,13 +5,14 @@
 ::  FindAndReplace (https://github.com/danielanywhere/FindAndReplace)
 ::
 :: Copyright (c). 2020 Daniel Patterson, MCSD (danielanywhere)
-:: Released for public access under the GNU General Public License v3.0.
-:: https://opensource.org/licenses/GPL-3.0
+:: Copyright (c). 2020 Ascendant Design and Training, LLC.
+:: Released for public access under the MIT License.
+:: https://opensource.org/licenses/MIT
 @ECHO OFF
-SET SOURCE=C:\Users\Daniel\Documents\GitHub\Scaffold\Docs\ScaffoldVision.docx
-SET TARGET=C:\Users\Daniel\Documents\GitHub\Scaffold\README.md
-SET POSTCONFIG=C:\Users\Daniel\Documents\GitHub\Scaffold\Scripts\ReadmeVisionPostConversion.json
-SET FAR=C:\Users\Daniel\Documents\Visual Studio 2015\Projects\FindAndReplace\FindAndReplace\bin\Debug\FindAndReplace.exe
+SET SOURCE=%USERPROFILE%\Documents\GitHub\Scaffold\Docs\ScaffoldVision.docx
+SET TARGET=%USERPROFILE%\Documents\GitHub\Scaffold\README.md
+SET POSTCONFIG=%USERPROFILE%\Documents\GitHub\Scaffold\Scripts\ReadmeVisionPostConversion.json
+SET FAR=C:\Scripts\FindAndReplace\FindAndReplace.exe
 
 PANDOC -f docx -t markdown_strict+pipe_tables -s "%SOURCE%" -o "%TARGET%"
 "%FAR%" /files:"%TARGET%" /patternfile:"%POSTCONFIG%"
