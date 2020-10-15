@@ -1,0 +1,17 @@
+[
+	{
+		"FindPattern": "&lt;pre&gt;&lt;code&gt;",
+		"ReplacePattern": "<pre><code>",
+		"UseRegEx": 0
+	},
+	{
+		"FindPattern": "&lt;/code&gt;&lt;/pre&gt;",
+		"ReplacePattern": "</code></pre>",
+		"UseRegEx": 0
+	},
+	{
+		"FindPattern": "\r\n<https://github.com/danielanywhere/Scaffold>",
+		"ReplacePattern": " https://github.com/danielanywhere/Scaffold",
+		"UseRegEx": 0
+	}
+]

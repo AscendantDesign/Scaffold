@@ -1,0 +1,32 @@
+[
+	{
+		"FindPattern": "media/image1.png",
+		"ReplacePattern": "Images/UIMockup01.png",
+		"UseRegEx": 0
+	},
+	{
+		"FindPattern": "media/image2.png",
+		"ReplacePattern": "Images/CurriculumHierarchy.png",
+		"UseRegEx": 0
+	},
+	{
+		"FindPattern": "media/image3.png",
+		"ReplacePattern": "Images/NodeExample1.png",
+		"UseRegEx": 0
+	},
+	{
+		"FindPattern": "(?i:(?<f>\\s{4}-\\s{3}(button|control|course|event|module|panel|page|trigger)\\.)(\\r*\\n*)+)",
+		"ReplacePattern": "${f}\r\n",
+		"UseRegEx": 1
+	},
+	{
+		"FindPattern": "(?i:(?<f>\\s{4}-\\s{3}(aicc|cmi5|scorm|tin can api 1\\.0)\\.)(\\r*\\n*)+)",
+		"ReplacePattern": "${f}\r\n",
+		"UseRegEx": 1
+	},
+	{
+		"FindPattern": "(?i:(?<f>-\\s{3}(buttons|checkboxes|embedded pages|hot spots|info boxes|mouse effects|panels|radio buttons|text labels)\\.)(\\r*\\n*)+)",
+		"ReplacePattern": "${f}\r\n",
+		"UseRegEx": 1
+	}
+]

@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="96"
+   inkscape:export-xdpi="96"
+   inkscape:export-filename="C:\Users\Daniel\bitmap.png"
+   sodipodi:docname="UIElements01.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 215.9 279.4"
+   height="1056"
+   width="816">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1325"
+       inkscape:collect="always">
+      <stop
+         id="stop1321"
+         offset="0"
+         style="stop-color:#b3fa9b;stop-opacity:1" />
+      <stop
+         id="stop1323"
+         offset="1"
+         style="stop-color:#3fe40b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient846"
+       inkscape:collect="always">
+      <stop
+         id="stop842"
+         offset="0"
+         style="stop-color:#808080;stop-opacity:1;" />
+      <stop
+         id="stop844"
+         offset="1"
+         style="stop-color:#808080;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient836-5"
+       inkscape:collect="always">
+      <stop
+         id="stop832"
+         offset="0"
+         style="stop-color:#808080;stop-opacity:1" />
+      <stop
+         id="stop834"
+         offset="1"
+         style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       gradientTransform="matrix(2.0000009,0,0,1.002004,-0.52916723,-0.3003846)"
+       gradientUnits="userSpaceOnUse"
+       y2="149.89167"
+       x2="1.3229164"
+       y1="149.89167"
+       x1="0.2645835"
+       id="linearGradient838"
+       xlink:href="#linearGradient836-5"
+       inkscape:collect="always" />
+    <linearGradient
+       gradientTransform="matrix(0.80000028,0,0,0.80000028,-8.5580004,34.015373)"
+       gradientUnits="userSpaceOnUse"
+       y2="144.67995"
+       x2="12.814163"
+       y1="144.67995"
+       x1="11.226664"
+       id="linearGradient848"
+       xlink:href="#linearGradient846"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="144.67995"
+       x2="12.814163"
+       y1="144.67995"
+       x1="11.226664"
+       gradientTransform="matrix(0.80000028,0,0,0.80000028,-8.5580004,32.16329)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient852"
+       xlink:href="#linearGradient846"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="144.67995"
+       x2="12.814163"
+       y1="144.67995"
+       x1="11.226664"
+       gradientTransform="matrix(0.80000028,0,0,0.80000028,-8.5580004,35.867466)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient856"
+       xlink:href="#linearGradient846"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient846"
+       id="linearGradient856-3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.80000027,0,0,0.80000027,79.22389,-91.047525)"
+       x1="11.226664"
+       y1="144.67995"
+       x2="12.814163"
+       y2="144.67995" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient846"
+       id="linearGradient848-2"
+       x1="11.226664"
+       y1="144.67995"
+       x2="12.814163"
+       y2="144.67995"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.80000027,0,0,0.80000027,79.22389,-92.899619)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient846"
+       id="linearGradient852-2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.80000027,0,0,0.80000027,79.22389,-94.751702)"
+       x1="11.226664"
+       y1="144.67995"
+       x2="12.814163"
+       y2="144.67995" />
+    <linearGradient
+       gradientTransform="matrix(1.001001,0,0,1.1428569,-0.13242391,-0.15119025)"
+       y2="1.9829473"
+       x2="140.77086"
+       y1="0.14395136"
+       x1="140.76988"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1198"
+       xlink:href="#linearGradient1325"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="149.89166"
+       x2="1.3229164"
+       y1="149.89166"
+       x1="0.2645835"
+       gradientTransform="matrix(2.0000009,0,0,1.002004,-0.52916723,-0.3003846)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1307"
+       xlink:href="#linearGradient1325"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="1.9829473"
+       x2="140.77086"
+       y1="0.14395136"
+       x1="140.76988"
+       gradientTransform="matrix(1.001001,0,0,1.1428569,-0.13242391,-0.15119025)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1327"
+       xlink:href="#linearGradient836-5"
+       inkscape:collect="always" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     units="px"
+     showgrid="false"
+     inkscape:current-layer="g968"
+     inkscape:document-units="px"
+     inkscape:cy="510.95422"
+     inkscape:cx="196.83688"
+     inkscape:zoom="0.6789773"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:none"
+     sodipodi:insensitive="true"
+     inkscape:label="blackbackground"
+     id="layer6"
+     inkscape:groupmode="layer">
+    <rect
+       y="-139.56769"
+       x="-107.8177"
+       height="558.5354"
+       width="431.5354"
+       id="rect1004"
+       style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#131313;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="resizable-ns-old"
+     id="layer3"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\resizable-n.png"
+       id="g967">
+      <rect
+         style="fill:url(#linearGradient1327);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect883"
+         width="264.58334"
+         height="2.1166666"
+         x="0"
+         y="2.7755576e-17" />
+      <g
+         style="display:inline"
+         id="g954"
+         transform="rotate(90,121.41988,33.637989)">
+        <rect
+           ry="0.21632127"
+           y="19.959871"
+           x="88.021713"
+           height="5.6126595"
+           width="1.6370258"
+           id="rect858-1"
+           style="display:inline;fill:#e9e9e9;fill-opacity:1;fill-rule:evenodd;stroke:#808080;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <circle
+           r="0.52916682"
+           cy="22.844378"
+           cx="88.840225"
+           id="path840-4"
+           style="display:inline;fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient848-2);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <circle
+           style="display:inline;fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient852-2);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle850-8"
+           cx="88.840225"
+           cy="20.992296"
+           r="0.52916682" />
+        <circle
+           r="0.52916682"
+           cy="24.696474"
+           cx="88.840225"
+           id="circle854-7"
+           style="display:inline;fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient856-3);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g968"
+     inkscape:label="resizable-ns"
+     style="display:inline">
+    <g
+       id="g965"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Source\Experiments\layout-v1\images\resizable-ns.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         y="2.7755576e-17"
+         x="0"
+         height="2.1166666"
+         width="264.58334"
+         id="rect953"
+         style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\resizable-ns.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <g
+         transform="rotate(90,121.41988,33.637989)"
+         id="g963"
+         style="display:inline">
+        <circle
+           style="display:inline;fill:#d6d6d6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient848-2);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle957"
+           cx="88.840225"
+           cy="22.844378"
+           r="0.52916682" />
+        <circle
+           r="0.52916682"
+           cy="20.992296"
+           cx="88.840225"
+           id="circle959"
+           style="display:inline;fill:#d6d6d6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient852-2);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <circle
+           style="display:inline;fill:#d7d7d7;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient856-3);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle961"
+           cx="88.840225"
+           cy="24.696474"
+           r="0.52916682" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1262"
+     inkscape:label="resizable-ns-dragging-old"
+     style="display:none">
+    <g
+       id="g1260"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\resizable-ns-dragging.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         y="2.7755576e-17"
+         x="0"
+         height="2.1166666"
+         width="264.58334"
+         id="rect1248"
+         style="fill:url(#linearGradient1198);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <g
+         transform="rotate(90,121.41988,33.637989)"
+         id="g1258"
+         style="display:inline">
+        <rect
+           style="display:inline;fill:#fff9d3;fill-opacity:1;fill-rule:evenodd;stroke:#808080;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect1250"
+           width="1.6370258"
+           height="5.6126595"
+           x="88.021713"
+           y="19.959871"
+           ry="0.21632127" />
+        <circle
+           style="display:inline;fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient848-2);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle1252"
+           cx="88.840225"
+           cy="22.844378"
+           r="0.52916682" />
+        <circle
+           r="0.52916682"
+           cy="20.992296"
+           cx="88.840225"
+           id="circle1254"
+           style="display:inline;fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient852-2);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <circle
+           style="display:inline;fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient856-3);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle1256"
+           cx="88.840225"
+           cy="24.696474"
+           r="0.52916682" />
+      </g>
+    </g>
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="resizable-ns-dragging"
+     id="g990"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Source\Experiments\layout-v1\images\resizable-ns-dragging.png"
+       id="g988">
+      <rect
+         style="fill:#3fe40b;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect976"
+         width="264.58334"
+         height="2.1166666"
+         x="0"
+         y="2.7755576e-17" />
+      <g
+         style="display:inline"
+         id="g986"
+         transform="rotate(90,121.41988,33.637989)">
+        <circle
+           r="0.52916682"
+           cy="22.844378"
+           cx="88.840225"
+           id="circle980"
+           style="display:inline;fill:#f6f3b6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient848-2);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <circle
+           style="display:inline;fill:#f6f3b6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient852-2);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="circle982"
+           cx="88.840225"
+           cy="20.992296"
+           r="0.52916682" />
+        <circle
+           r="0.52916682"
+           cy="24.696474"
+           cx="88.840225"
+           id="circle984"
+           style="display:inline;fill:#f6f3b6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient856-3);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+    </g>
+  </g>
+  <g
+     style="display:none"
+     transform="translate(0,-17.6)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="resizable-ew-old">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\resizable-e.png"
+       id="g865">
+      <rect
+         style="fill:url(#linearGradient838);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.866667"
+         id="rect830"
+         width="2.1166668"
+         height="264.58334"
+         x="0"
+         y="17.6"
+         ry="0" />
+      <rect
+         style="fill:#e9e9e9;fill-opacity:1;fill-rule:evenodd;stroke:#808080;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect858"
+         width="1.6370258"
+         height="5.6126595"
+         x="0.23982048"
+         y="146.87486"
+         ry="0.21632127" />
+      <circle
+         style="fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient848);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path840"
+         cx="1.0583334"
+         cy="149.75937"
+         r="0.52916682" />
+      <circle
+         r="0.52916682"
+         cy="147.90729"
+         cx="1.0583334"
+         id="circle850"
+         style="fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient852);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient856);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle854"
+         cx="1.0583334"
+         cy="151.61147"
+         r="0.52916682" />
+    </g>
+  </g>
+  <g
+     inkscape:label="resizable-ew"
+     inkscape:groupmode="layer"
+     id="g1006"
+     transform="translate(0,-17.6)"
+     style="display:none">
+    <g
+       id="g1004"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Source\Experiments\layout-v1\images\resizable-ew.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         ry="0"
+         y="17.6"
+         x="0"
+         height="264.58334"
+         width="2.1166668"
+         id="rect994"
+         style="fill:#505050;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.866667" />
+      <circle
+         r="0.52916682"
+         cy="149.75937"
+         cx="1.0583334"
+         id="circle998"
+         style="fill:#d6d6d6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient848);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="fill:#d6d6d6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient852);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle1000"
+         cx="1.0583334"
+         cy="147.90729"
+         r="0.52916682" />
+      <circle
+         r="0.52916682"
+         cy="151.61147"
+         cx="1.0583334"
+         id="circle1002"
+         style="fill:#d6d6d6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient856);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     inkscape:label="resizable-ew-dragging-old"
+     inkscape:groupmode="layer"
+     id="g1305"
+     transform="translate(0,-17.6)"
+     style="display:none">
+    <g
+       id="g1303"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\resizable-ew-dragging.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         ry="0"
+         y="17.6"
+         x="0"
+         height="264.58334"
+         width="2.1166668"
+         id="rect1293"
+         style="fill:url(#linearGradient1307);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.866667" />
+      <rect
+         ry="0.21632127"
+         y="146.87486"
+         x="0.23982048"
+         height="5.6126595"
+         width="1.6370258"
+         id="rect1295"
+         style="fill:#fff9d3;fill-opacity:1;fill-rule:evenodd;stroke:#808080;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         r="0.52916682"
+         cy="149.75937"
+         cx="1.0583334"
+         id="circle1297"
+         style="fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient848);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient852);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle1299"
+         cx="1.0583334"
+         cy="147.90729"
+         r="0.52916682" />
+      <circle
+         r="0.52916682"
+         cy="151.61147"
+         cx="1.0583334"
+         id="circle1301"
+         style="fill:#ababab;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient856);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     style="display:none"
+     transform="translate(0,-17.6)"
+     id="g1020"
+     inkscape:groupmode="layer"
+     inkscape:label="resizable-ew-dragging">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Source\Experiments\layout-v1\images\resizable-ew-dragging.png"
+       id="g1018">
+      <rect
+         style="fill:#3fe40b;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.866667"
+         id="rect1008"
+         width="2.1166668"
+         height="264.58334"
+         x="0"
+         y="17.6"
+         ry="0" />
+      <circle
+         style="fill:#f6f3b6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient848);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle1012"
+         cx="1.0583334"
+         cy="149.75937"
+         r="0.52916682" />
+      <circle
+         r="0.52916682"
+         cy="147.90729"
+         cx="1.0583334"
+         id="circle1014"
+         style="fill:#f6f3b6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient852);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="fill:#f6f3b6;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient856);stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle1016"
+         cx="1.0583334"
+         cy="151.61147"
+         r="0.52916682" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1076"
+     inkscape:label="go-up-off"
+     style="display:none;opacity:1">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\go-up-off.png"
+       transform="matrix(1,0,0,-1,0,4.2333332)"
+       id="g1074">
+      <rect
+         ry="0.92974353"
+         y="0.1322915"
+         x="0.1322915"
+         height="3.9687502"
+         width="3.9687502"
+         id="rect1068"
+         style="fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1070"
+         d="M 1.2638923,1.247584 2.1119232,2.0466901 2.9151064,1.2435069"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.2638923,2.323931 2.1119232,3.1230371 2.9151064,2.3198539"
+         id="path1072" />
+    </g>
+  </g>
+  <g
+     style="display:none;opacity:1"
+     inkscape:label="go-up-on"
+     id="g1086"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\go-up-on.png"
+       id="g1084"
+       transform="matrix(1,0,0,-1,0,4.2333332)">
+      <rect
+         style="fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#e5e5e5;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1078"
+         width="3.9687502"
+         height="3.9687502"
+         x="0.1322915"
+         y="0.1322915"
+         ry="0.92974353" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.2638923,1.247584 2.1119232,2.0466901 2.9151064,1.2435069"
+         id="path1080" />
+      <path
+         id="path1082"
+         d="M 1.2638923,2.323931 2.1119232,3.1230371 2.9151064,2.3198539"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     style="display:none;opacity:1"
+     inkscape:label="go-dn-off"
+     id="layer5"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\go-dn-off.png"
+       id="g1061">
+      <rect
+         style="fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1001"
+         width="3.9687502"
+         height="3.9687502"
+         x="0.1322915"
+         y="0.1322915"
+         ry="0.92974353" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.2638923,1.247584 2.1119232,2.0466901 2.9151064,1.2435069"
+         id="path1006" />
+      <path
+         id="path1008"
+         d="M 1.2638923,2.323931 2.1119232,3.1230371 2.9151064,2.3198539"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1056"
+     inkscape:label="go-dn-on"
+     style="display:none;opacity:1">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\go-dn-on.png"
+       id="g1066">
+      <rect
+         ry="0.92974353"
+         y="0.1322915"
+         x="0.1322915"
+         height="3.9687502"
+         width="3.9687502"
+         id="rect1050"
+         style="fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#e5e5e5;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1052"
+         d="M 1.2638923,1.247584 2.1119232,2.0466901 2.9151064,1.2435069"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.2638923,2.323931 2.1119232,3.1230371 2.9151064,2.3198539"
+         id="path1054" />
+    </g>
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="go-lt-off"
+     id="layer8"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\go-lt-off.png"
+       transform="rotate(90,2.1166666,2.1166666)"
+       id="g1038">
+      <rect
+         ry="0.92974353"
+         y="0.1322915"
+         x="0.1322915"
+         height="3.9687502"
+         width="3.9687502"
+         id="rect1025"
+         style="display:inline;opacity:1;fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1027"
+         d="M 1.2638923,1.247584 2.1119232,2.0466901 2.9151064,1.2435069"
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.2638923,2.323931 2.1119232,3.1230371 2.9151064,2.3198539"
+         id="path1029" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1048"
+     inkscape:label="go-lt-on"
+     style="display:none">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\go-lt-on.png"
+       id="g1046"
+       transform="rotate(90,2.1166666,2.1166666)">
+      <rect
+         style="display:inline;opacity:1;fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#e5e5e5;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1040"
+         width="3.9687502"
+         height="3.9687502"
+         x="0.1322915"
+         y="0.1322915"
+         ry="0.92974353" />
+      <path
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.2638923,1.247584 2.1119232,2.0466901 2.9151064,1.2435069"
+         id="path1042" />
+      <path
+         id="path1044"
+         d="M 1.2638923,2.323931 2.1119232,3.1230371 2.9151064,2.3198539"
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1096"
+     inkscape:label="go-rt-off"
+     style="display:none">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\go-rt-off.png"
+       id="g1094"
+       transform="matrix(0,1,1,0,-3.0018616e-8,0)">
+      <rect
+         style="display:inline;opacity:1;fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1088"
+         width="3.9687502"
+         height="3.9687502"
+         x="0.1322915"
+         y="0.1322915"
+         ry="0.92974353" />
+      <path
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.2638923,1.247584 2.1119232,2.0466901 2.9151064,1.2435069"
+         id="path1090" />
+      <path
+         id="path1092"
+         d="M 1.2638923,2.323931 2.1119232,3.1230371 2.9151064,2.3198539"
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="go-rt-on"
+     id="g1106"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\go-rt-on.png"
+       transform="matrix(0,1,1,0,-3.0018616e-8,0)"
+       id="g1104">
+      <rect
+         ry="0.92974353"
+         y="0.1322915"
+         x="0.1322915"
+         height="3.9687502"
+         width="3.9687502"
+         id="rect1098"
+         style="display:inline;opacity:1;fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#e5e5e5;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1100"
+         d="M 1.2638923,1.247584 2.1119232,2.0466901 2.9151064,1.2435069"
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.2638923,2.323931 2.1119232,3.1230371 2.9151064,2.3198539"
+         id="path1102" />
+    </g>
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="pin-up-off"
+     id="layer9"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\pin-up-off.png"
+       id="g1154">
+      <rect
+         ry="0.92974353"
+         y="0.1322915"
+         x="0.1322915"
+         height="3.9687502"
+         width="3.9687502"
+         id="rect1098-4"
+         style="display:inline;opacity:1;fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         transform="matrix(0,1,1,0,0,0)" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.5587168,1.1933926 V 3.0078362"
+         id="path1139" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 0.70629356,2.1067032 H 1.5587168"
+         id="path1141" />
+      <rect
+         style="fill:#595959;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1145"
+         width="1.6683141"
+         height="0.49927649"
+         x="1.5587168"
+         y="2.106703" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.5757719,1.5154964 H 3.2247354 V 2.0622807"
+         id="path1147" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1168"
+     inkscape:label="pin-up-on"
+     style="display:none">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\pin-up-on.png"
+       id="g1166">
+      <rect
+         transform="matrix(0,1,1,0,0,0)"
+         style="display:inline;opacity:1;fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#e5e5e5;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1156"
+         width="3.9687502"
+         height="3.9687502"
+         x="0.1322915"
+         y="0.1322915"
+         ry="0.92974353" />
+      <path
+         id="path1158"
+         d="M 1.5587168,1.1933926 V 3.0078362"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1160"
+         d="M 0.70629356,2.1067032 H 1.5587168"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="2.106703"
+         x="1.5587168"
+         height="0.49927649"
+         width="1.6683141"
+         id="rect1162"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1164"
+         d="M 1.5757719,1.5154964 H 3.2247354 V 2.0622807"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1182"
+     inkscape:label="pin-dn-off"
+     style="display:none">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\pin-dn-off.png"
+       transform="rotate(-90,2.1166666,2.1166666)"
+       id="g1180">
+      <rect
+         transform="matrix(0,1,1,0,0,0)"
+         style="display:inline;opacity:1;fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1170"
+         width="3.9687502"
+         height="3.9687502"
+         x="0.1322915"
+         y="0.1322915"
+         ry="0.92974353" />
+      <path
+         id="path1172"
+         d="M 1.5587168,1.1933926 V 3.0078362"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1174"
+         d="M 0.70629356,2.1067032 H 1.5587168"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         y="2.106703"
+         x="1.5587168"
+         height="0.49927649"
+         width="1.6683141"
+         id="rect1176"
+         style="fill:#595959;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path1178"
+         d="M 1.5757719,1.5154964 H 3.2247354 V 2.0622807"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#595959;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="pin-dn-on"
+     id="g1196"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Instructure\Source\Experiments\layout-v1\images\pin-dn-on.png"
+       id="g1194"
+       transform="rotate(-90,2.1166666,2.1166666)">
+      <rect
+         ry="0.92974353"
+         y="0.1322915"
+         x="0.1322915"
+         height="3.9687502"
+         width="3.9687502"
+         id="rect1184"
+         style="display:inline;opacity:1;fill:none;fill-opacity:0.01;fill-rule:evenodd;stroke:#e5e5e5;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         transform="matrix(0,1,1,0,0,0)" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.5587168,1.1933926 V 3.0078362"
+         id="path1186" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 0.70629356,2.1067032 H 1.5587168"
+         id="path1188" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1190"
+         width="1.6683141"
+         height="0.49927649"
+         x="1.5587168"
+         y="2.106703" />
+      <path
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 1.5757719,1.5154964 H 3.2247354 V 2.0622807"
+         id="path1192" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,3275 @@
+{
+	"SourceArtFilename": "%USERPROFILE%/Documents/AscendantShared/Art/Drawings/Illustrator/OnlineEventProduction/EventProduction-Animation.svg",
+	"CompiledHTMLFilename": "C:/Temp/Scaffold.html",
+	"Scenes":
+	[
+		{
+			"SceneName": "Start-Ideas",
+			"Marks":
+			[
+				{
+					"MarkName": "Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanWrite1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 2151.390,
+								"y": 0.000,
+								"rotation": 30.0
+							}
+						},
+						{
+							"CharacterName": "ThoughtBubbleConnector1",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 774.818,
+								"y": 138.300
+							}
+						},
+						{
+							"CharacterName": "ThoughtBubble1",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 69.507,
+								"y": 397.422
+							}
+						},
+						{
+							"CharacterName": "ToyRobots1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 13.768,
+								"y": 1036.812
+							}
+						}
+					]
+				},
+				{
+					"MarkName": "Middle",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanWrite1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 1097.806,
+								"y": 0.000,
+								"rotation": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "rotation",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 3
+								},
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ThoughtBubbleConnector1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 774.818,
+								"y": 138.300
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ThoughtBubble1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 69.507,
+								"y": 397.422
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ToyRobots1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 13.768,
+								"y": 483.248
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "y",
+									"InterpolationType": "BounceIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "LateMiddle",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanWrite1",
+							"Properties":
+							{
+								"rotation.Out": 30
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while leaving this mark.",
+									"InterpolationProperty": "rotation",
+									"InterpolationType": "CountOut",
+									"InterpolationCount": 3
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanWrite1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -395.199,
+								"y": 0.000,
+								"rotation": 30.0
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ThoughtBubbleConnector1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -718.187,
+								"y": 138.300
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ThoughtBubble1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -1423.498,
+								"y": 397.422
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ToyRobots1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -1479.238,
+								"y": 1036.812
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"SceneName": "Effort",
+			"Marks":
+			[
+				{
+					"MarkName": "Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanSit3",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 2111.391,
+								"y": 0.000,
+								"rotation": 30.000
+							}
+						},
+						{
+							"CharacterName": "TaskList1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 2426.828,
+								"y": 254.245
+							}
+						},
+						{
+							"CharacterName": "Gears1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -818.923,
+								"y": 7.253
+							}
+						},
+						{
+							"CharacterName": "PocketWatch1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -24.673,
+								"y": 1134.609
+							}
+						}
+					]
+				},
+				{
+					"MarkName": "Middle",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanSit3",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"rotation": 0.000,
+								"x": 718.396,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "rotation",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 3
+								},
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "TaskList1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 1133.833,
+								"y": 254.245
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "Gears1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 74.052,
+								"y": 7.253
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "BounceIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "PocketWatch1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -24.673,
+								"y": 548.721
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "y",
+									"InterpolationType": "BounceIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Tilt",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanSit3",
+							"Properties":
+							{
+								"rotation": 30
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while leaving this mark.",
+									"InterpolationProperty": "rotation",
+									"InterpolationType": "CountOut",
+									"InterpolationCount": 3
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanSit3",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -756.427,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "TaskList1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 1133.833,
+								"y": -854.902
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "y",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "Gears1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 1952.936,
+								"y": 7.253
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "PocketWatch1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -24.673,
+								"y": 1108.346
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "y",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"SceneName": "Planning",
+			"Marks":
+			[
+				{
+					"MarkName": "Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanWrite2",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -503.872,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "WhiteBoard1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 1970.111,
+								"y": 22.031
+							}
+						}
+					]
+				},
+				{
+					"MarkName": "Middle",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanWrite2",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 618.985,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "WhiteBoard1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 672.968,
+								"y": 22.031
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "BounceIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanWrite2",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -1752.444,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "WhiteBoard1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -809.889,
+								"y": 22.031
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"SceneName": "Tickets-Door",
+			"Marks":
+			[
+				{
+					"MarkName": "Tickets-Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "BoxOffice1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 1981.926,
+								"y": 0.000
+							}
+						}
+					]
+				},
+				{
+					"MarkName": "Tickets-Middle",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "BoxOffice1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 967.640,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Tickets-End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "BoxOffice1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -1146.646,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Door-Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "TicketBox1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 109.298,
+								"y": -645.141
+							}
+						},
+						{
+							"CharacterName": "JamesTicket1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -431.864,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "IanTicket1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 2008.646,
+								"y": 0.000
+							}
+						}
+					]
+				},
+				{
+					"MarkName": "Door-Middle",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "TicketBox1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 109.298,
+								"y": 14.859
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "y",
+									"InterpolationType": "BounceIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "JamesTicket1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 48.136,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "IanTicket1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 614.360,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Door-End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "TicketBox1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -1085.484,
+								"y": 14.859
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "JamesTicket1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -1146.646,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "IanTicket1",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": -580.422,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"SceneName": "Distraction-Fielding-Chatbox",
+			"Marks":
+			[
+				{
+					"MarkName": "Distraction-Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanSign1-Text",
+							"Properties":
+							{
+								"x": -785.269,
+								"y": 0.000,
+								"opacity": 1.0
+							}
+						},
+						{
+							"CharacterName": "IanSign2-Text",
+							"Properties":
+							{
+								"x": 111.874,
+								"y": 0.000,
+								"opacity": 0.000
+							}
+						},
+						{
+							"CharacterName": "IanPoint1",
+							"Properties":
+							{
+								"x": 537.679,
+								"y": 0.000,
+								"opacity": 0.000
+							}
+						},
+						{
+							"CharacterName": "SherriHandRaise1",
+							"Properties":
+							{
+								"x": 2034.548,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ArifSign1-Text",
+							"Properties":
+							{
+								"x": 1970.200,
+								"y": 0.000
+							}
+						}
+					]
+				},
+				{
+					"Description": "Ian enters from left. Sherri enters from right.",
+					"MarkName": "Distraction-Middle",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanSign1-Text",
+							"Properties":
+							{
+								"x": 111.874,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "SherriHandRaise1",
+							"Properties":
+							{
+								"x": 808.833,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while leaving this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Ian 1 fades to Ian 2. Sherri exits left. Arif enters right.",
+					"MarkName": "Distraction-End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanSign1-Text",
+							"Properties":
+							{
+								"x": 111.874,
+								"y": 0.000,
+								"opacity": 0.0
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "IanSign2-Text",
+							"Properties":
+							{
+								"x": 111.874,
+								"y": 0.000,
+								"opacity": 1.0
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "SherriHandRaise1",
+							"Properties":
+								{
+									"x": -402.595,
+									"y": 0.000
+								},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ArifSign1-Text",
+							"Properties":
+							{
+								"x": 1050.200
+							},
+							"Interpolations":
+							[
+								{
+									"Description":"Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Ian points to Arif.",
+					"MarkName": "Chatbox-Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanSign2-Text",
+							"Properties":
+							{
+								"opacity": 0.0
+							},
+							"Interpolations":
+							[
+								{
+									"Description":"Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "IanPoint1",
+							"Properties":
+							{
+								"opacity": 1.0
+							},
+							"Interpolations":
+							[
+								{
+									"Description":"Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Ian exits left. Arif exits left.",
+					"MarkName": "Chatbox-End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanPoint1",
+							"Properties":
+							{
+								"x": -1490.157,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ArifSign1-Text",
+							"Properties":
+							{
+								"x": -977.635,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"SceneName": "Additional",
+			"Marks":
+			[
+				{
+					"MarkName": "Additional-Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "MyriadFeatures-Questions",
+							"Properties":
+							{
+								"x": 0.000,
+								"y": 0.000,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "MyriadFeatures-Whiteboard",
+							"Properties":
+							{
+								"x": 0.000,
+								"y": 0.000,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "MyriadFeatures-Media",
+							"Properties":
+							{
+								"x": 0.000,
+								"y": 0.000,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "MyriadFeatures-BreakoutGroup",
+							"Properties":
+							{
+								"x": 0.000,
+								"y": 0.000,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "MyriadFeatures-YesNo",
+							"Properties":
+							{
+								"x": 0.000,
+								"y": 0.000,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "MyriadFeatures-Report",
+							"Properties":
+							{
+								"x": 0.000,
+								"y": 0.000,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "IanBack1",
+							"Properties":
+							{
+								"x": 2012.598,
+								"y": 0.000,
+								"opacity": 1.0
+							}
+						},
+						{
+							"CharacterName": "txtInteraction",
+							"Properties":
+							{
+								"x": 1288.490,
+								"y": 752.238,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "txtAutomation",
+							"Properties":
+							{
+								"x": 171.624,
+								"y": 752.238,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "txtFeatures",
+							"Properties":
+							{
+								"x": 66.314,
+								"y": 962.228,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "txtOrganization",
+							"Properties":
+							{
+								"x": 1273.316,
+								"y": 865.108,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "txtExtensions",
+							"Properties":
+							{
+								"x": 108.822,
+								"y": 856.254,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "txtPlugins",
+							"Properties":
+							{
+								"x": 1537.518,
+								"y": 958.311,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "addlguide1",
+							"Properties":
+							{
+								"x": 0.000,
+								"y": -3.020,
+								"opacity": 0.0
+							}
+						},
+						{
+							"CharacterName": "addlguide2",
+							"Properties":
+							{
+								"x": 1326.030,
+								"y": -2.020,
+								"opacity": 0.0
+							}
+						}
+					]
+				},
+				{
+					"Description": "Ian enters from right.",
+					"MarkName": "Additional-Ian",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanBack1",
+							"Properties":
+							{
+								"x": 732.598,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description":"Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Q&A appears. Interaction appears.",
+					"MarkName": "Additional-QA",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "MyriadFeatures-Questions",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtInteraction",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description":"Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Additional-Whiteboard",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "MyriadFeatures-Whiteboard",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description":"Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtOrganization",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description":"Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Additional-Media",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "MyriadFeatures-Media",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description":"Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtPlugins",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Additional-BreakoutGroup",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "MyriadFeatures-BreakoutGroup",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtFeatures",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Additional-YesNo",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "MyriadFeatures-YesNo",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtExtensions",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Additional-Report",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "MyriadFeatures-Report",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtAutomation",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Ian exits left. Props fade.",
+					"MarkName": "Additional-End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "IanBack1",
+							"Properties":
+							{
+								"x": -630.259,
+								"y": 0.000,
+								"opacity": 1.0
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "x",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "MyriadFeatures-Report",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtAutomation",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtExtensions",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtFeatures",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtInteraction",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtOrganization",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "txtPlugins",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "MyriadFeatures-Questions",
+							"Properties": { "opacity": 0.000 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "MyriadFeatures-Whiteboard",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "MyriadFeatures-Media",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "MyriadFeatures-BreakoutGroup",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "MyriadFeatures-YesNo",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"SceneName": "Help-Contact",
+			"Marks":
+			[
+				{
+					"Description": "Initialize help slide.",
+					"MarkName": "Help-Start",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-Zero",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-01",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-02",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-03",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-04",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-05",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-06",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-07",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-08",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-09",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-10",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						},
+						{
+							"CharacterName": "ProductionService-End",
+							"Properties":
+							{
+								"opacity": 0.0,
+								"x": 0.000,
+								"y": 0.000
+							}
+						}
+					]
+				},
+				{
+					"Description": "Ian appears.",
+					"MarkName": "Help-00",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-Zero",
+							"Properties":
+							{
+								"opacity": 1.0,
+								"x": 0.000,
+								"y": 0.000
+							},
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Planning",
+					"MarkName": "Help-01",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-01",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-Zero",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Box office",
+					"MarkName": "Help-02",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-02",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-01",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Door",
+					"MarkName": "Help-03",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-03",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-02",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Floor",
+					"MarkName": "Help-04",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-04",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-03",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Media",
+					"MarkName": "Help-05",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-05",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-04",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Property",
+					"MarkName": "Help-06",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-06",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-05",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Survey",
+					"MarkName": "Help-07",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-07",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-06",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Reporting",
+					"MarkName": "Help-08",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-08",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-07",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Moderation",
+					"MarkName": "Help-09",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-09",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-08",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "IT Support",
+					"MarkName": "Help-10",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-10",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-09",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"Description": "Finale",
+					"MarkName": "Help-End",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-End",
+							"Properties": { "opacity": 1.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						},
+						{
+							"CharacterName": "ProductionService-10",
+							"Properties": { "opacity": 0.0 },
+							"Interpolations":
+							[
+								{
+									"Description": "Pattern applied while entering this mark.",
+									"InterpolationProperty": "opacity",
+									"InterpolationType": "CountIn",
+									"InterpolationCount": 10
+								}
+							]
+						}
+					]
+				},
+				{
+					"MarkName": "Close",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "ProductionService-End",
+							"Properties": { "opacity": 1.0 }
+						}
+					]
+				}
+			]
+		}
+	],
+	"Frames":
+	[
+		{
+			"FrameIndex": 0,
+			"Description": "Start",
+			"Elements":
+			[
+				{
+					"ElementID": "layerStartIdeas",
+					"ElementType": "Layer",
+					"Properties": { "display": "inline" }
+				},
+				{
+					"ElementID": "layerEffort",
+					"ElementType": "Layer",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "layerPlanning",
+					"ElementType": "Layer",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "layerTicketsDoor",
+					"ElementType": "Layer",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "layerDistractionFieldingChatbox",
+					"ElementType": "Layer",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "layerAdditional",
+					"ElementType": "Layer",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "layerHelpContact",
+					"ElementType": "Layer",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "IanWrite1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.Start"
+				},
+				{
+					"ElementID": "ThoughtBubbleConnector1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.Start"
+				},
+				{
+					"ElementID": "ThoughtBubble1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.Start"
+				},
+				{
+					"ElementID": "ToyRobots1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.Start"
+				}
+			]
+		},
+		{
+			"FrameIndex": 98,
+			"Description": "Ian 1 enter. Ideas",
+			"Elements":
+			[
+				{
+					"ElementID": "IanWrite1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 118,
+			"Description": "Cloud enter. Ideas + Cloud",
+			"Elements":
+			[
+				{
+					"ElementID": "ThoughtBubble1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.Middle"
+				},
+				{
+					"ElementID": "ThoughtBubbleConnector1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 138,
+			"Description": "Robot enter. Ideas + Cloud + Robots",
+			"Elements":
+			[
+				{
+					"ElementID": "ToyRobots1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 186,
+			"Description": "Exit Ian 1, Cloud, Toy robots.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanWrite1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.LateMiddle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 196,
+			"Description": "Exit Ian 1, Cloud, Toy robots.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanWrite1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.End"
+				},
+				{
+					"ElementID": "ThoughtBubble1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.End"
+				},
+				{
+					"ElementID": "ThoughtBubbleConnector1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.End"
+				},
+				{
+					"ElementID": "ToyRobots1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Start-Ideas.End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 197,
+			"Elements":
+			[
+				{
+					"ElementID": "layerEffort",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "inline" }
+				},
+				{
+					"ElementID": "layerStartIdeas",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "IanSit3",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Start"
+				},
+				{
+					"ElementID": "TaskList1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Start"
+				},
+				{
+					"ElementID": "Gears1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Start"
+				},
+				{
+					"ElementID": "PocketWatch1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Start"
+				}
+			]
+		},
+		{
+			"FrameIndex": 275,
+			"Description": "Ian 1 enter. Tasklist enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanSit3",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Middle"
+				},
+				{
+					"ElementID": "TaskList1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 285,
+			"Description": "Gears enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "Gears1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 295,
+			"Description": "Pocketwatch enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "PocketWatch1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 414,
+			"Description": "Ian tilt for exit.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanSit3",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.Tilt"
+				}
+			]
+		},
+		{
+			"FrameIndex": 424,
+			"Description": "Exit Ian, Tasklist, Gears, Pocketwatch",
+			"Elements":
+			[
+				{
+					"ElementID": "IanSit3",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.End"
+				},
+				{
+					"ElementID": "TaskList1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.End"
+				},
+				{
+					"ElementID": "Gears1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.End"
+				},
+				{
+					"ElementID": "PocketWatch1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Effort.End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 427,
+			"Description": "Planning scene.",
+			"Elements":
+			[
+				{
+					"ElementID": "layerPlanning",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "inline" }
+				},
+				{
+					"ElementID": "layerEffort",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "IanWrite2",
+					"ElementType": "SceneMark",
+					"ElementMark": "Planning.Start"
+				},
+				{
+					"ElementID": "WhiteBoard1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Planning.Start"
+				}
+			]
+		},
+		{
+			"FrameIndex": 456,
+			"Description": "Ian enter. Whiteboard enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanWrite2",
+					"ElementType": "SceneMark",
+					"ElementMark": "Planning.Middle"
+				},
+				{
+					"ElementID": "WhiteBoard1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Planning.Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 605,
+			"Description": "Ian exit. Whiteboard exit.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanWrite2",
+					"ElementType": "SceneMark",
+					"ElementMark": "Planning.End"
+				},
+				{
+					"ElementID": "WhiteBoard1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Planning.End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 609,
+			"Description": "Tickets / Door scene.",
+			"Elements":
+			[
+				{
+					"ElementID": "layerTicketsDoor",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "inline" }
+				},
+				{
+					"ElementID": "layerPlanning",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "BoxOffice1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Tickets-Start"
+				},
+				{
+					"ElementID": "TicketBox1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-Start"
+				},
+				{
+					"ElementID": "JamesTicket1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-Start"
+				},
+				{
+					"ElementID": "IanTicket1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-Start"
+				}
+			]
+		},
+		{
+			"FrameIndex": 631,
+			"Description": "Ian in ticket booth enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "BoxOffice1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Tickets-Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 732,
+			"Description": "Ticket box enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "TicketBox1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 742,
+			"Description": "Ian door enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanTicket1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 768,
+			"Description": "James door enter",
+			"Elements":
+			[
+				{
+					"ElementID": "JamesTicket1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 816,
+			"Description": "All items in door scene exit.",
+			"Elements":
+			[
+				{
+					"ElementID": "BoxOffice1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Tickets-End"
+				},
+				{
+					"ElementID": "TicketBox1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-End"
+				},
+				{
+					"ElementID": "JamesTicket1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-End"
+				},
+				{
+					"ElementID": "IanTicket1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Tickets-Door.Door-End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 820,
+			"Description": "Distraction scene.",
+			"Elements":
+			[
+				{
+					"ElementID": "layerDistractionFieldingChatbox",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "inline" }
+				},
+				{
+					"ElementID": "layerTicketsDoor",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "IanSign1-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-Start"
+				},
+				{
+					"ElementID": "IanSign2-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-Start"
+				},
+				{
+					"ElementID": "IanPoint1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-Start"
+				},
+				{
+					"ElementID": "SherriHandRaise1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-Start"
+				},
+				{
+					"ElementID": "ArifSign1-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-Start"
+				}
+			]
+		},
+		{
+			"FrameIndex": 830,
+			"Description": "Ian big idea enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanSign1-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 868,
+			"Description": "Sherri hand raise enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "SherriHandRaise1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-Middle"
+				}
+			]
+		},
+		{
+			"FrameIndex": 961,
+			"Description": "Distracted Ian looks up.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanSign1-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-End"
+				},
+				{
+					"ElementID": "IanSign2-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1003,
+			"Description": "Sherri exit.",
+			"Elements":
+			[
+				{
+					"ElementID": "SherriHandRaise1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1031,
+			"Description": "Arif distraction enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "ArifSign1-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Distraction-End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1056,
+			"Description": "Distracted Ian points to Arif.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanSign2-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Chatbox-Start"
+				},
+				{
+					"ElementID": "IanPoint1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Chatbox-Start"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1105,
+			"Description": "Ian exit. Arif exit.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanPoint1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Chatbox-End"
+				},
+				{
+					"ElementID": "ArifSign1-Text",
+					"ElementType": "SceneMark",
+					"ElementMark": "Distraction-Fielding-Chatbox.Chatbox-End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1107,
+			"Description": "Myriad features scene. Composite mosaic.",
+			"Elements":
+			[
+				{
+					"ElementID": "layerAdditional",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "inline" }
+				},
+				{
+					"ElementID": "layerDistractionFieldingChatbox",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "MyriadFeatures-Questions",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "MyriadFeatures-Whiteboard",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "MyriadFeatures-Media",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "MyriadFeatures-BreakoutGroup",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "MyriadFeatures-YesNo",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "MyriadFeatures-Report",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "IanBack1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "txtInteraction",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "txtAutomation",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "txtFeatures",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "txtOrganization",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "txtExtensions",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "txtPlugins",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "addlguide1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				},
+				{
+					"ElementID": "addlguide2",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Start"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1132,
+			"Description": "Ian 1 enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanBack1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Ian"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1156,
+			"Description": "Questions enter. Interaction enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "MyriadFeatures-Questions",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-QA"
+				},
+				{
+					"ElementID": "txtInteraction",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-QA"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1180,
+			"Description": "Whiteboard enter. Organization enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "MyriadFeatures-Whiteboard",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Whiteboard"
+				},
+				{
+					"ElementID": "txtOrganization",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Whiteboard"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1204,
+			"Description": "Media enter. Plugins enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "MyriadFeatures-Media",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Media"
+				},
+				{
+					"ElementID": "txtPlugins",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Media"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1228,
+			"Description": "Breakout group enter. Features enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "MyriadFeatures-BreakoutGroup",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-BreakoutGroup"
+				},
+				{
+					"ElementID": "txtFeatures",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-BreakoutGroup"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1252,
+			"Description": "Yes/No enter. Extensions enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "MyriadFeatures-YesNo",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-YesNo"
+				},
+				{
+					"ElementID": "txtExtensions",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-YesNo"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1276,
+			"Description": "Report enter. Automation enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "MyriadFeatures-Report",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Report"
+				},
+				{
+					"ElementID": "txtAutomation",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-Report"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1549,
+			"Description": "Myriad all exit.",
+			"Elements":
+			[
+				{
+					"ElementID": "IanBack1",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "MyriadFeatures-Questions",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "MyriadFeatures-Whiteboard",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "MyriadFeatures-Media",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "MyriadFeatures-BreakoutGroup",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "MyriadFeatures-YesNo",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "MyriadFeatures-Report",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "txtAutomation",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "txtExtensions",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "txtFeatures",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "txtInteraction",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "txtOrganization",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				},
+				{
+					"ElementID": "txtPlugins",
+					"ElementType": "SceneMark",
+					"ElementMark": "Additional.Additional-End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1552,
+			"Description": "Help scene.",
+			"Elements":
+			[
+				{
+					"ElementID": "layerHelpContact",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "inline" }
+				},
+				{
+					"ElementID": "layerAdditional",
+					"ElementType": "Layer",
+					"InterpolationType": "Immediate",
+					"Properties": { "display": "none" }
+				},
+				{
+					"ElementID": "ProductionService-Zero",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-01",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-02",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-03",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-04",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-05",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-06",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-07",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-08",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-09",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-10",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				},
+				{
+					"ElementID": "ProductionService-End",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-Start"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1608,
+			"Description": "Ian enter.",
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-Zero",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-00"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1648,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-01",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-01"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1687,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-02",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-02"
+				},
+				{
+					"ElementID": "ProductionService-Zero",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-01"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1727,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-03",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-03"
+				},
+				{
+					"ElementID": "ProductionService-01",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-02"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1766,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-04",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-04"
+				},
+				{
+					"ElementID": "ProductionService-02",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-03"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1806,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-05",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-05"
+				},
+				{
+					"ElementID": "ProductionService-03",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-04"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1846,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-06",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-06"
+				},
+				{
+					"ElementID": "ProductionService-04",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-05"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1885,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-07",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-07"
+				},
+				{
+					"ElementID": "ProductionService-05",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-06"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1925,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-08",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-08"
+				},
+				{
+					"ElementID": "ProductionService-06",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-07"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1945,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-09",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-09"
+				},
+				{
+					"ElementID": "ProductionService-07",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-08"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1965,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-10",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-10"
+				},
+				{
+					"ElementID": "ProductionService-08",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-09"
+				}
+			]
+		},
+		{
+			"FrameIndex": 1985,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-09",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-10"
+				}
+			]
+		},
+		{
+			"FrameIndex": 2015,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-End",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-End"
+				},
+				{
+					"ElementID": "ProductionService-10",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Help-End"
+				}
+			]
+		},
+		{
+			"FrameIndex": 2160,
+			"Elements":
+			[
+				{
+					"ElementID": "ProductionService-End",
+					"ElementType": "SceneMark",
+					"ElementMark": "Help-Contact.Close"
+				}
+			]
+		}
+	]
+}
