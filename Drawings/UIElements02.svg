@@ -2901,12 +2901,12 @@
          transform="translate(-16.735461,-4.0691785)">
         <path
            id="circle1457"
-           style="fill:#cce8ff;fill-opacity:1;fill-rule:evenodd;stroke:#003866;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cce8ff;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
            d="m 24.275521,8.3609775 c 0,1.7429935 -1.303038,3.1559705 -2.910416,3.1559705 -0.0173,-2.3410731 0.01067,-3.8417613 0,-6.3119411 1.607379,3e-7 2.910416,1.4129764 2.910416,3.1559706 z"
            sodipodi:nodetypes="sccs" />
         <path
            id="path1455"
-           style="fill:#cce8ff;fill-opacity:1;fill-rule:evenodd;stroke:#003866;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#cce8ff;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
            d="m 23.084314,8.3509111 c 0,0.9717335 -0.746757,1.7594789 -1.703545,1.7594789 -0.03861,-1.0067674 0.04933,-2.2587534 0.01444,-3.5189579 0.956788,0 1.689108,0.7877456 1.689108,1.759479 z"
            sodipodi:nodetypes="sccs" />
         <path
