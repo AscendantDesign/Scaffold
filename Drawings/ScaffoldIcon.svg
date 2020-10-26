@@ -23,11 +23,11 @@
       <stop
          id="stop1243"
          offset="0"
-         style="stop-color:#000000;stop-opacity:1;" />
+         style="stop-color:#8d33d9;stop-opacity:1" />
       <stop
          id="stop1245"
          offset="1"
-         style="stop-color:#000000;stop-opacity:0;" />
+         style="stop-color:#d933d8;stop-opacity:1" />
     </linearGradient>
     <marker
        inkscape:stockid="Arrow1Mend"
@@ -58,9 +58,9 @@
     <linearGradient
        gradientUnits="userSpaceOnUse"
        y2="47.547932"
-       x2="93.463281"
+       x2="93.475683"
        y1="47.547932"
-       x1="58.910352"
+       x1="58.922754"
        id="linearGradient1249"
        xlink:href="#linearGradient1247"
        inkscape:collect="always" />
@@ -68,8 +68,8 @@
   <sodipodi:namedview
      inkscape:document-rotation="0"
      inkscape:window-maximized="0"
-     inkscape:window-y="0"
-     inkscape:window-x="128"
+     inkscape:window-y="-4"
+     inkscape:window-x="141"
      inkscape:window-height="1019"
      inkscape:window-width="1566"
      units="px"
