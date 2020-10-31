@@ -85,3 +85,35 @@ table
 	border-collapse: collapse;
 }
 
+.audio
+{
+	text-align: center;
+}
+.audio audio
+{
+	max-width: 200px;
+}
+
+.image
+{
+	text-align: center;
+}
+.image img
+{
+	max-width: 200px;
+}
+
+.link
+{
+	text-align: center;
+}
+
+.video
+{
+	text-align: center;
+}
+.video video
+{
+	max-width: 200px;
+}
+
