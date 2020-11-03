@@ -2,7 +2,7 @@ Scaffold
 ========
 
 **Initial Vision Document**  
-By Daniel Patterson, June 24, 2020
+Last updated by Daniel Patterson, November 3, 2020
 
 The purpose of this document is to provide the initial statement for the
 project along with the needs of the user community that can lead to the
@@ -92,11 +92,11 @@ A number of specialized terms are used in this project.
     happened. In this application, the event element is more specialized
     than that and is the handler and/or repeater for something that has
     happened. This system also has a type of element, known as a
-    trigger, that is responsible for the the signals that cause the
-    events. Events might be triggered directly from system events such
-    as clicking or moving the mouse, or by trigger elements defined by
-    the designer. Any event can have multiple trigger inputs, and any
-    event can also repeat its trigger signal to multiple other elements
+    trigger, that is responsible for the signals that cause the events.
+    Events might be triggered directly from system events such as
+    clicking or moving the mouse, or by trigger elements defined by the
+    designer. Any event can have multiple trigger inputs, and any event
+    can also repeat its trigger signal to multiple other elements
     capable of receiving trigger signals, either before or after the
     local handling of the event in question has been completed.
 
@@ -129,9 +129,9 @@ A number of specialized terms are used in this project.
     *unit* for establishing a direct curriculative reference. One unit
     can contain zero or more pages.
 
-<img src="Images/UIMockup01.png" style="width:6.5in;height:3.65625in" alt="A screenshot of a computer Description automatically generated" />
+<img src="Images/UIMockup2020110301.png" style="width:6.5in;height:3.65625in" />
 
-Figure - Initial UI Concept for Scaffold
+Figure - Scaffold Current UI Concept
 
 Overview of Project Goals
 -------------------------
@@ -139,9 +139,11 @@ Overview of Project Goals
 Scaffold is an open source e-learning authoring tool meant to meet the
 following goals.
 
--   Operate as a desktop application based upon the Electron framework,
-    to promote platform independence, and maintain 100% operational
-    compatibility with Windows, Linux, or Mac.
+-   Operate as a desktop application, avoiding internet dependencies
+    except when collaborating in real-time.
+
+-   Maintain 100% operational platform compatibility with Windows,
+    Linux, and Mac.
 
 -   Allow any element to work with any trigger / timeline combination
     under singular or cyclical conditions.
@@ -304,7 +306,7 @@ In the first version, the project will be capable of modeling a single
 full course with child elements that are modular enough to be shared
 among multiple courses.
 
-<img src="Images/CurriculumHierarchy.png" style="width:2.25127in;height:2.83333in" alt="Curriculum Hierarchy" />
+<img src="Images/NodeExample1.png" style="width:2.25127in;height:2.83333in" alt="Curriculum Hierarchy" />
 
 Figure - Curriculum hierarchy base object model
 
@@ -365,15 +367,17 @@ others.
 
 Cross-platform functionality could also be a huge advantage to users.
 
-A platform independent desktop platform like Electron is currently
-looking like the clear preference, given that it doesn't ever have to be
-repeatedly recompiled for use on Windows, Linux, or Mac.
+A platform independent desktop platform like Electron has certain
+advantages due to its web-oriented nature. However, Electron apps are
+not only heavy in resources, but incredibly slow when compared to native
+desktop applications.
 
-The change Apple is making to adopt their own microprocessors in the
-coming year will cause the differences between PC and Mac to be more
-pronounced than they have been since the 1980s and no matter what the
-quality level of your C compiler, differences always exist for
-applications compiled directly to dissimilar hardware platforms.
+To further complicate matters, the change Apple is making to adopt their
+own microprocessors in the coming year will cause the differences
+between PC and Mac to be more pronounced than they have been since the
+1980s and no matter what the quality level of a C++ compiler,
+differences always exist for applications compiled directly to
+dissimilar hardware platforms.
 
 Raising the code base to a universal UI level would alleviate all
 hardware considerations for a type of software like this that needs no
@@ -381,14 +385,17 @@ hardware support other than accurate timers. The real challenge in this
 elevation is to find code base that still provides exceptional
 performance when running at such an abstracted level.
 
+One possible direction is Progressive Web Apps (PWA) with WebAssembly
+and .NET Blazor / Razor service logic.
+
 This is context in which the first experimental exercises for this
 project will be conducted.
 
 ### Events, Triggers, Timelines, Keyframes, And Elements
 
-In this software, the term element is used to imply any thing that will
-be present in the course, including a background, sprite, button, and
-even the timer used to keep the pace on another element.
+In this software, the term element is used to imply any 'thing' that
+will be present in the course, including a background, sprite, button,
+and even the timer used to keep the pace on another element.
 
 A trigger is a signal that something has occurred, where an event
 represents an implementation of behaviors or actions serving as the
@@ -432,12 +439,24 @@ without having to alter any of the underlying course content.
 
 It is expected that without any great effort on behalf of the designer,
 all content should smoothly and consistently readjust to any screen size
-or resolution.
+or resolution, without any special consideration for alternate screen
+layouts that are currently considered by and only by the mobile industry
+to be "responsive". In this project, if I ever happen to mention a
+responsive layout, I will always be referring to one that is displayed
+equally on all screens of all orientations with no special
+consideration.
 
 A multiple resolution previewer should be implemented at the earliest
 version possible, to allow interactive adjustment of how certain
 individual elements might resize relative to display size, but other
 elements on the same page might reposition or reorganize.
+
+Additionally, for the reason that the *responsive* keyword is
+contemporarily equated with an extremely negative connotation related to
+how mobile devices never seem to be capable of living up to the same
+display layout capabilities as desktop PCs, I will try to avoid that
+word in this project altogether, instead referring to something as being
+*adaptive*.
 
 ### Accessible Content For People With Disabilities
 
@@ -470,9 +489,9 @@ report the results of any onboard assessments to a waiting LMS.
 
 ### Universal Transcript Support
 
-In as early a version as is possible, adoption of Universal Transcripts,
-as proposed by The National Laboratory for Education Transformation will
-be implemented, unless a more suitable system is found in the meantime.
+In the earliest version possible, adoption of Universal Transcripts, as
+proposed by The National Laboratory for Education Transformation, unless
+a more suitable system is found in the meantime.
 
 As described at their website <http://nlet.org/universal-transcript/>,
 Universal Transcript is a blockchain-based, student-managed,
@@ -602,18 +621,22 @@ interface nodes to describe a series of conditions or events has proven
 both intuitive to a large audience and successful in definition of
 functionality over the past few years.
 
-In the following illustration, a custom event named Button 1 Click is
-visually created using a combination of the actual click event from
-Button 1 and timer that expires every 10 seconds. The result of this
-chain is an event that happens every 10 seconds in addition to any
+Nodes can represent a vast number of different types of item-to-item
+relationships, from conversational flow control to elemental
+contributions to a larger structure.
+
+In the following example illustration, a custom event named Button 1
+Click is visually created using a combination of the actual click event
+from Button 1 and timer that expires every 10 seconds. The result of
+this chain is an event that happens every 10 seconds in addition to any
 direct click by the learner.
 
 Not shown here, Button 1 Click can be used to set the properties for
 anything, or to be set as a trigger for any other event.
 
-<img src="Images/NodeExample1.png" style="width:6.5in;height:4.875in" alt="Node-based expressions" />
+<img src="media/image4.png" style="width:6.5in;height:4.875in" alt="Node-based expressions" />
 
-Figure - Node-based expressions
+Figure - Node-based logic expressions
 
 ### Drag And Drop Design
 
@@ -642,7 +665,7 @@ More specifically, the following flow characteristics can be set.
     whether an inline assessment must be successfully completed before
     moving on to each new section.
 
--   Page skipping. This mode allows a page to be skipped if is has the
+-   Page skipping. This mode allows a page to be skipped if it has the
     skip attribute set.
 
 -   Learner-driven navigation to any page. This mode allows the learner
@@ -794,10 +817,13 @@ The grammar engine will start with the following rules, among others.
 #### Libraries
 
 At the time of this document, the following libraries are selected for
-providing spelling and grammar services.
+providing spelling and grammar services. Both may have to be converted
+from JavaScript to C\#.
 
 -   electron-spellchecker.
-    <https://www.npmjs.com/package/electron-spellchecker>
+    https://github.com/electron-userland/electron-spellchecker
+
+-   
 
 -   Proofreader. <https://github.com/kdzwinel/Proofreader>
 
@@ -879,14 +905,14 @@ The designer can define an unlimited number of unique variables that can
 be used alone or in mathematical expressions to control the flow of the
 course.
 
-User-defined variables can be referenced within expression controlled
+User-defined variables can be referenced within expression-controlled
 contexts, as well as for generating triggers, setting timers, and
 numerous other duties.
 
 ### Native JavaScript Support
 
-The behavior of any event, element, or animation can be expressed
-directly in JavaScript.
+Support for direct JavaScript expression of the behavior of any event,
+element, or animation should be provided.
 
 ### System Triggers
 
@@ -897,7 +923,7 @@ timers and triggers.
 Following is a non-exhaustive list of the built-in events. All of them
 occur at the page and control levels.
 
-| Name                     | Description                                                                                                             |
+| **Name**                 | **Description**                                                                                                         |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------|
 | Activate                 | Fired whenever the object is activated.                                                                                 |
 | Animation Start          | Fired when animation is started on an object.                                                                           |
@@ -964,10 +990,12 @@ Functional Dependencies
 As described in this document, the application is currently expected to
 have the following external dependencies.
 
-| Name                     | Local Use                                                       | Description                                                                        | Source                                  |
-|--------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------|-----------------------------------------|
-| GIT                      | Peer to peer distributed version collaboration.                 | The most widely adopted version control system.                                    | <https://git-scm.com/downloads>         |
-| jQuery                   | Quick and reliable control of user interface elements.          | HTML and JavaScript high capability and AJAX functionality library.                | <https://jquery.com/>                   |
-| jQuery UI                | Ornamentation of user interface elements.                       | Consistent formatting and control components from HTML user interface elements.    | <https://jqueryui.com/>                 |
-| jQuery UI Layout Plug-in | Docking windows.                                                | Docking window theme add-on for jQuery UI.                                         | <http://layout.jquery-dev.com/>         |
-| Universal Transcript     | In-course, independent transcript access for course completion. | Blockchain-based transcript for students in learning specializations of all types. | <http://nlet.org/universal-transcript/> |
+| **Name**                 | **Local Use**                                                   | **Description**                                                                                                                                              | **Source**                                   |
+|--------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| .NET                     | Prototype user interface.                                       | The current prototype application is using WinForms while we are waiting to find the perfect UI candidate. One possible XAML-based candidate is Avalonia UI. | https://en.wikipedia.org/wiki/Windows\_Forms |
+| GIT                      | Peer to peer distributed version collaboration.                 | The most widely adopted version control system.                                                                                                              | <https://git-scm.com/downloads>              |
+| jQuery                   | Quick and reliable control of user interface elements.          | HTML and JavaScript high capability and AJAX functionality library.                                                                                          | <https://jquery.com/>                        |
+|                          |                                                                 |                                                                                                                                                              |                                              |
+| jQuery UI Layout Plug-in | Docking windows.                                                | Docking window theme add-on for jQuery UI.                                                                                                                   | <http://layout.jquery-dev.com/>              |
+| SkiaSharp                | Visual presentation.                                            | Cross-platform 2D visual presentation powered by the Google Skia graphics engine.                                                                            | https://github.com/mono/SkiaSharp            |
+| Universal Transcript     | In-course, independent transcript access for course completion. | Blockchain-based transcript for students in learning specializations of all types.                                                                           | <http://nlet.org/universal-transcript/>      |
