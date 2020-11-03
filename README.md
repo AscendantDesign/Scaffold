@@ -306,7 +306,7 @@ In the first version, the project will be capable of modeling a single
 full course with child elements that are modular enough to be shared
 among multiple courses.
 
-<img src="Images/NodeExample1.png" style="width:2.25127in;height:2.83333in" alt="Curriculum Hierarchy" />
+<img src="Images/CurriculumHierarchy.png" style="width:2.25127in;height:2.83333in" alt="Curriculum Hierarchy" />
 
 Figure - Curriculum hierarchy base object model
 
@@ -634,7 +634,7 @@ direct click by the learner.
 Not shown here, Button 1 Click can be used to set the properties for
 anything, or to be set as a trigger for any other event.
 
-<img src="media/image4.png" style="width:6.5in;height:4.875in" alt="Node-based expressions" />
+<img src="Images/NodeExample1.png" style="width:6.5in;height:4.875in" alt="Node-based expressions" />
 
 Figure - Node-based logic expressions
 

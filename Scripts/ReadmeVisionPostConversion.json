@@ -5,12 +5,12 @@
 		"UseRegEx": 0
 	},
 	{
-		"FindPattern": "media/image2.png",
+		"FindPattern": "media/image3.png",
 		"ReplacePattern": "Images/CurriculumHierarchy.png",
 		"UseRegEx": 0
 	},
 	{
-		"FindPattern": "media/image3.png",
+		"FindPattern": "media/image4.png",
 		"ReplacePattern": "Images/NodeExample1.png",
 		"UseRegEx": 0
 	},
