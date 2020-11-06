@@ -117,3 +117,20 @@ table
 	max-width: 200px;
 }
 
+.button .image
+{
+	text-align: left;
+	display: inline-block;
+}
+.button .image img
+{
+	max-width: 200px;
+}
+
+.button .text
+{
+	display: inline-block;
+	vertical-align: top;
+	margin: 4px;
+}
+
