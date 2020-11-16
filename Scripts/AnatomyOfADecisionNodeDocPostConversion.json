@@ -1,0 +1,7 @@
+[
+	{
+		"FindPattern": "media/image1.png",
+		"ReplacePattern": "../Images/AnatomyOfADecisionNode.png",
+		"UseRegEx": 0
+	}
+]
