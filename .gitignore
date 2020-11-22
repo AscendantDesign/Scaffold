@@ -4,7 +4,11 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # Internal reference
+Docs/InProgress/
 Docs/Reference/
+
+Drawings/InProgress/
+Experiments/
 
 # Removed folders
 _Archive*
