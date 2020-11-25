@@ -1,6 +1,6 @@
 Contributors
 ============
-Last updated by Daniel Patterson, Wednesday, November 25, 2020
+Last updated by Daniel Patterson on Wednesday, November 25, 2020
 
 Following are the list of contributors to this project last time this file was saved.
 
