@@ -149,10 +149,6 @@
     <value>https://slack.com/api/chat.postMessage</value>
     <comment>Slack method chat.postMessage.</comment>
   </data>
-  <data name="SlackWebHook" xml:space="preserve">
-    <value>https://hooks.slack.com/services/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</value>
-    <comment>Slack API web hook address for sending messages.</comment>
-  </data>
   <data name="sqlConversationInsert" xml:space="preserve">
     <value>INSERT INTO Conversation(ConversationTicket, ConversationTitle, ConversationDescription)
 VALUES

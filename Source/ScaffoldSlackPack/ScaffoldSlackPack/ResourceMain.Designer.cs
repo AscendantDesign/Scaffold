@@ -133,15 +133,6 @@ namespace ScaffoldSlackPack {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://hooks.slack.com/services/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.
-        /// </summary>
-        internal static string SlackWebHook {
-            get {
-                return ResourceManager.GetString("SlackWebHook", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to INSERT INTO Conversation(ConversationTicket, ConversationTitle, ConversationDescription)
         ///VALUES
         ///( $ConversationTicket, $ConversationTitle, $ConversationDescription);.
