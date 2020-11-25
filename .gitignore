@@ -17,6 +17,7 @@ _Archive*
 *.rsuser
 *.suo
 *.user
+*.user.json
 *.userosscache
 *.sln.docstates
 *.PublishSettings

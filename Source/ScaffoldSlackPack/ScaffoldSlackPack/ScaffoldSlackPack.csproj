@@ -74,6 +74,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="slackserverkeys.user.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\Media\03c1cd25-4763-4a5d-adcb-acfed1d6461e_0097c103-0ed3-4815-b8b8-224a5f85e671.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

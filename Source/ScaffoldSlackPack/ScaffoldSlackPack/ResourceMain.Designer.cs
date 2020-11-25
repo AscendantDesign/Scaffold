@@ -124,29 +124,11 @@ namespace ScaffoldSlackPack {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to xoxb-1497228267895-1536117793920-a0vOw6FJ1Q7NN9odmzYBYpNv.
-        /// </summary>
-        internal static string SlackBotToken {
-            get {
-                return ResourceManager.GetString("SlackBotToken", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to https://slack.com/api/chat.postMessage.
         /// </summary>
         internal static string SlackMethodChatPostMessage {
             get {
                 return ResourceManager.GetString("SlackMethodChatPostMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to xoxp-1497228267895-1505237871238-1521790202324-0ba2a329be2d1ee4bb775f7529193a61.
-        /// </summary>
-        internal static string SlackTeamToken {
-            get {
-                return ResourceManager.GetString("SlackTeamToken", resourceCulture);
             }
         }
         

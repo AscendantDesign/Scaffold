@@ -1322,7 +1322,7 @@ namespace ScaffoldSlackPack
 					HttpRequestHeader.ContentType, "application/json");
 				webClient.Headers.Add(
 					HttpRequestHeader.Authorization,
-					$"Bearer {ResourceMain.SlackBotToken}");
+					$"Bearer {mSlackTokens.SlackBotToken}");
 				_ = Task.Run(() => webClient.UploadString(
 					new Uri($"{ResourceMain.SlackMethodChatPostMessage}"),
 					"POST", slackBlockContent));
@@ -1345,6 +1345,61 @@ namespace ScaffoldSlackPack
 			{
 				mBaseUrl = String.Format("{0}://{1}", request.Scheme, request.Host);
 			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		////*-----------------------------------------------------------------------*
+		////*	SlackBotToken																													*
+		////*-----------------------------------------------------------------------*
+		//private static string mSlackBotToken = "";
+		///// <summary>
+		///// Get/Set the currently configured Slack bot token for your app.
+		///// </summary>
+		///// <remarks>
+		///// This value is loaded at startup from a file you provide:
+		///// slackserverkeys.user.json. The file contains two properties:
+		///// SlackBotToken, SlackTeamToken. The values of each property are
+		///// the Slack-issued token values from your app at api.slack.com.
+		///// </remarks>
+		//public static string SlackBotToken
+		//{
+		//	get { return mSlackBotToken; }
+		//	set { mSlackBotToken = value; }
+		//}
+		////*-----------------------------------------------------------------------*
+
+		////*-----------------------------------------------------------------------*
+		////*	SlackTeamToken																												*
+		////*-----------------------------------------------------------------------*
+		//private static string mSlackTeamToken = "";
+		///// <summary>
+		///// Get/Set the currently configured Slack team token for your app.
+		///// </summary>
+		///// <remarks>
+		///// This value is loaded at startup from a file you provide:
+		///// slackserverkeys.user.json. The file contains two properties:
+		///// SlackBotToken, SlackTeamToken. The values of each property are
+		///// the Slack-issued token values from your app at api.slack.com.
+		///// </remarks>
+		//public static string SlackTeamToken
+		//{
+		//	get { return mSlackBotToken; }
+		//	set { mSlackBotToken = value; }
+		//}
+		////*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	SlackTokens																														*
+		//*-----------------------------------------------------------------------*
+		private static SlackServerKeys mSlackTokens = new SlackServerKeys();
+		/// <summary>
+		/// Get/Set a reference to the keys required by Slack for server to server
+		/// interaction.
+		/// </summary>
+		public static SlackServerKeys SlackTokens
+		{
+			get { return mSlackTokens; }
+			set { mSlackTokens = value; }
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1571,7 +1626,7 @@ namespace ScaffoldSlackPack
 				{
 					data = webClient.DownloadData(new Uri(
 						$"{ResourceMain.SlackAPIUsersList}?token=" +
-						$"{ResourceMain.SlackTeamToken}&pretty=1"));
+						$"{mSlackTokens.SlackTeamToken}&pretty=1"));
 				}
 				catch(Exception ex)
 				{

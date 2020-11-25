@@ -145,17 +145,9 @@
     <value>https://slack.com/api/users.list</value>
     <comment>Slack API address of users.list method.</comment>
   </data>
-  <data name="SlackBotToken" xml:space="preserve">
-    <value>xoxb-1497228267895-1536117793920-a0vOw6FJ1Q7NN9odmzYBYpNv</value>
-    <comment>The token needed for this application to post messages to users and channels.</comment>
-  </data>
   <data name="SlackMethodChatPostMessage" xml:space="preserve">
     <value>https://slack.com/api/chat.postMessage</value>
     <comment>Slack method chat.postMessage.</comment>
-  </data>
-  <data name="SlackTeamToken" xml:space="preserve">
-    <value>xoxp-1497228267895-1505237871238-1521790202324-0ba2a329be2d1ee4bb775f7529193a61</value>
-    <comment>Slack OAuth Team Access Token.</comment>
   </data>
   <data name="SlackWebHook" xml:space="preserve">
     <value>https://hooks.slack.com/services/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</value>

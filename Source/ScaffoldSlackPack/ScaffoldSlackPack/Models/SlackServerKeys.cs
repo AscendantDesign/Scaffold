@@ -1,4 +1,4 @@
-//	HelloWorld.cs
+//	SlackServerKeys.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 namespace ScaffoldSlackPack.Models
 {
 	//*-------------------------------------------------------------------------*
-	//*	HelloWorldItem																													*
+	//*	SlackServerKeys																													*
 	//*-------------------------------------------------------------------------*
 	/// <summary>
-	/// Simple hello world object.
+	/// Token values needed by Slack for server-to-server interaction.
 	/// </summary>
-	public class HelloWorldItem
+	public class SlackServerKeys
 	{
 		//*************************************************************************
 		//*	Private																																*
@@ -28,39 +28,33 @@ namespace ScaffoldSlackPack.Models
 		//*	Public																																*
 		//*************************************************************************
 		//*-----------------------------------------------------------------------*
-		//*	_Constructor																													*
+		//*	SlackBotToken																													*
 		//*-----------------------------------------------------------------------*
+		private string mSlackBotToken = "";
 		/// <summary>
-		/// Create a new instance of the HelloWorldItem Item.
+		/// Get/Set the active Slack bot token for the app.
 		/// </summary>
-		public HelloWorldItem()
+		public string SlackBotToken
 		{
-		}
-		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		/// <summary>
-		/// Create a new instance of the HelloWorldItem Item.
-		/// </summary>
-		public HelloWorldItem(string basePath)
-		{
-			mHello = $"World from {basePath}";
+			get { return mSlackBotToken; }
+			set { mSlackBotToken = value; }
 		}
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
-		//*	Hello																																	*
+		//*	SlackTeamToken																												*
 		//*-----------------------------------------------------------------------*
-		private string mHello = "World";
+		private string mSlackTeamToken = "";
 		/// <summary>
-		/// Get the value of hello, which is always world.
+		/// Get/Set the active Slack team token for the app.
 		/// </summary>
-		public string Hello
+		public string SlackTeamToken
 		{
-			get
-			{
-				return mHello;
-			}
+			get { return mSlackTeamToken; }
+			set { mSlackTeamToken = value; }
 		}
 		//*-----------------------------------------------------------------------*
+
 
 	}
 	//*-------------------------------------------------------------------------*

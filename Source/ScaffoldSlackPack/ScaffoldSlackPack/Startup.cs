@@ -16,6 +16,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
+using Newtonsoft.Json;
+using ScaffoldSlackPack.Models;
 
 namespace ScaffoldSlackPack
 {
@@ -105,10 +107,15 @@ namespace ScaffoldSlackPack
 		/// </remarks>
 		public void ConfigureServices(IServiceCollection services)
 		{
+			string content = System.IO.File.ReadAllText("slackserverkeys.user.json");
+
 			//	This line uses System.Text.Json.
 			services.AddControllers();
 			//	This line uses Newtonsoft.Json.
 			//services.AddControllers().AddNewtonsoftJson();
+
+			ScaffoldSlackPackUtil.SlackTokens =
+				JsonConvert.DeserializeObject<SlackServerKeys>(content);
 		}
 		//*-----------------------------------------------------------------------*
 
