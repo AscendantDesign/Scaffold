@@ -1,7 +1,8 @@
 ﻿//	CefControlExtensions.cs
-//	Copyright(c) 2020. Ascendant Design and Training, LLC
-//	This file is licensed under the MIT License.
-//	Please see the LICENSE file in this project.
+//	Copyright © 2010-2015 The CefSharp Authors.
+//	All rights reserved. Use of this source code is governed by a
+//	BSD-style license that can be found in the LICENSE file at
+//	https://github.com/cefsharp/CefSharp
 using System;
 using System.Windows.Forms;
 
