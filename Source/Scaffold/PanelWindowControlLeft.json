@@ -1,0 +1,12 @@
+{
+	"Name": "Left",
+	"AutoSize": true,
+	"Margin": 6,
+	"Controls":
+	[
+		{
+			"Name": "tctlTools",
+			"Dock": "Fill"
+		}
+	]
+}

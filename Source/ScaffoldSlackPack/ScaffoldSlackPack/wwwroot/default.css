@@ -1,0 +1,17 @@
+﻿/*
+	default.css
+	Copyright(c) 2020. Ascendant Design and Training, LLC
+	This file is licensed under the MIT License.
+	Please see the LICENSE file in this project.
+*/
+body
+{
+	font-family: Calibri, Verdana, Geneva, Tahoma, sans-serif, Arial;
+	font-size: 12pt;
+}
+
+.result
+{
+	background-color: #90c0f0;
+	border: 1px solid black;
+}

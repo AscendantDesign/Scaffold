@@ -1,0 +1,32 @@
+{
+	"user":"U01EV6ZRM70",
+	"blocks":
+	[
+		{
+			"type":"divider",
+			"block_id":"1e5e28fc-5863-489b-b60d-f503a95c492c"
+		},
+		{
+			"type":"section",
+			"block_id":"1d5e90ac-c201-477f-b738-0812847eec1a",
+			"text":
+			{
+				"type":"mrkdwn",
+				"text":"The following courses are currently published in Scaffold.\n`Name` - *Description*"
+			}
+		},
+		{
+			"type":"divider",
+			"block_id":"17ed6f1b-d150-41dc-9ffa-a9f20269c627"
+		},
+		{
+			"type":"section",
+			"block_id":"2eeaecee-3e84-4054-a741-ee77abb308c9",
+			"text":
+			{
+				"type":"mrkdwn",
+				"text":"`Grandmad` - Grandma convinces Jonas to get COVID-19.\n"
+			}
+		}
+	]
+}

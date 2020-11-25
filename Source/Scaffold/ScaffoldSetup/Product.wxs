@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+* Product.wxs
+* Copyright(c) 2020. Ascendant Design and Training, LLC
+* This file is licensed under the MIT License.
+* Please see the LICENSE file in this project.
+-->
+<?define Name="Scaffold" ?>
+<?define Description="Open source e-learning authoring tool." ?>
+<?define Manufacturer="Ascendant" ?>
+<?define Version="0.0.2020.1123" ?>
+<?define UpgradeCode="8a4327ec-d91f-4e73-9af0-a93da7453fa3" ?>
+<?define CabName="ScaffoldSetupPackage.cab" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <!-- Application Source Directory -->
+  <?define AppSourceDir=$(var.Scaffold.TargetDir) ?>
+  <!-- Scaffold Setup Project Directory -->
+  <?define SetupDir=$(var.ScaffoldSetup.ProjectDir) ?>
+  <Product Name="$(var.Name)" Id="*" Version="$(var.Version)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)" Language="1033">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Platform="x64" />
+    <!-- Application logo. -->
+    <Icon Id="ScaffoldIcon" SourceFile="$(var.AppSourceDir)/Scaffold.exe" />
+    <!-- Application logo for Control Panel. -->
+    <Property Id="ARPPRODUCTICON" Value="ScaffoldIcon" />
+    <Media Id="1" Cabinet="$(var.CabName)" EmbedCab="yes" />
+    <!-- Allow upgrade, avoid downgrade. -->
+    <MajorUpgrade DowngradeErrorMessage="Newer version of [ProductName] already installed." />
+    <Feature Id="Application" Title="Scaffold Setup" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="ProductComponentsx64" />
+      <ComponentGroupRef Id="ProductDependencies" />
+					 <ComponentGroupRef Id="ProductComponentsRuntimeData" />
+      <!-- Desktop shortcut. -->
+      <ComponentRef Id="DesktopShortcut" />
+    </Feature>
+    <!-- TODO: Make sure the custom action will run. -->
+    <CustomAction Id="WebViewDependency" Directory="DEPENDENCIES" ExeCommand="VC_redist.x64.exe" Execute="commit" Impersonate="no" Return="asyncNoWait" />
+    <InstallExecuteSequence>
+      <Custom Action="WebViewDependency" After="InstallInitialize" />
+    </InstallExecuteSequence>
+  </Product>
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- Desktop -->
+      <Directory Id="DesktopFolder" Name="DesktopFolder" />
+      <!-- Start Menu -->
+      <!--
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgramsFolder" Name="Scaffold"/>
+			</Directory>
+			-->
+      <!-- Application / Program Files -->
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="ROOTDIRECTORY" Name="$(var.Manufacturer)">
+          <Directory Id="INSTALLFOLDER" Name="$(var.Name)">
+            <Directory Id="APPPUBLISH" Name="app.publish" />
+            <Directory Id="DEPENDENCIES" Name="Dependencies" />
+            <Directory Id="PROCARM64" Name="arm64" />
+            <Directory Id="PROCX64" Name="x64" />
+            <Directory Id="PROCX86" Name="x86" />
+											 <Directory Id="RUNTIMEDATA" Name="RuntimeData" />
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="ProductDependencies" Directory="DEPENDENCIES">
+      <Component Id="ProductDependency" Win64="yes" Guid="462eacd3-d9d5-4032-a523-dc3ed8424ce1">
+        <File Id="VCRedistx64" Source="$(var.ScaffoldSetup.ProjectDir)/Dependencies/x64/VC_redist.x64.exe" />
+      </Component>
+    </ComponentGroup>
+			<ComponentGroup Id="ProductComponentsRuntimeData" Directory="RUNTIMEDATA">
+				<Component Id="ProductComponentsRuntime" Win64="yes" Guid="c087bbb7-8721-47de-9466-a5ed52fab4f6">
+					<File Id="ChatbotJS" Source="$(var.Scaffold.TargetDir)/RuntimeData/chatbot.js" />
+     <File Id="ChatbotCSS" Source="$(var.Scaffold.TargetDir)/RuntimeData/chatbotdefault.css" />
+					<File Id="ChatbotHTMLBottom" Source="$(var.Scaffold.TargetDir)/RuntimeData/chatbotlowerbody.html" />
+				</Component>
+   </ComponentGroup>
+    <ComponentGroup Id="ProductComponentsx64" Directory="PROCX64">
+      <Component Id="ProductComponentx64" Win64="yes" Guid="95ad2e23-f949-4630-8cb8-85e1e39a4fd6">
+        <File Id="libHarfBuzzSharpx64" Source="$(var.Scaffold.TargetDir)/x64/libHarfBuzzSharp.dll" />
+        <File Id="libSkiaSharpx64" Source="$(var.Scaffold.TargetDir)/x64/libSkiaSharp.dll" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent" Win64="yes" Guid="3c918a8a-05c3-48ef-8bc5-5648076e6345">
+        <Environment Id="ScaffoldPath" Name="PATH" Action="set" Permanent="no" System="yes" Part="last" Value="[INSTALLFOLDER]" />
+        <File Source="$(var.Scaffold.TargetDir)/cef.pak" />
+        <File Source="$(var.Scaffold.TargetDir)/CefSharp.BrowserSubprocess.Core.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/CefSharp.BrowserSubprocess.exe" />
+        <File Source="$(var.Scaffold.TargetDir)/CefSharp.Core.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/CefSharp.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/CefSharp.WinForms.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/cef_100_percent.pak" />
+        <File Source="$(var.Scaffold.TargetDir)/cef_200_percent.pak" />
+        <File Source="$(var.Scaffold.TargetDir)/cef_extensions.pak" />
+        <File Source="$(var.Scaffold.TargetDir)/chrome_elf.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/d3dcompiler_47.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/devtools_resources.pak" />
+        <File Source="$(var.Scaffold.TargetDir)/ffmpeg.exe" />
+        <File Source="$(var.Scaffold.TargetDir)/HarfBuzzSharp.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/icudtl.dat" />
+        <File Source="$(var.Scaffold.TargetDir)/libcef.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/libEGL.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/libGLESv2.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/libHarfBuzzSharp.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/libHarfBuzzSharp.dylib" />
+        <File Source="$(var.Scaffold.TargetDir)/libSkiaSharp.dylib" />
+        <File Source="$(var.Scaffold.TargetDir)/Microsoft.Office.Tools.Common.v4.0.Utilities.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/Newtonsoft.Json.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/OpenTK.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/OpenTK.GLControl.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/Scaffold.application" />
+        <File Source="$(var.Scaffold.TargetDir)/Scaffold.exe.config" />
+        <File Source="$(var.Scaffold.TargetDir)/Scaffold.exe.manifest" />
+							 <File Source="$(var.Scaffold.TargetDir)/ScaffoldNodes.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/SkiaSharp.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/SkiaSharp.HarfBuzz.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/SkiaSharp.Views.Desktop.Common.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/SkiaSharp.Views.Desktop.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/SkiaSharp.Views.Gtk.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/SkiaSharp.Views.WindowsForms.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/SkiaSharp.Views.WPF.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/SkiaSharpSvg.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/snapshot_blob.bin" />
+        <File Source="$(var.Scaffold.TargetDir)/SvgAnimation.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/System.Buffers.dll" />
+ 							<File Source="$(var.Scaffold.TargetDir)/System.Drawing.Common.dll" />
+	 						<File Source="$(var.Scaffold.TargetDir)/System.Memory.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/System.Numerics.Vectors.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/System.Runtime.CompilerServices.Unsafe.dll" />
+        <File Source="$(var.Scaffold.TargetDir)/v8_context_snapshot.bin" />
+        <File Id="ScaffoldExe" Source="$(var.Scaffold.TargetDir)/Scaffold.exe" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <!-- Desktop shortcut -->
+  <Fragment>
+    <ComponentGroup Id="DesktopShortcuts">
+      <Component Id="DesktopShortcut" Directory="DesktopFolder" Guid="d438e3f7-49fc-40d1-9b69-b65ecd6edcd7">
+        <Shortcut Id="AppDesktopShortcut" Name="$(var.Name)" Description="$(var.Description)" Directory="DesktopFolder" Target="[#ScaffoldExe]" WorkingDirectory="INSTALLFOLDER" />
+        <!--Remove desktop shortcut on uninstall-->
+        <RemoveFolder Id="DesktopFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software/$(var.Manufacturer)/$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <!-- Start menu shortcut -->
+  <!--
+	<Fragment>
+		<DirectoryRef Id="ApplicationProgramsFolder">
+			<Component Id="ApplicationShortcut" Guid="6d5dbf37-d390-4430-9093-79de6b29998a">
+				<Shortcut Id="ApplicationStartMenuShortcut" 
+					Name="Scaffold"
+					Description="Open source e-learning authoring tool."
+					Target="[#Scaffold.exe]"
+					WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+					<RemoveFolder Id="CleanUpShortCut"
+						Directory="ApplicationProgramsFolder" On="uninstall"/>
+					<RegistryValue Root="HKCU"
+						Key="Software\AscendantDesign\Scaffold"
+						Name="installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+	-->
+</Wix>

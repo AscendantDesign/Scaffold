@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html lang="en">
+<!--
+	ClientQuery.cs
+	Copyright(c) 2020. Ascendant Design and Training, LLC
+	This file is licensed under the MIT License.
+	Please see the LICENSE file in this project.
+-->
+	<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="default.css" />
+	<title>Query</title>
+</head>
+<body>
+	<h1>Client query</h1>
+
+	<p>Query text:</p>
+	<textarea id="txtQuery" rows="5" cols="50"></textarea><br />
+	<button id="btnQuery">Submit</button>
+	<div class="result" id="txtResult"></div>
+
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("#btnQuery").click(function()
+		{
+			$("#txtResult").empty();
+			$.post("Query/Submit", `{ "Request": "${$("#txtQuery").val()}" } `,
+				function(data)
+				{
+					$("#txtResult").append(JSON.stringify(data));
+				});
+		});
+	});
+	</script>
+</body>
+</html>

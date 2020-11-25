@@ -1,0 +1,14 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<!--
+	AssemblyInfo.cs
+	Copyright(c) 2020. Ascendant Design and Training, LLC
+	This file is licensed under the MIT License.
+	Please see the LICENSE file in this project.
+-->
+
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>

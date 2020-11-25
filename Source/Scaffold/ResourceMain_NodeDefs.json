@@ -1,0 +1,26 @@
+[
+	{
+		"Name": "Start",
+		"TextName": "Question",
+		"Inputs": "None",
+		"Outputs": "Multiple",
+		"OutputName": "Answer",
+		"OutputTargetType": "Single"
+	},
+	{
+		"Name": "Fork",
+		"TextName": "Question",
+		"Inputs": "Single",
+		"InputSourceType": "Multiple",
+		"Outputs": "Multiple",
+		"OutputName": "Answer",
+		"OutputTargetType": "Single"
+	},
+	{
+		"Name": "Termination",
+		"TextName": "Conclusion",
+		"Inputs": "Single",
+		"InputSourceType": "Multiple",
+		"Outputs": "None"
+	}
+]

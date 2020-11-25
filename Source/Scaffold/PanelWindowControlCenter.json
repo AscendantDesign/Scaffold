@@ -1,0 +1,11 @@
+{
+	"Name": "Center",
+	"AutoSize": false,
+	"Controls":
+	[
+		{
+			"Name": "tctlDocument",
+			"Dock": "Fill"
+		}
+	]
+}

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<!--	SkiaSharpSvg.csproj
+	Copyright(c) 2020. Ascendant Design and Training, LLC
+	This file is licensed under the MIT License.
+	Please see the LICENSE file in this project.
+-->
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;IDE0017;IDE0044;IDE0059</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <NoWarn>1701;1702;IDE0017;IDE0044;IDE0059</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <NoWarn>1701;1702;IDE0017;IDE0018;IDE0044;IDE0059</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Archive2020101201\**" />
+    <EmbeddedResource Remove="_Archive2020101201\**" />
+    <None Remove="_Archive2020101201\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="SkiaSharp" Version="2.80.2" />
+  </ItemGroup>
+
+</Project>

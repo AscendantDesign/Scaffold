@@ -1,0 +1,15 @@
+{
+	"AccessType": "POST",
+	"URL": "https://hooks.slack.com/services/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",
+	"Headers":
+	[
+		{
+			"Content-Type": "application/json"
+		}
+	],
+	"Body":
+	{
+		"user": "U01EV6ZRM70",
+		"text": "Hello, Daniel!"
+	}
+}

@@ -1,0 +1,105 @@
+{
+	"Files":
+	{
+		"Source": "_Inventory.xml",
+		"Target": "Product.wxs"
+	},
+	"Folders":
+	{
+		"Project": "%USERPROFILE%/Documents/Visual Studio 2019/Projects/Scaffold/Scaffold/bin/x64/Release",
+		"Source": "C:/Temp/Deploy",
+		"Target": "%USERPROFILE%/Documents/Visual Studio 2019/Projects/Scaffold/ScaffoldSetup",
+		"Batch": "%USERPROFILE%/Documents/Visual Studio 2019/Projects/Scaffold",
+		"Output": "%USERPROFILE%/Documents/Visual Studio 2019/Projects/Scaffold/ScaffoldSetup/bin/Release"
+		},
+	"Namespaces":
+	[
+		{
+			"File": "Target",
+			"Namespace": "http://schemas.microsoft.com/wix/2006/wi",
+			"Prefix": "wi"
+		}
+	],
+	"Actions":
+	[
+		{
+			"Remark": "Delete previous files from setup output.",
+			"Folder": "Output",
+			"Action": "DeleteFiles",
+			"Scope": "*.msi;*.wixpdb"
+		},
+		{
+			"Remark": "Delete previous files from source.",
+			"Folder": "Source",
+			"Action": "DeleteFiles",
+			"Scope": "*"
+		},
+		{
+			"Remark": "Copy files from project folder to source.",
+			"Folder": "Project",
+			"Action": "CopyFilesRecursive",
+			"Scope": "*",
+			"Properties":
+			[
+				{
+					"Name": "Target",
+					"Value": "Source"
+				}
+			]
+		},
+		{
+			"Remark": "Delete unneeded files on source.",
+			"Folder": "Source",
+			"Action": "DeleteFiles",
+			"Scope": "*.pdb;*.xml"
+		},
+		{
+			"Remark": "Create an XML list of files.",
+			"Folder": "Source",
+			"Action": "XmlCaptureListFiles",
+			"Scope": "!Scaffold.exe",
+			"XPath": "wi:File",
+			"Properties":
+			[
+				{
+					"Name": "Source",
+					"Value": "$(var.Scaffold.TargetDir)/{Filename}"
+				}
+			]
+		},
+		{
+			"Remark": "Append to the XML list of files.",
+			"Folder": "Source",
+			"File": "Source",
+			"Action": "XmlCaptureListFilesAppend",
+			"Scope": "Scaffold.exe",
+			"XPath": "File",
+			"Properties":
+			[
+				{
+					"Name": "Id",
+					"Value": "ScaffoldExe"
+				},
+				{
+					"Name": "Source",
+					"Value": "$(var.Scaffold.TargetDir)/{Filename}"
+				}
+			]
+		},
+		{
+			"Remark": "Clear old entries from target section.",
+			"Folder": "Target",
+			"File": "Target",
+			"Action": "XmlClear",
+			"Scope": "Array",
+			"XPath": "//wi:Component[@Id='ProductComponent']/wi:File"
+		},
+		{
+			"Remark": "Append new file entries to the target object.",
+			"Folder": "Target",
+			"File": "Target",
+			"Action": "XmlAppend",
+			"XPath": "//wi:Component[@Id='ProductComponent']"
+		}
+	]
+}

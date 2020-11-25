@@ -1,0 +1,24 @@
+{
+	"Name": "Top",
+	"AutoSize": true,
+	"Margin": 2,
+	"Controls":
+	[
+		{
+			"Name": "menuMain",
+			"Dock": "Top"
+		},
+		{
+			"Name": "btnDecisionTreeEditor",
+			"Dock": "None"
+		},
+		{
+			"Name": "btnSlideEditor",
+			"Dock": "None"
+		},
+		{
+			"Name": "btnHTML",
+			"Dock": "None"
+		}
+	]
+}

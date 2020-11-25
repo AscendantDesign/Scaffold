@@ -1,0 +1,144 @@
+/*
+	chatbotdefault.cs
+	Copyright(c) 2020. Ascendant Design and Training, LLC
+	This file is licensed under the MIT License.
+	Please see the LICENSE file in this project.
+	-----
+	Styles in use with the chatbot emulator.
+*/
+body
+{
+	font-family: Verdana, Geneva, Tahoma, Arial, sans-serif;
+	font-size: 12pt;
+	background-color: #333333;
+	color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+}
+div.button
+{
+	padding: 8px;
+	border: 2px solid #5d5d5d;
+	background-color: #f9f9f9;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+div.button-used
+{
+	padding: 8px;
+	border: 2px solid #deebfa;
+	color: #deebfa;
+	background-color: unset;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	cursor: default;
+}
+div.buttons
+{
+	margin-left: 24px;
+	margin-right: 24px;
+}
+div.container
+{
+	margin: 16px;
+	border: 4px solid gray;
+	display: block;
+	height: 75vh;
+	overflow: scroll;
+	position: relative;
+	width: 90vw;
+}
+div.hero-card
+{
+	margin: 16px;
+	border-radius: 8px;
+	max-width: 512px;
+	display: block;
+	position: relative;
+}
+div.hero-card.question
+{
+	border: 4px solid #479cff;
+	background-color: #add3ff;
+	color: #000000;
+	left: 72px;
+}
+div.hero-card.answer
+{
+	border: 4px solid #9400c7;
+	background-color: #f0c3ff;
+	color: #000000;
+	right: 72px;
+	margin-left: auto;
+}
+div.hero-card .title
+{
+	padding: 8px;
+	text-align: center;
+}
+div.hero-card.answer .title
+{
+	padding: 8px;
+	font-weight: bold;
+}
+div.window
+{
+	margin: 16px;
+}
+table
+{
+	border-collapse: collapse;
+}
+
+.audio
+{
+	text-align: center;
+}
+.audio audio
+{
+	max-width: 200px;
+}
+
+.image
+{
+	text-align: center;
+}
+.image img
+{
+	max-width: 200px;
+}
+
+.link
+{
+	text-align: center;
+}
+
+.video
+{
+	text-align: center;
+}
+.video video
+{
+	max-width: 200px;
+}
+
+.button .image
+{
+	text-align: left;
+	display: inline-block;
+}
+.button .image img
+{
+	max-width: 200px;
+}
+
+.button .text
+{
+	display: inline-block;
+	vertical-align: top;
+	margin: 4px;
+}
+

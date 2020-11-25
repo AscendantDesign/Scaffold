@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="rxCharPatternFirst" xml:space="preserve">
+    <value>(?s:\s*(?&lt;first&gt;[^ \t\r\n]{1}).*$)</value>
+    <comment>Regular expression to match first instance of n characters.</comment>
+  </data>
+  <data name="rxCharPatternLast" xml:space="preserve">
+    <value>(?s:.*?(?&lt;last&gt;[^ \t\r\n]{1})\s*$)</value>
+    <comment>Regular expression to match the last usable characer in the string.</comment>
+  </data>
+  <data name="rxCommandWordAny" xml:space="preserve">
+    <value>(?i:(^|\W*)(?&lt;word&gt;[a-z0-9-.,_]+)(\W+|$))</value>
+    <comment>Regular expression to match all words in the phrase.</comment>
+  </data>
+  <data name="rxCommandWordCommand" xml:space="preserve">
+    <value>(?i:(\W+|^)(?&lt;command&gt;(list|start|stop|pause|resume))(\W+|$))</value>
+    <comment>Regular expression to match any of the command words.</comment>
+  </data>
+  <data name="rxCommandWordNoun" xml:space="preserve">
+    <value>(?i:(^|\W*)(?&lt;noun&gt;(lesson|lessons|course|courses|module|modules|conversation|conversations|scenario|scenarios))(\W+|$))</value>
+    <comment>Regular expression to match known nouns in the command words.</comment>
+  </data>
+  <data name="rxNumeric" xml:space="preserve">
+    <value>^(?&lt;value&gt;-{0,1}[0-9,]*\.{0,1}[0-9]*)$</value>
+    <comment>Regular expression value to match a string if the entire string is number-like. Commas allowed.</comment>
+  </data>
+  <data name="SlackAPIUsersList" xml:space="preserve">
+    <value>https://slack.com/api/users.list</value>
+    <comment>Slack API address of users.list method.</comment>
+  </data>
+  <data name="SlackBotToken" xml:space="preserve">
+    <value>xoxb-1497228267895-1536117793920-a0vOw6FJ1Q7NN9odmzYBYpNv</value>
+    <comment>The token needed for this application to post messages to users and channels.</comment>
+  </data>
+  <data name="SlackMethodChatPostMessage" xml:space="preserve">
+    <value>https://slack.com/api/chat.postMessage</value>
+    <comment>Slack method chat.postMessage.</comment>
+  </data>
+  <data name="SlackTeamToken" xml:space="preserve">
+    <value>xoxp-1497228267895-1505237871238-1521790202324-0ba2a329be2d1ee4bb775f7529193a61</value>
+    <comment>Slack OAuth Team Access Token.</comment>
+  </data>
+  <data name="SlackWebHook" xml:space="preserve">
+    <value>https://hooks.slack.com/services/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</value>
+    <comment>Slack API web hook address for sending messages.</comment>
+  </data>
+  <data name="sqlConversationInsert" xml:space="preserve">
+    <value>INSERT INTO Conversation(ConversationTicket, ConversationTitle, ConversationDescription)
+VALUES
+( $ConversationTicket, $ConversationTitle, $ConversationDescription);</value>
+    <comment>SQL query to append to the Conversation table using parameter values.</comment>
+  </data>
+  <data name="sqlConversationSelect" xml:space="preserve">
+    <value>SELECT * FROM Conversation WHERE ConversationTicket = '{0}';</value>
+    <comment>SQL query to select all values from the conversation record specified by conversation ticket.</comment>
+  </data>
+  <data name="sqlConversationSelectCatalogAll" xml:space="preserve">
+    <value>SELECT rowid, ConversationTicket, ConversationTitle, ConversationDescription FROM Conversation;</value>
+    <comment>SQL query to select only the catalog contents of the conversation courses.</comment>
+  </data>
+  <data name="sqlConversationSelectIDForTicket" xml:space="preserve">
+    <value>SELECT ROWID
+FROM Conversation WHERE
+ConversationTicket = '{0}'</value>
+    <comment>SQL query to select the ROWID of the record with the matching conversation ticket.</comment>
+  </data>
+  <data name="sqlConversationUpdate" xml:space="preserve">
+    <value>UPDATE Conversation SET
+ConversationTitle = $ConversationTitle,
+ConversationDescription = $ConversationDescription
+WHERE
+ROWID = {0}</value>
+    <comment>SQL query to update the Conversation table using parameter values.</comment>
+  </data>
+  <data name="sqlNodeDataInsert" xml:space="preserve">
+    <value>INSERT INTO NodeData(NodeItemTicket, ConversationTicket, NodeType, NodeText, NodeDelay, NodeImageUrl, NodeLinkUrl) VALUES ($NodeItemTicket, $ConversationTicket, $NodeType, $NodeText, $NodeDelay, $NodeImageUrl, $NodeLinkUrl);</value>
+    <comment>SQL query to insert a record into the NodeData table.</comment>
+  </data>
+  <data name="sqlNodeDataSelect" xml:space="preserve">
+    <value>SELECT * FROM NodeData WHERE NodeItemTicket = '{0}';</value>
+    <comment>SQL query to select all values of the record matching the node item ticket.</comment>
+  </data>
+  <data name="sqlNodeDataSelectID" xml:space="preserve">
+    <value>SELECT rowid FROM NodeData WHERE NodeItemTicket = '{0}';</value>
+    <comment>SQL query to select the ROWID value for the corresponding node data ticket.</comment>
+  </data>
+  <data name="sqlNodeDataSelectStart" xml:space="preserve">
+    <value>SELECT * FROM NodeData WHERE ConversationTicket = '{0}' AND NodeType = 'Start';</value>
+    <comment>SQL query to read the start node record for a specified conversation ticket.</comment>
+  </data>
+  <data name="sqlNodeDataUpdate" xml:space="preserve">
+    <value>UPDATE NodeData SET ConversationTicket = $ConversationTicket, NodeType = $NodeType, NodeText = $NodeText, NodeDelay = $NodeDelay, NodeImageUrl = $NodeImageUrl, NodeLinkUrl = $NodeLinkUrl WHERE NodeItemTicket = $NodeItemTicket;</value>
+    <comment>SQL query to update a record in the NodeData table.</comment>
+  </data>
+  <data name="sqlSocketDataInsert" xml:space="preserve">
+    <value>INSERT INTO SocketData(SocketItemTicket, NodeItemTicket, NextNodeItemTicket, NextSocketItemTicket, SocketType, SocketText, SocketImageUrl, SocketLinkUrl) VALUES ($SocketItemTicket, $NodeItemTicket, $NextNodeItemTicket, $NextSocketItemTicket, $SocketType, $SocketText, $SocketImageUrl, $SocketLinkUrl);</value>
+    <comment>SQL query to insert values into a SocketData record.</comment>
+  </data>
+  <data name="sqlSocketDataSelectID" xml:space="preserve">
+    <value>SELECT rowid FROM SocketData WHERE SocketItemTicket = '{0}';</value>
+    <comment>SQL query to select the ROWID value for the specified socket item ticket.</comment>
+  </data>
+  <data name="sqlSocketDataSelectNode" xml:space="preserve">
+    <value>SELECT * FROM SocketData WHERE NodeItemTicket = '{0}';</value>
+    <comment>SQL query to select sockets attached to the specified node item ticket.</comment>
+  </data>
+  <data name="sqlSocketDataUpdate" xml:space="preserve">
+    <value>UPDATE SocketData SET NodeItemTicket = $NodeItemTicket, NextNodeItemTicket = $NextNodeItemTicket, NextSocketItemTicket = $NextSocketItemTicket, SocketType = $SocketType, SocketText = $SocketText, SocketImageUrl = $SocketImageUrl, SocketLinkUrl = $SocketLinkUrl WHERE SocketItemTicket = $SocketItemTicket</value>
+    <comment>SQL query to update the values of a SocketData record.</comment>
+  </data>
+  <data name="sqlUserItemInsertUnique" xml:space="preserve">
+    <value>INSERT INTO UserItem(UserItemTicket, SlackID, SlackName) SELECT '{0}', '{1}', '{2}' WHERE NOT EXISTS(SELECT 1 FROM UserItem WHERE UserItemTicket = '{0}' OR SlackID = '{1}');</value>
+    <comment>SQL query to insert a record into UserItem if it is unique.</comment>
+  </data>
+  <data name="sqlUserItemSelectAll" xml:space="preserve">
+    <value>SELECT rowid, UserItemTicket, SlackID, SlackName FROM UserItem;</value>
+    <comment>SQL query to return all UserItem records.</comment>
+  </data>
+  <data name="sqlUserItemSelectSlackID" xml:space="preserve">
+    <value>SELECT rowid, UserItemTicket, SlackID, SlackName FROM UserItem WHERE SlackID = '{0}';</value>
+    <comment>SQL query to select the full contents of the user record matching the specified Slack ID.</comment>
+  </data>
+  <data name="sqlUserItemSelectTicket" xml:space="preserve">
+    <value>SELECT UserItemTicket FROM UserItem WHERE SlackID = '{0}';</value>
+    <comment>SQL query to select the system user ticket from the Slack ID.</comment>
+  </data>
+  <data name="sqlUserItemUpdateSlackNameFromSlackID" xml:space="preserve">
+    <value>UPDATE UserItem SET SlackName = '{0}' WHERE SlackID = '{1}';</value>
+    <comment>SQL query to update the SlackName in an existing UserItem from the SlackID.</comment>
+  </data>
+  <data name="sqlUserProgressInsert" xml:space="preserve">
+    <value>INSERT INTO UserProgress(UserProgressTicket, UserItemTicket, ConversationTicket, ConversationState, UserLevel) VALUES ('{0}', '{1}', '{2}', {3}, {4});</value>
+    <comment>SQL query to insert a new record into the UserProgress table.</comment>
+  </data>
+  <data name="sqlUserProgressSelectCourse" xml:space="preserve">
+    <value>SELECT * FROM UserProgress WHERE UserItemTicket = '{0}' AND ConversationTicket = '{1}';</value>
+    <comment>SQL query to select course progress information for the combination of user and course.</comment>
+  </data>
+  <data name="sqlUserProgressSelectUserAll" xml:space="preserve">
+    <value>SELECT * FROM UserProgress WHERE UserItemTicket = '{0}';</value>
+    <comment>SQL query to select all course progress information for the specified user.</comment>
+  </data>
+  <data name="sqlUserProgressUpdateStatus" xml:space="preserve">
+    <value>UPDATE UserProgress SET ConversationState = {0} WHERE UserProgressTicket = '{1}';</value>
+    <comment>SQL query to update the status of a specified user progress record.</comment>
+  </data>
+  <data name="sqlUserProgressUpdateStatusLevel" xml:space="preserve">
+    <value>UPDATE UserProgress SET ConversationState = {0}, UserLevel = {1} WHERE UserProgressTicket = '{2}';</value>
+    <comment>SQL query to update the status and level of a specified user progress record.</comment>
+  </data>
+</root>

@@ -1,0 +1,83 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+<!--
+	ScaffoldSlackPack.csproj
+	Copyright(c) 2020. Ascendant Design and Training, LLC
+	This file is licensed under the MIT License.
+	Please see the LICENSE file in this project.
+-->
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>9e35c169-d348-4ece-8b4a-d187f8754a12</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;IDE0017;IDE0018;IDE0044;IDE0059;IDE0063;IDE0071</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_Archive2020111801\**" />
+    <Compile Remove="_Archive2020112201\**" />
+    <Content Remove="_Archive2020111801\**" />
+    <Content Remove="_Archive2020112201\**" />
+    <EmbeddedResource Remove="_Archive2020111801\**" />
+    <EmbeddedResource Remove="_Archive2020112201\**" />
+    <None Remove="_Archive2020111801\**" />
+    <None Remove="_Archive2020112201\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Data\Activity.txt" />
+    <None Remove="Data\ScaffoldSlackPack.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\Activity.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ScaffoldSlackPack.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ResourceMain.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceMain.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ResourceMain.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceMain.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\scripts\jquery-3.4.1.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ScaffoldNodes\ScaffoldNodes\ScaffoldNodes.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Media\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\Media\03c1cd25-4763-4a5d-adcb-acfed1d6461e_0097c103-0ed3-4815-b8b8-224a5f85e671.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+
+</Project>
