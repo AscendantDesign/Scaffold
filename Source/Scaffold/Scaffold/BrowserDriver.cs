@@ -1,4 +1,4 @@
-﻿//	BrowserDriver.cs
+//	BrowserDriver.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using static Scaffold.ScaffoldUtil;
+using static Scaffold.ScaffoldNodesUtil;
 
 namespace Scaffold
 {
@@ -50,9 +50,9 @@ namespace Scaffold
 			{
 				result = "";
 			}
-			else if(value is string)
+			else if(value is string @string)
 			{
-				result = (string)value;
+				result = @string;
 			}
 			else if(SvgAnimationUtil.IsDouble(value))
 			{

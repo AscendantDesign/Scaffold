@@ -1,4 +1,4 @@
-﻿//	frmMain.cs
+//	frmMain.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -13,8 +13,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Windows.Forms;
 
+using static Scaffold.ScaffoldNodesUtil;
 using static Scaffold.ScaffoldUtil;
 using static SkiaSharpSvg.SvgAnimationUtil;
+
 using SkiaSharpSvg;
 using SkiaSharp;
 using Newtonsoft.Json;

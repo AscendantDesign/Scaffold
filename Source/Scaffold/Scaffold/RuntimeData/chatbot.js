@@ -146,7 +146,7 @@ function getResourceText(properties, propertyName)
 			for(index = 0; index < count; index ++)
 			{
 				resource = resources[index];
-				if(resource.Ticket.toLowerCase() == ticket)
+				if(resource && resource.Ticket.toLowerCase() == ticket)
 				{
 					//	Resource found.
 					result = getPropertyValue(resource, "Text");
@@ -197,7 +197,7 @@ function getResourceUri(properties, propertyName)
 			for(index = 0; index < count; index ++)
 			{
 				resource = resources[index];
-				if(resource.Ticket.toLowerCase() == ticket)
+				if(resource && resource.Ticket.toLowerCase() == ticket)
 				{
 					//	Resource found.
 					result = resource.Uri;

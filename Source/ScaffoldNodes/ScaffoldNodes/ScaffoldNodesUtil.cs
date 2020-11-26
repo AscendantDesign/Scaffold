@@ -1,4 +1,4 @@
-﻿//	ScaffoldNodesUtil.cs
+//	ScaffoldNodesUtil.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -28,11 +28,11 @@ namespace Scaffold
 		//*************************************************************************
 		//*	Private																																*
 		//*************************************************************************
-		[DllImport("shlwapi.dll")]
-		private static extern int ColorHLSToRGB(int H, int L, int S);
+		//[DllImport("shlwapi.dll")]
+		//private static extern int ColorHLSToRGB(int H, int L, int S);
 
-		private static string[] mBoolChoices =
-			new string[] { "true", "false", "yes", "no", "1", "0" };
+		//private static string[] mBoolChoices =
+		//	new string[] { "true", "false", "yes", "no", "1", "0" };
 
 		//*************************************************************************
 		//*	Protected																															*
@@ -114,210 +114,210 @@ namespace Scaffold
 		//}
 		////*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* AttachResource																												*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Attach the specified existing resource to the node.
-		///// </summary>
-		///// <param name="node">
-		///// Reference to the node to which a resource will be attached.
-		///// </param>
-		///// <param name="resources">
-		///// Collection of resources containing the asset to be attached.
-		///// </param>
-		///// <param name="resourceTicket">
-		///// Globally unique identification of the resource to attach.
-		///// </param>
-		//public static void AttachResource(NodeItem node,
-		//	ResourceCollection resources, string resourceTicket)
-		//{
-		//	PropertyItem property = null;
-		//	ResourceItem resource = null;
+		//*-----------------------------------------------------------------------*
+		//* AttachResource																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Attach the specified existing resource to the node.
+		/// </summary>
+		/// <param name="node">
+		/// Reference to the node to which a resource will be attached.
+		/// </param>
+		/// <param name="resources">
+		/// Collection of resources containing the asset to be attached.
+		/// </param>
+		/// <param name="resourceTicket">
+		/// Globally unique identification of the resource to attach.
+		/// </param>
+		public static void AttachResource(NodeItem node,
+			ResourceCollection resources, string resourceTicket)
+		{
+			PropertyItem property = null;
+			ResourceItem resource = null;
 
-		//	if(node != null && resources?.Count > 0 && resourceTicket?.Length > 0)
-		//	{
-		//		resource = resources.FirstOrDefault(x =>
-		//			x.Ticket.ToLower() == resourceTicket.ToLower());
-		//		if(resource != null)
-		//		{
-		//			property = node.Properties.FirstOrDefault(x =>
-		//				x.Name == resource.ResourceType);
-		//			if(property == null)
-		//			{
-		//				property = node.Properties.Add(resource.ResourceType, null);
-		//			}
-		//			property.Value = resource.Ticket;
-		//			switch(resource.ResourceType)
-		//			{
-		//				case "MediaAudio":
-		//					property = node.Properties.FirstOrDefault(x =>
-		//						x.Name == "IconAudio");
-		//					if(property != null)
-		//					{
-		//						node.Properties.Remove(property);
-		//					}
-		//					CreateAudioIcon(node);
-		//					break;
-		//				case "MediaImage":
-		//					property = node.Properties.FirstOrDefault(x =>
-		//						x.Name == "ThumbImage");
-		//					if(property != null)
-		//					{
-		//						node.Properties.Remove(property);
-		//					}
-		//					CreateImageThumbnail(node, resource);
-		//					break;
-		//				case "MediaLink":
-		//					property = node.Properties.FirstOrDefault(x =>
-		//						x.Name == "IconLink");
-		//					if(property != null)
-		//					{
-		//						node.Properties.Remove(property);
-		//					}
-		//					CreateLinkIcon(node);
-		//					break;
-		//				case "MediaVideo":
-		//					property = node.Properties.FirstOrDefault(x =>
-		//						x.Name == "ThumbVideo");
-		//					if(property != null)
-		//					{
-		//						node.Properties.Remove(property);
-		//					}
-		//					CreateVideoThumbnail(node, resource);
-		//					break;
-		//			}
-		//		}
-		//	}
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Attach the specified existing resource to the properties collection.
-		///// </summary>
-		///// <param name="properties">
-		///// Reference to the properties collection to which a resource will be
-		///// attached.
-		///// </param>
-		///// <param name="resources">
-		///// Collection of resources containing the asset to be attached.
-		///// </param>
-		///// <param name="resourceTicket">
-		///// Globally unique identification of the resource to attach.
-		///// </param>
-		///// <param name="createIcons">
-		///// Value indicating whether to create icons and thumbnails.
-		///// </param>
-		//public static void AttachResource(PropertyCollection properties,
-		//	ResourceCollection resources, string resourceTicket,
-		//	bool createIcons = false)
-		//{
-		//	PropertyItem property = null;
-		//	ResourceItem resource = null;
+			if(node != null && resources?.Count > 0 && resourceTicket?.Length > 0)
+			{
+				resource = resources.FirstOrDefault(x =>
+					x.Ticket.ToLower() == resourceTicket.ToLower());
+				if(resource != null)
+				{
+					property = node.Properties.FirstOrDefault(x =>
+						x.Name == resource.ResourceType);
+					if(property == null)
+					{
+						property = node.Properties.Add(resource.ResourceType, null);
+					}
+					property.Value = resource.Ticket;
+					switch(resource.ResourceType)
+					{
+						case "MediaAudio":
+							property = node.Properties.FirstOrDefault(x =>
+								x.Name == "IconAudio");
+							if(property != null)
+							{
+								node.Properties.Remove(property);
+							}
+							CreateAudioIcon(node);
+							break;
+						case "MediaImage":
+							property = node.Properties.FirstOrDefault(x =>
+								x.Name == "ThumbImage");
+							if(property != null)
+							{
+								node.Properties.Remove(property);
+							}
+							CreateImageThumbnail(node, resource);
+							break;
+						case "MediaLink":
+							property = node.Properties.FirstOrDefault(x =>
+								x.Name == "IconLink");
+							if(property != null)
+							{
+								node.Properties.Remove(property);
+							}
+							CreateLinkIcon(node);
+							break;
+						case "MediaVideo":
+							property = node.Properties.FirstOrDefault(x =>
+								x.Name == "ThumbVideo");
+							if(property != null)
+							{
+								node.Properties.Remove(property);
+							}
+							CreateVideoThumbnail(node, resource);
+							break;
+					}
+				}
+			}
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Attach the specified existing resource to the properties collection.
+		/// </summary>
+		/// <param name="properties">
+		/// Reference to the properties collection to which a resource will be
+		/// attached.
+		/// </param>
+		/// <param name="resources">
+		/// Collection of resources containing the asset to be attached.
+		/// </param>
+		/// <param name="resourceTicket">
+		/// Globally unique identification of the resource to attach.
+		/// </param>
+		/// <param name="createIcons">
+		/// Value indicating whether to create icons and thumbnails.
+		/// </param>
+		public static void AttachResource(PropertyCollection properties,
+			ResourceCollection resources, string resourceTicket,
+			bool createIcons = false)
+		{
+			PropertyItem property = null;
+			ResourceItem resource = null;
 
-		//	if(properties?.Count > 0 && resources?.Count > 0 &&
-		//		resourceTicket?.Length > 0)
-		//	{
-		//		resource = resources.FirstOrDefault(x =>
-		//			x.Ticket.ToLower() == resourceTicket.ToLower());
-		//		if(resource != null)
-		//		{
-		//			property = properties.FirstOrDefault(x =>
-		//				x.Name == resource.ResourceType);
-		//			if(property == null)
-		//			{
-		//				property = properties.Add(resource.ResourceType, null);
-		//			}
-		//			property.Value = resource.Ticket;
-		//			switch(resource.ResourceType)
-		//			{
-		//				case "MediaAudio":
-		//					property = properties.FirstOrDefault(x =>
-		//						x.Name == "IconAudio");
-		//					if(property != null)
-		//					{
-		//						properties.Remove(property);
-		//					}
-		//					if(createIcons)
-		//					{
-		//						CreateAudioIcon(properties);
-		//					}
-		//					break;
-		//				case "MediaImage":
-		//					property = properties.FirstOrDefault(x =>
-		//						x.Name == "ThumbImage");
-		//					if(property != null)
-		//					{
-		//						properties.Remove(property);
-		//					}
-		//					if(createIcons)
-		//					{
-		//						CreateImageThumbnail(properties, resource);
-		//					}
-		//					break;
-		//				case "MediaLink":
-		//					property = properties.FirstOrDefault(x =>
-		//						x.Name == "IconLink");
-		//					if(property != null)
-		//					{
-		//						properties.Remove(property);
-		//					}
-		//					if(createIcons)
-		//					{
-		//						CreateLinkIcon(properties);
-		//					}
-		//					break;
-		//				case "MediaVideo":
-		//					property = properties.FirstOrDefault(x =>
-		//						x.Name == "ThumbVideo");
-		//					if(property != null)
-		//					{
-		//						properties.Remove(property);
-		//					}
-		//					if(createIcons)
-		//					{
-		//						CreateVideoThumbnail(properties, resource);
-		//					}
-		//					break;
-		//			}
-		//		}
-		//	}
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Attach the specified existing resource to the node.
-		///// </summary>
-		///// <param name="socket">
-		///// Reference to the socket to which a resource will be attached.
-		///// </param>
-		///// <param name="resources">
-		///// Collection of resources containing the asset to be attached.
-		///// </param>
-		///// <param name="resourceTicket">
-		///// Globally unique identification of the resource to attach.
-		///// </param>
-		//public static void AttachResource(SocketItem socket,
-		//	ResourceCollection resources, string resourceTicket)
-		//{
-		//	PropertyItem property = null;
-		//	ResourceItem resource = null;
+			if(properties?.Count > 0 && resources?.Count > 0 &&
+				resourceTicket?.Length > 0)
+			{
+				resource = resources.FirstOrDefault(x =>
+					x.Ticket.ToLower() == resourceTicket.ToLower());
+				if(resource != null)
+				{
+					property = properties.FirstOrDefault(x =>
+						x.Name == resource.ResourceType);
+					if(property == null)
+					{
+						property = properties.Add(resource.ResourceType, null);
+					}
+					property.Value = resource.Ticket;
+					switch(resource.ResourceType)
+					{
+						case "MediaAudio":
+							property = properties.FirstOrDefault(x =>
+								x.Name == "IconAudio");
+							if(property != null)
+							{
+								properties.Remove(property);
+							}
+							if(createIcons)
+							{
+								CreateAudioIcon(properties);
+							}
+							break;
+						case "MediaImage":
+							property = properties.FirstOrDefault(x =>
+								x.Name == "ThumbImage");
+							if(property != null)
+							{
+								properties.Remove(property);
+							}
+							if(createIcons)
+							{
+								CreateImageThumbnail(properties, resource);
+							}
+							break;
+						case "MediaLink":
+							property = properties.FirstOrDefault(x =>
+								x.Name == "IconLink");
+							if(property != null)
+							{
+								properties.Remove(property);
+							}
+							if(createIcons)
+							{
+								CreateLinkIcon(properties);
+							}
+							break;
+						case "MediaVideo":
+							property = properties.FirstOrDefault(x =>
+								x.Name == "ThumbVideo");
+							if(property != null)
+							{
+								properties.Remove(property);
+							}
+							if(createIcons)
+							{
+								CreateVideoThumbnail(properties, resource);
+							}
+							break;
+					}
+				}
+			}
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Attach the specified existing resource to the node.
+		/// </summary>
+		/// <param name="socket">
+		/// Reference to the socket to which a resource will be attached.
+		/// </param>
+		/// <param name="resources">
+		/// Collection of resources containing the asset to be attached.
+		/// </param>
+		/// <param name="resourceTicket">
+		/// Globally unique identification of the resource to attach.
+		/// </param>
+		public static void AttachResource(SocketItem socket,
+			ResourceCollection resources, string resourceTicket)
+		{
+			PropertyItem property = null;
+			ResourceItem resource = null;
 
-		//	if(socket != null && resources?.Count > 0 && resourceTicket?.Length > 0)
-		//	{
-		//		resource = resources.FirstOrDefault(x =>
-		//			x.Ticket.ToLower() == resourceTicket.ToLower());
-		//		if(resource != null)
-		//		{
-		//			property = socket.Properties.FirstOrDefault(x =>
-		//				x.Name == resource.ResourceType);
-		//			if(property == null)
-		//			{
-		//				property = socket.Properties.Add(resource.ResourceType, null);
-		//			}
-		//			property.Value = resource.Ticket;
-		//		}
-		//	}
-		//}
-		////*-----------------------------------------------------------------------*
+			if(socket != null && resources?.Count > 0 && resourceTicket?.Length > 0)
+			{
+				resource = resources.FirstOrDefault(x =>
+					x.Ticket.ToLower() == resourceTicket.ToLower());
+				if(resource != null)
+				{
+					property = socket.Properties.FirstOrDefault(x =>
+						x.Name == resource.ResourceType);
+					if(property == null)
+					{
+						property = socket.Properties.Add(resource.ResourceType, null);
+					}
+					property.Value = resource.Ticket;
+				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
 
 		////*-----------------------------------------------------------------------*
 		////*	CenterOver																														*
@@ -670,6 +670,7 @@ namespace Scaffold
 		public static void CreateAudioIcon(NodeItem node)
 		{
 			PropertyItem property = null;
+			string typeName = "";
 
 			if(node != null)
 			{
@@ -683,7 +684,21 @@ namespace Scaffold
 					};
 					node.Properties.Add(property);
 				}
-				property.Value = ResourceLib.Audio32;
+				//property.Value = ResourceLib.Audio32;
+				typeName = ResourceLib.Audio32.GetType().Name.ToLower();
+				switch(typeName)
+				{
+					case "bitmap":
+						property.Value = ResourceLib.Audio32;
+						break;
+					case "byte[]":
+						using(MemoryStream memoryStream =
+							new MemoryStream(ResourceLib.Audio32))
+						{
+							property.Value = new Bitmap(memoryStream);
+						}
+						break;
+				}
 			}
 		}
 		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
@@ -696,6 +711,7 @@ namespace Scaffold
 		public static void CreateAudioIcon(PropertyCollection properties)
 		{
 			PropertyItem property = null;
+			string typeName = "";
 
 			if(properties?.Count > 0)
 			{
@@ -709,7 +725,21 @@ namespace Scaffold
 					};
 					properties.Add(property);
 				}
-				property.Value = ResourceLib.Audio32;
+				//property.Value = ResourceLib.Audio32;
+				typeName = ResourceLib.Audio32.GetType().Name.ToLower();
+				switch(typeName)
+				{
+					case "bitmap":
+						property.Value = ResourceLib.Audio32;
+						break;
+					case "byte[]":
+						using(MemoryStream memoryStream =
+							new MemoryStream(ResourceLib.Audio32))
+						{
+							property.Value = new Bitmap(memoryStream);
+						}
+						break;
+				}
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -1201,6 +1231,7 @@ namespace Scaffold
 		public static void CreateLinkIcon(NodeItem node)
 		{
 			PropertyItem property = null;
+			string typeName = "";
 
 			if(node != null)
 			{
@@ -1214,7 +1245,20 @@ namespace Scaffold
 					};
 					node.Properties.Add(property);
 				}
-				property.Value = ResourceLib.Link32;
+				typeName = ResourceLib.Link32.GetType().Name.ToLower();
+				switch(typeName)
+				{
+					case "bitmap":
+						property.Value = ResourceLib.Link32;
+						break;
+					case "byte[]":
+						using(MemoryStream memoryStream =
+							new MemoryStream(ResourceLib.Link32))
+						{
+							property.Value = new Bitmap(memoryStream);
+						}
+						break;
+				}
 			}
 		}
 		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
@@ -1228,6 +1272,7 @@ namespace Scaffold
 		public static void CreateLinkIcon(PropertyCollection properties)
 		{
 			PropertyItem property = null;
+			string typeName = "";
 
 			if(properties?.Count > 0)
 			{
@@ -1241,7 +1286,20 @@ namespace Scaffold
 					};
 					properties.Add(property);
 				}
-				property.Value = ResourceLib.Link32;
+				typeName = ResourceLib.Link32.GetType().Name.ToLower();
+				switch(typeName)
+				{
+					case "bitmap":
+						property.Value = ResourceLib.Link32;
+						break;
+					case "byte[]":
+						using(MemoryStream memoryStream =
+							new MemoryStream(ResourceLib.Link32))
+						{
+							property.Value = new Bitmap(memoryStream);
+						}
+						break;
+				}
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -2199,112 +2257,112 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* FromHSL																																*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return the system color from the caller's HSL value.
-		/// </summary>
-		/// <param name="hue">
-		/// The Hue level to convert, from 0 to 360.
-		/// </param>
-		/// <param name="saturation">
-		/// The Saturation to convert, from 0 to 1.
-		/// </param>
-		/// <param name="luminance">
-		/// The Luminance to convert, from 0 to 1. 0 is black and 1 is white.
-		/// </param>
-		/// <param name="alpha">
-		/// The alpha level to apply.
-		/// </param>
-		/// <returns>
-		/// System.Drawing.Color representing the RGB value of the caller's color.
-		/// </returns>
-		public static Color FromHSL(float hue, float saturation, float luminance,
-			int alpha = 255)
-		{
-			int vHue = (int)((hue / 360f) * 240f);
-			int vLum = (int)(saturation * 240f);
-			int vSat = (int)(luminance * 240f);
-			return FromHSL(vHue, vLum, vSat, alpha);
-		}
-		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		/// <summary>
-		/// Return the system color from the caller's HSL value.
-		/// </summary>
-		/// <param name="hue">
-		/// The Hue level to convert, from 0 to 240.
-		/// </param>
-		/// <param name="saturation">
-		/// The Saturation to convert, from 0 to 240.
-		/// </param>
-		/// <param name="luminance">
-		/// The Luminance to convert, from 0 to 240. 0 is black and 240 is white.
-		/// </param>
-		/// <param name="alpha">
-		/// The Alpha level to apply.
-		/// </param>
-		/// <returns>
-		/// System.Drawing.Color representing the RGB value of the caller's color.
-		/// </returns>
-		public static Color FromHSL(int hue, int saturation, int luminance,
-			int alpha = 255)
-		{
-			Color result = ColorTranslator.FromWin32(
-				ColorHLSToRGB(hue, luminance, saturation));
-			if(alpha < 255)
-			{
-				result = Color.FromArgb(alpha, result);
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* FromHSL																																*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return the system color from the caller's HSL value.
+		///// </summary>
+		///// <param name="hue">
+		///// The Hue level to convert, from 0 to 360.
+		///// </param>
+		///// <param name="saturation">
+		///// The Saturation to convert, from 0 to 1.
+		///// </param>
+		///// <param name="luminance">
+		///// The Luminance to convert, from 0 to 1. 0 is black and 1 is white.
+		///// </param>
+		///// <param name="alpha">
+		///// The alpha level to apply.
+		///// </param>
+		///// <returns>
+		///// System.Drawing.Color representing the RGB value of the caller's color.
+		///// </returns>
+		//public static Color FromHSL(float hue, float saturation, float luminance,
+		//	int alpha = 255)
+		//{
+		//	int vHue = (int)((hue / 360f) * 240f);
+		//	int vLum = (int)(saturation * 240f);
+		//	int vSat = (int)(luminance * 240f);
+		//	return FromHSL(vHue, vLum, vSat, alpha);
+		//}
+		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		///// <summary>
+		///// Return the system color from the caller's HSL value.
+		///// </summary>
+		///// <param name="hue">
+		///// The Hue level to convert, from 0 to 240.
+		///// </param>
+		///// <param name="saturation">
+		///// The Saturation to convert, from 0 to 240.
+		///// </param>
+		///// <param name="luminance">
+		///// The Luminance to convert, from 0 to 240. 0 is black and 240 is white.
+		///// </param>
+		///// <param name="alpha">
+		///// The Alpha level to apply.
+		///// </param>
+		///// <returns>
+		///// System.Drawing.Color representing the RGB value of the caller's color.
+		///// </returns>
+		//public static Color FromHSL(int hue, int saturation, int luminance,
+		//	int alpha = 255)
+		//{
+		//	Color result = ColorTranslator.FromWin32(
+		//		ColorHLSToRGB(hue, luminance, saturation));
+		//	if(alpha < 255)
+		//	{
+		//		result = Color.FromArgb(alpha, result);
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* GetCharacterMatchCount																								*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return the number of characters matching in the two strings from
-		/// index 0 onward.
-		/// </summary>
-		/// <param name="value1">
-		/// Left string to compare.
-		/// </param>
-		/// <param name="value2">
-		/// Right string to compare.
-		/// </param>
-		/// <returns>
-		/// Count of characters matching in the two strings from the beginning
-		/// of the string. Otherwise, 0.
-		/// </returns>
-		public static int GetCharacterMatchCount(string value1, string value2)
-		{
-			char[] chars1 = null;
-			char[] chars2 = null;
-			int count = 0;
-			int index = 0;
-			int result = 0;
+		////*-----------------------------------------------------------------------*
+		////* GetCharacterMatchCount																								*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return the number of characters matching in the two strings from
+		///// index 0 onward.
+		///// </summary>
+		///// <param name="value1">
+		///// Left string to compare.
+		///// </param>
+		///// <param name="value2">
+		///// Right string to compare.
+		///// </param>
+		///// <returns>
+		///// Count of characters matching in the two strings from the beginning
+		///// of the string. Otherwise, 0.
+		///// </returns>
+		//public static int GetCharacterMatchCount(string value1, string value2)
+		//{
+		//	char[] chars1 = null;
+		//	char[] chars2 = null;
+		//	int count = 0;
+		//	int index = 0;
+		//	int result = 0;
 
-			if(value1?.Length > 0 && value2?.Length > 0)
-			{
-				chars1 = value1.ToCharArray();
-				chars2 = value2.ToCharArray();
-				count = Math.Min(chars1.Length, chars2.Length);
-				for(index = 0; index < count; index ++)
-				{
-					if(chars1[index] == chars2[index])
-					{
-						result++;
-					}
-					else
-					{
-						break;
-					}
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		//	if(value1?.Length > 0 && value2?.Length > 0)
+		//	{
+		//		chars1 = value1.ToCharArray();
+		//		chars2 = value2.ToCharArray();
+		//		count = Math.Min(chars1.Length, chars2.Length);
+		//		for(index = 0; index < count; index ++)
+		//		{
+		//			if(chars1[index] == chars2[index])
+		//			{
+		//				result++;
+		//			}
+		//			else
+		//			{
+		//				break;
+		//			}
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* GetDataUri																														*
@@ -2426,113 +2484,113 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* GetMediaTypeName																											*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return the media type name for the supplied file extension.
-		/// </summary>
-		/// <param name="file">
-		/// Reference to information about a file.
-		/// </param>
-		/// <returns>
-		/// Media type name for the provided file.
-		/// </returns>
-		public static string GetMediaTypeName(FileInfo file)
-		{
-			string extension = "";
-			string result = "";
+		////*-----------------------------------------------------------------------*
+		////* GetMediaTypeName																											*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return the media type name for the supplied file extension.
+		///// </summary>
+		///// <param name="file">
+		///// Reference to information about a file.
+		///// </param>
+		///// <returns>
+		///// Media type name for the provided file.
+		///// </returns>
+		//public static string GetMediaTypeName(FileInfo file)
+		//{
+		//	string extension = "";
+		//	string result = "";
 
-			if(file != null)
-			{
-				extension = file.Extension.ToLower();
-				if(extension.StartsWith("."))
-				{
-					extension = extension.Substring(1);
-				}
-				switch(extension)
-				{
-					case "aac":
-					case "flac":
-					case "m4a":
-					case "mp3":
-					case "wav":
-					case "wma":
-						result = "MediaAudio";
-						break;
-					case "bmp":
-					case "jpeg":
-					case "jpg":
-					case "png":
-					case "tif":
-					case "tiff":
-					case "webp":
-						result = "MediaImage";
-						break;
-					case "avi":
-					case "mov":
-					case "mp4":
-					case "webm":
-					case "wmv":
-						result = "MediaVideo";
-						break;
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		//	if(file != null)
+		//	{
+		//		extension = file.Extension.ToLower();
+		//		if(extension.StartsWith("."))
+		//		{
+		//			extension = extension.Substring(1);
+		//		}
+		//		switch(extension)
+		//		{
+		//			case "aac":
+		//			case "flac":
+		//			case "m4a":
+		//			case "mp3":
+		//			case "wav":
+		//			case "wma":
+		//				result = "MediaAudio";
+		//				break;
+		//			case "bmp":
+		//			case "jpeg":
+		//			case "jpg":
+		//			case "png":
+		//			case "tif":
+		//			case "tiff":
+		//			case "webp":
+		//				result = "MediaImage";
+		//				break;
+		//			case "avi":
+		//			case "mov":
+		//			case "mp4":
+		//			case "webm":
+		//			case "wmv":
+		//				result = "MediaVideo";
+		//				break;
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* GetRelaxedType																												*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return the relaxed type name from the specified object type.
-		/// </summary>
-		/// <param name="value">
-		/// Reference to the object for which a relaxed type will be found.
-		/// </param>
-		/// <returns>
-		/// The name of the relaxed type to be used for this value.
-		/// </returns>
-		public static string GetRelaxedType(object value)
-		{
-			string result = "string";
+		////*-----------------------------------------------------------------------*
+		////* GetRelaxedType																												*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return the relaxed type name from the specified object type.
+		///// </summary>
+		///// <param name="value">
+		///// Reference to the object for which a relaxed type will be found.
+		///// </param>
+		///// <returns>
+		///// The name of the relaxed type to be used for this value.
+		///// </returns>
+		//public static string GetRelaxedType(object value)
+		//{
+		//	string result = "string";
 
-			if(value != null)
-			{
-				if(value is bool)
-				{
-					result = "bool";
-				}
-				else if(value is Color)
-				{
-					result = "color";
-				}
-				else if(value is DateTime)
-				{
-					result = "datetime";
-				}
-				else if(value is Guid)
-				{
-					result = "guid";
-				}
-				else if(value is float)
-				{
-					result = "single";
-				}
-				else if(value is int ||
-					(IsNumeric(value) && !IsNumericFloatingPoint(value)))
-				{
-					result = "int";
-				}
-				else if(value is double || IsNumericFloatingPoint(value))
-				{
-					result = "double";
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		//	if(value != null)
+		//	{
+		//		if(value is bool)
+		//		{
+		//			result = "bool";
+		//		}
+		//		else if(value is Color)
+		//		{
+		//			result = "color";
+		//		}
+		//		else if(value is DateTime)
+		//		{
+		//			result = "datetime";
+		//		}
+		//		else if(value is Guid)
+		//		{
+		//			result = "guid";
+		//		}
+		//		else if(value is float)
+		//		{
+		//			result = "single";
+		//		}
+		//		else if(value is int ||
+		//			(IsNumeric(value) && !IsNumericFloatingPoint(value)))
+		//		{
+		//			result = "int";
+		//		}
+		//		else if(value is double || IsNumericFloatingPoint(value))
+		//		{
+		//			result = "double";
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* GetResource																														*
@@ -2688,205 +2746,205 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* InsideOf																															*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return the text found between the left and right pattern edges.
-		/// </summary>
-		/// <param name="value">
-		/// The value to inspect.
-		/// </param>
-		/// <param name="leftPattern">
-		/// The pattern establishing the left boundary of the content.
-		/// </param>
-		/// <param name="rightPattern">
-		/// The pattern establishing the right boundary of the content.
-		/// </param>
-		/// <returns>
-		/// If the left and right patterns were both found, then the content
-		/// between those patterns. If only the left pattern was found and the
-		/// right pattern was not found to the right of it, then the content to
-		/// the right of the left pattern. If the left pattern was not found and
-		/// the right pattern was found, then the content to the left of the
-		/// right pattern. Otherwise, an empty string.
-		/// </returns>
-		public static string InsideOf(string value,
-			string leftPattern, string rightPattern)
-		{
-			int leftIndex = 0;
-			string result = "";
-			int rightIndex = 0;
-			
-			if(value?.Length > 0)
-			{
-				if(leftPattern?.Length > 0 && value.IndexOf(leftPattern) > -1)
-				{
-					//	Left pattern found.
-					leftIndex = value.IndexOf(leftPattern);
-					if(rightPattern?.Length > 0 &&
-						value.IndexOf(rightPattern, leftIndex + 1) > -1)
-					{
-						//	Right pattern found.
-						rightIndex =
-							value.IndexOf(rightPattern, leftIndex + leftPattern.Length);
-						if(rightIndex > leftIndex + leftPattern.Length)
-						{
-							result = value.Substring(leftIndex + leftPattern.Length,
-								rightIndex - (leftIndex + leftPattern.Length));
-						}
-					}
-					else
-					{
-						//	Right pattern not found.
-						result = value.Substring(leftIndex + leftPattern.Length);
-					}
-				}
-				else if(rightPattern?.Length > 0 && value.IndexOf(rightPattern) > -1)
-				{
-					//	Left pattern not found. Right pattern found.
-					rightIndex = value.IndexOf(rightPattern);
-					result = value.Substring(0, rightIndex);
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* InsideOf																															*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return the text found between the left and right pattern edges.
+		///// </summary>
+		///// <param name="value">
+		///// The value to inspect.
+		///// </param>
+		///// <param name="leftPattern">
+		///// The pattern establishing the left boundary of the content.
+		///// </param>
+		///// <param name="rightPattern">
+		///// The pattern establishing the right boundary of the content.
+		///// </param>
+		///// <returns>
+		///// If the left and right patterns were both found, then the content
+		///// between those patterns. If only the left pattern was found and the
+		///// right pattern was not found to the right of it, then the content to
+		///// the right of the left pattern. If the left pattern was not found and
+		///// the right pattern was found, then the content to the left of the
+		///// right pattern. Otherwise, an empty string.
+		///// </returns>
+		//public static string InsideOf(string value,
+		//	string leftPattern, string rightPattern)
+		//{
+		//	int leftIndex = 0;
+		//	string result = "";
+		//	int rightIndex = 0;
 
-		//*-----------------------------------------------------------------------*
-		//* IsBoolean																															*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return a value indicating whether the supplied value is boolean.
-		/// </summary>
-		/// <param name="value">
-		/// The value to inspect.
-		/// </param>
-		/// <returns>
-		/// Value indicating whether the supplied value was boolean.
-		/// </returns>
-		public static bool IsBoolean(object value)
-		{
-			bool result = false;
+		//	if(value?.Length > 0)
+		//	{
+		//		if(leftPattern?.Length > 0 && value.IndexOf(leftPattern) > -1)
+		//		{
+		//			//	Left pattern found.
+		//			leftIndex = value.IndexOf(leftPattern);
+		//			if(rightPattern?.Length > 0 &&
+		//				value.IndexOf(rightPattern, leftIndex + 1) > -1)
+		//			{
+		//				//	Right pattern found.
+		//				rightIndex =
+		//					value.IndexOf(rightPattern, leftIndex + leftPattern.Length);
+		//				if(rightIndex > leftIndex + leftPattern.Length)
+		//				{
+		//					result = value.Substring(leftIndex + leftPattern.Length,
+		//						rightIndex - (leftIndex + leftPattern.Length));
+		//				}
+		//			}
+		//			else
+		//			{
+		//				//	Right pattern not found.
+		//				result = value.Substring(leftIndex + leftPattern.Length);
+		//			}
+		//		}
+		//		else if(rightPattern?.Length > 0 && value.IndexOf(rightPattern) > -1)
+		//		{
+		//			//	Left pattern not found. Right pattern found.
+		//			rightIndex = value.IndexOf(rightPattern);
+		//			result = value.Substring(0, rightIndex);
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-			if(value != null)
-			{
-				result = (mBoolChoices.FirstOrDefault(x =>
-					x == value.ToString().ToLower()) != null);
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* IsBoolean																															*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return a value indicating whether the supplied value is boolean.
+		///// </summary>
+		///// <param name="value">
+		///// The value to inspect.
+		///// </param>
+		///// <returns>
+		///// Value indicating whether the supplied value was boolean.
+		///// </returns>
+		//public static bool IsBoolean(object value)
+		//{
+		//	bool result = false;
 
-		//*-----------------------------------------------------------------------*
-		//* IsNumeric																															*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return a value indicating whether the entire value fits a recognizable
-		/// numeric pattern.
-		/// </summary>
-		/// <param name="value">
-		/// The value to inspect.
-		/// </param>
-		/// <returns>
-		/// True if the value can be directly converted to a numeric format.
-		/// Otherwise, false.
-		/// </returns>
-		public static bool IsNumeric(object value)
-		{
-			string comparison = "";
-			Match match = null;
-			bool result = false;
+		//	if(value != null)
+		//	{
+		//		result = (mBoolChoices.FirstOrDefault(x =>
+		//			x == value.ToString().ToLower()) != null);
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-			if(value != null)
-			{
-				comparison = value.ToString();
-				match = Regex.Match(comparison, ResourceLib.rxNumeric);
-				if(match.Success &&
-					GetValue(match, "pattern").Length == comparison.Length)
-				{
-					//	The entire string matches the pattern.
-					result = true;
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* IsNumeric																															*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return a value indicating whether the entire value fits a recognizable
+		///// numeric pattern.
+		///// </summary>
+		///// <param name="value">
+		///// The value to inspect.
+		///// </param>
+		///// <returns>
+		///// True if the value can be directly converted to a numeric format.
+		///// Otherwise, false.
+		///// </returns>
+		//public static bool IsNumeric(object value)
+		//{
+		//	string comparison = "";
+		//	Match match = null;
+		//	bool result = false;
 
-		//*-----------------------------------------------------------------------*
-		//* IsNumericFloatingPoint																								*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return a value indicating whether the entire value fits a recognizable
-		/// numeric floating point pattern.
-		/// </summary>
-		/// <param name="value">
-		/// The value to inspect.
-		/// </param>
-		/// <returns>
-		/// True if the value can be directly converted to a numeric format, and
-		/// that format contains a decimal point. Otherwise, false. Note that
-		/// an integer value will return false on this method.
-		/// </returns>
-		public static bool IsNumericFloatingPoint(object value)
-		{
-			string comparison = "";
-			Match match = null;
-			bool result = false;
+		//	if(value != null)
+		//	{
+		//		comparison = value.ToString();
+		//		match = Regex.Match(comparison, ResourceLib.rxNumeric);
+		//		if(match.Success &&
+		//			GetValue(match, "pattern").Length == comparison.Length)
+		//		{
+		//			//	The entire string matches the pattern.
+		//			result = true;
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-			if(value != null)
-			{
-				comparison = value.ToString();
-				match = Regex.Match(comparison, ResourceLib.rxNumeric);
-				if(match.Success &&
-					GetValue(match, "pattern").Length == comparison.Length &&
-					match.Value.IndexOf(".") > -1)
-				{
-					//	The entire string matches the floating point pattern.
-					result = true;
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* IsNumericFloatingPoint																								*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return a value indicating whether the entire value fits a recognizable
+		///// numeric floating point pattern.
+		///// </summary>
+		///// <param name="value">
+		///// The value to inspect.
+		///// </param>
+		///// <returns>
+		///// True if the value can be directly converted to a numeric format, and
+		///// that format contains a decimal point. Otherwise, false. Note that
+		///// an integer value will return false on this method.
+		///// </returns>
+		//public static bool IsNumericFloatingPoint(object value)
+		//{
+		//	string comparison = "";
+		//	Match match = null;
+		//	bool result = false;
 
-		//*-----------------------------------------------------------------------*
-		//* IsNumericScientific																										*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return a value indicating whether the entire value fits a recognizable
-		/// numeric scientific notation pattern.
-		/// </summary>
-		/// <param name="value">
-		/// The value to inspect.
-		/// </param>
-		/// <returns>
-		/// True if the value can be directly converted to a numeric format, and
-		/// that format contains scientific notation. Otherwise, false. Note that
-		/// a simple integer or floating point value will return false on this
-		/// method.
-		/// </returns>
-		public static bool IsNumericScientific(object value)
-		{
-			string comparison = "";
-			Match match = null;
-			bool result = false;
+		//	if(value != null)
+		//	{
+		//		comparison = value.ToString();
+		//		match = Regex.Match(comparison, ResourceLib.rxNumeric);
+		//		if(match.Success &&
+		//			GetValue(match, "pattern").Length == comparison.Length &&
+		//			match.Value.IndexOf(".") > -1)
+		//		{
+		//			//	The entire string matches the floating point pattern.
+		//			result = true;
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-			if(value != null)
-			{
-				comparison = value.ToString();
-				match = Regex.Match(comparison, ResourceLib.rxNumeric);
-				if(match.Success &&
-					GetValue(match, "pattern").Length == comparison.Length &&
-					match.Value.ToLower().IndexOf("e") > -1)
-				{
-					//	The entire string matches the scientific notation pattern.
-					result = true;
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* IsNumericScientific																										*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return a value indicating whether the entire value fits a recognizable
+		///// numeric scientific notation pattern.
+		///// </summary>
+		///// <param name="value">
+		///// The value to inspect.
+		///// </param>
+		///// <returns>
+		///// True if the value can be directly converted to a numeric format, and
+		///// that format contains scientific notation. Otherwise, false. Note that
+		///// a simple integer or floating point value will return false on this
+		///// method.
+		///// </returns>
+		//public static bool IsNumericScientific(object value)
+		//{
+		//	string comparison = "";
+		//	Match match = null;
+		//	bool result = false;
+
+		//	if(value != null)
+		//	{
+		//		comparison = value.ToString();
+		//		match = Regex.Match(comparison, ResourceLib.rxNumeric);
+		//		if(match.Success &&
+		//			GetValue(match, "pattern").Length == comparison.Length &&
+		//			match.Value.ToLower().IndexOf("e") > -1)
+		//		{
+		//			//	The entire string matches the scientific notation pattern.
+		//			result = true;
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
 		////*-----------------------------------------------------------------------*
 		////* LinearInterpolate																											*
@@ -3406,7 +3464,7 @@ namespace Scaffold
 					case "zip": //	ZIP archive.
 						result = "application/zip";
 						break;
-					default:	//	Any unidentified format is binary data.
+					default:  //	Any unidentified format is binary data.
 						result = "application/octet-stream";
 						break;
 				}
@@ -3735,6 +3793,34 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
+		//*-----------------------------------------------------------------------*
+		//*	NodeFileInfo																													*
+		//*-----------------------------------------------------------------------*
+		private static FileInfo mNodeFileInfo = null;
+		/// <summary>
+		/// Get/Set a reference to the physical loaded node file info.
+		/// </summary>
+		public static FileInfo NodeFileInfo
+		{
+			get { return mNodeFileInfo; }
+			set { mNodeFileInfo = value; }
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	NodeFileObject																												*
+		//*-----------------------------------------------------------------------*
+		private static NodeFileItem mNodeFileObject = null;
+		/// <summary>
+		/// Get/Set a reference to the currently loaded node file object.
+		/// </summary>
+		public static NodeFileItem NodeFileObject
+		{
+			get { return mNodeFileObject; }
+			set { mNodeFileObject = value; }
+		}
+		//*-----------------------------------------------------------------------*
+
 		////*-----------------------------------------------------------------------*
 		////* ProgressUpdate																												*
 		////*-----------------------------------------------------------------------*
@@ -4051,182 +4137,182 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* RelativeFilename																											*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return the relative filename from the logical difference between
-		/// two paths.
-		/// </summary>
-		/// <param name="baseFile">
-		/// The base file or domain name from which a relative path can be built.
-		/// </param>
-		/// <param name="relativeFile">
-		/// An external file to be referenced with a relative path.
-		/// </param>
-		/// <returns>
-		/// Relative path and filename of the specified relative file, if
-		/// feasible. Otherwise, the full path of the relative file.
-		/// </returns>
-		public static string RelativeFilename(FileInfo baseFile,
-			FileInfo relativeFile)
-		{
-			StringBuilder builder = null;
-			int count = 0;
-			int index = 0;
-			string[] levels = null;
-			string pathBase = "";
-			string pathOffset = "";
-			string pathRel = "";
-			int prefixLength = 0;
-			string result = "";
-			char[] slash = new char[] { '/' };
+		////*-----------------------------------------------------------------------*
+		////* RelativeFilename																											*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return the relative filename from the logical difference between
+		///// two paths.
+		///// </summary>
+		///// <param name="baseFile">
+		///// The base file or domain name from which a relative path can be built.
+		///// </param>
+		///// <param name="relativeFile">
+		///// An external file to be referenced with a relative path.
+		///// </param>
+		///// <returns>
+		///// Relative path and filename of the specified relative file, if
+		///// feasible. Otherwise, the full path of the relative file.
+		///// </returns>
+		//public static string RelativeFilename(FileInfo baseFile,
+		//	FileInfo relativeFile)
+		//{
+		//	StringBuilder builder = null;
+		//	int count = 0;
+		//	int index = 0;
+		//	string[] levels = null;
+		//	string pathBase = "";
+		//	string pathOffset = "";
+		//	string pathRel = "";
+		//	int prefixLength = 0;
+		//	string result = "";
+		//	char[] slash = new char[] { '/' };
 
-			if(relativeFile != null)
-			{
-				if(baseFile != null)
-				{
-					pathBase = baseFile.Directory.FullName.ToLower().Replace('\\', '/');
-					pathRel =
-						relativeFile.Directory.FullName.ToLower().Replace('\\', '/');
-					if(pathBase == pathRel)
-					{
-						//	Same folder. The filename is all that is needed.
-						result = relativeFile.Name;
-					}
-					else
-					{
-						prefixLength = GetCharacterMatchCount(pathBase, pathRel);
-						if(prefixLength == 0)
-						{
-							//	No path in common.
-							result = relativeFile.FullName.Replace('\\', '/');
-						}
-						else if(prefixLength == pathBase.Length)
-						{
-							//	The relative file is inward from the base.
-							result = Path.Combine(
-								relativeFile.Directory.FullName.
-								Substring(prefixLength),
-								relativeFile.Name).Replace('\\', '/');
-							if(result.StartsWith("/"))
-							{
-								result = result.Substring(1);
-							}
-						}
-						else if(prefixLength == pathRel.Length)
-						{
-							//	The relative file is back from the base.
-							pathOffset = baseFile.Directory.FullName.
-								Substring(prefixLength).Replace('\\', '/');
-							if(pathOffset.StartsWith("/"))
-							{
-								pathOffset = pathOffset.Substring(1);
-							}
-							if(pathOffset.EndsWith("/"))
-							{
-								pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
-							}
-							builder = new StringBuilder();
-							levels = pathOffset.Split(slash);
-							count = levels.Length;
-							for(index = 0; index < count; index ++)
-							{
-								builder.Append("../");
-							}
-							builder.Append(relativeFile.Name);
-							result = builder.ToString();
-						}
-						else
-						{
-							//	The relative file is diagonal to the base.
-							//	Start by getting the number of directories back.
-							pathOffset = baseFile.Directory.FullName.
-								Substring(prefixLength).Replace('\\', '/');
-							if(pathOffset.StartsWith("/"))
-							{
-								pathOffset = pathOffset.Substring(1);
-							}
-							if(pathOffset.EndsWith("/"))
-							{
-								pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
-							}
-							builder = new StringBuilder();
-							levels = pathOffset.Split(slash);
-							count = levels.Length;
-							for(index = 0; index < count; index++)
-							{
-								builder.Append("../");
-							}
-							//	Continue by adding in the number of directories forward.
-							pathOffset = relativeFile.Directory.FullName.
-								Substring(prefixLength).Replace('\\', '/');
-							if(pathOffset.StartsWith("/"))
-							{
-								pathOffset = pathOffset.Substring(1);
-							}
-							if(pathOffset.EndsWith("/"))
-							{
-								pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
-							}
-							if(builder[builder.Length - 1] != '/')
-							{
-								builder.Append("/");
-							}
-							builder.Append(pathOffset);
-							builder.Append("/");
-							builder.Append(relativeFile.Name);
-							result = builder.ToString();
-						}
-					}
-				}
-				else
-				{
-					result = relativeFile.FullName;
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		//	if(relativeFile != null)
+		//	{
+		//		if(baseFile != null)
+		//		{
+		//			pathBase = baseFile.Directory.FullName.ToLower().Replace('\\', '/');
+		//			pathRel =
+		//				relativeFile.Directory.FullName.ToLower().Replace('\\', '/');
+		//			if(pathBase == pathRel)
+		//			{
+		//				//	Same folder. The filename is all that is needed.
+		//				result = relativeFile.Name;
+		//			}
+		//			else
+		//			{
+		//				prefixLength = GetCharacterMatchCount(pathBase, pathRel);
+		//				if(prefixLength == 0)
+		//				{
+		//					//	No path in common.
+		//					result = relativeFile.FullName.Replace('\\', '/');
+		//				}
+		//				else if(prefixLength == pathBase.Length)
+		//				{
+		//					//	The relative file is inward from the base.
+		//					result = Path.Combine(
+		//						relativeFile.Directory.FullName.
+		//						Substring(prefixLength),
+		//						relativeFile.Name).Replace('\\', '/');
+		//					if(result.StartsWith("/"))
+		//					{
+		//						result = result.Substring(1);
+		//					}
+		//				}
+		//				else if(prefixLength == pathRel.Length)
+		//				{
+		//					//	The relative file is back from the base.
+		//					pathOffset = baseFile.Directory.FullName.
+		//						Substring(prefixLength).Replace('\\', '/');
+		//					if(pathOffset.StartsWith("/"))
+		//					{
+		//						pathOffset = pathOffset.Substring(1);
+		//					}
+		//					if(pathOffset.EndsWith("/"))
+		//					{
+		//						pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
+		//					}
+		//					builder = new StringBuilder();
+		//					levels = pathOffset.Split(slash);
+		//					count = levels.Length;
+		//					for(index = 0; index < count; index ++)
+		//					{
+		//						builder.Append("../");
+		//					}
+		//					builder.Append(relativeFile.Name);
+		//					result = builder.ToString();
+		//				}
+		//				else
+		//				{
+		//					//	The relative file is diagonal to the base.
+		//					//	Start by getting the number of directories back.
+		//					pathOffset = baseFile.Directory.FullName.
+		//						Substring(prefixLength).Replace('\\', '/');
+		//					if(pathOffset.StartsWith("/"))
+		//					{
+		//						pathOffset = pathOffset.Substring(1);
+		//					}
+		//					if(pathOffset.EndsWith("/"))
+		//					{
+		//						pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
+		//					}
+		//					builder = new StringBuilder();
+		//					levels = pathOffset.Split(slash);
+		//					count = levels.Length;
+		//					for(index = 0; index < count; index++)
+		//					{
+		//						builder.Append("../");
+		//					}
+		//					//	Continue by adding in the number of directories forward.
+		//					pathOffset = relativeFile.Directory.FullName.
+		//						Substring(prefixLength).Replace('\\', '/');
+		//					if(pathOffset.StartsWith("/"))
+		//					{
+		//						pathOffset = pathOffset.Substring(1);
+		//					}
+		//					if(pathOffset.EndsWith("/"))
+		//					{
+		//						pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
+		//					}
+		//					if(builder[builder.Length - 1] != '/')
+		//					{
+		//						builder.Append("/");
+		//					}
+		//					builder.Append(pathOffset);
+		//					builder.Append("/");
+		//					builder.Append(relativeFile.Name);
+		//					result = builder.ToString();
+		//				}
+		//			}
+		//		}
+		//		else
+		//		{
+		//			result = relativeFile.FullName;
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//*	ResolveEnvironment																										*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return a string value where all environment variable references have
-		/// been resolved.
-		/// </summary>
-		/// <param name="value">
-		/// String value potentially containing environment variables wrapped in
-		/// percent signs.
-		/// </param>
-		/// <returns>
-		/// String value where all environment variables have been replaced with
-		/// their local values.
-		/// </returns>
-		public static string ResolveEnvironment(string value)
-		{
-			string env = "";
-			MatchCollection matches = null;
-			string setting = "";
-			string result = value;
+		////*-----------------------------------------------------------------------*
+		////*	ResolveEnvironment																										*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return a string value where all environment variable references have
+		///// been resolved.
+		///// </summary>
+		///// <param name="value">
+		///// String value potentially containing environment variables wrapped in
+		///// percent signs.
+		///// </param>
+		///// <returns>
+		///// String value where all environment variables have been replaced with
+		///// their local values.
+		///// </returns>
+		//public static string ResolveEnvironment(string value)
+		//{
+		//	string env = "";
+		//	MatchCollection matches = null;
+		//	string setting = "";
+		//	string result = value;
 
-			matches = Regex.Matches(value, "%(?<f>[^%]+?)%");
-			foreach(Match match in matches)
-			{
-				setting = GetValue(match, "f");
-				if(setting.Length > 0)
-				{
-					env = Environment.GetEnvironmentVariable(setting);
-					if(env?.Length > 0)
-					{
-						result = result.Replace($"%{setting}%", env);
-					}
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		//	matches = Regex.Matches(value, "%(?<f>[^%]+?)%");
+		//	foreach(Match match in matches)
+		//	{
+		//		setting = GetValue(match, "f");
+		//		if(setting.Length > 0)
+		//		{
+		//			env = Environment.GetEnvironmentVariable(setting);
+		//			if(env?.Length > 0)
+		//			{
+		//				result = result.Replace($"%{setting}%", env);
+		//			}
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
 		////*-----------------------------------------------------------------------*
 		////* RoundedRectangle																											*
@@ -4502,126 +4588,126 @@ namespace Scaffold
 		//}
 		////*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* ThreadSleep																														*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Continue to process the UI while waiting on the calling thread for
-		/// the specified number of milliseconds.
-		/// </summary>
-		/// <param name="milliseconds">
-		/// Number of milliseconds to wait.
-		/// </param>
-		/// <returns>
-		/// Reference to an active task.
-		/// </returns>
-		public static async Task ThreadSleep(int milliseconds)
-		{
-			await Task.Delay(milliseconds);
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* ThreadSleep																														*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Continue to process the UI while waiting on the calling thread for
+		///// the specified number of milliseconds.
+		///// </summary>
+		///// <param name="milliseconds">
+		///// Number of milliseconds to wait.
+		///// </param>
+		///// <returns>
+		///// Reference to an active task.
+		///// </returns>
+		//public static async Task ThreadSleep(int milliseconds)
+		//{
+		//	await Task.Delay(milliseconds);
+		//}
+		////*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* ToBoolean																															*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Provide fail-safe conversion of string to boolean value.
-		/// </summary>
-		/// <param name="value">
-		/// Value to convert.
-		/// </param>
-		/// <returns>
-		/// Boolean value. False if not convertible.
-		/// </returns>
-		public static bool ToBoolean(object value)
-		{
-			bool result = false;
-			if(value != null)
-			{
-				result = ToBoolean(value.ToString());
-			}
-			return result;
-		}
-		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		/// <summary>
-		/// Provide fail-safe conversion of string to boolean value.
-		/// </summary>
-		/// <param name="value">
-		/// Value to convert.
-		/// </param>
-		/// <returns>
-		/// Boolean value. False if not convertible.
-		/// </returns>
-		public static bool ToBoolean(string value)
-		{
-			int count = 0;
-			int index = 0;
-			string lower = "";
-			bool result = false;
-			
-			if(IsBoolean(value))
-			{
-				lower = value.ToLower();
-				count = mBoolChoices.Length;
-				for(index = 0; index < count; index ++)
-				{
-					if(mBoolChoices[index] == lower)
-					{
-						//	Match found.
-						if(index % 2 == 0)
-						{
-							result = true;
-						}
-						break;
-					}
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* ToBoolean																															*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Provide fail-safe conversion of string to boolean value.
+		///// </summary>
+		///// <param name="value">
+		///// Value to convert.
+		///// </param>
+		///// <returns>
+		///// Boolean value. False if not convertible.
+		///// </returns>
+		//public static bool ToBoolean(object value)
+		//{
+		//	bool result = false;
+		//	if(value != null)
+		//	{
+		//		result = ToBoolean(value.ToString());
+		//	}
+		//	return result;
+		//}
+		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		///// <summary>
+		///// Provide fail-safe conversion of string to boolean value.
+		///// </summary>
+		///// <param name="value">
+		///// Value to convert.
+		///// </param>
+		///// <returns>
+		///// Boolean value. False if not convertible.
+		///// </returns>
+		//public static bool ToBoolean(string value)
+		//{
+		//	int count = 0;
+		//	int index = 0;
+		//	string lower = "";
+		//	bool result = false;
 
-		//*-----------------------------------------------------------------------*
-		//* ToFloat																																*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Provide fail-safe conversion of string to numeric value.
-		/// </summary>
-		/// <param name="value">
-		/// Value to convert.
-		/// </param>
-		/// <returns>
-		/// Floating point value. 0 if not convertible.
-		/// </returns>
-		public static float ToFloat(object value)
-		{
-			float result = 0f;
-			if(value != null)
-			{
-				result = ToFloat(value.ToString());
-			}
-			return result;
-		}
-		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		/// <summary>
-		/// Provide fail-safe conversion of string to numeric value.
-		/// </summary>
-		/// <param name="value">
-		/// Value to convert.
-		/// </param>
-		/// <returns>
-		/// Floating point value. 0 if not convertible.
-		/// </returns>
-		public static float ToFloat(string value)
-		{
-			float result = 0f;
-			try
-			{
-				result = float.Parse(value);
-			}
-			catch { }
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		//	if(IsBoolean(value))
+		//	{
+		//		lower = value.ToLower();
+		//		count = mBoolChoices.Length;
+		//		for(index = 0; index < count; index ++)
+		//		{
+		//			if(mBoolChoices[index] == lower)
+		//			{
+		//				//	Match found.
+		//				if(index % 2 == 0)
+		//				{
+		//					result = true;
+		//				}
+		//				break;
+		//			}
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
+
+		////*-----------------------------------------------------------------------*
+		////* ToFloat																																*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Provide fail-safe conversion of string to numeric value.
+		///// </summary>
+		///// <param name="value">
+		///// Value to convert.
+		///// </param>
+		///// <returns>
+		///// Floating point value. 0 if not convertible.
+		///// </returns>
+		//public static float ToFloat(object value)
+		//{
+		//	float result = 0f;
+		//	if(value != null)
+		//	{
+		//		result = ToFloat(value.ToString());
+		//	}
+		//	return result;
+		//}
+		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		///// <summary>
+		///// Provide fail-safe conversion of string to numeric value.
+		///// </summary>
+		///// <param name="value">
+		///// Value to convert.
+		///// </param>
+		///// <returns>
+		///// Floating point value. 0 if not convertible.
+		///// </returns>
+		//public static float ToFloat(string value)
+		//{
+		//	float result = 0f;
+		//	try
+		//	{
+		//		result = float.Parse(value);
+		//	}
+		//	catch { }
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//*	ToHex																																	*
@@ -4657,118 +4743,118 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* ToImpliedType																													*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return a value that is either string, numeric, or boolean.
-		/// </summary>
-		/// <param name="value">
-		/// Value to inspect.
-		/// </param>
-		/// <returns>
-		/// Value in a native type corresponding to string, numeric, or boolean.
-		/// </returns>
-		/// <remarks>
-		/// This method is generally intended for use with JSON output.
-		/// </remarks>
-		public static object ToImpliedType(string value)
-		{
-			object result = null;
+		////*-----------------------------------------------------------------------*
+		////* ToImpliedType																													*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return a value that is either string, numeric, or boolean.
+		///// </summary>
+		///// <param name="value">
+		///// Value to inspect.
+		///// </param>
+		///// <returns>
+		///// Value in a native type corresponding to string, numeric, or boolean.
+		///// </returns>
+		///// <remarks>
+		///// This method is generally intended for use with JSON output.
+		///// </remarks>
+		//public static object ToImpliedType(string value)
+		//{
+		//	object result = null;
 
-			if(value != null)
-			{
-				if(IsNumeric(value))
-				{
-					if(IsNumericFloatingPoint(value))
-					{
-						result = ToFloat(value);
-					}
-					else
-					{
-						result = ToInt(value);
-					}
-				}
-				else if(IsBoolean(value))
-				{
-					result = ToBoolean(value);
-				}
-				else
-				{
-					result = value;
-				}
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		//	if(value != null)
+		//	{
+		//		if(IsNumeric(value))
+		//		{
+		//			if(IsNumericFloatingPoint(value))
+		//			{
+		//				result = ToFloat(value);
+		//			}
+		//			else
+		//			{
+		//				result = ToInt(value);
+		//			}
+		//		}
+		//		else if(IsBoolean(value))
+		//		{
+		//			result = ToBoolean(value);
+		//		}
+		//		else
+		//		{
+		//			result = value;
+		//		}
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* ToInt																																	*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Provide fail-safe conversion of string to numeric value.
-		/// </summary>
-		/// <param name="value">
-		/// Value to convert.
-		/// </param>
-		/// <returns>
-		/// Integer value. 0 if not convertible.
-		/// </returns>
-		public static int ToInt(object value)
-		{
-			int result = 0;
-			if(value != null)
-			{
-				result = ToInt(value.ToString());
-			}
-			return result;
-		}
-		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		/// <summary>
-		/// Provide fail-safe conversion of string to numeric value.
-		/// </summary>
-		/// <param name="value">
-		/// Value to convert.
-		/// </param>
-		/// <returns>
-		/// Integer value. 0 if not convertible.
-		/// </returns>
-		public static int ToInt(string value)
-		{
-			//	A try .. catch block was originally implemented here, but the
-			//	following text was being sent to output on each unsuccessful
-			//	match.
-			//	Exception thrown: 'System.FormatException' in mscorlib.dll
-			int result = 0;
-			int.TryParse(value, out result);
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* ToInt																																	*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Provide fail-safe conversion of string to numeric value.
+		///// </summary>
+		///// <param name="value">
+		///// Value to convert.
+		///// </param>
+		///// <returns>
+		///// Integer value. 0 if not convertible.
+		///// </returns>
+		//public static int ToInt(object value)
+		//{
+		//	int result = 0;
+		//	if(value != null)
+		//	{
+		//		result = ToInt(value.ToString());
+		//	}
+		//	return result;
+		//}
+		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		///// <summary>
+		///// Provide fail-safe conversion of string to numeric value.
+		///// </summary>
+		///// <param name="value">
+		///// Value to convert.
+		///// </param>
+		///// <returns>
+		///// Integer value. 0 if not convertible.
+		///// </returns>
+		//public static int ToInt(string value)
+		//{
+		//	//	A try .. catch block was originally implemented here, but the
+		//	//	following text was being sent to output on each unsuccessful
+		//	//	match.
+		//	//	Exception thrown: 'System.FormatException' in mscorlib.dll
+		//	int result = 0;
+		//	int.TryParse(value, out result);
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* ToString																															*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Return a non-null string representation of the specified object.
-		/// </summary>
-		/// <param name="value">
-		/// Value to interpret.
-		/// </param>
-		/// <returns>
-		/// String representation of the specified value, if converted
-		/// successfully. Otherwise, an empty string.
-		/// </returns>
-		public static string ToString(object value)
-		{
-			string result = "";
+		////*-----------------------------------------------------------------------*
+		////* ToString																															*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Return a non-null string representation of the specified object.
+		///// </summary>
+		///// <param name="value">
+		///// Value to interpret.
+		///// </param>
+		///// <returns>
+		///// String representation of the specified value, if converted
+		///// successfully. Otherwise, an empty string.
+		///// </returns>
+		//public static string ToString(object value)
+		//{
+		//	string result = "";
 
-			if(value != null)
-			{
-				result = value.ToString();
-			}
-			return result;
-		}
-		//*-----------------------------------------------------------------------*
+		//	if(value != null)
+		//	{
+		//		result = value.ToString();
+		//	}
+		//	return result;
+		//}
+		////*-----------------------------------------------------------------------*
 
 		////*-----------------------------------------------------------------------*
 		////*	TypeConverter																													*
@@ -4783,6 +4869,83 @@ namespace Scaffold
 		//	get { return mTypeConverter; }
 		//}
 		////*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* UpdateThumbnails																											*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Update all thumbnails on a node and its sockets.
+		/// </summary>
+		/// <param name="node">
+		/// Reference to the node for which the thumbnails will be updated.
+		/// </param>
+		public static void UpdateThumbnails(NodeItem node)
+		{
+			List<string> iconNames = new List<string>()
+			{
+				"IconAudio",
+				"ThumbImage",
+				"IconLink",
+				"ThumbVideo"
+			};
+			List<string> mediaNames = new List<string>()
+			{
+				"MediaAudio",
+				"MediaImage",
+				"MediaLink",
+				"MediaVideo"
+			};
+			PropertyItem property = null;
+			ResourceItem resource = null;
+
+
+			if(node != null)
+			{
+				foreach(string iconName in iconNames)
+				{
+					property = node.Properties.FirstOrDefault(x => x.Name == iconName);
+					if(property != null)
+					{
+						node.Properties.Remove(property);
+					}
+				}
+
+				foreach(string mediaName in mediaNames)
+				{
+					property = node.Properties.FirstOrDefault(x => x.Name == mediaName);
+					if(property != null)
+					{
+						//	Property is present.
+						switch(mediaName)
+						{
+							case "MediaAudio":
+								CreateAudioIcon(node);
+								break;
+							case "MediaImage":
+								resource = mNodeFileObject.Resources.FirstOrDefault(x =>
+									x.Ticket == property.StringValue());
+								if(resource != null)
+								{
+									CreateImageThumbnail(node, resource);
+								}
+								break;
+							case "MediaLink":
+								CreateLinkIcon(node);
+								break;
+							case "MediaVideo":
+								resource = mNodeFileObject.Resources.FirstOrDefault(x =>
+									x.Ticket == property.StringValue());
+								if(resource != null)
+								{
+									CreateVideoThumbnail(node, resource);
+								}
+								break;
+						}
+					}
+				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
 
 #if DEBUG && VERBOSE
 		//*-----------------------------------------------------------------------*
@@ -4818,20 +4981,20 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 #else
-			//*-----------------------------------------------------------------------*
-			//* Verbose																																*
-			//*-----------------------------------------------------------------------*
-			/// <summary>
-			/// Send a message to the verbose text output.
-			/// </summary>
-			/// <param name="value">
-			/// Message to display.
-			/// </param>
-			/// <param name="level">
-			/// Verbose level to display.
-			/// </param>
-			public static void Verbose(string value, int level = 1) { }
-		//*-----------------------------------------------------------------------*
+		////*-----------------------------------------------------------------------*
+		////* Verbose																																*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Send a message to the verbose text output.
+		///// </summary>
+		///// <param name="value">
+		///// Message to display.
+		///// </param>
+		///// <param name="level">
+		///// Verbose level to display.
+		///// </param>
+		//public static void Verbose(string value, int level = 1) { }
+		////*-----------------------------------------------------------------------*
 #endif
 
 	}

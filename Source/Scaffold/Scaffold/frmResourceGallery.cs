@@ -1,4 +1,4 @@
-﻿//	frmResourceGallery.cs
+//	frmResourceGallery.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using static Scaffold.ScaffoldUtil;
+using static Scaffold.ScaffoldNodesUtil;
 
 namespace Scaffold
 {

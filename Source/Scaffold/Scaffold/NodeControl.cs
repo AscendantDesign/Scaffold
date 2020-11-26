@@ -1,4 +1,4 @@
-﻿//	NodeControl.cs
+//	NodeControl.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -14,6 +14,8 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 
 using static Scaffold.ScaffoldUtil;
+using static Scaffold.ScaffoldNodesUtil;
+
 using System.IO;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -214,6 +216,7 @@ namespace Scaffold
 			RectangleF image = RectangleF.Empty;
 			GraphicsPath path = null;
 			Pen pen = null;
+			PropertyItem property = null;
 			RectangleF rect = RectangleF.Empty;
 			bool toolTipActive = false;
 
@@ -310,11 +313,16 @@ namespace Scaffold
 					}
 					if(node.Properties.Exists(p => p.Name == "IconLink"))
 					{
-						bitmap = (Bitmap)node.Properties.FirstOrDefault(p =>
-							p.Name == "IconLink").Value;
-						image = new RectangleF(node.X + 6f, caption.Bottom + 42f,
-							32f, 32f);
-						g.DrawImage(bitmap, image);
+						property = node.Properties.FirstOrDefault(p =>
+							p.Name == "IconLink");
+						if(property != null)
+						{
+							bitmap = (Bitmap)node.Properties.FirstOrDefault(p =>
+								p.Name == "IconLink").Value;
+							image = new RectangleF(node.X + 6f, caption.Bottom + 42f,
+								32f, 32f);
+							g.DrawImage(bitmap, image);
+						}
 					}
 				}
 

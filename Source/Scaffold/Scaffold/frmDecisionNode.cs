@@ -1,4 +1,4 @@
-﻿//	frmDecisionNode.cs
+//	frmDecisionNode.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
 using static Scaffold.ScaffoldUtil;
+using static Scaffold.ScaffoldNodesUtil;
 
 namespace Scaffold
 {
@@ -1783,44 +1784,44 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		//*-----------------------------------------------------------------------*
-		//* RemoveRow																															*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Remove a row from the table where the cell is equal to the specified
-		/// value in the named column.
-		/// </summary>
-		/// <param name="table">
-		/// Reference to the table containing the row to delete.
-		/// </param>
-		/// <param name="columnName">
-		/// Name of the column to match.
-		/// </param>
-		/// <param name="cellValue">
-		/// Value of the cell to match.
-		/// </param>
-		private void RemoveRow(DataTable table,
-			string columnName, string cellValue)
-		{
-			int count = 0;
-			int index = 0;
-			DataRow row = null;
+		////*-----------------------------------------------------------------------*
+		////* RemoveRow																															*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Remove a row from the table where the cell is equal to the specified
+		///// value in the named column.
+		///// </summary>
+		///// <param name="table">
+		///// Reference to the table containing the row to delete.
+		///// </param>
+		///// <param name="columnName">
+		///// Name of the column to match.
+		///// </param>
+		///// <param name="cellValue">
+		///// Value of the cell to match.
+		///// </param>
+		//private void RemoveRow(DataTable table,
+		//	string columnName, string cellValue)
+		//{
+		//	int count = 0;
+		//	int index = 0;
+		//	DataRow row = null;
 
-			if(table != null && table.Columns.Contains(columnName))
-			{
-				count = table.Rows.Count;
-				for(index = 0; index < count; index ++)
-				{
-					row = table.Rows[index];
-					if(row.Field<string>(columnName) == cellValue)
-					{
-						table.Rows.RemoveAt(index);
-						break;
-					}
-				}
-			}
-		}
-		//*-----------------------------------------------------------------------*
+		//	if(table != null && table.Columns.Contains(columnName))
+		//	{
+		//		count = table.Rows.Count;
+		//		for(index = 0; index < count; index ++)
+		//		{
+		//			row = table.Rows[index];
+		//			if(row.Field<string>(columnName) == cellValue)
+		//			{
+		//				table.Rows.RemoveAt(index);
+		//				break;
+		//			}
+		//		}
+		//	}
+		//}
+		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//*	WriteNode																															*

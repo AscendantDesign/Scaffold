@@ -67,7 +67,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;VERBOSE;V1</DefineConstants>
-    <NoWarn>IDE1006;IDE0017;IDE0018;IDE0044;IDE0059;IDE0060</NoWarn>
+    <NoWarn>IDE1006;IDE0017;IDE0018;IDE0039;IDE0044;IDE0059;IDE0060</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>
