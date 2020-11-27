@@ -52,6 +52,8 @@ namespace Scaffold
 			this.mnuFilePublish = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuFilePublishSlackChatConversation = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuFileSep2 = new System.Windows.Forms.ToolStripSeparator();
+			this.mnuFileDocumentProperties = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuFileSep3 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuEditUndo = new System.Windows.Forms.ToolStripMenuItem();
@@ -155,8 +157,8 @@ namespace Scaffold
 			this.btnDecisionTreeEditor = new Scaffold.LabelButtonControl();
 			this.panelWindowControl = new Scaffold.PanelWindowControl();
 			this.timerAutoSave = new System.Windows.Forms.Timer(this.components);
-			this.mnuFileSep3 = new System.Windows.Forms.ToolStripSeparator();
-			this.mnuFileDocumentProperties = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuToolsChatbotEmulateBeginning = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuToolsChatbotEmulateSelected = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuMain.SuspendLayout();
 			this.statusMain.SuspendLayout();
 			this.tctlDocument.SuspendLayout();
@@ -311,6 +313,18 @@ namespace Scaffold
 			// 
 			this.mnuFileSep2.Name = "mnuFileSep2";
 			this.mnuFileSep2.Size = new System.Drawing.Size(270, 6);
+			// 
+			// mnuFileDocumentProperties
+			// 
+			this.mnuFileDocumentProperties.Name = "mnuFileDocumentProperties";
+			this.mnuFileDocumentProperties.Size = new System.Drawing.Size(273, 26);
+			this.mnuFileDocumentProperties.Text = "&Document Properties";
+			this.mnuFileDocumentProperties.Click += new System.EventHandler(this.mnuFileDocumentProperties_Click);
+			// 
+			// mnuFileSep3
+			// 
+			this.mnuFileSep3.Name = "mnuFileSep3";
+			this.mnuFileSep3.Size = new System.Drawing.Size(270, 6);
 			// 
 			// mnuFileExit
 			// 
@@ -655,22 +669,24 @@ namespace Scaffold
 			// 
 			this.mnuToolsColorPalette.ForeColor = System.Drawing.Color.Black;
 			this.mnuToolsColorPalette.Name = "mnuToolsColorPalette";
-			this.mnuToolsColorPalette.Size = new System.Drawing.Size(259, 26);
+			this.mnuToolsColorPalette.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsColorPalette.Text = "&Color Palette";
 			this.mnuToolsColorPalette.Click += new System.EventHandler(this.mnuToolsColorPalette_Click);
 			// 
 			// mnuToolsChatbotEmulator
 			// 
+			this.mnuToolsChatbotEmulator.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuToolsChatbotEmulateBeginning,
+            this.mnuToolsChatbotEmulateSelected});
 			this.mnuToolsChatbotEmulator.Name = "mnuToolsChatbotEmulator";
-			this.mnuToolsChatbotEmulator.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-			this.mnuToolsChatbotEmulator.Size = new System.Drawing.Size(259, 26);
+			this.mnuToolsChatbotEmulator.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsChatbotEmulator.Text = "Chatbot &Emulator";
 			this.mnuToolsChatbotEmulator.Click += new System.EventHandler(this.mnuToolsChatbotEmulator_Click);
 			// 
 			// mnuToolsResourceGallery
 			// 
 			this.mnuToolsResourceGallery.Name = "mnuToolsResourceGallery";
-			this.mnuToolsResourceGallery.Size = new System.Drawing.Size(259, 26);
+			this.mnuToolsResourceGallery.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsResourceGallery.Text = "&Resource Gallery";
 			this.mnuToolsResourceGallery.Click += new System.EventHandler(this.mnuToolsResourceGallery_Click);
 			// 
@@ -683,7 +699,7 @@ namespace Scaffold
             this.mnuToolsAnimationSaveFrames});
 			this.mnuToolsAnimation.ForeColor = System.Drawing.Color.Black;
 			this.mnuToolsAnimation.Name = "mnuToolsAnimation";
-			this.mnuToolsAnimation.Size = new System.Drawing.Size(259, 26);
+			this.mnuToolsAnimation.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsAnimation.Text = "&Animation";
 			// 
 			// mnuToolsAnimationTimelineFileReport
@@ -719,7 +735,7 @@ namespace Scaffold
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(256, 6);
+			this.toolStripMenuItem1.Size = new System.Drawing.Size(246, 6);
 			// 
 			// mnuToolsClipboard
 			// 
@@ -730,7 +746,7 @@ namespace Scaffold
             this.mnuToolsClipboardClear});
 			this.mnuToolsClipboard.ForeColor = System.Drawing.Color.Black;
 			this.mnuToolsClipboard.Name = "mnuToolsClipboard";
-			this.mnuToolsClipboard.Size = new System.Drawing.Size(259, 26);
+			this.mnuToolsClipboard.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsClipboard.Text = "C&lipboard";
 			// 
 			// mnuToolsClipboardSave
@@ -766,7 +782,7 @@ namespace Scaffold
             this.mnuToolsControlNodeControl,
             this.mnuToolsControlNodeMeasurement});
 			this.mnuToolsControl.Name = "mnuToolsControl";
-			this.mnuToolsControl.Size = new System.Drawing.Size(259, 26);
+			this.mnuToolsControl.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsControl.Text = "C&ontrol Reports";
 			// 
 			// mnuToolsControlUndo
@@ -798,7 +814,7 @@ namespace Scaffold
             this.mnuToolsBase64Raw});
 			this.mnuToolsBase64.ForeColor = System.Drawing.Color.Black;
 			this.mnuToolsBase64.Name = "mnuToolsBase64";
-			this.mnuToolsBase64.Size = new System.Drawing.Size(259, 26);
+			this.mnuToolsBase64.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsBase64.Text = "base64 Data &Packing";
 			// 
 			// mnuToolsBase64SRC
@@ -828,7 +844,7 @@ namespace Scaffold
             this.mnuToolsBase64UClipboard,
             this.mnuToolsBase64UFile});
 			this.mnuToolsBase64U.Name = "mnuToolsBase64U";
-			this.mnuToolsBase64U.Size = new System.Drawing.Size(259, 26);
+			this.mnuToolsBase64U.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsBase64U.Text = "base64 Data &Unpacking";
 			// 
 			// mnuToolsBase64UClipboard
@@ -988,6 +1004,9 @@ namespace Scaffold
 			this.nodeControl.Name = "nodeControl";
 			this.nodeControl.NeedsInvalidate = true;
 			this.nodeControl.NodeBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(155)))), ((int)(((byte)(236)))));
+			nodeFileItem1.Description = "";
+			nodeFileItem1.Name = "";
+			nodeFileItem1.Ticket = "633c447a-e1c7-4e83-b54a-2845dfa5a5b4";
 			this.nodeControl.NodeFile = nodeFileItem1;
 			this.nodeControl.NodeLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(149)))));
 			this.nodeControl.NodeLineWidth = 4;
@@ -1305,17 +1324,18 @@ namespace Scaffold
 			this.timerAutoSave.Interval = 300000;
 			this.timerAutoSave.Tick += new System.EventHandler(this.timerAutoSave_Tick);
 			// 
-			// mnuFileSep3
+			// mnuToolsChatbotEmulateBeginning
 			// 
-			this.mnuFileSep3.Name = "mnuFileSep3";
-			this.mnuFileSep3.Size = new System.Drawing.Size(270, 6);
+			this.mnuToolsChatbotEmulateBeginning.Name = "mnuToolsChatbotEmulateBeginning";
+			this.mnuToolsChatbotEmulateBeginning.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+			this.mnuToolsChatbotEmulateBeginning.Size = new System.Drawing.Size(305, 26);
+			this.mnuToolsChatbotEmulateBeginning.Text = "Emulate From &Beginning";
 			// 
-			// mnuFileDocumentProperties
+			// mnuToolsChatbotEmulateSelected
 			// 
-			this.mnuFileDocumentProperties.Name = "mnuFileDocumentProperties";
-			this.mnuFileDocumentProperties.Size = new System.Drawing.Size(273, 26);
-			this.mnuFileDocumentProperties.Text = "&Document Properties";
-			this.mnuFileDocumentProperties.Click += new System.EventHandler(this.mnuFileDocumentProperties_Click);
+			this.mnuToolsChatbotEmulateSelected.Name = "mnuToolsChatbotEmulateSelected";
+			this.mnuToolsChatbotEmulateSelected.Size = new System.Drawing.Size(305, 26);
+			this.mnuToolsChatbotEmulateSelected.Text = "Emulate From &Selected Node";
 			// 
 			// frmMain
 			// 
@@ -1488,6 +1508,8 @@ namespace Scaffold
 		private ToolStripMenuItem mnuFilePublishSlackChatConversation;
 		private ToolStripMenuItem mnuFileDocumentProperties;
 		private ToolStripSeparator mnuFileSep3;
+		private ToolStripMenuItem mnuToolsChatbotEmulateBeginning;
+		private ToolStripMenuItem mnuToolsChatbotEmulateSelected;
 	}
 }
 
