@@ -3,7 +3,7 @@ Scaffold Style Guide
 
 Please observe the following patterns when submitting code changes to the Scaffold project.
 
-**Comment Your Work**. Contrary to what may seem like popular belief, code is NOT self-explanatory. Please use comments so everyone can understand your perspective and intentions, especially in the documentation attribute sections. Remember: .NET applications are compiled. As a result, inline comments and other text won't ever affect the size of the executable.
+**Comment Your Work**. Contrary to what may seem like popular belief, code is not self-explanatory. Please use comments so everyone can understand your perspective and intentions, especially in the documentation attribute sections. Remember: .NET applications are compiled. As a result, inline comments and other text won't ever affect the size of the executable.
 
 **Full Braces**. Every statement with follow-up should be fully enclosed.
 Instead of:
