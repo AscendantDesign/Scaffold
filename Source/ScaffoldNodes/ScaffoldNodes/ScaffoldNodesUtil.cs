@@ -123,21 +123,19 @@ namespace Scaffold
 		/// <param name="node">
 		/// Reference to the node to which a resource will be attached.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources containing the asset to be attached.
-		/// </param>
 		/// <param name="resourceTicket">
 		/// Globally unique identification of the resource to attach.
 		/// </param>
 		public static void AttachResource(NodeItem node,
-			ResourceCollection resources, string resourceTicket)
+			string resourceTicket)
 		{
 			PropertyItem property = null;
 			ResourceItem resource = null;
 
-			if(node != null && resources?.Count > 0 && resourceTicket?.Length > 0)
+			if(node != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources?.Count > 0 && resourceTicket?.Length > 0)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.Ticket.ToLower() == resourceTicket.ToLower());
 				if(resource != null)
 				{
@@ -198,9 +196,6 @@ namespace Scaffold
 		/// Reference to the properties collection to which a resource will be
 		/// attached.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources containing the asset to be attached.
-		/// </param>
 		/// <param name="resourceTicket">
 		/// Globally unique identification of the resource to attach.
 		/// </param>
@@ -208,16 +203,16 @@ namespace Scaffold
 		/// Value indicating whether to create icons and thumbnails.
 		/// </param>
 		public static void AttachResource(PropertyCollection properties,
-			ResourceCollection resources, string resourceTicket,
-			bool createIcons = false)
+			string resourceTicket, bool createIcons = false)
 		{
 			PropertyItem property = null;
 			ResourceItem resource = null;
 
-			if(properties?.Count > 0 && resources?.Count > 0 &&
+			if(properties?.Count > 0 && mNodeFileObject != null &&
+				mNodeFileObject.Resources?.Count > 0 &&
 				resourceTicket?.Length > 0)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.Ticket.ToLower() == resourceTicket.ToLower());
 				if(resource != null)
 				{
@@ -289,21 +284,19 @@ namespace Scaffold
 		/// <param name="socket">
 		/// Reference to the socket to which a resource will be attached.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources containing the asset to be attached.
-		/// </param>
 		/// <param name="resourceTicket">
 		/// Globally unique identification of the resource to attach.
 		/// </param>
 		public static void AttachResource(SocketItem socket,
-			ResourceCollection resources, string resourceTicket)
+			string resourceTicket)
 		{
 			PropertyItem property = null;
 			ResourceItem resource = null;
 
-			if(socket != null && resources?.Count > 0 && resourceTicket?.Length > 0)
+			if(socket != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources?.Count > 0 && resourceTicket?.Length > 0)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.Ticket.ToLower() == resourceTicket.ToLower());
 				if(resource != null)
 				{
@@ -760,21 +753,19 @@ namespace Scaffold
 		/// Value indicating whether the data of the file will be embedded directly
 		/// into the resource record.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to which the audio will be sent.
-		/// </param>
 		/// <returns>
 		/// Globally unique identification of the resource created or updated.
 		/// </returns>
 		public static string CreateAudioResource(FileInfo file,
-			string relativeFilename, bool embed, ResourceCollection resources)
+			string relativeFilename, bool embed)
 		{
 			ResourceItem resource = null;
 			string result = "";
 
-			if(file != null && resources != null)
+			if(file != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources != null)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.RelativeFilename == relativeFilename);
 				//	If the file was already loaded, update its content.
 				//	Otherwise, add a new resource.
@@ -782,7 +773,7 @@ namespace Scaffold
 				{
 					resource = new ResourceItem();
 					resource.RelativeFilename = relativeFilename;
-					resources.Add(resource);
+					mNodeFileObject.Resources.Add(resource);
 				}
 				resource.AbsoluteFilename = file.FullName.Replace('\\', '/');
 				resource.ResourceType = "MediaAudio";
@@ -818,22 +809,19 @@ namespace Scaffold
 		/// Value indicating whether the data of the file will be embedded directly
 		/// into the resource record.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to which the audio will be sent.
-		/// </param>
 		/// <returns>
 		/// Globally unique identification of the resource created or updated.
 		/// </returns>
 		public static string CreateAudioResource(NodeItem node,
-			FileInfo file, string relativeFilename, bool embed,
-			ResourceCollection resources)
+			FileInfo file, string relativeFilename, bool embed)
 		{
 			ResourceItem resource = null;
 			string result = "";
 
-			if(node != null && file != null && resources != null)
+			if(node != null && file != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources != null)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.RelativeFilename == relativeFilename);
 				//	If the file was already loaded, update its content.
 				//	Otherwise, add a new resource.
@@ -841,7 +829,7 @@ namespace Scaffold
 				{
 					resource = new ResourceItem();
 					resource.RelativeFilename = relativeFilename;
-					resources.Add(resource);
+					mNodeFileObject.Resources.Add(resource);
 				}
 				resource.AbsoluteFilename = file.FullName.Replace('\\', '/');
 				resource.ResourceType = "MediaAudio";
@@ -884,22 +872,20 @@ namespace Scaffold
 		/// Value indicating whether the data of the file will be embedded directly
 		/// into the resource record.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to which the image will be sent.
-		/// </param>
 		/// <returns>
 		/// Globally unique identification of the resource that was created or
 		/// updated.
 		/// </returns>
 		public static string CreateImageResource(FileInfo file,
-			string relativeFilename, bool embed, ResourceCollection resources)
+			string relativeFilename, bool embed)
 		{
 			ResourceItem resource = null;
 			string result = "";
 
-			if(file != null && resources != null)
+			if(file != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources != null)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.RelativeFilename == relativeFilename);
 				//	If the file was already loaded, update its content.
 				//	Otherwise, add a new resource.
@@ -907,7 +893,7 @@ namespace Scaffold
 				{
 					resource = new ResourceItem();
 					resource.RelativeFilename = relativeFilename;
-					resources.Add(resource);
+					mNodeFileObject.Resources.Add(resource);
 				}
 				resource.AbsoluteFilename = file.FullName.Replace('\\', '/');
 				resource.ResourceType = "MediaImage";
@@ -943,22 +929,20 @@ namespace Scaffold
 		/// Value indicating whether the data of the file will be embedded directly
 		/// into the resource record.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to which the image will be sent.
-		/// </param>
 		/// <returns>
 		/// Globally unique identification of the resource that was created or
 		/// updated.
 		/// </returns>
 		public static string CreateImageResource(NodeItem node, FileInfo file,
-			string relativeFilename, bool embed, ResourceCollection resources)
+			string relativeFilename, bool embed)
 		{
 			ResourceItem resource = null;
 			string result = "";
 
-			if(node != null && file != null && resources != null)
+			if(node != null && file != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources != null)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.RelativeFilename == relativeFilename);
 				//	If the file was already loaded, update its content.
 				//	Otherwise, add a new resource.
@@ -966,7 +950,7 @@ namespace Scaffold
 				{
 					resource = new ResourceItem();
 					resource.RelativeFilename = relativeFilename;
-					resources.Add(resource);
+					mNodeFileObject.Resources.Add(resource);
 				}
 				resource.AbsoluteFilename = file.FullName.Replace('\\', '/');
 				resource.ResourceType = "MediaImage";
@@ -987,7 +971,7 @@ namespace Scaffold
 					//	Assign the resource ticket to the node.
 					node.Properties["MediaImage"].Value = result;
 				}
-				CreateImageThumbnail(node, resources);
+				CreateImageThumbnail(node);
 			}
 			return result;
 		}
@@ -1031,11 +1015,7 @@ namespace Scaffold
 		/// <param name="node">
 		/// Reference to the node to be updated.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to search.
-		/// </param>
-		public static void CreateImageThumbnail(NodeItem node,
-			ResourceCollection resources)
+		public static void CreateImageThumbnail(NodeItem node)
 		{
 			Bitmap bitmap = null;
 			ResourceItem resource = null;
@@ -1044,10 +1024,10 @@ namespace Scaffold
 
 			if(node != null)
 			{
-				if(MediaExists(node, resources, "MediaImage"))
+				if(MediaExists(node, "MediaImage"))
 				{
 					//	Image is attached.
-					resource = GetResource(node, resources, "MediaImage");
+					resource = GetResource(node, "MediaImage");
 					if(resource != null)
 					{
 						resourceLive = ResourceLiveItem.FromResourceItem(resource);
@@ -1316,28 +1296,25 @@ namespace Scaffold
 		/// <param name="uri">
 		/// URI content to be stored.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to which the link will be sent.
-		/// </param>
 		/// <returns>
 		/// Globally unique identifier of the updated or created resource.
 		/// </returns>
-		public static string CreateLinkResource(NodeItem node, string uri,
-			ResourceCollection resources)
+		public static string CreateLinkResource(NodeItem node, string uri)
 		{
 			ResourceItem resource = null;
 			string result = "";
 
-			if(node != null && resources != null)
+			if(node != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources != null)
 			{
-				resource = resources.FirstOrDefault(x => x.Uri == uri);
+				resource = mNodeFileObject.Resources.FirstOrDefault(x => x.Uri == uri);
 				//	If the link was already loaded, update its content.
 				//	Otherwise, add a new resource.
 				if(resource == null)
 				{
 					resource = new ResourceItem();
 					resource.Uri = uri;
-					resources.Add(resource);
+					mNodeFileObject.Resources.Add(resource);
 				}
 				resource.ResourceType = "MediaLink";
 				result = resource.Ticket;
@@ -1368,21 +1345,19 @@ namespace Scaffold
 		/// Value indicating whether the data of the file will be embedded directly
 		/// into the resource record.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to which the video will be sent.
-		/// </param>
 		/// <returns>
 		/// The globally unique identifier of the new or retrieved resource.
 		/// </returns>
 		public static string CreateVideoResource(FileInfo file,
-			string relativeFilename, bool embed, ResourceCollection resources)
+			string relativeFilename, bool embed)
 		{
 			ResourceItem resource = null;
 			string result = "";
 
-			if(file != null && resources != null)
+			if(file != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources != null)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.RelativeFilename == relativeFilename);
 				//	If the file was already loaded, update its content.
 				//	Otherwise, add a new resource.
@@ -1390,7 +1365,7 @@ namespace Scaffold
 				{
 					resource = new ResourceItem();
 					resource.RelativeFilename = relativeFilename;
-					resources.Add(resource);
+					mNodeFileObject.Resources.Add(resource);
 				}
 				resource.AbsoluteFilename = file.FullName.Replace('\\', '/');
 				resource.ResourceType = "MediaVideo";
@@ -1426,21 +1401,19 @@ namespace Scaffold
 		/// Value indicating whether the data of the file will be embedded directly
 		/// into the resource record.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to which the video will be sent.
-		/// </param>
 		/// <returns>
 		/// The globally unique identifier of the new or retrieved resource.
 		/// </returns>
 		public static string CreateVideoResource(NodeItem node, FileInfo file,
-			string relativeFilename, bool embed, ResourceCollection resources)
+			string relativeFilename, bool embed)
 		{
 			ResourceItem resource = null;
 			string result = "";
 
-			if(node != null && file != null && resources != null)
+			if(node != null && file != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources != null)
 			{
-				resource = resources.FirstOrDefault(x =>
+				resource = mNodeFileObject.Resources.FirstOrDefault(x =>
 					x.RelativeFilename == relativeFilename);
 				//	If the file was already loaded, update its content.
 				//	Otherwise, add a new resource.
@@ -1448,7 +1421,7 @@ namespace Scaffold
 				{
 					resource = new ResourceItem();
 					resource.RelativeFilename = relativeFilename;
-					resources.Add(resource);
+					mNodeFileObject.Resources.Add(resource);
 				}
 				resource.AbsoluteFilename = file.FullName.Replace('\\', '/');
 				resource.ResourceType = "MediaVideo";
@@ -1469,7 +1442,7 @@ namespace Scaffold
 					//	Assign the resource ticket to the node.
 					node.Properties["MediaVideo"].Value = result;
 				}
-				CreateVideoThumbnail(node, resources);
+				CreateVideoThumbnail(node);
 			}
 			return result;
 		}
@@ -1513,11 +1486,7 @@ namespace Scaffold
 		/// <param name="node">
 		/// Reference to the node item associated to a video resource.
 		/// </param>
-		/// <param name="resources">
-		/// Reference to a resource collection.
-		/// </param>
-		public async static void CreateVideoThumbnail(NodeItem node,
-			ResourceCollection resources)
+		public async static void CreateVideoThumbnail(NodeItem node)
 		{
 			Bitmap bitmap = null;
 			byte[] data = null;
@@ -1531,10 +1500,10 @@ namespace Scaffold
 
 			if(node != null)
 			{
-				if(MediaExists(node, resources, "MediaVideo"))
+				if(MediaExists(node, "MediaVideo"))
 				{
 					//	Image is attached.
-					resource = GetResource(node, resources, "MediaVideo");
+					resource = GetResource(node, "MediaVideo");
 					if(resource != null)
 					{
 						resourceLive = ResourceLiveItem.FromResourceItem(resource);
@@ -2602,10 +2571,7 @@ namespace Scaffold
 		/// <param name="node">
 		/// Reference to the node to which the property is attached.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to search.
-		/// </param>
-		/// <param name="propertyName">
+		/// <param name="mediaType">
 		/// Name of the property to inspect.
 		/// </param>
 		/// <returns>
@@ -2613,13 +2579,15 @@ namespace Scaffold
 		/// Otherwise, null.
 		/// </returns>
 		public static ResourceItem GetResource(NodeItem node,
-			ResourceCollection resources, string propertyName)
+			MediaTypeEnum mediaType)
 		{
 			Match match = null;
+			string propertyName = $"Media{mediaType}";
 			ResourceItem result = null;
 			string ticket = "";
 
-			if(node != null && resources?.Count > 0 && propertyName?.Length > 0)
+			if(node != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources.Count > 0)
 			{
 				if(PropertyExists(node, propertyName))
 				{
@@ -2628,7 +2596,46 @@ namespace Scaffold
 					if(match.Success)
 					{
 						result =
-							resources.FirstOrDefault(x => x.Ticket.ToLower() == ticket);
+							mNodeFileObject.Resources.FirstOrDefault(x =>
+								x.Ticket.ToLower() == ticket);
+					}
+				}
+			}
+			return result;
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Return a reference to the resource found by reference in the specified
+		/// property.
+		/// </summary>
+		/// <param name="node">
+		/// Reference to the node to which the property is attached.
+		/// </param>
+		/// <param name="propertyName">
+		/// Name of the property to inspect.
+		/// </param>
+		/// <returns>
+		/// Reference to the associated single instance resource, if found.
+		/// Otherwise, null.
+		/// </returns>
+		public static ResourceItem GetResource(NodeItem node, string propertyName)
+		{
+			Match match = null;
+			ResourceItem result = null;
+			string ticket = "";
+
+			if(node != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources.Count > 0 && propertyName?.Length > 0)
+			{
+				if(PropertyExists(node, propertyName))
+				{
+					ticket = node[propertyName].StringValue().ToLower();
+					match = Regex.Match(ticket, ResourceLib.rxIsGUID);
+					if(match.Success)
+					{
+						result =
+							mNodeFileObject.Resources.FirstOrDefault(x =>
+								x.Ticket.ToLower() == ticket);
 					}
 				}
 			}
@@ -2642,9 +2649,6 @@ namespace Scaffold
 		/// <param name="properties">
 		/// Reference to the properties to which the property is attached.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to search.
-		/// </param>
 		/// <param name="propertyName">
 		/// Name of the property to inspect.
 		/// </param>
@@ -2653,14 +2657,14 @@ namespace Scaffold
 		/// Otherwise, null.
 		/// </returns>
 		public static ResourceItem GetResource(PropertyCollection properties,
-			ResourceCollection resources, string propertyName)
+			string propertyName)
 		{
 			Match match = null;
 			ResourceItem result = null;
 			string ticket = "";
 
-			if(properties != null && resources?.Count > 0 &&
-				propertyName?.Length > 0)
+			if(properties != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources.Count > 0 && propertyName?.Length > 0)
 			{
 				if(PropertyExists(properties, propertyName))
 				{
@@ -2669,7 +2673,8 @@ namespace Scaffold
 					if(match.Success)
 					{
 						result =
-							resources.FirstOrDefault(x => x.Ticket.ToLower() == ticket);
+							mNodeFileObject.Resources.FirstOrDefault(x =>
+								x.Ticket.ToLower() == ticket);
 					}
 				}
 			}
@@ -2683,8 +2688,45 @@ namespace Scaffold
 		/// <param name="socket">
 		/// Reference to the socket to which the property is attached.
 		/// </param>
-		/// <param name="resources">
-		/// Collection of resources to search.
+		/// <param name="mediaType">
+		/// Name of the property to inspect.
+		/// </param>
+		/// <returns>
+		/// Reference to the associated single instance resource, if found.
+		/// Otherwise, null.
+		/// </returns>
+		public static ResourceItem GetResource(SocketItem socket,
+			MediaTypeEnum mediaType)
+		{
+			Match match = null;
+			string propertyName = $"Media{mediaType}";
+			ResourceItem result = null;
+			string ticket = "";
+
+			if(socket != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources.Count > 0)
+			{
+				if(PropertyExists(socket, propertyName))
+				{
+					ticket = socket[propertyName].StringValue().ToLower();
+					match = Regex.Match(ticket, ResourceLib.rxIsGUID);
+					if(match.Success)
+					{
+						result =
+							mNodeFileObject.Resources.FirstOrDefault(x =>
+								x.Ticket.ToLower() == ticket);
+					}
+				}
+			}
+			return result;
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Return a reference to the resource found by reference in the specified
+		/// property.
+		/// </summary>
+		/// <param name="socket">
+		/// Reference to the socket to which the property is attached.
 		/// </param>
 		/// <param name="propertyName">
 		/// Name of the property to inspect.
@@ -2694,13 +2736,14 @@ namespace Scaffold
 		/// Otherwise, null.
 		/// </returns>
 		public static ResourceItem GetResource(SocketItem socket,
-			ResourceCollection resources, string propertyName)
+			string propertyName)
 		{
 			Match match = null;
 			ResourceItem result = null;
 			string ticket = "";
 
-			if(socket != null && resources?.Count > 0 && propertyName?.Length > 0)
+			if(socket != null && mNodeFileObject != null &&
+				mNodeFileObject.Resources.Count > 0 && propertyName?.Length > 0)
 			{
 				if(PropertyExists(socket, propertyName))
 				{
@@ -2709,7 +2752,8 @@ namespace Scaffold
 					if(match.Success)
 					{
 						result =
-							resources.FirstOrDefault(x => x.Ticket.ToLower() == ticket);
+							mNodeFileObject.Resources.FirstOrDefault(x =>
+								x.Ticket.ToLower() == ticket);
 					}
 				}
 			}
@@ -3050,14 +3094,39 @@ namespace Scaffold
 		//* MediaExists																														*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
+		/// Return a value indicaing whether the provided node has the specified
+		/// resource.
+		/// </summary>
+		/// <param name="node">
+		/// Reference to the node to inspect.
+		/// </param>
+		/// <param name="mediaType">
+		/// Type of media to test for.
+		/// </param>
+		/// <returns>
+		/// True if the specified media exists on the provided node. Otherwise,
+		/// false.
+		/// </returns>
+		public static bool MediaExists(NodeItem node, MediaTypeEnum mediaType)
+		{
+			ResourceItem resource = null;
+			bool result = false;
+
+			if(node != null)
+			{
+				resource =
+					GetResource(node, $"Media{mediaType}");
+				result = (resource != null);
+			}
+			return result;
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
 		/// Return a value indicating whether the specified media exists on the
 		/// provided node.
 		/// </summary>
 		/// <param name="node">
 		/// Reference to the node to test.
-		/// </param>
-		/// <param name="resources">
-		/// Reference to a single instance resource collection.
 		/// </param>
 		/// <param name="propertyName">
 		/// Name of the property to check. If name is null or blank, any fully
@@ -3066,18 +3135,17 @@ namespace Scaffold
 		/// <returns>
 		/// True if media type is found on the node. Otherwise, false.
 		/// </returns>
-		public static bool MediaExists(NodeItem node, ResourceCollection resources,
-			string propertyName = null)
+		public static bool MediaExists(NodeItem node, string propertyName = null)
 		{
 			bool result = false;
 
-			if(node != null)
+			if(node != null && mNodeFileObject != null)
 			{
 				if(propertyName?.Length > 0)
 				{
 					//	Property was specified.
 					if(PropertyExists(node, propertyName) &&
-						resources.Exists(x => x.Ticket.ToLower() ==
+						mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
 						node[propertyName].StringValue().ToLower()))
 					{
 						//	Specific media found.
@@ -3090,7 +3158,7 @@ namespace Scaffold
 					foreach(string mediaType in CommonMediaTypes)
 					{
 						if(PropertyExists(node, mediaType) &&
-							resources.Exists(x => x.Ticket.ToLower() ==
+							mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
 							node[mediaType].StringValue().ToLower()))
 						{
 							//	Specific media found.
@@ -3110,9 +3178,6 @@ namespace Scaffold
 		/// <param name="properties">
 		/// Reference to the property collection to inspect.
 		/// </param>
-		/// <param name="resources">
-		/// Reference to a single instance resource collection.
-		/// </param>
 		/// <param name="propertyName">
 		/// Name of the property to check. If name is null or blank, any fully
 		/// qualified media is counted as a match.
@@ -3121,17 +3186,17 @@ namespace Scaffold
 		/// True if media type is found on the node. Otherwise, false.
 		/// </returns>
 		public static bool MediaExists(PropertyCollection properties,
-			ResourceCollection resources, string propertyName = null)
+			string propertyName = null)
 		{
 			bool result = false;
 
-			if(properties?.Count > 0)
+			if(properties?.Count > 0 && mNodeFileObject != null)
 			{
 				if(propertyName?.Length > 0)
 				{
 					//	Property was specified.
 					if(PropertyExists(properties, propertyName) &&
-						resources.Exists(x => x.Ticket.ToLower() ==
+						mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
 						properties[propertyName].StringValue().ToLower()))
 					{
 						//	Specific media found.
@@ -3144,7 +3209,7 @@ namespace Scaffold
 					foreach(string mediaType in CommonMediaTypes)
 					{
 						if(PropertyExists(properties, mediaType) &&
-							resources.Exists(x => x.Ticket.ToLower() ==
+							mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
 							properties[mediaType].StringValue().ToLower()))
 						{
 							//	Specific media found.
@@ -3158,14 +3223,39 @@ namespace Scaffold
 		}
 		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
 		/// <summary>
+		/// Return a value indicaing whether the provided socket has the specified
+		/// resource.
+		/// </summary>
+		/// <param name="socket">
+		/// Reference to the socket to inspect.
+		/// </param>
+		/// <param name="mediaType">
+		/// Type of media to test for.
+		/// </param>
+		/// <returns>
+		/// True if the specified media exists on the provided socket. Otherwise,
+		/// false.
+		/// </returns>
+		public static bool MediaExists(SocketItem socket, MediaTypeEnum mediaType)
+		{
+			ResourceItem resource = null;
+			bool result = false;
+
+			if(socket != null)
+			{
+				resource =
+					GetResource(socket, $"Media{mediaType}");
+				result = (resource != null);
+			}
+			return result;
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
 		/// Return a value indicating whether the specified media exists on the
 		/// provided node.
 		/// </summary>
 		/// <param name="socket">
 		/// Reference to the socket to test.
-		/// </param>
-		/// <param name="resources">
-		/// Reference to a single instance resource collection.
 		/// </param>
 		/// <param name="propertyName">
 		/// Name of the property to check. If name is null or blank, any fully
@@ -3175,17 +3265,17 @@ namespace Scaffold
 		/// True if media type is found on the node. Otherwise, false.
 		/// </returns>
 		public static bool MediaExists(SocketItem socket,
-			ResourceCollection resources, string propertyName = null)
+			string propertyName = null)
 		{
 			bool result = false;
 
-			if(socket != null)
+			if(socket != null && mNodeFileObject != null)
 			{
 				if(propertyName?.Length > 0)
 				{
 					//	Property was specified.
 					if(PropertyExists(socket, propertyName) &&
-						resources.Exists(x => x.Ticket.ToLower() ==
+						mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
 						socket[propertyName].StringValue().ToLower()))
 					{
 						//	Specific media found.
@@ -3198,7 +3288,7 @@ namespace Scaffold
 					foreach(string mediaType in CommonMediaTypes)
 					{
 						if(PropertyExists(socket, mediaType) &&
-							resources.Exists(x => x.Ticket.ToLower() ==
+							mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
 							socket[mediaType].StringValue().ToLower()))
 						{
 							//	Specific media found.

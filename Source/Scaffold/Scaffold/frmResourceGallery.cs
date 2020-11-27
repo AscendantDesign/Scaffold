@@ -427,16 +427,13 @@ namespace Scaffold
 							switch(mediaType)
 							{
 								case "MediaAudio":
-									CreateAudioResource(file, relativeFilename,
-										bEmbed, resources);
+									CreateAudioResource(file, relativeFilename, bEmbed);
 									break;
 								case "MediaImage":
-									CreateImageResource(file, relativeFilename,
-										bEmbed, resources);
+									CreateImageResource(file, relativeFilename, bEmbed);
 									break;
 								case "MediaVideo":
-									CreateVideoResource(file, relativeFilename,
-										bEmbed, resources);
+									CreateVideoResource(file, relativeFilename, bEmbed);
 									break;
 							}
 						}

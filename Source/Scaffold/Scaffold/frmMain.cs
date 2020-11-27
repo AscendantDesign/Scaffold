@@ -204,6 +204,102 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* ChatbotEmulator																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Run the chatbot emulator from an optional starting node.
+		/// </summary>
+		/// <param name="startNodeTicket">
+		/// Global identification of the starting node from which to start. If
+		/// blank, the first node of type 'Start' will be selected.
+		/// </param>
+		private void ChatbotEmulator(string startNodeTicket = "")
+		{
+			string appPath = System.IO.Path.GetDirectoryName(
+				System.Reflection.Assembly.GetEntryAssembly().Location);
+			bool bContinue = true;
+			StringBuilder builder = new StringBuilder();
+			string filename = Path.Combine(Path.GetTempPath(),
+				Guid.NewGuid().ToString("D") + ".html");
+			ProcessStartInfo processInfo = null;
+
+			if(NodeFileInfo == null)
+			{
+				if(MessageBox.Show("Please save your node file before continuing.",
+					"Chatbot Emulator", MessageBoxButtons.OKCancel) == DialogResult.OK)
+				{
+					mnuFileSaveNodeAs_Click(null, null);
+				}
+				else
+				{
+					bContinue = false;
+				}
+			}
+			if(NodeFileInfo == null)
+			{
+				bContinue = false;
+			}
+
+			if(bContinue)
+			{
+				//	TODO: Modify chatbot.js to support media on questions and responses.
+				statMessage.Text = "Preparing Chatbot Emulator...";
+				this.Refresh();
+
+				//	Steps for creating the file.
+				//	HTML5 header.
+				builder.Append(ResourceMain.htmlHeaderBasic);
+				//	Embedded jQuery.
+				builder.Append(ResourceMain.htmljQueryEmbedded);
+				//	Script element including serialized node file assigned to var
+				builder.Append("<script type=\"text/javascript\">");
+				//	startNode.
+				builder.Append("var startNodeTicket = ");
+				if(startNodeTicket?.Length > 0)
+				{
+					builder.Append($"\"{startNodeTicket}\";");
+				}
+				else
+				{
+					builder.Append("\"\";");
+				}
+				//	chatbotdata.
+				builder.Append("var chatbotdata = ");
+				builder.Append(
+					NodeDataCollection.SerializeData(nodeControl.NodeFile, true,
+					NodeFileInfo.DirectoryName));
+				builder.Append(";\r\n");
+				//	Embedded Chatbot.js.
+				builder.Append(
+					File.ReadAllText(Path.Combine(appPath, "RuntimeData/chatbot.js")));
+				builder.Append("</script>");
+				//	Embedded Styles.
+				builder.Append("<style type=\"text/css\">");
+				builder.Append(File.ReadAllText(
+					Path.Combine(appPath, "RuntimeData/chatbotdefault.css")));
+				builder.Append("</style>");
+				//	Title, /head, body, window div, h1, chatContainer, and chatPanel.
+				//	Sample content to close out the file.
+				builder.Append(File.ReadAllText(
+					Path.Combine(appPath, "RuntimeData/chatbotlowerbody.html")));
+				File.WriteAllText(filename, builder.ToString());
+				processInfo = new ProcessStartInfo();
+				processInfo.FileName = filename;
+				processInfo.UseShellExecute = true;
+				Process.Start(processInfo);
+
+				GC.Collect();
+
+				statMessage.Text = "Chatbot Emulator started in default browser...";
+			}
+			else
+			{
+				statMessage.Text = "Chatbot Emulator cancelled...";
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* frmMain_KeyDown																												*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -397,7 +493,7 @@ namespace Scaffold
 							count = nodes.Count;
 							node = nodes[index];
 							ticket = CreateAudioResource(node, file,
-								relativeFilename, dialogEmbed.Embed, nodeControl.Resources);
+								relativeFilename, dialogEmbed.Embed);
 							if(ticket?.Length > 0)
 							{
 								//	All remaining selected nodes.
@@ -514,7 +610,7 @@ namespace Scaffold
 							count = nodes.Count;
 							node = nodes[index];
 							ticket = CreateImageResource(node, file,
-								relativeFilename, dialogEmbed.Embed, nodeControl.Resources);
+								relativeFilename, dialogEmbed.Embed);
 							if(node.Properties.Exists(p => p.Name == "ThumbImage"))
 							{
 								thumbnail =
@@ -609,8 +705,7 @@ namespace Scaffold
 						index = 0;
 						count = nodes.Count;
 						node = nodes[index];
-						ticket = CreateLinkResource(node, dialogInput.Text,
-							nodeControl.Resources);
+						ticket = CreateLinkResource(node, dialogInput.Text);
 						if(ticket?.Length > 0)
 						{
 							//	All remaining selected nodes.
@@ -750,15 +845,15 @@ namespace Scaffold
 							{
 								case "MediaAudio":
 									CreateAudioResource(file, relativeFilename,
-										bEmbed, resources);
+										bEmbed);
 									break;
 								case "MediaImage":
 									CreateImageResource(file, relativeFilename,
-										bEmbed, resources);
+										bEmbed);
 									break;
 								case "MediaVideo":
 									CreateVideoResource(file, relativeFilename,
-										bEmbed, resources);
+										bEmbed);
 									break;
 							}
 						}
@@ -853,7 +948,7 @@ namespace Scaffold
 							count = nodes.Count;
 							node = nodes[index];
 							ticket = CreateVideoResource(node, file,
-								relativeFilename, dialogEmbed.Embed, nodeControl.Resources);
+								relativeFilename, dialogEmbed.Embed);
 							if(node.Properties.Exists(p => p.Name == "ThumbVideo"))
 							{
 								thumbnail =
@@ -1226,6 +1321,29 @@ namespace Scaffold
 					}
 					nodePrev = node;
 				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* mnuEditFind_Click																											*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Edit / Find menu option has been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuEditFind_Click(object sender, EventArgs e)
+		{
+			frmFind form = new frmFind();
+
+			if(form.ShowDialog() == DialogResult.OK)
+			{
+
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -2492,6 +2610,8 @@ namespace Scaffold
 				mUndoPack.Clear();
 				mUndo_StackPushPop(null, null);
 				nodeControl.Invalidate();
+				nodeControl.Refresh();
+				ScrollIntoView();
 			}
 			else
 			{
@@ -4129,10 +4249,11 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
-		//* mnuToolsChatbotEmulator_Click																					*
+		//* mnuToolsChatbotEmulateBeginning_Click																	*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
-		/// The Tools / Chatbot Emulator menu option has been clicked.
+		/// The Tools / Chatbot Emulator / Emulate From Beginning menu option has
+		/// been clicked.
 		/// </summary>
 		/// <param name="sender">
 		/// The object raising this event.
@@ -4140,78 +4261,36 @@ namespace Scaffold
 		/// <param name="e">
 		/// Standard event arguments.
 		/// </param>
-		private void mnuToolsChatbotEmulator_Click(object sender, EventArgs e)
+		private void mnuToolsChatbotEmulateBeginning_Click(object sender,
+			EventArgs e)
 		{
-			string appPath = System.IO.Path.GetDirectoryName(
-				System.Reflection.Assembly.GetEntryAssembly().Location);
-			bool bContinue = true;
-			StringBuilder builder = new StringBuilder();
-			string filename = Path.Combine(Path.GetTempPath(),
-				Guid.NewGuid().ToString("D") + ".html");
-			ProcessStartInfo processInfo = null;
+			ChatbotEmulator();
+		}
+		//*-----------------------------------------------------------------------*
 
-			if(NodeFileInfo == null)
-			{
-				if(MessageBox.Show("Please save your node file before continuing.",
-					"Chatbot Emulator", MessageBoxButtons.OKCancel) == DialogResult.OK)
-				{
-					mnuFileSaveNodeAs_Click(sender, e);
-				}
-				else
-				{
-					bContinue = false;
-				}
-			}
-			if(NodeFileInfo == null)
-			{
-				bContinue = false;
-			}
+		//*-----------------------------------------------------------------------*
+		//* mnuToolsChatbotEmulateSelected_Click																	*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Tools / Chatbot Emulator / Emulate From Selected Node menu option
+		/// has been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuToolsChatbotEmulateSelected_Click(object sender,
+			EventArgs e)
+		{
+			string start = "";
 
-			if(bContinue)
+			if(nodeControl.SelectionQueue.Count > 0)
 			{
-				//	TODO: Modify chatbot.js to support media on questions and responses.
-				statMessage.Text = "Preparing Chatbot Emulator...";
-				this.Refresh();
-
-				//	Steps for creating the file.
-				//	HTML5 header.
-				builder.Append(ResourceMain.htmlHeaderBasic);
-				//	Embedded jQuery.
-				builder.Append(ResourceMain.htmljQueryEmbedded);
-				//	Script element including serialized node file assigned to var
-				builder.Append("<script type=\"text/javascript\">");
-				//	chatbotdata.
-				builder.Append("var chatbotdata = ");
-				builder.Append(
-					NodeDataCollection.SerializeData(nodeControl.NodeFile, true,
-					NodeFileInfo.DirectoryName));
-				builder.Append(";\r\n");
-				//	Embedded Chatbot.js.
-				builder.Append(
-					File.ReadAllText(Path.Combine(appPath, "RuntimeData/chatbot.js")));
-				builder.Append("</script>");
-				//	Embedded Styles.
-				builder.Append("<style type=\"text/css\">");
-				builder.Append(File.ReadAllText(
-					Path.Combine(appPath, "RuntimeData/chatbotdefault.css")));
-				builder.Append("</style>");
-				//	Title, /head, body, window div, h1, chatContainer, and chatPanel.
-				//	Sample content to close out the file.
-				builder.Append(File.ReadAllText(
-					Path.Combine(appPath, "RuntimeData/chatbotlowerbody.html")));
-				File.WriteAllText(filename, builder.ToString());
-				processInfo = new ProcessStartInfo();
-				processInfo.FileName = filename;
-				processInfo.UseShellExecute = true;
-				Process.Start(processInfo);
-				GC.Collect();
-
-				statMessage.Text = "Chatbot Emulator started in default browser...";
+				start = nodeControl.SelectionQueue[0].Ticket;
 			}
-			else
-			{
-				statMessage.Text = "Chatbot Emulator cancelled...";
-			}
+			ChatbotEmulator(start);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -4630,6 +4709,47 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* mnuViewScrollLayout_Click																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The View / Scroll / Scroll Layout Into View menu option has been
+		/// clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuViewScrollLayout_Click(object sender, EventArgs e)
+		{
+			ScrollIntoView();
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* mnuViewScrollNode_Click																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The View / Scroll / Scroll Selected Node Into View menu option has been
+		/// clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuViewScrollNode_Click(object sender, EventArgs e)
+		{
+			if(nodeControl.SelectionQueue.Count > 0)
+			{
+				ScrollIntoView(nodeControl.SelectionQueue[0]);
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* mnuViewZoom100_Click																									*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -4984,8 +5104,7 @@ namespace Scaffold
 				switch(e.Information)
 				{
 					case "MediaAudio":
-						resource = GetResource(e.Node, nodeControl.Resources,
-							"MediaAudio");
+						resource = GetResource(e.Node, "MediaAudio");
 						if(resource != null)
 						{
 							//	The audio was found.
@@ -5009,8 +5128,7 @@ namespace Scaffold
 						}
 						break;
 					case "MediaImage":
-						resource = GetResource(e.Node, nodeControl.Resources,
-							"MediaImage");
+						resource = GetResource(e.Node, "MediaImage");
 						if(resource != null)
 						{
 							//	The image was found.
@@ -5034,8 +5152,7 @@ namespace Scaffold
 						}
 						break;
 					case "MediaLink":
-						resource = GetResource(e.Node, nodeControl.Resources,
-							"MediaLink");
+						resource = GetResource(e.Node, "MediaLink");
 						if(resource != null)
 						{
 							//	The link was found.
@@ -5052,8 +5169,7 @@ namespace Scaffold
 						}
 						break;
 					case "MediaVideo":
-						resource = GetResource(e.Node, nodeControl.Resources,
-							"MediaVideo");
+						resource = GetResource(e.Node, "MediaVideo");
 						if(resource != null)
 						{
 							//	The video was found.
@@ -5616,6 +5732,35 @@ namespace Scaffold
 					//	to get accurate description update on response event.
 					mUndoPack.Push(mUndo);
 				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* ScrollIntoView																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Scroll the objects into view.
+		/// </summary>
+		/// <param name="node">
+		/// Optional reference to a node to be scrolled. If null, the leftmost
+		/// node is selected.
+		/// </param>
+		private void ScrollIntoView(NodeItem node = null)
+		{
+			float minX = nodeControl.Nodes.Min(x => x.X);
+			float minY = 0f;
+			NodeItem nodeItem = (node != null ? node :
+				nodeControl.Nodes.FirstOrDefault(x => x.X == minX));
+
+			if(nodeItem != null)
+			{
+				minX = nodeItem.X * nodeControl.DrawingScale.Width;
+				minY = nodeItem.Y * nodeControl.DrawingScale.Height;
+				//	Convert from pixel to fraction of display.
+				minX = minX / (float)nodeControl.CanvasWidth;
+				minY = minY / (float)nodeControl.CanvasHeight;
+				nodeControl.QueueViewCenter(new PointF(minX, minY));
 			}
 		}
 		//*-----------------------------------------------------------------------*

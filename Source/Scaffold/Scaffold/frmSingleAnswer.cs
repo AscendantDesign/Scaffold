@@ -156,11 +156,11 @@ namespace Scaffold
 						//	A resource is being added or updated.
 						resourceType = resource.ResourceType;
 						RemoveMediaListItem(resourceType);
-						if(MediaExists(mSocketProperties, mResources, resourceType))
+						if(MediaExists(mSocketProperties, resourceType))
 						{
 							DetachResourceByProperty(mSocketProperties, resourceType);
 						}
-						AttachResource(mSocketProperties, mResources, ticket);
+						AttachResource(mSocketProperties, ticket);
 						AddMediaListItem(ticket);
 					}
 				}

@@ -2,7 +2,7 @@
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
-using CefSharp.Internals;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,16 +11,11 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 using static Scaffold.ScaffoldNodesUtil;
@@ -78,9 +73,9 @@ namespace Scaffold
 			ResourceItem resource = null;
 			Bitmap thumbnail = null;
 
-			if(MediaExists(properties, resources))
+			if(MediaExists(properties))
 			{
-				resource = GetResource(properties, resources, "MediaAudio");
+				resource = GetResource(properties, "MediaAudio");
 				if(resource != null)
 				{
 					item = new ListViewItem(ResourceItem.Filename(resource), 0);
@@ -88,7 +83,7 @@ namespace Scaffold
 					item.Group = listControl.Groups["Audio"];
 					listControl.Items.Add(item);
 				}
-				resource = GetResource(properties, resources, "MediaImage");
+				resource = GetResource(properties, "MediaImage");
 				if(resource != null)
 				{
 					thumbnail = CreateImageThumbnail(resource, 128, 128);
@@ -100,7 +95,7 @@ namespace Scaffold
 					item.Group = listControl.Groups["Image"];
 					listControl.Items.Add(item);
 				}
-				resource = GetResource(properties, resources, "MediaLink");
+				resource = GetResource(properties, "MediaLink");
 				if(resource != null)
 				{
 					item = new ListViewItem(ResourceItem.Filename(resource), 1);
@@ -108,7 +103,7 @@ namespace Scaffold
 					item.Group = listControl.Groups["Link"];
 					listControl.Items.Add(item);
 				}
-				resource = GetResource(properties, resources, "MediaVideo");
+				resource = GetResource(properties, "MediaVideo");
 				if(resource != null)
 				{
 					thumbnail = await CreateVideoThumbnail(resource, 128, 128);
@@ -4475,6 +4470,95 @@ namespace Scaffold
 			return result;
 		}
 		//*-----------------------------------------------------------------------*
+
+		////*-----------------------------------------------------------------------*
+		////* ScrollToPoint																													*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Scroll the scrollable control to the specified point.
+		///// </summary>
+		///// <param name="scrollableControl">
+		///// Reference to a scrollable control.
+		///// </param>
+		///// <param name="point">
+		///// Point to which the control will be scrolled.
+		///// </param>
+		//public static void ScrollToPoint(ScrollableControl scrollableControl,
+		//	PointF point)
+		//{
+		//	bool auto = false;
+		//	Point coord = Point.Empty;
+		//	int height = 0;
+		//	int width = 0;
+		//	//Panel panel = new Panel() { Size = new Size(500, 500) };
+
+		//	if(scrollableControl != null)
+		//	{
+		//		coord = Point.Round(point);
+		//		//auto = scrollableControl.AutoScroll;
+		//		//scrollableControl.AutoScroll = false;
+		//		//panel.Location = Point.Round(point);
+		//		//panel.Parent = scrollableControl;
+		//		//scrollableControl.ScrollControlIntoView(panel);
+		//		//panel.Parent = null;
+		//		//panel.Dispose();
+		//		width = scrollableControl.Width +
+		//			scrollableControl.HorizontalScroll.Maximum;
+		//		height = scrollableControl.Height +
+		//			scrollableControl.VerticalScroll.Maximum;
+
+		//		if(coord.X >= 0)
+		//		{
+		//			if(coord.X < width)
+		//			{
+		//				if(coord.X > scrollableControl.Width / 2)
+		//				{
+		//					//	There is some level of intermediate scroll.
+		//					scrollableControl.HorizontalScroll.Value =
+		//						coord.X - (scrollableControl.Width / 2);
+		//				}
+		//				else
+		//				{
+		//					//	Peg left.
+		//					scrollableControl.HorizontalScroll.Value =
+		//						scrollableControl.HorizontalScroll.Minimum;
+		//				}
+		//			}
+		//			else
+		//			{
+		//				//	Peg right.
+		//				scrollableControl.HorizontalScroll.Value =
+		//					scrollableControl.HorizontalScroll.Maximum;
+		//			}
+		//		}
+		//		if(coord.Y >= 0)
+		//		{
+		//			if(coord.Y < height)
+		//			{
+		//				if(coord.Y > scrollableControl.Height / 2)
+		//				{
+		//					//	There is some level of intermediate scroll.
+		//					scrollableControl.VerticalScroll.Value =
+		//						coord.Y - (scrollableControl.Height / 2);
+		//				}
+		//				else
+		//				{
+		//					//	Peg top.
+		//					scrollableControl.VerticalScroll.Value =
+		//						scrollableControl.VerticalScroll.Minimum;
+		//				}
+		//			}
+		//			else
+		//			{
+		//				//	Peg bottom.
+		//				scrollableControl.VerticalScroll.Value =
+		//					scrollableControl.VerticalScroll.Maximum;
+		//			}
+		//		}
+		//		//scrollableControl.AutoScroll = auto;
+		//	}
+		//}
+		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//*	SvgReplaceFileRefWithB64																							*

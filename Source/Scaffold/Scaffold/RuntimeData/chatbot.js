@@ -648,6 +648,8 @@ $(document).ready(function()
 	var index = 0;
 	var startNode = null;
 
+	//	Process.Start no longer supports URL query string.
+	// urlParams = new URLSearchParams(window.location.search);
 	$("#chatPanel").empty();
 	$("#chatPanel").on("click", ".button", function(e)
 	{
@@ -657,14 +659,30 @@ $(document).ready(function()
 		$(`#buttons${currentNode.EntryID} .button`).attr("class", "button-used");
 		handleResponse(currentNode, ticket);
 	});
-	chatbotdata.Nodes.some(function(e)
+	if(startNodeTicket)
 	{
-		if(e.NodeType == "Start")
+		//	Start from the specified ticket.
+		chatbotdata.Nodes.some(function(e)
 		{
-			startNode = e;
-			return true;
-		}
-	});
+			if(e.Ticket == startNodeTicket)
+			{
+				startNode = e;
+				return true;
+			}
+		});
+	}
+	else
+	{
+		//	No start node specified.
+		chatbotdata.Nodes.some(function(e)
+		{
+			if(e.NodeType == "Start")
+			{
+				startNode = e;
+				return true;
+			}
+		});
+	}
 	currentNode = startNode;
 	currentNode.EntryID = entryID;
 	if(startNode)

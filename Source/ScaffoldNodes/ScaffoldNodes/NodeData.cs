@@ -1,4 +1,4 @@
-﻿//	NodeData.cs
+//	NodeData.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -260,13 +260,13 @@ namespace Scaffold
 				//	Create thumbnails and icons for nodes with media.
 				foreach(NodeItem node in file.Nodes)
 				{
-					if(MediaExists(node, file.Resources))
+					if(MediaExists(node))
 					{
 						//	Media are attached to this node.
-						if(MediaExists(node, file.Resources, "MediaImage"))
+						if(MediaExists(node, "MediaImage"))
 						{
 							//	Image is attached.
-							CreateImageThumbnail(node, file.Resources);
+							CreateImageThumbnail(node);
 							//resource =
 							//	NodeItem.GetResource(node, file.Resources, "MediaImage");
 							//if(resource != null)
@@ -286,10 +286,10 @@ namespace Scaffold
 							//	PostThumbnail(node, "ThumbImage", bitmap, thumbWidth);
 							//}
 						}
-						if(MediaExists(node, file.Resources, "MediaVideo"))
+						if(MediaExists(node, "MediaVideo"))
 						{
 							//	Video is attached.
-							CreateVideoThumbnail(node, file.Resources);
+							CreateVideoThumbnail(node);
 							//resource =
 							//	NodeItem.GetResource(node, file.Resources, "MediaVideo");
 							//if(resource != null)
@@ -319,14 +319,14 @@ namespace Scaffold
 							//	}
 							//}
 						}
-						if(MediaExists(node, file.Resources, "MediaAudio"))
+						if(MediaExists(node, "MediaAudio"))
 						{
 							//	Audio file is attached.
 							CreateAudioIcon(node);
 							////	Create Icon.
 							//PostThumbnail(node, "IconAudio", ResourceMain.Audio, 32f);
 						}
-						if(MediaExists(node, file.Resources, "MediaLink"))
+						if(MediaExists(node, "MediaLink"))
 						{
 							//	Link is attached.
 							CreateLinkIcon(node);

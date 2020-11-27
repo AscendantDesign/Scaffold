@@ -279,7 +279,7 @@ namespace Scaffold
 					node.Width - 6f, node.TitleHeight));
 
 				//	Thumbnails and Icons.
-				if(MediaExists(node, mResources))
+				if(MediaExists(node))
 				{
 					//	At least one media resource is defined.
 					if(node.Properties.Exists(p => p.Name == "ThumbImage"))
@@ -701,7 +701,7 @@ namespace Scaffold
 				headerHeight = node.TitleHeight = titleTextSize.Height;
 
 				//	Thumbnails and Icons.
-				if(MediaExists(node, mResources))
+				if(MediaExists(node))
 				{
 					//	Thumbnails and icons will already exist here...
 					//	At least one media resource is defined. Measure for the

@@ -371,11 +371,11 @@ namespace Scaffold
 						//	A resource is being added or updated.
 						resourceType = resource.ResourceType;
 						RemoveMediaQuestionListItem(resourceType);
-						if(MediaExists(mNode, mResources, resourceType))
+						if(MediaExists(mNode, resourceType))
 						{
 							DetachResourceByProperty(mNode, resourceType);
 						}
-						AttachResource(mNode, mResources, ticket);
+						AttachResource(mNode, ticket);
 						AddMediaQuestionListItem(ticket);
 					}
 				}
@@ -420,11 +420,11 @@ namespace Scaffold
 						RemoveMediaResponseListItem(resourceType);
 						if(socket != null)
 						{
-							if(MediaExists(socket, mResources, resourceType))
+							if(MediaExists(socket, resourceType))
 							{
 								DetachResourceByProperty(socket, resourceType);
 							}
-							AttachResource(socket, mResources, ticket);
+							AttachResource(socket, ticket);
 						}
 						AddMediaResponseListItem(ticket);
 					}
