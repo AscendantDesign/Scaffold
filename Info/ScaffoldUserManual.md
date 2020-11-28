@@ -15,6 +15,28 @@ CONTRIBUTING document at
 <https://github.com/AscendantDesign/Scaffold/blob/main/Docs/CONTRIBUTING.md>
 for general steps on creating a fork and submitting a change.
 
+Philosophy
+----------
+
+The philosophy of this application is simple. If it's difficult to use
+or confusing in any way, then the UI developers did something wrong and
+will need to fix it. Sometimes that will take a couple of iterations to
+get right and other times, everything will just work the way we thought
+it would. Your interaction with us is important for determining our
+level of success though.
+
+In other words, we want you to be able to use this application by
+following your own intuition.
+
+There are bound to be certain procedures in the future that will come up
+where following a checklist is the safest and most consistent way to
+accomplish your goal, but for all practical intents and purposes,
+anything that the application can do for you should be accessible in the
+place or manner that you expect it would be.
+
+With all of that aside, please remember that Scaffold is still just
+infant software, and will be for some time.
+
 Limitations
 -----------
 
