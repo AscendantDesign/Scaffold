@@ -225,7 +225,7 @@ namespace Scaffold
 					resources = mResources.FindAll(x => x.ResourceType == "MediaLink");
 					foreach(ResourceItem resource in resources)
 					{
-						item = new ListViewItem(ResourceItem.Filename(resource), 0);
+						item = new ListViewItem(resource.Uri, 0);
 						item.Tag = resource.Ticket;
 						lvResourceGallery.Items.Add(item);
 					}
@@ -320,6 +320,163 @@ namespace Scaffold
 			if(lvResourceGallery.SelectedItems.Count > 0)
 			{
 				btnOK_Click(sender, e);
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* lvResourceGallery_SelectedIndexChanged																*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The selected index has changed on the list view control.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void lvResourceGallery_SelectedIndexChanged(object sender,
+			EventArgs e)
+		{
+			mnuEditRemoveSelected.Enabled =
+				(lvResourceGallery.SelectedItems.Count > 0);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* mnuEditRemoveSelected_Click																						*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Edit / Remove Selected Resources menu option has been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuEditRemoveSelected_Click(object sender, EventArgs e)
+		{
+			bool bContinue = false;
+			int count = 0;
+			int index = 0;
+			ListViewItem item = null;
+			int nodeCount = 0;
+			List<NodeItem> nodes = null;
+			PropertyItem property = null;
+			List<ListViewItem> selectedItems = null;
+			ResourceItem resource = null;
+			string ticket = "";
+			string sentence = "";
+			string[] sentences = new string[]
+			{
+				"There is {0} object using this resource. " +
+				"Do you wish to delete it anyway?",
+				"There are {0} objects using this resource. " +
+				"Do you wish to delete it anyway?",
+				"There is {0} object using these resources. " +
+				"Do you wish to delete them anyway?",
+				"There are {0} objects using these resources. " +
+				"Do you wish to delete them anyway?"
+			};
+
+			nodes = NodeFileObject.Nodes;
+			count = lvResourceGallery.SelectedItems.Count;
+			for(index = 0; index < count; index ++)
+			{
+				item = lvResourceGallery.SelectedItems[index];
+				ticket = (string)item.Tag;
+				resource =
+					NodeFileObject.Resources.FirstOrDefault(x => x.Ticket == ticket);
+				if(resource != null)
+				{
+					nodeCount += nodes.Count(x =>
+						x.Properties.Exists(y =>
+							y.Name == resource.ResourceType &&
+							y.StringValue() == ticket));
+					foreach(NodeItem nodeItem in nodes)
+					{
+						nodeCount += nodeItem.Sockets.Count(x =>
+							x.Properties.Exists(y =>
+								y.Name == resource.ResourceType &&
+								y.StringValue() == ticket));
+					}
+				}
+			}
+			if(count > 0)
+			{
+				if(nodeCount > 0)
+				{
+					if(count == 1 && nodeCount == 1)
+					{
+						sentence = sentences[0];
+					}
+					else if(count == 1)
+					{
+						sentence = sentences[1];
+					}
+					else if(nodeCount == 1)
+					{
+						sentence = sentences[2];
+					}
+					else
+					{
+						sentence = sentences[3];
+					}
+					bContinue = (MessageBox.Show(String.Format(sentence, nodeCount),
+						"Remove Selected Nodes", MessageBoxButtons.YesNo) ==
+						DialogResult.Yes);
+				}
+				else
+				{
+					bContinue = true;
+				}
+			}
+			if(bContinue)
+			{
+				for(index = 0; index < count; index++)
+				{
+					item = lvResourceGallery.SelectedItems[index];
+					ticket = (string)item.Tag;
+					resource =
+						NodeFileObject.Resources.FirstOrDefault(x => x.Ticket == ticket);
+					//	Remove references from all nodes and sockets.
+					if(nodeCount > 0)
+					{
+						foreach(NodeItem nodeItem in nodes)
+						{
+							property = nodeItem.Properties.FirstOrDefault(x =>
+								x.Name == resource.ResourceType &&
+								x.StringValue() == ticket);
+							if(property != null)
+							{
+								nodeItem.Properties.Remove(property);
+							}
+							foreach(SocketItem socketItem in nodeItem.Sockets)
+							{
+								property = socketItem.Properties.FirstOrDefault(x =>
+									x.Name == resource.ResourceType &&
+									x.StringValue() == ticket);
+								if(property != null)
+								{
+									socketItem.Properties.Remove(property);
+								}
+							}
+						}
+					}
+					//	Remove the actual resource.
+					NodeFileObject.Resources.Remove(resource);
+				}
+				//	Remove the items from the list.
+				foreach(ListViewItem listItem in lvResourceGallery.SelectedItems)
+				{
+					selectedItems.Add(listItem);
+				}
+				foreach(ListViewItem listItem in selectedItems)
+				{
+					lvResourceGallery.Items.Remove(listItem);
+				}
 			}
 		}
 		//*-----------------------------------------------------------------------*

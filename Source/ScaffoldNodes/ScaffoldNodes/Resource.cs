@@ -1,4 +1,4 @@
-﻿//	Resource.cs
+//	Resource.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -156,28 +156,35 @@ namespace Scaffold
 
 			if(resource != null)
 			{
-				if(IsDataUri(resource))
+				if(resource.ResourceType == "MediaLink")
 				{
-					//	The item is already embedded data.
-					result = resource;
+					result = new ResourceItem(resource);
 				}
-				else if(!resource.mUri.StartsWith("http") &&
-					!resource.mUri.StartsWith("ftp"))
+				else
 				{
-					//	The item needs to be converted to data.
-					file = new FileInfo(GetEffectivePath(resource.mUri));
-					if(file.Exists)
+					if(IsDataUri(resource))
 					{
-						//	The referenced file exists.
-						result = new ResourceItem(resource);
-						result.mDataUriHeaderLength = GetDataUriHeaderLength(file);
-						result.mUri = GetDataUri(file);
+						//	The item is already embedded data.
+						result = resource;
 					}
-					else
+					else if(!resource.mUri.StartsWith("http") &&
+						!resource.mUri.StartsWith("ftp"))
 					{
-						//	The specified file could not be found.
-						Debug.WriteLine("Error in ResourceItem.Embed: " +
-							$"File not found: {file.FullName}");
+						//	The item needs to be converted to data.
+						file = new FileInfo(GetEffectivePath(resource.mUri));
+						if(file.Exists)
+						{
+							//	The referenced file exists.
+							result = new ResourceItem(resource);
+							result.mDataUriHeaderLength = GetDataUriHeaderLength(file);
+							result.mUri = GetDataUri(file);
+						}
+						else
+						{
+							//	The specified file could not be found.
+							Debug.WriteLine("Error in ResourceItem.Embed: " +
+								$"File not found: {file.FullName}");
+						}
 					}
 				}
 			}

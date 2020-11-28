@@ -58,6 +58,7 @@ namespace Scaffold
 		{
 			bool found = false;
 			string lText = "";
+			ListViewItem lvItem = null;
 			bool match = false;
 
 			if(NodeFileObject != null)
@@ -74,16 +75,19 @@ namespace Scaffold
 					}
 					if(match == found && chkMediaImage.Checked)
 					{
+						match = true;
 						found =
 							ResourceFound(node, MediaTypeEnum.Image, txtMediaImage.Text);
 					}
 					if(match == found && chkMediaLink.Checked)
 					{
+						match = true;
 						found =
 							ResourceFound(node, MediaTypeEnum.Link, txtMediaLink.Text);
 					}
 					if(match == found && chkMediaVideo.Checked)
 					{
+						match = true;
 						found =
 							ResourceFound(node, MediaTypeEnum.Video, txtMediaVideo.Text);
 					}
@@ -92,6 +96,7 @@ namespace Scaffold
 						match = true;
 						if(txtSearch.Text.Length > 0)
 						{
+							found = false;
 							lText = txtSearch.Text.ToLower();
 							if(node.Properties[node.TitleProperty].StringValue().ToLower().
 								IndexOf(lText) > -1)
@@ -122,6 +127,13 @@ namespace Scaffold
 					{
 						//	TODO: !1. Stopped here.
 						//	Place this item in the list.
+						lvItem = new ListViewItem(new string[]
+						{
+							"Node",
+							node.Properties[node.TitleProperty].StringValue()
+						});
+						lvItem.Tag = node;
+						lv.Items.Add(lvItem);
 					}
 				}
 			}
@@ -381,6 +393,27 @@ namespace Scaffold
 		public frmFind()
 		{
 			InitializeComponent();
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	SelectedItems																													*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get a reference to the collection of selected items.
+		/// </summary>
+		public List<ListViewItem> SelectedItems
+		{
+			get
+			{
+				List<ListViewItem> result = new List<ListViewItem>();
+
+				foreach(ListViewItem item in lv.SelectedItems)
+				{
+					result.Add(item);
+				}
+				return result;
+			}
 		}
 		//*-----------------------------------------------------------------------*
 

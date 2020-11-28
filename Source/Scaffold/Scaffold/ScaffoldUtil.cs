@@ -79,6 +79,7 @@ namespace Scaffold
 				if(resource != null)
 				{
 					item = new ListViewItem(ResourceItem.Filename(resource), 0);
+					item.Text = GetFilename(resource.AbsoluteFilename);
 					item.Tag = resource.Ticket;
 					item.Group = listControl.Groups["Audio"];
 					listControl.Items.Add(item);
@@ -99,6 +100,7 @@ namespace Scaffold
 				if(resource != null)
 				{
 					item = new ListViewItem(ResourceItem.Filename(resource), 1);
+					item.Text = resource.Uri;
 					item.Tag = resource.Ticket;
 					item.Group = listControl.Groups["Link"];
 					listControl.Items.Add(item);
@@ -2426,6 +2428,48 @@ namespace Scaffold
 		//	return result;
 		//}
 		////*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	GetFilename																														*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return just the filename from the full path.
+		/// </summary>
+		/// <param name="pathName">
+		/// Full path.
+		/// </param>
+		/// <returns>
+		/// Just the filename of the specified value.
+		/// </returns>
+		public static string GetFilename(string pathName)
+		{
+			string fullpath = pathName;
+			int index = 0;
+			string[] levels = null;
+			string result = "";
+
+			if(fullpath?.Length > 0)
+			{
+				//	Remove values to the right of the url parameter line.
+				index = fullpath.IndexOf("?");
+				if(index > -1)
+				{
+					fullpath = fullpath.Substring(0, index);
+				}
+				//	Switch all slashes to forward.
+				if(fullpath.IndexOf("\\") > -1)
+				{
+					fullpath = fullpath.Replace("\\", "/");
+				}
+				levels = fullpath.Split('/');
+				if(levels.Length > 0)
+				{
+					result = levels[levels.Length - 1];
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* GetMediaTypeName																											*

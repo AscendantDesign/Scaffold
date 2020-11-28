@@ -61,6 +61,8 @@ namespace Scaffold
 			this.mnuEditSelectAll = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuEditSelectNone = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuEditSep2 = new System.Windows.Forms.ToolStripSeparator();
+			this.mnuEditFind = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuEditSep3 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuEditNode = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuEditNodeColor = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuEditNodeColorText = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,8 +164,6 @@ namespace Scaffold
 			this.btnDecisionTreeEditor = new Scaffold.LabelButtonControl();
 			this.panelWindowControl = new Scaffold.PanelWindowControl();
 			this.timerAutoSave = new System.Windows.Forms.Timer(this.components);
-			this.mnuEditFind = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuEditSep3 = new System.Windows.Forms.ToolStripSeparator();
 			this.menuMain.SuspendLayout();
 			this.statusMain.SuspendLayout();
 			this.tctlDocument.SuspendLayout();
@@ -389,6 +389,19 @@ namespace Scaffold
 			// 
 			this.mnuEditSep2.Name = "mnuEditSep2";
 			this.mnuEditSep2.Size = new System.Drawing.Size(261, 6);
+			// 
+			// mnuEditFind
+			// 
+			this.mnuEditFind.Name = "mnuEditFind";
+			this.mnuEditFind.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+			this.mnuEditFind.Size = new System.Drawing.Size(264, 26);
+			this.mnuEditFind.Text = "&Find";
+			this.mnuEditFind.Click += new System.EventHandler(this.mnuEditFind_Click);
+			// 
+			// mnuEditSep3
+			// 
+			this.mnuEditSep3.Name = "mnuEditSep3";
+			this.mnuEditSep3.Size = new System.Drawing.Size(261, 6);
 			// 
 			// mnuEditNode
 			// 
@@ -625,7 +638,7 @@ namespace Scaffold
             this.mnuViewZoomOut,
             this.mnuViewZoom100});
 			this.mnuViewZoom.Name = "mnuViewZoom";
-			this.mnuViewZoom.Size = new System.Drawing.Size(132, 26);
+			this.mnuViewZoom.Size = new System.Drawing.Size(224, 26);
 			this.mnuViewZoom.Text = "&Zoom";
 			// 
 			// mnuViewZoomIn
@@ -661,20 +674,21 @@ namespace Scaffold
             this.mnuViewScrollLayout,
             this.mnuViewScrollNode});
 			this.mnuViewScroll.Name = "mnuViewScroll";
-			this.mnuViewScroll.Size = new System.Drawing.Size(132, 26);
+			this.mnuViewScroll.Size = new System.Drawing.Size(224, 26);
 			this.mnuViewScroll.Text = "&Scroll";
 			// 
 			// mnuViewScrollLayout
 			// 
 			this.mnuViewScrollLayout.Name = "mnuViewScrollLayout";
-			this.mnuViewScrollLayout.Size = new System.Drawing.Size(297, 26);
+			this.mnuViewScrollLayout.Size = new System.Drawing.Size(350, 26);
 			this.mnuViewScrollLayout.Text = "Scroll &Layout Into View";
 			this.mnuViewScrollLayout.Click += new System.EventHandler(this.mnuViewScrollLayout_Click);
 			// 
 			// mnuViewScrollNode
 			// 
 			this.mnuViewScrollNode.Name = "mnuViewScrollNode";
-			this.mnuViewScrollNode.Size = new System.Drawing.Size(297, 26);
+			this.mnuViewScrollNode.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F2)));
+			this.mnuViewScrollNode.Size = new System.Drawing.Size(350, 26);
 			this.mnuViewScrollNode.Text = "Scroll Selected &Node Into View";
 			this.mnuViewScrollNode.Click += new System.EventHandler(this.mnuViewScrollNode_Click);
 			// 
@@ -717,14 +731,15 @@ namespace Scaffold
 			// 
 			this.mnuToolsChatbotEmulateBeginning.Name = "mnuToolsChatbotEmulateBeginning";
 			this.mnuToolsChatbotEmulateBeginning.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-			this.mnuToolsChatbotEmulateBeginning.Size = new System.Drawing.Size(305, 26);
+			this.mnuToolsChatbotEmulateBeginning.Size = new System.Drawing.Size(339, 26);
 			this.mnuToolsChatbotEmulateBeginning.Text = "Emulate From &Beginning";
 			this.mnuToolsChatbotEmulateBeginning.Click += new System.EventHandler(this.mnuToolsChatbotEmulateBeginning_Click);
 			// 
 			// mnuToolsChatbotEmulateSelected
 			// 
 			this.mnuToolsChatbotEmulateSelected.Name = "mnuToolsChatbotEmulateSelected";
-			this.mnuToolsChatbotEmulateSelected.Size = new System.Drawing.Size(305, 26);
+			this.mnuToolsChatbotEmulateSelected.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F3)));
+			this.mnuToolsChatbotEmulateSelected.Size = new System.Drawing.Size(339, 26);
 			this.mnuToolsChatbotEmulateSelected.Text = "Emulate From &Selected Node";
 			this.mnuToolsChatbotEmulateSelected.Click += new System.EventHandler(this.mnuToolsChatbotEmulateSelected_Click);
 			// 
@@ -1368,19 +1383,6 @@ namespace Scaffold
 			this.timerAutoSave.Enabled = true;
 			this.timerAutoSave.Interval = 300000;
 			this.timerAutoSave.Tick += new System.EventHandler(this.timerAutoSave_Tick);
-			// 
-			// mnuEditFind
-			// 
-			this.mnuEditFind.Name = "mnuEditFind";
-			this.mnuEditFind.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-			this.mnuEditFind.Size = new System.Drawing.Size(264, 26);
-			this.mnuEditFind.Text = "&Find";
-			this.mnuEditFind.Click += new System.EventHandler(this.mnuEditFind_Click);
-			// 
-			// mnuEditSep3
-			// 
-			this.mnuEditSep3.Name = "mnuEditSep3";
-			this.mnuEditSep3.Size = new System.Drawing.Size(261, 6);
 			// 
 			// frmMain
 			// 

@@ -66,6 +66,8 @@ namespace Scaffold
 			this.imageListImage = new System.Windows.Forms.ImageList(this.components);
 			this.imageListLink = new System.Windows.Forms.ImageList(this.components);
 			this.imageListVideo = new System.Windows.Forms.ImageList(this.components);
+			this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuEditRemoveSelected = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuResourceGallery.SuspendLayout();
 			this.statusResourceGallery.SuspendLayout();
 			this.pnlResourceGallery.SuspendLayout();
@@ -82,6 +84,7 @@ namespace Scaffold
 			this.menuResourceGallery.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.menuResourceGallery.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
+            this.mnuEdit,
             this.mnuTools,
             this.mnuWindow});
 			this.menuResourceGallery.Location = new System.Drawing.Point(0, 0);
@@ -235,6 +238,7 @@ namespace Scaffold
 			this.lvResourceGallery.Size = new System.Drawing.Size(670, 349);
 			this.lvResourceGallery.TabIndex = 2;
 			this.lvResourceGallery.UseCompatibleStateImageBehavior = false;
+			this.lvResourceGallery.SelectedIndexChanged += new System.EventHandler(this.lvResourceGallery_SelectedIndexChanged);
 			this.lvResourceGallery.DoubleClick += new System.EventHandler(this.lvResourceGallery_DoubleClick);
 			// 
 			// imageListAudio
@@ -414,6 +418,22 @@ namespace Scaffold
 			this.imageListVideo.ImageSize = new System.Drawing.Size(128, 128);
 			this.imageListVideo.TransparentColor = System.Drawing.Color.Transparent;
 			// 
+			// mnuEdit
+			// 
+			this.mnuEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuEditRemoveSelected});
+			this.mnuEdit.Name = "mnuEdit";
+			this.mnuEdit.Size = new System.Drawing.Size(49, 24);
+			this.mnuEdit.Text = "&Edit";
+			// 
+			// mnuEditRemoveSelected
+			// 
+			this.mnuEditRemoveSelected.Enabled = false;
+			this.mnuEditRemoveSelected.Name = "mnuEditRemoveSelected";
+			this.mnuEditRemoveSelected.Size = new System.Drawing.Size(277, 26);
+			this.mnuEditRemoveSelected.Text = "&Remove Selected Resources";
+			this.mnuEditRemoveSelected.Click += new System.EventHandler(this.mnuEditRemoveSelected_Click);
+			// 
 			// frmResourceGallery
 			// 
 			this.AcceptButton = this.btnOK;
@@ -485,5 +505,7 @@ namespace Scaffold
 		private System.Windows.Forms.ToolStripMenuItem mnuTools;
 		private System.Windows.Forms.ToolStripMenuItem mnuToolsEmbedAll;
 		private System.Windows.Forms.ToolStripStatusLabel statMessage;
+		private System.Windows.Forms.ToolStripMenuItem mnuEdit;
+		private System.Windows.Forms.ToolStripMenuItem mnuEditRemoveSelected;
 	}
 }

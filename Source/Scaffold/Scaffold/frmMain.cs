@@ -1340,10 +1340,28 @@ namespace Scaffold
 		private void mnuEditFind_Click(object sender, EventArgs e)
 		{
 			frmFind form = new frmFind();
+			NodeItem node = null;
+			List<NodeItem> selected = null;
 
 			if(form.ShowDialog() == DialogResult.OK)
 			{
-
+				selected = nodeControl.SelectionQueue.ToList();
+				foreach(NodeItem nodeItem in selected)
+				{
+					nodeItem.Selected = false;
+				}
+				foreach(ListViewItem listItem in form.SelectedItems)
+				{
+					node = NodeFileObject.Nodes.
+						FirstOrDefault(x => x.Ticket == ((NodeItem)listItem.Tag).Ticket);
+					if(node != null)
+					{
+						node.Selected = true;
+					}
+				}
+				nodeControl.NeedsInvalidate = true;
+				//nodeControl.Invalidate();
+				//nodeControl.Refresh();
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -4744,7 +4762,10 @@ namespace Scaffold
 		{
 			if(nodeControl.SelectionQueue.Count > 0)
 			{
+				//	NOTE: This technique has an immediate response for the user.
+				nodeControl.Focus();
 				ScrollIntoView(nodeControl.SelectionQueue[0]);
+				nodeControl.Invalidate();
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -5761,6 +5782,8 @@ namespace Scaffold
 				minX = minX / (float)nodeControl.CanvasWidth;
 				minY = minY / (float)nodeControl.CanvasHeight;
 				nodeControl.QueueViewCenter(new PointF(minX, minY));
+				//nodeControl.Invalidate();
+				//nodeControl.Refresh();
 			}
 		}
 		//*-----------------------------------------------------------------------*

@@ -2644,6 +2644,7 @@ namespace Scaffold
 		public void QueueViewCenter(PointF centerFraction)
 		{
 			mViewCenterFraction = centerFraction;
+			QueueInvalidate();
 		}
 		//*-----------------------------------------------------------------------*
 

@@ -57,6 +57,7 @@ namespace Scaffold
 					{
 						case "MediaAudio":
 							item = new ListViewItem(ResourceItem.Filename(resource), 0);
+							item.Text = GetFilename(resource.AbsoluteFilename);
 							item.Tag = resource.Ticket;
 							item.Group = lvMedia.Groups["Audio"];
 							lvMedia.Items.Add(item);
@@ -73,6 +74,7 @@ namespace Scaffold
 							break;
 						case "MediaLink":
 							item = new ListViewItem(ResourceItem.Filename(resource), 1);
+							item.Text = resource.Uri;
 							item.Tag = resource.Ticket;
 							item.Group = lvMedia.Groups["Link"];
 							lvMedia.Items.Add(item);

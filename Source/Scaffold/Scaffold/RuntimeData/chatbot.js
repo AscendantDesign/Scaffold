@@ -150,6 +150,12 @@ function getResourceText(properties, propertyName)
 				{
 					//	Resource found.
 					result = getPropertyValue(resource, "Text");
+					if(!result && propertyName == "MediaLink")
+					{
+						//	There was no text property on the resource.
+						//	Return the link instead.
+						result = resource.Uri;
+					}
 					break;
 				}
 			}
@@ -177,6 +183,7 @@ function getResourceUri(properties, propertyName)
 	var result = "";
 	var ticket = "";
 
+	// console.log(`getResourceUri ${propertyName}`);
 	if(properties)
 	{
 		count = properties.length;
@@ -187,6 +194,7 @@ function getResourceUri(properties, propertyName)
 			{
 				//	Property found.
 				ticket = property.Value.toLowerCase();
+				// console.log(` Property found: ${ticket}`);
 				break;
 			}
 		}
@@ -201,6 +209,7 @@ function getResourceUri(properties, propertyName)
 				{
 					//	Resource found.
 					result = resource.Uri;
+					// console.log(` Resource found: ${result}`);
 					break;
 				}
 			}
@@ -646,6 +655,7 @@ $(document).ready(function()
 	var hasLink = false;
 	var hasVideo = false;
 	var index = 0;
+	var mediaList = [];
 	var startNode = null;
 
 	//	Process.Start no longer supports URL query string.
@@ -687,11 +697,34 @@ $(document).ready(function()
 	currentNode.EntryID = entryID;
 	if(startNode)
 	{
+		console.log(`Starting node: ${startNode.Ticket}`);
 		//	Get media status.
+		mediaCount = 0;
 		hasAudio = hasResource(currentNode.Properties, "MediaAudio");
 		hasImage = hasResource(currentNode.Properties, "MediaImage");
 		hasLink = hasResource(currentNode.Properties, "MediaLink");
 		hasVideo = hasResource(currentNode.Properties, "MediaVideo");
+		if(hasAudio)
+		{
+			mediaList.push("Audio");
+		}
+		if(hasImage)
+		{
+			mediaList.push("Image");
+		}
+		if(hasLink)
+		{
+			mediaList.push("Link");
+		}
+		if(hasVideo)
+		{
+			mediaList.push("Video");
+		}
+		if(mediaList.length == 0)
+		{
+			mediaList.push("no");
+		}
+		console.log(`Start node has ${mediaList.join(", ")} media.`);
 		//	Build the card.
 		//	Container.
 		content = `<div class="hero-card question">` +
@@ -717,7 +750,8 @@ $(document).ready(function()
 		//	Link area.
 		(hasLink ?
 			`<div class="link">
-			<a href="${getResourceUri(currentNode.Properties, "MediaLink")}">
+			<a href="${getResourceUri(currentNode.Properties, "MediaLink")}"
+			target="_blank">
 			${getResourceText(currentNode.Properties, "MediaLink")}</a></div>` : "") +
 		//	Buttons area.
 		`<div id="buttons${entryID}" class="buttons">
