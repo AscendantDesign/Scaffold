@@ -1,4 +1,4 @@
-﻿//	AssemblyInfo.cs
+//	AssemblyInfo.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -37,6 +37,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.2020.1123")]
-[assembly: AssemblyFileVersion("0.2020.1123")]
+[assembly: AssemblyVersion("0.2020.1130")]
+[assembly: AssemblyFileVersion("0.2020.1130")]
 
