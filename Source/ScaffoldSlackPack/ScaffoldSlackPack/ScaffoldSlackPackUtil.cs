@@ -1255,6 +1255,46 @@ namespace ScaffoldSlackPack
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* RemoveNodeFile																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Remove a node file from the database.
+		/// </summary>
+		/// <param name="content">
+		/// Node file descriptor content, in serialized JSON format.
+		/// </param>
+		/// <returns>
+		/// Message about operation.
+		/// </returns>
+		public static string RemoveNodeFile(string content)
+		{
+			//	TODO: !1 - Stopped here. Test course deletion.
+			NodeFileDescriptor nodeFile = null;
+			string result = "OK";
+
+			if(content?.Length > 0)
+			{
+				try
+				{
+					nodeFile =
+						JsonConvert.DeserializeObject<NodeFileDescriptor>(content);
+					if(nodeFile != null)
+					{
+						//	The correct format was received.
+						ConversationCourseItem.DeleteFromDatabase(nodeFile.Ticket);
+					}
+				}
+				catch(Exception ex)
+				{
+					result = $"Error Deserializing: {ex.Message}";
+					Debug.WriteLine(result);
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	SendGreeting																													*
 		//*-----------------------------------------------------------------------*
 		/// <summary>

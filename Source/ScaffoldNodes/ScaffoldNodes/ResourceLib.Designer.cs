@@ -115,5 +115,14 @@ namespace Scaffold {
                 return ResourceManager.GetString("rxNumeric", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 24.
+        /// </summary>
+        internal static string SocketMediaIconSize {
+            get {
+                return ResourceManager.GetString("SocketMediaIconSize", resourceCulture);
+            }
+        }
     }
 }

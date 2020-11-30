@@ -158,11 +158,11 @@ namespace Scaffold
 						//	A resource is being added or updated.
 						resourceType = resource.ResourceType;
 						RemoveMediaListItem(resourceType);
-						if(MediaExists(mSocketProperties, resourceType))
+						if(MediaExists(mSocket, resourceType))
 						{
 							DetachResourceByProperty(mSocketProperties, resourceType);
 						}
-						AttachResource(mSocketProperties, ticket);
+						AttachResource(mSocket, ticket);
 						AddMediaListItem(ticket);
 					}
 				}
@@ -194,7 +194,7 @@ namespace Scaffold
 			}
 			foreach(ListViewItem item in items)
 			{
-				ticket = ScaffoldUtil.ToString(item.Tag);
+				ticket = ScaffoldNodesUtil.ToString(item.Tag);
 				DetachResourceByTicket(mSocketProperties, ticket);
 				lvMedia.Items.Remove(item);
 			}
@@ -1274,6 +1274,28 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
+		////*-----------------------------------------------------------------------*
+		////* SetSocketProperties																										*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Set a reference to the socket properties and associated resources being
+		///// used in this session.
+		///// </summary>
+		///// <param name="properties">
+		///// Reference to the property collection being edited.
+		///// </param>
+		///// <param name="resources">
+		///// Reference to the collection of resources available to this socket.
+		///// </param>
+		//public void SetSocketProperties(PropertyCollection properties,
+		//	ResourceCollection resources)
+		//{
+		//	mSocketProperties = properties;
+		//	mResources = resources;
+		//	ReadSocket();
+		//}
+		////*-----------------------------------------------------------------------*
+
 		//*-----------------------------------------------------------------------*
 		//* SetSocketProperties																										*
 		//*-----------------------------------------------------------------------*
@@ -1281,18 +1303,37 @@ namespace Scaffold
 		/// Set a reference to the socket properties and associated resources being
 		/// used in this session.
 		/// </summary>
-		/// <param name="properties">
-		/// Reference to the property collection being edited.
+		/// <param name="socket">
+		/// Reference to the socket being edited.
 		/// </param>
-		/// <param name="resources">
-		/// Reference to the collection of resources available to this socket.
-		/// </param>
-		public void SetSocketProperties(PropertyCollection properties,
-			ResourceCollection resources)
+		public void SetSocketProperties(SocketItem socket)
 		{
-			mSocketProperties = properties;
-			mResources = resources;
+
+			mSocket = socket;
+			if(socket != null)
+			{
+				mSocketProperties = socket.Properties;
+			}
+			else
+			{
+				mSocketProperties = null;
+			}
+			mResources = NodeFileObject.Resources;
 			ReadSocket();
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	Socket																																*
+		//*-----------------------------------------------------------------------*
+		private SocketItem mSocket = null;
+		/// <summary>
+		/// Get a reference to the socket associated with this
+		/// answer.
+		/// </summary>
+		public SocketItem Socket
+		{
+			get { return mSocket; }
 		}
 		//*-----------------------------------------------------------------------*
 

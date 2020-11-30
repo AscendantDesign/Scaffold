@@ -1,4 +1,4 @@
-﻿//	ConversationCourse.cs
+//	ConversationCourse.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -328,6 +328,111 @@ namespace ScaffoldSlackPack.Models
 		{
 			get { return mConversationTitle; }
 			set { mConversationTitle = value; }
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* DeleteFromDatabase																										*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Delete the specified course from the database.
+		/// </summary>
+		/// <param name="conversationTicket">
+		/// Unique identification of the course to delete.
+		/// </param>
+		/// <returns>
+		/// True if the course was deleted or did not exist. False if an error
+		/// occurred.
+		/// </returns>
+		public static bool DeleteFromDatabase(string conversationTicket)
+		{
+			SqliteCommand command = null;
+			bool result = true;
+
+			if(conversationTicket?.Length > 0)
+			{
+				try
+				{
+					using(SqliteConnection connection =
+						new SqliteConnection("Data Source = Data/ScaffoldSlackPack.db"))
+					{
+						connection.Open();
+						command = connection.CreateCommand();
+						//	Remove student progress.
+						command.CommandText =
+							String.Format(ResourceMain.sqlUserProgressDeleteConversation,
+							conversationTicket);
+						command.ExecuteNonQuery();
+						//	Remove socket data.
+						command.CommandText =
+							string.Format(ResourceMain.sqlSocketDataDeleteConversation,
+							conversationTicket);
+						command.ExecuteNonQuery();
+						//	Remove node data.
+						command.CommandText =
+							string.Format(ResourceMain.sqlNodeDataDeleteConversation,
+							conversationTicket);
+						command.ExecuteNonQuery();
+						//	Finally, remove the conversation.
+						command.CommandText =
+							string.Format(ResourceMain.sqlConversationDelete,
+							conversationTicket);
+						command.ExecuteNonQuery();
+					}
+				}
+				catch
+				{
+					result = false;
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	LoadFromDatabase																											*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a course, loaded from the database.
+		/// </summary>
+		/// <param name="conversationTicket">
+		/// Unique identification of the course.
+		/// </param>
+		/// <returns>
+		/// Reference to the matching course, if found. Otherwise, null.
+		/// </returns>
+		public static ConversationCourseItem LoadFromDatabase(
+			string conversationTicket)
+		{
+			SqliteCommand command = null;
+			ConversationCourseItem course = null;
+			SqliteDataReader reader = null;
+
+			using(SqliteConnection connection =
+				new SqliteConnection("Data Source = Data/ScaffoldSlackPack.db"))
+			{
+				connection.Open();
+				command = connection.CreateCommand();
+				command.CommandText =
+					String.Format(ResourceMain.sqlConversationSelect,
+					conversationTicket);
+				reader = command.ExecuteReader();
+				if(reader.Read())
+				{
+					course = new ConversationCourseItem()
+					{
+						RowID = reader.GetInt32(0),
+						ConversationTicket =
+							reader.GetString(reader.GetOrdinal("ConversationTicket")),
+						ConversationTitle =
+							reader.GetString(reader.GetOrdinal("ConversationTitle")),
+						ConversationDescription =
+							reader.GetString(reader.GetOrdinal("ConversationDescription"))
+					};
+				}
+				reader.DisposeAsync();
+			}
+			return course;
 		}
 		//*-----------------------------------------------------------------------*
 

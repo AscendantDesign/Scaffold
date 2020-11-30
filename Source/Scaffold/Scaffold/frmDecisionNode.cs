@@ -247,8 +247,7 @@ namespace Scaffold
 			record.SetField<string>("Answer", "");
 			record.SetField<PropertyCollection>("Properties",
 				socket.Properties);
-			form.SetSocketProperties(
-				socket.Properties, mResources);
+			form.SetSocketProperties(socket);
 			if(form.ShowDialog() == DialogResult.OK)
 			{
 				//record = mAnswerTable.NewRow();
@@ -300,7 +299,10 @@ namespace Scaffold
 		private void btnAnswerEdit_Click(object sender, EventArgs e)
 		{
 			frmSingleAnswer form = null;
+			PropertyCollection properties = null;
 			DataRow record = null;
+			SocketItem socket = null;
+			string ticket = "";
 
 			if(grdAnswer.SelectedRows.Count > 0 &&
 				grdAnswer.SelectedRows[0].Index !=
@@ -312,8 +314,20 @@ namespace Scaffold
 				record = ((DataRowView)grdAnswer.SelectedRows[0].DataBoundItem).Row;
 				form.Index = record.Field<string>("Index");
 				form.Answer = record.Field<string>("Answer");
-				form.SetSocketProperties(
-					record.Field<PropertyCollection>("Properties"), mResources);
+				ticket = record.Field<string>("Ticket");
+				if(ticket?.Length > 0)
+				{
+					socket = mNode.Sockets.FirstOrDefault(s => s.Ticket == ticket);
+				}
+				if(socket == null)
+				{
+					//	The record might be new. Handle all properties through
+					//	a socket for type awareness.
+					socket = new SocketItem();
+					properties = record.Field<PropertyCollection>("Properties");
+					SocketItem.SetProperties(socket, properties);
+				}
+				form.SetSocketProperties(socket);
 				if(form.ShowDialog() == DialogResult.OK)
 				{
 					record.SetField<string>("Index", form.Index);
@@ -461,7 +475,7 @@ namespace Scaffold
 			}
 			foreach(ListViewItem item in items)
 			{
-				ticket = ScaffoldUtil.ToString(item.Tag);
+				ticket = ScaffoldNodesUtil.ToString(item.Tag);
 				DetachResourceByTicket(mNode, ticket);
 				lvMediaQuestion.Items.Remove(item);
 			}
@@ -496,7 +510,7 @@ namespace Scaffold
 			}
 			foreach(ListViewItem item in items)
 			{
-				ticket = ScaffoldUtil.ToString(item.Tag);
+				ticket = ScaffoldNodesUtil.ToString(item.Tag);
 				DetachResourceByTicket(socket, ticket);
 				lvMediaResponse.Items.Remove(item);
 			}

@@ -140,4 +140,8 @@
     <value>(?i:(?&lt;pattern&gt;-{0,1}[0-9]+(\.[0-9]+){0,1}(e-{0,1}[0-9]+){0,1}))</value>
     <comment>Find the numeric pattern in the string.</comment>
   </data>
+  <data name="SocketMediaIconSize" xml:space="preserve">
+    <value>24</value>
+    <comment>Size of the icon to be placed on a socket.</comment>
+  </data>
 </root>

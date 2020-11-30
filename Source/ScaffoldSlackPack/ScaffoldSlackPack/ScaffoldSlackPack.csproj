@@ -16,12 +16,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\_Archive2020112901\**" />
+    <Compile Remove="Data\_Archive2020113001\**" />
     <Compile Remove="_Archive2020111801\**" />
     <Compile Remove="_Archive2020112201\**" />
+    <Content Remove="Data\_Archive2020112901\**" />
+    <Content Remove="Data\_Archive2020113001\**" />
     <Content Remove="_Archive2020111801\**" />
     <Content Remove="_Archive2020112201\**" />
+    <EmbeddedResource Remove="Data\_Archive2020112901\**" />
+    <EmbeddedResource Remove="Data\_Archive2020113001\**" />
     <EmbeddedResource Remove="_Archive2020111801\**" />
     <EmbeddedResource Remove="_Archive2020112201\**" />
+    <None Remove="Data\_Archive2020112901\**" />
+    <None Remove="Data\_Archive2020113001\**" />
     <None Remove="_Archive2020111801\**" />
     <None Remove="_Archive2020112201\**" />
   </ItemGroup>

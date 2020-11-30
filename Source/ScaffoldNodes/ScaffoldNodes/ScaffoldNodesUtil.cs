@@ -31,8 +31,8 @@ namespace Scaffold
 		//[DllImport("shlwapi.dll")]
 		//private static extern int ColorHLSToRGB(int H, int L, int S);
 
-		//private static string[] mBoolChoices =
-		//	new string[] { "true", "false", "yes", "no", "1", "0" };
+		private static string[] mBoolChoices =
+			new string[] { "true", "false", "yes", "no", "1", "0" };
 
 		//*************************************************************************
 		//*	Protected																															*
@@ -40,80 +40,6 @@ namespace Scaffold
 		//*************************************************************************
 		//*	Public																																*
 		//*************************************************************************
-		////*-----------------------------------------------------------------------*
-		////* AddMediaListItems																											*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Populate the specified media list with representations of the media
-		///// properties in the collection.
-		///// </summary>
-		///// <param name="listControl">
-		///// Reference to the target list view control.
-		///// </param>
-		///// <param name="imageControl">
-		///// Reference to the associated icons and thumbnails image list.
-		///// </param>
-		///// <param name="resources">
-		///// Collection of resources providing the media.
-		///// </param>
-		///// <param name="properties">
-		///// Collection of properties to inspect for media entries.
-		///// </param>
-		//public static async void AddMediaListItems(ListView listControl,
-		//	ImageList imageControl, ResourceCollection resources,
-		//	PropertyCollection properties)
-		//{
-		//	int index = 0;
-		//	ListViewItem item = null;
-		//	ResourceItem resource = null;
-		//	Bitmap thumbnail = null;
-
-		//	if(MediaExists(properties, resources))
-		//	{
-		//		resource = GetResource(properties, resources, "MediaAudio");
-		//		if(resource != null)
-		//		{
-		//			item = new ListViewItem(ResourceItem.Filename(resource), 0);
-		//			item.Tag = resource.Ticket;
-		//			item.Group = listControl.Groups["Audio"];
-		//			listControl.Items.Add(item);
-		//		}
-		//		resource = GetResource(properties, resources, "MediaImage");
-		//		if(resource != null)
-		//		{
-		//			thumbnail = CreateImageThumbnail(resource, 128, 128);
-		//			index = imageControl.Images.Count;
-		//			imageControl.Images.Add(thumbnail);
-		//			item = new ListViewItem(ResourceItem.Filename(resource),
-		//				index);
-		//			item.Tag = resource.Ticket;
-		//			item.Group = listControl.Groups["Image"];
-		//			listControl.Items.Add(item);
-		//		}
-		//		resource = GetResource(properties, resources, "MediaLink");
-		//		if(resource != null)
-		//		{
-		//			item = new ListViewItem(ResourceItem.Filename(resource), 1);
-		//			item.Tag = resource.Ticket;
-		//			item.Group = listControl.Groups["Link"];
-		//			listControl.Items.Add(item);
-		//		}
-		//		resource = GetResource(properties, resources, "MediaVideo");
-		//		if(resource != null)
-		//		{
-		//			thumbnail = await CreateVideoThumbnail(resource, 128, 128);
-		//			index = imageControl.Images.Count;
-		//			imageControl.Images.Add(thumbnail);
-		//			item = new ListViewItem(ResourceItem.Filename(resource),
-		//				index);
-		//			item.Tag = resource.Ticket;
-		//			item.Group = listControl.Groups["Video"];
-		//			listControl.Items.Add(item);
-		//		}
-		//	}
-		//}
-		////*-----------------------------------------------------------------------*
-
 		//*-----------------------------------------------------------------------*
 		//* AttachResource																												*
 		//*-----------------------------------------------------------------------*
@@ -290,6 +216,7 @@ namespace Scaffold
 		public static void AttachResource(SocketItem socket,
 			string resourceTicket)
 		{
+			string prefResource = "";
 			PropertyItem property = null;
 			ResourceItem resource = null;
 
@@ -307,124 +234,50 @@ namespace Scaffold
 						property = socket.Properties.Add(resource.ResourceType, null);
 					}
 					property.Value = resource.Ticket;
+					if(MediaExists(socket, "MediaImage"))
+					{
+						prefResource = "MediaImage";
+					}
+					else if(MediaExists(socket, "MediaVideo"))
+					{
+						prefResource = "MediaVideo";
+					}
+					else if(MediaExists(socket, "MediaAudio"))
+					{
+						prefResource = "MediaAudio";
+					}
+					else if(MediaExists(socket, "MediaLink"))
+					{
+						prefResource = "MediaLink";
+					}
+					if(prefResource == resource.ResourceType)
+					{
+						property = socket.Properties.FirstOrDefault(x =>
+							x.Name == "Icon");
+						if(property != null)
+						{
+							socket.Properties.Remove(property);
+						}
+						switch(resource.ResourceType)
+						{
+							case "MediaAudio":
+								CreateAudioIcon(socket);
+								break;
+							case "MediaImage":
+								CreateImageThumbnail(socket);
+								break;
+							case "MediaLink":
+								CreateLinkIcon(socket);
+								break;
+							case "MediaVideo":
+								CreateVideoThumbnail(socket);
+								break;
+						}
+					}
 				}
 			}
 		}
 		//*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	CenterOver																														*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Center the top form over the base form.
-		///// </summary>
-		///// <param name="baseForm">
-		///// </param>
-		///// <param name="topForm">
-		///// </param>
-		///// <returns>
-		///// </returns>
-		//public static Point CenterOver(Form baseForm, Form topForm)
-		//{
-		//	Point center = Point.Empty;
-		//	Point result = Point.Empty;
-
-		//	if(baseForm != null && topForm != null)
-		//	{
-		//		//	Both forms have dimensions.
-		//		result = new Point(
-		//			(baseForm.Width / 2),
-		//			(baseForm.Height / 2));
-		//		result = new Point(
-		//			result.X - (topForm.Width / 2),
-		//			result.Y - (topForm.Height / 2));
-		//		result = baseForm.PointToScreen(result);
-		//		topForm.StartPosition = FormStartPosition.Manual;
-		//		if(result.X < 0)
-		//		{
-		//			result.X = 0;
-		//		}
-		//		if(result.Y < 0)
-		//		{
-		//			result.Y = 0;
-		//		}
-		//		if(result.X + topForm.Width > Screen.PrimaryScreen.Bounds.Width)
-		//		{
-		//			result.X = Screen.PrimaryScreen.Bounds.Width - topForm.Width;
-		//		}
-		//		if(result.Y + topForm.Height > Screen.PrimaryScreen.Bounds.Height)
-		//		{
-		//			result.Y = Screen.PrimaryScreen.Bounds.Height - topForm.Height;
-		//		}
-		//		topForm.Location = result;
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	ClipboardLoadFromResource																							*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Load the clipboard from an onboard binary resource.
-		///// </summary>
-		///// <param name="resourceName">
-		///// Name of the resource to load.
-		///// </param>
-		///// <returns>
-		///// True if the clipboard was loaded. Otherwise, false.
-		///// </returns>
-		//public static bool ClipboardLoadFromResource(string resourceName)
-		//{
-		//	byte[] buffer = new byte[0];
-		//	DataObject dataobject = null;
-		//	BinaryFormatter formatter = null;
-		//	MemoryStream memory = null;
-		//	NamedObjectCollection pages = null;
-		//	PropertyInfo property = null;
-		//	bool result = false;
-		//	Type type = typeof(ResourceMain);
-
-		//	property = type.GetProperty(resourceName,
-		//		BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
-		//	try
-		//	{
-		//		buffer = (byte[])property.GetValue(null, null);
-		//		if(buffer.Length > 0)
-		//		{
-		//			try
-		//			{
-		//				memory = new MemoryStream(buffer);
-		//				formatter = new BinaryFormatter();
-		//				pages = (NamedObjectCollection)formatter.Deserialize(memory);
-		//			}
-		//			catch(Exception ex)
-		//			{
-		//				Console.WriteLine($"Could not deserialize clipboard: {ex.Message}",
-		//					"Load Clipboard File");
-		//			}
-		//			finally
-		//			{
-		//				memory.Close();
-		//				memory.Dispose();
-		//			}
-		//		}
-		//		//	Prepare the clipboard.
-		//		if(pages.Count > 0)
-		//		{
-		//			Clipboard.Clear();
-		//			dataobject = new DataObject();
-		//			foreach(NamedObjectItem page in pages)
-		//			{
-		//				dataobject.SetData(page.Name, false, page.Value);
-		//			}
-		//			Clipboard.SetDataObject(dataobject, true);
-		//		}
-		//	}
-		//	catch { }
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* CommonMediaTypes																											*
@@ -730,6 +583,52 @@ namespace Scaffold
 							new MemoryStream(ResourceLib.Audio32))
 						{
 							property.Value = new Bitmap(memoryStream);
+						}
+						break;
+				}
+			}
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Create a local instance of the audio icon for the provided node.
+		/// </summary>
+		/// <param name="socket">
+		/// Reference to the socket to be updated..
+		/// </param>
+		public static void CreateAudioIcon(SocketItem socket)
+		{
+			Bitmap bitmap = null;
+			float iconWidth = ToFloat(ResourceLib.SocketMediaIconSize);
+			PropertyItem property = null;
+			string typeName = "";
+
+			if(socket != null)
+			{
+				property = socket.Properties.FirstOrDefault(x => x.Name == "Icon");
+				if(property == null)
+				{
+					property = new PropertyItem()
+					{
+						Name = "Icon",
+						Static = false
+					};
+					socket.Properties.Add(property);
+				}
+				//property.Value = ResourceLib.Audio32;
+				typeName = ResourceLib.Audio32.GetType().Name.ToLower();
+				switch(typeName)
+				{
+					case "bitmap":
+						property.Value = ResourceLib.Audio32;
+						RefreshThumbnail(socket,
+							"Icon", (Bitmap)property.Value, iconWidth);
+						break;
+					case "byte[]":
+						using(MemoryStream memoryStream =
+							new MemoryStream(ResourceLib.Audio32))
+						{
+							bitmap = new Bitmap(memoryStream);
+							RefreshThumbnail(socket, "Icon", bitmap, iconWidth);
 						}
 						break;
 				}
@@ -1197,6 +1096,45 @@ namespace Scaffold
 			}
 			return thumbnail;
 		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Create an image thumbnail from the associated image resource.
+		/// </summary>
+		/// <param name="socket">
+		/// Reference to the socket to be updated.
+		/// </param>
+		public static void CreateImageThumbnail(SocketItem socket)
+		{
+			Bitmap bitmap = null;
+			float iconWidth = ToFloat(ResourceLib.SocketMediaIconSize);
+			ResourceItem resource = null;
+			ResourceLiveItem resourceLive = null;
+
+			if(socket != null)
+			{
+				if(MediaExists(socket, "MediaImage"))
+				{
+					//	Image is attached.
+					resource = GetResource(socket, "MediaImage");
+					if(resource != null)
+					{
+						resourceLive = ResourceLiveItem.FromResourceItem(resource);
+						if(resourceLive.Data is byte[] rData && rData.Length > 0)
+						{
+							try
+							{
+								using(MemoryStream stream = new MemoryStream(rData))
+								{
+									bitmap = new Bitmap(stream);
+								}
+							}
+							catch { }
+						}
+						RefreshThumbnail(socket, "Icon", bitmap, iconWidth);
+					}
+				}
+			}
+		}
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
@@ -1277,6 +1215,51 @@ namespace Scaffold
 							new MemoryStream(ResourceLib.Link32))
 						{
 							property.Value = new Bitmap(memoryStream);
+						}
+						break;
+				}
+			}
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Create or update the link icon on the specified socket.
+		/// </summary>
+		/// <param name="socket">
+		/// Reference to the socket to which a link icon will be applied.
+		/// </param>
+		public static void CreateLinkIcon(SocketItem socket)
+		{
+			Bitmap bitmap = null;
+			float iconWidth = ToFloat(ResourceLib.SocketMediaIconSize);
+			PropertyItem property = null;
+			string typeName = "";
+
+			if(socket != null)
+			{
+				property = socket.Properties.FirstOrDefault(x => x.Name == "Icon");
+				if(property == null)
+				{
+					property = new PropertyItem()
+					{
+						Name = "Icon",
+						Static = false
+					};
+					socket.Properties.Add(property);
+				}
+				typeName = ResourceLib.Link32.GetType().Name.ToLower();
+				switch(typeName)
+				{
+					case "bitmap":
+						property.Value = ResourceLib.Link32;
+						RefreshThumbnail(socket,
+							"Icon", (Bitmap)property.Value, iconWidth);
+						break;
+					case "byte[]":
+						using(MemoryStream memoryStream =
+							new MemoryStream(ResourceLib.Link32))
+						{
+							bitmap = new Bitmap(memoryStream);
+							RefreshThumbnail(socket, "Icon", bitmap, iconWidth);
 						}
 						break;
 				}
@@ -1757,67 +1740,69 @@ namespace Scaffold
 			}
 			return thumbnail;
 		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Create a runtime video thumbnail from an attached video resource.
+		/// </summary>
+		/// <param name="socket">
+		/// Reference to the socket item associated to a video resource.
+		/// </param>
+		public async static void CreateVideoThumbnail(SocketItem socket)
+		{
+			Bitmap bitmap = null;
+			byte[] data = null;
+			string dataPath = "";
+			string extension = "";
+			ResourceItem resource = null;
+			ResourceLiveItem resourceLive = null;
+			//FileInfo thumbFile = null;
+			string thumbPath = "";
+			float iconWidth = ToFloat(ResourceLib.SocketMediaIconSize);
+
+			if(socket != null)
+			{
+				if(MediaExists(socket, "MediaVideo"))
+				{
+					//	Image is attached.
+					resource = GetResource(socket, "MediaVideo");
+					if(resource != null)
+					{
+						resourceLive = ResourceLiveItem.FromResourceItem(resource);
+						if(resourceLive.Data is byte[] rData && rData.Length > 0)
+						{
+							try
+							{
+								extension = MimeTypeExtension(resourceLive.MimeType);
+								dataPath = Path.Combine(Path.GetTempPath(),
+									Guid.NewGuid().ToString("D") + "." + extension);
+								File.WriteAllBytes(dataPath, rData);
+								thumbPath = Path.Combine(Path.GetTempPath(),
+									Guid.NewGuid().ToString("D") + ".png");
+								if(await ConvertVideoToThumbnail(dataPath, thumbPath,
+									TimeSpan.FromSeconds(0.1)))
+								{
+									//	Thumbnail file was created.
+									data = File.ReadAllBytes(thumbPath);
+									using(MemoryStream stream = new MemoryStream(data))
+									{
+										bitmap = (Bitmap)Bitmap.FromStream(stream);
+									}
+									RefreshThumbnail(socket, "Icon", bitmap, iconWidth);
+									File.Delete(thumbPath);
+								}
+								File.Delete(dataPath);
+							}
+							catch(Exception ex)
+							{
+								Debug.WriteLine(
+									$"Error in CreateVideoThumbnail: {ex.Message}.");
+							}
+						}
+					}
+				}
+			}
+		}
 		//*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* DeScaleDrawing																												*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Scale the coordinate to the specified factor and return the new
-		///// coordinate to the caller.
-		///// </summary>
-		///// <param name="origin">
-		///// Original point to scale.
-		///// </param>
-		///// <param name="scale">
-		///// Scale factor.
-		///// </param>
-		///// <returns>
-		///// Scaled coordinate.
-		///// </returns>
-		//public static PointF DeScaleDrawing(Point origin, SizeF scale,
-		//	int scrollHorizontal = 0, int scrollVertical = 0)
-		//{
-		//	PointF orig = new PointF((float)origin.X, (float)origin.Y);
-		//	PointF result = new PointF(0f, 0f);
-
-		//	if(scale.Width != 0f)
-		//	{
-		//		result.X =
-		//			((orig.X * scale.Width) + (float)scrollHorizontal);
-		//	}
-		//	if(scale.Height != 0f)
-		//	{
-		//		result.Y =
-		//			((orig.Y * scale.Height) + (float)scrollVertical);
-		//	}
-		//	return result;
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Scale the rectangle to the specified factor and return the new area to
-		///// the caller.
-		///// </summary>
-		///// <param name="rectangle">
-		///// Rectangle to inspect.
-		///// </param>
-		///// <param name="scale">
-		///// X and Y scale factors.
-		///// </param>
-		///// <returns>
-		///// New rectangle as a result of the original rectangle scaled by the
-		///// specified factors.
-		///// </returns>
-		//public static RectangleF DeScaleDrawing(RectangleF rectangle, SizeF scale)
-		//{
-		//	RectangleF result = new RectangleF(
-		//		rectangle.X / scale.Width,
-		//		rectangle.Y / scale.Height,
-		//		rectangle.Width / scale.Width,
-		//		rectangle.Height / scale.Height);
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* DetachResourceByProperty																							*
@@ -2137,60 +2122,6 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////*	DrawRoundedRectangle																									*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Draw the outline of a rounded rectangle.
-		///// </summary>
-		///// <param name="graphics">
-		///// </param>
-		///// <param name="pen">
-		///// </param>
-		///// <param name="bounds">
-		///// </param>
-		///// <param name="cornerRadius">
-		///// </param>
-		//public static void DrawRoundedRectangle(Graphics graphics, Pen pen,
-		//	Rectangle bounds, int cornerRadius)
-		//{
-		//	if(graphics != null && pen != null)
-		//	{
-		//		using(GraphicsPath path = RoundedRectangle(bounds, cornerRadius))
-		//		{
-		//			graphics.DrawPath(pen, path);
-		//		}
-		//	}
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	FillRoundedRectangle																									*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Fill the shape of a rounded rectangle.
-		///// </summary>
-		///// <param name="graphics">
-		///// </param>
-		///// <param name="brush">
-		///// </param>
-		///// <param name="bounds">
-		///// </param>
-		///// <param name="cornerRadius">
-		///// </param>
-		//public static void FillRoundedRectangle(Graphics graphics,
-		//	Brush brush, Rectangle bounds, int cornerRadius)
-		//{
-		//	if(graphics != null && brush != null)
-		//	{
-		//		using(GraphicsPath path = RoundedRectangle(bounds, cornerRadius))
-		//		{
-		//			graphics.FillPath(brush, path);
-		//		}
-		//	}
-		//}
-		////*-----------------------------------------------------------------------*
-
 		//*-----------------------------------------------------------------------*
 		//*	FromHex																																*
 		//*-----------------------------------------------------------------------*
@@ -2225,113 +2156,6 @@ namespace Scaffold
 			return result;
 		}
 		//*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* FromHSL																																*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the system color from the caller's HSL value.
-		///// </summary>
-		///// <param name="hue">
-		///// The Hue level to convert, from 0 to 360.
-		///// </param>
-		///// <param name="saturation">
-		///// The Saturation to convert, from 0 to 1.
-		///// </param>
-		///// <param name="luminance">
-		///// The Luminance to convert, from 0 to 1. 0 is black and 1 is white.
-		///// </param>
-		///// <param name="alpha">
-		///// The alpha level to apply.
-		///// </param>
-		///// <returns>
-		///// System.Drawing.Color representing the RGB value of the caller's color.
-		///// </returns>
-		//public static Color FromHSL(float hue, float saturation, float luminance,
-		//	int alpha = 255)
-		//{
-		//	int vHue = (int)((hue / 360f) * 240f);
-		//	int vLum = (int)(saturation * 240f);
-		//	int vSat = (int)(luminance * 240f);
-		//	return FromHSL(vHue, vLum, vSat, alpha);
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Return the system color from the caller's HSL value.
-		///// </summary>
-		///// <param name="hue">
-		///// The Hue level to convert, from 0 to 240.
-		///// </param>
-		///// <param name="saturation">
-		///// The Saturation to convert, from 0 to 240.
-		///// </param>
-		///// <param name="luminance">
-		///// The Luminance to convert, from 0 to 240. 0 is black and 240 is white.
-		///// </param>
-		///// <param name="alpha">
-		///// The Alpha level to apply.
-		///// </param>
-		///// <returns>
-		///// System.Drawing.Color representing the RGB value of the caller's color.
-		///// </returns>
-		//public static Color FromHSL(int hue, int saturation, int luminance,
-		//	int alpha = 255)
-		//{
-		//	Color result = ColorTranslator.FromWin32(
-		//		ColorHLSToRGB(hue, luminance, saturation));
-		//	if(alpha < 255)
-		//	{
-		//		result = Color.FromArgb(alpha, result);
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* GetCharacterMatchCount																								*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the number of characters matching in the two strings from
-		///// index 0 onward.
-		///// </summary>
-		///// <param name="value1">
-		///// Left string to compare.
-		///// </param>
-		///// <param name="value2">
-		///// Right string to compare.
-		///// </param>
-		///// <returns>
-		///// Count of characters matching in the two strings from the beginning
-		///// of the string. Otherwise, 0.
-		///// </returns>
-		//public static int GetCharacterMatchCount(string value1, string value2)
-		//{
-		//	char[] chars1 = null;
-		//	char[] chars2 = null;
-		//	int count = 0;
-		//	int index = 0;
-		//	int result = 0;
-
-		//	if(value1?.Length > 0 && value2?.Length > 0)
-		//	{
-		//		chars1 = value1.ToCharArray();
-		//		chars2 = value2.ToCharArray();
-		//		count = Math.Min(chars1.Length, chars2.Length);
-		//		for(index = 0; index < count; index ++)
-		//		{
-		//			if(chars1[index] == chars2[index])
-		//			{
-		//				result++;
-		//			}
-		//			else
-		//			{
-		//				break;
-		//			}
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* GetDataUri																														*
@@ -2452,114 +2276,6 @@ namespace Scaffold
 			return result;
 		}
 		//*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* GetMediaTypeName																											*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the media type name for the supplied file extension.
-		///// </summary>
-		///// <param name="file">
-		///// Reference to information about a file.
-		///// </param>
-		///// <returns>
-		///// Media type name for the provided file.
-		///// </returns>
-		//public static string GetMediaTypeName(FileInfo file)
-		//{
-		//	string extension = "";
-		//	string result = "";
-
-		//	if(file != null)
-		//	{
-		//		extension = file.Extension.ToLower();
-		//		if(extension.StartsWith("."))
-		//		{
-		//			extension = extension.Substring(1);
-		//		}
-		//		switch(extension)
-		//		{
-		//			case "aac":
-		//			case "flac":
-		//			case "m4a":
-		//			case "mp3":
-		//			case "wav":
-		//			case "wma":
-		//				result = "MediaAudio";
-		//				break;
-		//			case "bmp":
-		//			case "jpeg":
-		//			case "jpg":
-		//			case "png":
-		//			case "tif":
-		//			case "tiff":
-		//			case "webp":
-		//				result = "MediaImage";
-		//				break;
-		//			case "avi":
-		//			case "mov":
-		//			case "mp4":
-		//			case "webm":
-		//			case "wmv":
-		//				result = "MediaVideo";
-		//				break;
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* GetRelaxedType																												*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the relaxed type name from the specified object type.
-		///// </summary>
-		///// <param name="value">
-		///// Reference to the object for which a relaxed type will be found.
-		///// </param>
-		///// <returns>
-		///// The name of the relaxed type to be used for this value.
-		///// </returns>
-		//public static string GetRelaxedType(object value)
-		//{
-		//	string result = "string";
-
-		//	if(value != null)
-		//	{
-		//		if(value is bool)
-		//		{
-		//			result = "bool";
-		//		}
-		//		else if(value is Color)
-		//		{
-		//			result = "color";
-		//		}
-		//		else if(value is DateTime)
-		//		{
-		//			result = "datetime";
-		//		}
-		//		else if(value is Guid)
-		//		{
-		//			result = "guid";
-		//		}
-		//		else if(value is float)
-		//		{
-		//			result = "single";
-		//		}
-		//		else if(value is int ||
-		//			(IsNumeric(value) && !IsNumericFloatingPoint(value)))
-		//		{
-		//			result = "int";
-		//		}
-		//		else if(value is double || IsNumericFloatingPoint(value))
-		//		{
-		//			result = "double";
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* GetResource																														*
@@ -2790,305 +2506,140 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* InsideOf																															*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the text found between the left and right pattern edges.
-		///// </summary>
-		///// <param name="value">
-		///// The value to inspect.
-		///// </param>
-		///// <param name="leftPattern">
-		///// The pattern establishing the left boundary of the content.
-		///// </param>
-		///// <param name="rightPattern">
-		///// The pattern establishing the right boundary of the content.
-		///// </param>
-		///// <returns>
-		///// If the left and right patterns were both found, then the content
-		///// between those patterns. If only the left pattern was found and the
-		///// right pattern was not found to the right of it, then the content to
-		///// the right of the left pattern. If the left pattern was not found and
-		///// the right pattern was found, then the content to the left of the
-		///// right pattern. Otherwise, an empty string.
-		///// </returns>
-		//public static string InsideOf(string value,
-		//	string leftPattern, string rightPattern)
-		//{
-		//	int leftIndex = 0;
-		//	string result = "";
-		//	int rightIndex = 0;
+		//*-----------------------------------------------------------------------*
+		//* IsBoolean																															*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a value indicating whether the supplied value is boolean.
+		/// </summary>
+		/// <param name="value">
+		/// The value to inspect.
+		/// </param>
+		/// <returns>
+		/// Value indicating whether the supplied value was boolean.
+		/// </returns>
+		public static bool IsBoolean(object value)
+		{
+			bool result = false;
 
-		//	if(value?.Length > 0)
-		//	{
-		//		if(leftPattern?.Length > 0 && value.IndexOf(leftPattern) > -1)
-		//		{
-		//			//	Left pattern found.
-		//			leftIndex = value.IndexOf(leftPattern);
-		//			if(rightPattern?.Length > 0 &&
-		//				value.IndexOf(rightPattern, leftIndex + 1) > -1)
-		//			{
-		//				//	Right pattern found.
-		//				rightIndex =
-		//					value.IndexOf(rightPattern, leftIndex + leftPattern.Length);
-		//				if(rightIndex > leftIndex + leftPattern.Length)
-		//				{
-		//					result = value.Substring(leftIndex + leftPattern.Length,
-		//						rightIndex - (leftIndex + leftPattern.Length));
-		//				}
-		//			}
-		//			else
-		//			{
-		//				//	Right pattern not found.
-		//				result = value.Substring(leftIndex + leftPattern.Length);
-		//			}
-		//		}
-		//		else if(rightPattern?.Length > 0 && value.IndexOf(rightPattern) > -1)
-		//		{
-		//			//	Left pattern not found. Right pattern found.
-		//			rightIndex = value.IndexOf(rightPattern);
-		//			result = value.Substring(0, rightIndex);
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
+			if(value != null)
+			{
+				result = (mBoolChoices.FirstOrDefault(x =>
+					x == value.ToString().ToLower()) != null);
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* IsBoolean																															*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return a value indicating whether the supplied value is boolean.
-		///// </summary>
-		///// <param name="value">
-		///// The value to inspect.
-		///// </param>
-		///// <returns>
-		///// Value indicating whether the supplied value was boolean.
-		///// </returns>
-		//public static bool IsBoolean(object value)
-		//{
-		//	bool result = false;
+		//*-----------------------------------------------------------------------*
+		//* IsNumeric																															*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a value indicating whether the entire value fits a recognizable
+		/// numeric pattern.
+		/// </summary>
+		/// <param name="value">
+		/// The value to inspect.
+		/// </param>
+		/// <returns>
+		/// True if the value can be directly converted to a numeric format.
+		/// Otherwise, false.
+		/// </returns>
+		public static bool IsNumeric(object value)
+		{
+			string comparison = "";
+			Match match = null;
+			bool result = false;
 
-		//	if(value != null)
-		//	{
-		//		result = (mBoolChoices.FirstOrDefault(x =>
-		//			x == value.ToString().ToLower()) != null);
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
+			if(value != null)
+			{
+				comparison = value.ToString();
+				match = Regex.Match(comparison, ResourceLib.rxNumeric);
+				if(match.Success &&
+					GetValue(match, "pattern").Length == comparison.Length)
+				{
+					//	The entire string matches the pattern.
+					result = true;
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* IsNumeric																															*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return a value indicating whether the entire value fits a recognizable
-		///// numeric pattern.
-		///// </summary>
-		///// <param name="value">
-		///// The value to inspect.
-		///// </param>
-		///// <returns>
-		///// True if the value can be directly converted to a numeric format.
-		///// Otherwise, false.
-		///// </returns>
-		//public static bool IsNumeric(object value)
-		//{
-		//	string comparison = "";
-		//	Match match = null;
-		//	bool result = false;
+		//*-----------------------------------------------------------------------*
+		//* IsNumericFloatingPoint																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a value indicating whether the entire value fits a recognizable
+		/// numeric floating point pattern.
+		/// </summary>
+		/// <param name="value">
+		/// The value to inspect.
+		/// </param>
+		/// <returns>
+		/// True if the value can be directly converted to a numeric format, and
+		/// that format contains a decimal point. Otherwise, false. Note that
+		/// an integer value will return false on this method.
+		/// </returns>
+		public static bool IsNumericFloatingPoint(object value)
+		{
+			string comparison = "";
+			Match match = null;
+			bool result = false;
 
-		//	if(value != null)
-		//	{
-		//		comparison = value.ToString();
-		//		match = Regex.Match(comparison, ResourceLib.rxNumeric);
-		//		if(match.Success &&
-		//			GetValue(match, "pattern").Length == comparison.Length)
-		//		{
-		//			//	The entire string matches the pattern.
-		//			result = true;
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
+			if(value != null)
+			{
+				comparison = value.ToString();
+				match = Regex.Match(comparison, ResourceLib.rxNumeric);
+				if(match.Success &&
+					GetValue(match, "pattern").Length == comparison.Length &&
+					match.Value.IndexOf(".") > -1)
+				{
+					//	The entire string matches the floating point pattern.
+					result = true;
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* IsNumericFloatingPoint																								*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return a value indicating whether the entire value fits a recognizable
-		///// numeric floating point pattern.
-		///// </summary>
-		///// <param name="value">
-		///// The value to inspect.
-		///// </param>
-		///// <returns>
-		///// True if the value can be directly converted to a numeric format, and
-		///// that format contains a decimal point. Otherwise, false. Note that
-		///// an integer value will return false on this method.
-		///// </returns>
-		//public static bool IsNumericFloatingPoint(object value)
-		//{
-		//	string comparison = "";
-		//	Match match = null;
-		//	bool result = false;
+		//*-----------------------------------------------------------------------*
+		//* IsNumericScientific																										*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a value indicating whether the entire value fits a recognizable
+		/// numeric scientific notation pattern.
+		/// </summary>
+		/// <param name="value">
+		/// The value to inspect.
+		/// </param>
+		/// <returns>
+		/// True if the value can be directly converted to a numeric format, and
+		/// that format contains scientific notation. Otherwise, false. Note that
+		/// a simple integer or floating point value will return false on this
+		/// method.
+		/// </returns>
+		public static bool IsNumericScientific(object value)
+		{
+			string comparison = "";
+			Match match = null;
+			bool result = false;
 
-		//	if(value != null)
-		//	{
-		//		comparison = value.ToString();
-		//		match = Regex.Match(comparison, ResourceLib.rxNumeric);
-		//		if(match.Success &&
-		//			GetValue(match, "pattern").Length == comparison.Length &&
-		//			match.Value.IndexOf(".") > -1)
-		//		{
-		//			//	The entire string matches the floating point pattern.
-		//			result = true;
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* IsNumericScientific																										*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return a value indicating whether the entire value fits a recognizable
-		///// numeric scientific notation pattern.
-		///// </summary>
-		///// <param name="value">
-		///// The value to inspect.
-		///// </param>
-		///// <returns>
-		///// True if the value can be directly converted to a numeric format, and
-		///// that format contains scientific notation. Otherwise, false. Note that
-		///// a simple integer or floating point value will return false on this
-		///// method.
-		///// </returns>
-		//public static bool IsNumericScientific(object value)
-		//{
-		//	string comparison = "";
-		//	Match match = null;
-		//	bool result = false;
-
-		//	if(value != null)
-		//	{
-		//		comparison = value.ToString();
-		//		match = Regex.Match(comparison, ResourceLib.rxNumeric);
-		//		if(match.Success &&
-		//			GetValue(match, "pattern").Length == comparison.Length &&
-		//			match.Value.ToLower().IndexOf("e") > -1)
-		//		{
-		//			//	The entire string matches the scientific notation pattern.
-		//			result = true;
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* LinearInterpolate																											*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the linear interpolation of the specified amount between values
-		///// a and b.
-		///// </summary>
-		///// <param name="a">
-		///// First value.
-		///// </param>
-		///// <param name="b">
-		///// Second value.
-		///// </param>
-		///// <param name="amount">
-		///// The amount to interpolate.
-		///// </param>
-		///// <returns>
-		///// The linearly interpolated difference between a and b.
-		///// </returns>
-		//public static float LinearInterpolate(float a, float b, float amount)
-		//{
-		//	return a * (1f - amount) + b * amount;
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Return the linear interpolation between points a and b.
-		///// </summary>
-		///// <param name="a">
-		///// Point a.
-		///// </param>
-		///// <param name="b">
-		///// Point b.
-		///// </param>
-		///// <param name="amount">
-		///// The amount to interpolate.
-		///// </param>
-		///// <returns>
-		///// The linearly interpolated difference between points a and b.
-		///// </returns>
-		//public static PointF LinearInterpolate(PointF a, PointF b, float amount)
-		//{
-		//	PointF result = new PointF();
-
-		//	result.X = a.X * (1f - amount) + b.X * amount;
-		//	result.Y = a.Y * (1f - amount) + b.Y * amount;
-
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	MeasureString																													*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the size of the caller's string.
-		///// </summary>
-		///// <param name="text">
-		///// Text to measure.
-		///// </param>
-		///// <param name="fontName">
-		///// Name of the font.
-		///// </param>
-		///// <param name="fontSize">
-		///// Size of the font.
-		///// </param>
-		///// <param name="maxWidth">
-		///// Optional maximum width of the string.
-		///// </param>
-		///// <returns>
-		///// </returns>
-		//public static Size MeasureString(string text,
-		//	string fontName, float fontSize, int maxWidth = 0)
-		//{
-		//	Graphics g = Graphics.FromHwnd(IntPtr.Zero);
-		//	Size result = Size.Empty;
-
-		//	if(text?.Length > 0 && fontName?.Length > 0 && fontSize > 0f)
-		//	{
-		//		g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-		//		if(maxWidth > 0f)
-		//		{
-		//			//	Word wrap.
-		//			result =
-		//				Size.Round(
-		//					g.MeasureString(text, new Font(fontName, fontSize), maxWidth,
-		//					StringFormat.GenericTypographic));
-		//		}
-		//		else
-		//		{
-		//			//	Single line.
-		//			result =
-		//				Size.Round(
-		//					g.MeasureString(text, new Font(fontName, fontSize)));
-		//		}
-		//	}
-		//	g.Dispose();
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
+			if(value != null)
+			{
+				comparison = value.ToString();
+				match = Regex.Match(comparison, ResourceLib.rxNumeric);
+				if(match.Success &&
+					GetValue(match, "pattern").Length == comparison.Length &&
+					match.Value.ToLower().IndexOf("e") > -1)
+				{
+					//	The entire string matches the scientific notation pattern.
+					result = true;
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* MediaExists																														*
@@ -3911,28 +3462,6 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* ProgressUpdate																												*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Update progress bar value through asynchronous invoke.
-		///// </summary>
-		///// <param name="progress">
-		///// Reference to the progress bar to update.
-		///// </param>
-		///// <param name="value">
-		///// Value to place on the progress bar.
-		///// </param>
-		//public static void ProgressUpdate(ToolStripProgressBar progress, int value)
-		//{
-		//	if(progress != null && progress.GetCurrentParent().Parent.InvokeRequired)
-		//	{
-		//		progress.GetCurrentParent().Parent.BeginInvoke(
-		//			new MethodInvoker(delegate { progress.Value = value; }));
-		//	}
-		//}
-		////*-----------------------------------------------------------------------*
-
 		//*-----------------------------------------------------------------------*
 		//* PropertyExists																												*
 		//*-----------------------------------------------------------------------*
@@ -4043,33 +3572,6 @@ namespace Scaffold
 			return result;
 		}
 		//*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	RectangleFromPoints																										*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Create a rectangle from two points.
-		///// </summary>
-		///// <param name="a">
-		///// </param>
-		///// <param name="b">
-		///// </param>
-		///// <returns>
-		///// </returns>
-		//public static RectangleF RectangleFromPoints(PointF a, PointF b)
-		//{
-		//	RectangleF result = RectangleF.Empty;
-		//	float x1 = a.X;
-		//	float x2 = b.X;
-		//	float y1 = a.Y;
-		//	float y2 = b.Y;
-
-		//	result = new RectangleF(
-		//		Math.Min(x1, x2), Math.Min(y1, y2),
-		//		Math.Abs(x2 - x1), Math.Abs(y2 - y1));
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* RefreshThumbnail																											*
@@ -4225,579 +3727,185 @@ namespace Scaffold
 				}
 			}
 		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Post or update a runtime thumbnail of the provided image on the
+		/// specified socket property.
+		/// </summary>
+		/// <param name="socket">
+		/// Reference to the socket to update.
+		/// </param>
+		/// <param name="propertyName">
+		/// Name of the node property to update.
+		/// </param>
+		/// <param name="bitmap">
+		/// Reference to the image to receive thumbnail.
+		/// </param>
+		/// <param name="thumbWidth">
+		/// Maximum width of the thumbnail.
+		/// </param>
+		/// <remarks>
+		/// The property created here is non-permanent (Static = false), and will
+		/// not be saved with other socket properties.
+		/// </remarks>
+		public static void RefreshThumbnail(SocketItem socket, string propertyName,
+			Bitmap bitmap, float thumbWidth)
+		{
+			float height = 0f;
+			PropertyItem property = null;
+			float scale = 0f;
+			Bitmap thumbnail = null;
+			float width = 0f;
+
+			if(bitmap != null)
+			{
+				width = (float)bitmap.Width;
+				height = (float)bitmap.Height;
+				if(width != 0f && height != 0f)
+				{
+					//	A thumbnail will be generated.
+					if(width > thumbWidth)
+					{
+						scale = width / thumbWidth;
+					}
+					else
+					{
+						scale = 1f;
+					}
+					thumbnail = new Bitmap(
+						(int)(width / scale), (int)(height / scale));
+					using(Graphics g = Graphics.FromImage(thumbnail))
+					{
+						g.CompositingQuality =
+							System.Drawing.Drawing2D.
+							CompositingQuality.HighQuality;
+						g.InterpolationMode =
+							System.Drawing.Drawing2D.InterpolationMode.High;
+						g.SmoothingMode =
+							System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+						g.DrawImage(bitmap,
+							new RectangleF(0f, 0f, width / scale, height / scale),
+							new RectangleF(0f, 0f, width, height),
+							GraphicsUnit.Pixel);
+					}
+					property = socket.Properties.FirstOrDefault(x =>
+						x.Name == propertyName);
+					if(property == null)
+					{
+						property = new PropertyItem()
+						{
+							Name = propertyName,
+							Static = false
+						};
+						socket.Properties.Add(property);
+					}
+					property.Value = thumbnail;
+				}
+			}
+		}
 		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* RelativeFilename																											*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the relative filename from the logical difference between
-		///// two paths.
-		///// </summary>
-		///// <param name="baseFile">
-		///// The base file or domain name from which a relative path can be built.
-		///// </param>
-		///// <param name="relativeFile">
-		///// An external file to be referenced with a relative path.
-		///// </param>
-		///// <returns>
-		///// Relative path and filename of the specified relative file, if
-		///// feasible. Otherwise, the full path of the relative file.
-		///// </returns>
-		//public static string RelativeFilename(FileInfo baseFile,
-		//	FileInfo relativeFile)
-		//{
-		//	StringBuilder builder = null;
-		//	int count = 0;
-		//	int index = 0;
-		//	string[] levels = null;
-		//	string pathBase = "";
-		//	string pathOffset = "";
-		//	string pathRel = "";
-		//	int prefixLength = 0;
-		//	string result = "";
-		//	char[] slash = new char[] { '/' };
+		//*-----------------------------------------------------------------------*
+		//* ToBoolean																															*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Provide fail-safe conversion of string to boolean value.
+		/// </summary>
+		/// <param name="value">
+		/// Value to convert.
+		/// </param>
+		/// <returns>
+		/// Boolean value. False if not convertible.
+		/// </returns>
+		public static bool ToBoolean(object value)
+		{
+			bool result = false;
+			if(value != null)
+			{
+				result = ToBoolean(value.ToString());
+			}
+			return result;
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Provide fail-safe conversion of string to boolean value.
+		/// </summary>
+		/// <param name="value">
+		/// Value to convert.
+		/// </param>
+		/// <returns>
+		/// Boolean value. False if not convertible.
+		/// </returns>
+		public static bool ToBoolean(string value)
+		{
+			int count = 0;
+			int index = 0;
+			string lower = "";
+			bool result = false;
 
-		//	if(relativeFile != null)
-		//	{
-		//		if(baseFile != null)
-		//		{
-		//			pathBase = baseFile.Directory.FullName.ToLower().Replace('\\', '/');
-		//			pathRel =
-		//				relativeFile.Directory.FullName.ToLower().Replace('\\', '/');
-		//			if(pathBase == pathRel)
-		//			{
-		//				//	Same folder. The filename is all that is needed.
-		//				result = relativeFile.Name;
-		//			}
-		//			else
-		//			{
-		//				prefixLength = GetCharacterMatchCount(pathBase, pathRel);
-		//				if(prefixLength == 0)
-		//				{
-		//					//	No path in common.
-		//					result = relativeFile.FullName.Replace('\\', '/');
-		//				}
-		//				else if(prefixLength == pathBase.Length)
-		//				{
-		//					//	The relative file is inward from the base.
-		//					result = Path.Combine(
-		//						relativeFile.Directory.FullName.
-		//						Substring(prefixLength),
-		//						relativeFile.Name).Replace('\\', '/');
-		//					if(result.StartsWith("/"))
-		//					{
-		//						result = result.Substring(1);
-		//					}
-		//				}
-		//				else if(prefixLength == pathRel.Length)
-		//				{
-		//					//	The relative file is back from the base.
-		//					pathOffset = baseFile.Directory.FullName.
-		//						Substring(prefixLength).Replace('\\', '/');
-		//					if(pathOffset.StartsWith("/"))
-		//					{
-		//						pathOffset = pathOffset.Substring(1);
-		//					}
-		//					if(pathOffset.EndsWith("/"))
-		//					{
-		//						pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
-		//					}
-		//					builder = new StringBuilder();
-		//					levels = pathOffset.Split(slash);
-		//					count = levels.Length;
-		//					for(index = 0; index < count; index ++)
-		//					{
-		//						builder.Append("../");
-		//					}
-		//					builder.Append(relativeFile.Name);
-		//					result = builder.ToString();
-		//				}
-		//				else
-		//				{
-		//					//	The relative file is diagonal to the base.
-		//					//	Start by getting the number of directories back.
-		//					pathOffset = baseFile.Directory.FullName.
-		//						Substring(prefixLength).Replace('\\', '/');
-		//					if(pathOffset.StartsWith("/"))
-		//					{
-		//						pathOffset = pathOffset.Substring(1);
-		//					}
-		//					if(pathOffset.EndsWith("/"))
-		//					{
-		//						pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
-		//					}
-		//					builder = new StringBuilder();
-		//					levels = pathOffset.Split(slash);
-		//					count = levels.Length;
-		//					for(index = 0; index < count; index++)
-		//					{
-		//						builder.Append("../");
-		//					}
-		//					//	Continue by adding in the number of directories forward.
-		//					pathOffset = relativeFile.Directory.FullName.
-		//						Substring(prefixLength).Replace('\\', '/');
-		//					if(pathOffset.StartsWith("/"))
-		//					{
-		//						pathOffset = pathOffset.Substring(1);
-		//					}
-		//					if(pathOffset.EndsWith("/"))
-		//					{
-		//						pathOffset = pathOffset.Substring(0, pathOffset.Length - 1);
-		//					}
-		//					if(builder[builder.Length - 1] != '/')
-		//					{
-		//						builder.Append("/");
-		//					}
-		//					builder.Append(pathOffset);
-		//					builder.Append("/");
-		//					builder.Append(relativeFile.Name);
-		//					result = builder.ToString();
-		//				}
-		//			}
-		//		}
-		//		else
-		//		{
-		//			result = relativeFile.FullName;
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
+			if(IsBoolean(value))
+			{
+				lower = value.ToLower();
+				count = mBoolChoices.Length;
+				for(index = 0; index < count; index++)
+				{
+					if(mBoolChoices[index] == lower)
+					{
+						//	Match found.
+						if(index % 2 == 0)
+						{
+							result = true;
+						}
+						break;
+					}
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////*	ResolveEnvironment																										*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return a string value where all environment variable references have
-		///// been resolved.
-		///// </summary>
-		///// <param name="value">
-		///// String value potentially containing environment variables wrapped in
-		///// percent signs.
-		///// </param>
-		///// <returns>
-		///// String value where all environment variables have been replaced with
-		///// their local values.
-		///// </returns>
-		//public static string ResolveEnvironment(string value)
-		//{
-		//	string env = "";
-		//	MatchCollection matches = null;
-		//	string setting = "";
-		//	string result = value;
-
-		//	matches = Regex.Matches(value, "%(?<f>[^%]+?)%");
-		//	foreach(Match match in matches)
-		//	{
-		//		setting = GetValue(match, "f");
-		//		if(setting.Length > 0)
-		//		{
-		//			env = Environment.GetEnvironmentVariable(setting);
-		//			if(env?.Length > 0)
-		//			{
-		//				result = result.Replace($"%{setting}%", env);
-		//			}
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* RoundedRectangle																											*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return a graphics path representing a rounded rectangle.
-		///// </summary>
-		///// <param name="bounds">
-		///// </param>
-		///// <param name="radius">
-		///// </param>
-		///// <returns>
-		///// </returns>
-		//public static GraphicsPath RoundedRectangle(Rectangle bounds, int radius)
-		//{
-		//	int diameter = radius * 2;
-		//	Size size = new Size(diameter, diameter);
-		//	Rectangle arc = new Rectangle(bounds.Location, size);
-		//	GraphicsPath path = new GraphicsPath();
-
-		//	if(radius == 0)
-		//	{
-		//		path.AddRectangle(bounds);
-		//		return path;
-		//	}
-
-		//	// Top left arc  
-		//	path.AddArc(arc, 180, 90);
-
-		//	// Top right arc  
-		//	arc.X = bounds.Right - diameter;
-		//	path.AddArc(arc, 270, 90);
-
-		//	// Bottom right arc  
-		//	arc.Y = bounds.Bottom - diameter;
-		//	path.AddArc(arc, 0, 90);
-
-		//	// Bottom left arc 
-		//	arc.X = bounds.Left;
-		//	path.AddArc(arc, 90, 90);
-
-		//	path.CloseFigure();
-		//	return path;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* Saturate																															*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Saturate any value outside of a positive decimal fraction.
-		///// </summary>
-		///// <param name="value">
-		///// Decimal fraction to inspect.
-		///// </param>
-		///// <returns>
-		///// Caller's value, saturated to 0 if the original value was less than 0
-		///// and saturated to 1 if the original value was more than 1.
-		///// </returns>
-		//public static double Saturate(double value)
-		//{
-		//	double result = value;
-
-		//	if(value < 0d)
-		//	{
-		//		result = 0d;
-		//	}
-		//	else if(value > 1d)
-		//	{
-		//		result = 1d;
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* ScaleValues																														*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return the scale of the caller's values.
-		///// </summary>
-		///// <param name="x"></param>
-		///// <param name="a"></param>
-		///// <param name="b"></param>
-		///// <param name="c"></param>
-		///// <param name="d"></param>
-		///// <returns></returns>
-		//public static double ScaleValues(double x, double a, double b,
-		//	double c, double d)
-		//{
-		//	double s = (x - a) / (b - a);
-		//	return s * (d - c) + c;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	ScaleDrawing																													*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Translate the caller's physical coordinate to the scaled view.
-		///// </summary>
-		///// <param name="origin">
-		///// The physical coordinate being translated.
-		///// </param>
-		///// <param name="scale">
-		///// The current scaling factor.
-		///// </param>
-		///// <param name="scroll">
-		///// The current scroll value in the specified axis.
-		///// </param>
-		///// <returns>
-		///// </returns>
-		///// <remarks>
-		///// Scrollbar values are assumed to exist in the scaled domain, since
-		///// they serve to move the scaled view on the physical viewport.
-		///// </remarks>
-		//public static float ScaleDrawing(int origin, float scale, int scroll = 0)
-		//{
-		//	float result = 0f;
-
-		//	if(scale != 0f)
-		//	{
-		//		result = ((float)origin * (1f / scale)) + (float)scroll;
-		//	}
-		//	return result;
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Translate the caller's physical point to the scaled view.
-		///// </summary>
-		///// <param name="origin">
-		///// The physical point being translated.
-		///// </param>
-		///// <param name="scale">
-		///// The current scaling factor.
-		///// </param>
-		///// <param name="scrollHorizontal">
-		///// The current horizontal scroll value.
-		///// </param>
-		///// <param name="scrollVertical">
-		///// The current vertical scroll value.
-		///// </param>
-		///// <returns>
-		///// A scaled version of the caller's point.
-		///// </returns>
-		///// <remarks>
-		///// Scrollbar values are assumed to exist in the scaled domain, since
-		///// they serve to move the scaled view on the physical viewport.
-		///// </remarks>
-		//public static PointF ScaleDrawing(Point origin, SizeF scale,
-		//	int scrollHorizontal = 0, int scrollVertical = 0)
-		//{
-		//	PointF orig = new PointF((float)origin.X, (float)origin.Y);
-		//	PointF result = new PointF(0f, 0f);
-
-		//	if(scale.Width != 0f)
-		//	{
-		//		result.X =
-		//			(orig.X + (float)scrollHorizontal) * (1f / scale.Width);
-		//		//Debug.WriteLine(
-		//		//	$"Scale H with {scrollHorizontal} From {orig.X} to {result.X}");
-		//	}
-		//	if(scale.Height != 0f)
-		//	{
-		//		result.Y =
-		//			(orig.Y + (float)scrollVertical) * (1f / scale.Height);
-		//	}
-		//	return result;
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Scale the rectangle to the specified factor and return the new area to
-		///// the caller.
-		///// </summary>
-		///// <param name="rectangle">
-		///// Rectangle to inspect.
-		///// </param>
-		///// <param name="scale">
-		///// X and Y scale factors.
-		///// </param>
-		///// <returns>
-		///// New rectangle as a result of the original rectangle scaled by the
-		///// specified factors.
-		///// </returns>`
-		//public static RectangleF ScaleDrawing(RectangleF rectangle, SizeF scale)
-		//{
-		//	RectangleF result = new RectangleF(
-		//		rectangle.X * scale.Width,
-		//		rectangle.Y * scale.Height,
-		//		rectangle.Width * scale.Width,
-		//		rectangle.Height * scale.Height);
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	SvgReplaceFileRefWithB64																							*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Replace all file references in the SVG content with base64 embedded
-		///// values.
-		///// </summary>
-		///// <param name="directory">
-		///// Working directory serving as the base of the current content.
-		///// </param>
-		///// <param name="rawContent">
-		///// SVG content.
-		///// </param>
-		///// <param name="progress">
-		///// Reference to an optional progress bar to display the current progress.
-		///// </param>
-		///// <returns>
-		///// SVG string value where all external references have been fully
-		///// embedded.
-		///// </returns>
-		//public static async Task SvgReplaceFileRefWithB64(DirectoryInfo directory,
-		//	string rawContent, NameValueItem namedResult,
-		//	ToolStripProgressBar progress = null)
-		//{
-		//	Action replaceInstances = () =>
-		//	{
-		//		byte[] buffer = new byte[0];  //	File content.
-		//		StringBuilder builder = new StringBuilder();  //	base64 content.
-		//		double count = 0;
-		//		FileInfo file = null;
-		//		double index = 0;
-		//		string inner = "";
-		//		MatchCollection matches = null;
-		//		List<string> processedLinks = new List<string>();
-		//		string result = rawContent;
-
-		//		if(directory != null && rawContent?.Length > 0)
-		//		{
-		//			matches = Regex.Matches(rawContent, ResourceMain.rxSVGHREFFind);
-		//			count = (double)matches.Count;
-		//			index = 0.0;
-		//			foreach(Match match in matches)
-		//			{
-		//				//	External reference found.
-		//				if(builder.Length > 0)
-		//				{
-		//					builder.Remove(0, builder.Length);
-		//				}
-		//				inner = GetValue(match, "inner");
-		//				if(inner.Length > 0 && !processedLinks.Exists(x => x == inner))
-		//				{
-		//					file = new FileInfo(Path.Combine(directory.FullName, inner));
-		//					if(file.Exists)
-		//					{
-		//						//	The file is available.
-		//						buffer = File.ReadAllBytes(file.FullName);
-		//						builder.Append("data:");
-		//						builder.Append(MimeType(file.Extension));
-		//						builder.Append(";base64,");
-		//						builder.Append(Convert.ToBase64String(buffer));
-		//					}
-		//					result = result.Replace(GetValue(match, "outer"),
-		//						$"xlink:href=\"{builder}\"");
-		//					processedLinks.Add(inner);
-		//					GC.Collect();
-		//				}
-		//				if(progress != null && count != 0.0)
-		//				{
-		//					ProgressUpdate(progress, (int)(index / count));
-		//				}
-		//				index++;
-		//			}
-		//		}
-		//		namedResult.Name = "OK";
-		//		namedResult.Value = result;
-		//	};
-		//	await Task.Run(replaceInstances);
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* ThreadSleep																														*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Continue to process the UI while waiting on the calling thread for
-		///// the specified number of milliseconds.
-		///// </summary>
-		///// <param name="milliseconds">
-		///// Number of milliseconds to wait.
-		///// </param>
-		///// <returns>
-		///// Reference to an active task.
-		///// </returns>
-		//public static async Task ThreadSleep(int milliseconds)
-		//{
-		//	await Task.Delay(milliseconds);
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* ToBoolean																															*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Provide fail-safe conversion of string to boolean value.
-		///// </summary>
-		///// <param name="value">
-		///// Value to convert.
-		///// </param>
-		///// <returns>
-		///// Boolean value. False if not convertible.
-		///// </returns>
-		//public static bool ToBoolean(object value)
-		//{
-		//	bool result = false;
-		//	if(value != null)
-		//	{
-		//		result = ToBoolean(value.ToString());
-		//	}
-		//	return result;
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Provide fail-safe conversion of string to boolean value.
-		///// </summary>
-		///// <param name="value">
-		///// Value to convert.
-		///// </param>
-		///// <returns>
-		///// Boolean value. False if not convertible.
-		///// </returns>
-		//public static bool ToBoolean(string value)
-		//{
-		//	int count = 0;
-		//	int index = 0;
-		//	string lower = "";
-		//	bool result = false;
-
-		//	if(IsBoolean(value))
-		//	{
-		//		lower = value.ToLower();
-		//		count = mBoolChoices.Length;
-		//		for(index = 0; index < count; index ++)
-		//		{
-		//			if(mBoolChoices[index] == lower)
-		//			{
-		//				//	Match found.
-		//				if(index % 2 == 0)
-		//				{
-		//					result = true;
-		//				}
-		//				break;
-		//			}
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* ToFloat																																*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Provide fail-safe conversion of string to numeric value.
-		///// </summary>
-		///// <param name="value">
-		///// Value to convert.
-		///// </param>
-		///// <returns>
-		///// Floating point value. 0 if not convertible.
-		///// </returns>
-		//public static float ToFloat(object value)
-		//{
-		//	float result = 0f;
-		//	if(value != null)
-		//	{
-		//		result = ToFloat(value.ToString());
-		//	}
-		//	return result;
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Provide fail-safe conversion of string to numeric value.
-		///// </summary>
-		///// <param name="value">
-		///// Value to convert.
-		///// </param>
-		///// <returns>
-		///// Floating point value. 0 if not convertible.
-		///// </returns>
-		//public static float ToFloat(string value)
-		//{
-		//	float result = 0f;
-		//	try
-		//	{
-		//		result = float.Parse(value);
-		//	}
-		//	catch { }
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
+		//*-----------------------------------------------------------------------*
+		//* ToFloat																																*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Provide fail-safe conversion of string to numeric value.
+		/// </summary>
+		/// <param name="value">
+		/// Value to convert.
+		/// </param>
+		/// <returns>
+		/// Floating point value. 0 if not convertible.
+		/// </returns>
+		public static float ToFloat(object value)
+		{
+			float result = 0f;
+			if(value != null)
+			{
+				result = ToFloat(value.ToString());
+			}
+			return result;
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Provide fail-safe conversion of string to numeric value.
+		/// </summary>
+		/// <param name="value">
+		/// Value to convert.
+		/// </param>
+		/// <returns>
+		/// Floating point value. 0 if not convertible.
+		/// </returns>
+		public static float ToFloat(string value)
+		{
+			float result = 0f;
+			try
+			{
+				result = float.Parse(value);
+			}
+			catch { }
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//*	ToHex																																	*
@@ -4833,132 +3941,73 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* ToImpliedType																													*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return a value that is either string, numeric, or boolean.
-		///// </summary>
-		///// <param name="value">
-		///// Value to inspect.
-		///// </param>
-		///// <returns>
-		///// Value in a native type corresponding to string, numeric, or boolean.
-		///// </returns>
-		///// <remarks>
-		///// This method is generally intended for use with JSON output.
-		///// </remarks>
-		//public static object ToImpliedType(string value)
-		//{
-		//	object result = null;
+		//*-----------------------------------------------------------------------*
+		//* ToInt																																	*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Provide fail-safe conversion of string to numeric value.
+		/// </summary>
+		/// <param name="value">
+		/// Value to convert.
+		/// </param>
+		/// <returns>
+		/// Integer value. 0 if not convertible.
+		/// </returns>
+		public static int ToInt(object value)
+		{
+			int result = 0;
+			if(value != null)
+			{
+				result = ToInt(value.ToString());
+			}
+			return result;
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Provide fail-safe conversion of string to numeric value.
+		/// </summary>
+		/// <param name="value">
+		/// Value to convert.
+		/// </param>
+		/// <returns>
+		/// Integer value. 0 if not convertible.
+		/// </returns>
+		public static int ToInt(string value)
+		{
+			//	A try .. catch block was originally implemented here, but the
+			//	following text was being sent to output on each unsuccessful
+			//	match.
+			//	Exception thrown: 'System.FormatException' in mscorlib.dll
+			int result = 0;
+			int.TryParse(value, out result);
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
-		//	if(value != null)
-		//	{
-		//		if(IsNumeric(value))
-		//		{
-		//			if(IsNumericFloatingPoint(value))
-		//			{
-		//				result = ToFloat(value);
-		//			}
-		//			else
-		//			{
-		//				result = ToInt(value);
-		//			}
-		//		}
-		//		else if(IsBoolean(value))
-		//		{
-		//			result = ToBoolean(value);
-		//		}
-		//		else
-		//		{
-		//			result = value;
-		//		}
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
+		//*-----------------------------------------------------------------------*
+		//* ToString																															*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a non-null string representation of the specified object.
+		/// </summary>
+		/// <param name="value">
+		/// Value to interpret.
+		/// </param>
+		/// <returns>
+		/// String representation of the specified value, if converted
+		/// successfully. Otherwise, an empty string.
+		/// </returns>
+		public static string ToString(object value)
+		{
+			string result = "";
 
-		////*-----------------------------------------------------------------------*
-		////* ToInt																																	*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Provide fail-safe conversion of string to numeric value.
-		///// </summary>
-		///// <param name="value">
-		///// Value to convert.
-		///// </param>
-		///// <returns>
-		///// Integer value. 0 if not convertible.
-		///// </returns>
-		//public static int ToInt(object value)
-		//{
-		//	int result = 0;
-		//	if(value != null)
-		//	{
-		//		result = ToInt(value.ToString());
-		//	}
-		//	return result;
-		//}
-		////*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
-		///// <summary>
-		///// Provide fail-safe conversion of string to numeric value.
-		///// </summary>
-		///// <param name="value">
-		///// Value to convert.
-		///// </param>
-		///// <returns>
-		///// Integer value. 0 if not convertible.
-		///// </returns>
-		//public static int ToInt(string value)
-		//{
-		//	//	A try .. catch block was originally implemented here, but the
-		//	//	following text was being sent to output on each unsuccessful
-		//	//	match.
-		//	//	Exception thrown: 'System.FormatException' in mscorlib.dll
-		//	int result = 0;
-		//	int.TryParse(value, out result);
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* ToString																															*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Return a non-null string representation of the specified object.
-		///// </summary>
-		///// <param name="value">
-		///// Value to interpret.
-		///// </param>
-		///// <returns>
-		///// String representation of the specified value, if converted
-		///// successfully. Otherwise, an empty string.
-		///// </returns>
-		//public static string ToString(object value)
-		//{
-		//	string result = "";
-
-		//	if(value != null)
-		//	{
-		//		result = value.ToString();
-		//	}
-		//	return result;
-		//}
-		////*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////*	TypeConverter																													*
-		////*-----------------------------------------------------------------------*
-		//private static RelaxedTypeConverterCollection mTypeConverter =
-		//	new RelaxedTypeConverterCollection();
-		///// <summary>
-		///// Get a reference to the universal relaxed type converter.
-		///// </summary>
-		//public static RelaxedTypeConverterCollection TypeConverter
-		//{
-		//	get { return mTypeConverter; }
-		//}
-		////*-----------------------------------------------------------------------*
+			if(value != null)
+			{
+				result = value.ToString();
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* UpdateThumbnails																											*
@@ -5036,56 +4085,6 @@ namespace Scaffold
 			}
 		}
 		//*-----------------------------------------------------------------------*
-
-#if DEBUG && VERBOSE
-		//*-----------------------------------------------------------------------*
-		//* Verbose																																*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Send a message to the verbose text output.
-		/// </summary>
-		/// <param name="value">
-		/// Message to display.
-		/// </param>
-		/// <param name="level">
-		/// Verbose level to display.
-		/// </param>
-		public static void Verbose(string value, int level = 1)
-		{
-#if V3
-			if(level <= 3)
-			{
-				Debug.WriteLine(value);
-			}
-#elif V2
-			if(level <= 2)
-			{
-				Debug.WriteLine(value);
-			}
-#else
-			if(level == 1)
-			{
-				Debug.WriteLine(value);
-			}
-#endif
-		}
-		//*-----------------------------------------------------------------------*
-#else
-		////*-----------------------------------------------------------------------*
-		////* Verbose																																*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Send a message to the verbose text output.
-		///// </summary>
-		///// <param name="value">
-		///// Message to display.
-		///// </param>
-		///// <param name="level">
-		///// Verbose level to display.
-		///// </param>
-		//public static void Verbose(string value, int level = 1) { }
-		////*-----------------------------------------------------------------------*
-#endif
 
 	}
 	//*-------------------------------------------------------------------------*

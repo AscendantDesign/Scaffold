@@ -164,6 +164,8 @@ namespace Scaffold
 			this.btnDecisionTreeEditor = new Scaffold.LabelButtonControl();
 			this.panelWindowControl = new Scaffold.PanelWindowControl();
 			this.timerAutoSave = new System.Windows.Forms.Timer(this.components);
+			this.mnuFileUnpublish = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuFileUnpublishSlackChatConversation = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuMain.SuspendLayout();
 			this.statusMain.SuspendLayout();
 			this.tctlDocument.SuspendLayout();
@@ -214,6 +216,7 @@ namespace Scaffold
             this.mnuFileConvert,
             this.mnuFileExport,
             this.mnuFilePublish,
+            this.mnuFileUnpublish,
             this.mnuFileSep2,
             this.mnuFileDocumentProperties,
             this.mnuFileSep3,
@@ -638,7 +641,7 @@ namespace Scaffold
             this.mnuViewZoomOut,
             this.mnuViewZoom100});
 			this.mnuViewZoom.Name = "mnuViewZoom";
-			this.mnuViewZoom.Size = new System.Drawing.Size(224, 26);
+			this.mnuViewZoom.Size = new System.Drawing.Size(132, 26);
 			this.mnuViewZoom.Text = "&Zoom";
 			// 
 			// mnuViewZoomIn
@@ -674,7 +677,7 @@ namespace Scaffold
             this.mnuViewScrollLayout,
             this.mnuViewScrollNode});
 			this.mnuViewScroll.Name = "mnuViewScroll";
-			this.mnuViewScroll.Size = new System.Drawing.Size(224, 26);
+			this.mnuViewScroll.Size = new System.Drawing.Size(132, 26);
 			this.mnuViewScroll.Text = "&Scroll";
 			// 
 			// mnuViewScrollLayout
@@ -1384,6 +1387,21 @@ namespace Scaffold
 			this.timerAutoSave.Interval = 300000;
 			this.timerAutoSave.Tick += new System.EventHandler(this.timerAutoSave_Tick);
 			// 
+			// mnuFileUnpublish
+			// 
+			this.mnuFileUnpublish.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileUnpublishSlackChatConversation});
+			this.mnuFileUnpublish.Name = "mnuFileUnpublish";
+			this.mnuFileUnpublish.Size = new System.Drawing.Size(273, 26);
+			this.mnuFileUnpublish.Text = "&Unpublish";
+			// 
+			// mnuFileUnpublishSlackChatConversation
+			// 
+			this.mnuFileUnpublishSlackChatConversation.Name = "mnuFileUnpublishSlackChatConversation";
+			this.mnuFileUnpublishSlackChatConversation.Size = new System.Drawing.Size(273, 26);
+			this.mnuFileUnpublishSlackChatConversation.Text = "&Slack Chatbot Conversation";
+			this.mnuFileUnpublishSlackChatConversation.Click += new System.EventHandler(this.mnuFileUnpublishSlackChatConversation_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1562,6 +1580,8 @@ namespace Scaffold
 		private ToolStripMenuItem mnuViewScrollNode;
 		private ToolStripMenuItem mnuEditFind;
 		private ToolStripSeparator mnuEditSep3;
+		private ToolStripMenuItem mnuFileUnpublish;
+		private ToolStripMenuItem mnuFileUnpublishSlackChatConversation;
 	}
 }
 

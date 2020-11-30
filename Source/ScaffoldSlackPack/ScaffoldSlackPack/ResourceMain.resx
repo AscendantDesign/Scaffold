@@ -149,6 +149,10 @@
     <value>https://slack.com/api/chat.postMessage</value>
     <comment>Slack method chat.postMessage.</comment>
   </data>
+  <data name="sqlConversationDelete" xml:space="preserve">
+    <value>DELETE FROM Conversation WHERE ConversationTicket = '{0}';</value>
+    <comment>SQL query to delete the specified conversation record.</comment>
+  </data>
   <data name="sqlConversationInsert" xml:space="preserve">
     <value>INSERT INTO Conversation(ConversationTicket, ConversationTitle, ConversationDescription)
 VALUES
@@ -177,6 +181,10 @@ WHERE
 ROWID = {0}</value>
     <comment>SQL query to update the Conversation table using parameter values.</comment>
   </data>
+  <data name="sqlNodeDataDeleteConversation" xml:space="preserve">
+    <value>DELETE FROM NodeData WHERE ConversationTicket = '{0}';</value>
+    <comment>SQL query to delete all node data items for a specified conversation.</comment>
+  </data>
   <data name="sqlNodeDataInsert" xml:space="preserve">
     <value>INSERT INTO NodeData(NodeItemTicket, ConversationTicket, NodeType, NodeText, NodeDelay, NodeImageUrl, NodeLinkUrl) VALUES ($NodeItemTicket, $ConversationTicket, $NodeType, $NodeText, $NodeDelay, $NodeImageUrl, $NodeLinkUrl);</value>
     <comment>SQL query to insert a record into the NodeData table.</comment>
@@ -196,6 +204,15 @@ ROWID = {0}</value>
   <data name="sqlNodeDataUpdate" xml:space="preserve">
     <value>UPDATE NodeData SET ConversationTicket = $ConversationTicket, NodeType = $NodeType, NodeText = $NodeText, NodeDelay = $NodeDelay, NodeImageUrl = $NodeImageUrl, NodeLinkUrl = $NodeLinkUrl WHERE NodeItemTicket = $NodeItemTicket;</value>
     <comment>SQL query to update a record in the NodeData table.</comment>
+  </data>
+  <data name="sqlSocketDataDeleteConversation" xml:space="preserve">
+    <value>DELETE FROM SocketData
+WHERE NodeItemTicket IN(
+	SELECT NodeItemTicket
+	FROM NodeData
+	WHERE ConversationTicket = '{0}'
+);</value>
+    <comment>SQL query to delete all socket data items for a specified conversation.</comment>
   </data>
   <data name="sqlSocketDataInsert" xml:space="preserve">
     <value>INSERT INTO SocketData(SocketItemTicket, NodeItemTicket, NextNodeItemTicket, NextSocketItemTicket, SocketType, SocketText, SocketImageUrl, SocketLinkUrl) VALUES ($SocketItemTicket, $NodeItemTicket, $NextNodeItemTicket, $NextSocketItemTicket, $SocketType, $SocketText, $SocketImageUrl, $SocketLinkUrl);</value>
@@ -232,6 +249,10 @@ ROWID = {0}</value>
   <data name="sqlUserItemUpdateSlackNameFromSlackID" xml:space="preserve">
     <value>UPDATE UserItem SET SlackName = '{0}' WHERE SlackID = '{1}';</value>
     <comment>SQL query to update the SlackName in an existing UserItem from the SlackID.</comment>
+  </data>
+  <data name="sqlUserProgressDeleteConversation" xml:space="preserve">
+    <value>DELETE FROM UserProgress WHERE ConversationTicket = '{0}';</value>
+    <comment>SQL query to delete all user progress items for a specicied conversation.</comment>
   </data>
   <data name="sqlUserProgressInsert" xml:space="preserve">
     <value>INSERT INTO UserProgress(UserProgressTicket, UserItemTicket, ConversationTicket, ConversationState, UserLevel) VALUES ('{0}', '{1}', '{2}', {3}, {4});</value>

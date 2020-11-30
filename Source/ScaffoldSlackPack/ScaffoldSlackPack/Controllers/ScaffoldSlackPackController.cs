@@ -1,4 +1,4 @@
-﻿//	ScaffoldSlackPackController.cs
+//	ScaffoldSlackPackController.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -278,6 +278,37 @@ namespace ScaffoldSlackPack
 				result = await ProcessUserInteraction(content);
 			}
 			return Content(result);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* UnpublishPackage																											*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Unpublish a Node package from use as a chatbot within Slack.
+		/// </summary>
+		/// <returns>
+		/// Content result "200 OK".
+		/// </returns>
+		/// <remarks>
+		/// The current version expects JSON as raw text in the body.
+		/// Data format of the body parameter is that of node file descriptor.
+		/// This method reads the following format.
+		/// { Ticket: "", Name: "", Description: "" }
+		/// If the project ticket is not already present in the database, no
+		/// action is taken. Otherwise, all related records are deleted.
+		/// </remarks>
+		[HttpPost("UnpublishPackage")]
+		public async Task<ContentResult> UnpublishPackage()
+		{
+			string content = "";
+
+			using(StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+			{
+				content = await reader.ReadToEndAsync();
+			}
+			RemoveNodeFile(content);
+			return Content("");
 		}
 		//*-----------------------------------------------------------------------*
 

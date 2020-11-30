@@ -1,4 +1,4 @@
-﻿//	OfficeDriver.cs
+//	OfficeDriver.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -12,6 +12,7 @@ using Microsoft.Office.Core;
 using Microsoft.Office.Interop.PowerPoint;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 
+using static Scaffold.ScaffoldNodesUtil;
 using static Scaffold.ScaffoldUtil;
 using System.Drawing;
 

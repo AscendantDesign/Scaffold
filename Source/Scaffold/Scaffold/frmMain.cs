@@ -2997,6 +2997,115 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* mnuFileUnpublishSlackChatConversation_Click														*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// File / Unpublish / Slack Chatbot Conversation menu option has been
+		/// clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuFileUnpublishSlackChatConversation_Click(object sender,
+			EventArgs e)
+		{
+			bool bContinue = true;    //	Flag - continue.
+			string content = "";
+			NodeFileDescriptor descriptor = null;
+			frmDocumentProperties formProperties = null;
+			//	Runtime.
+			string site = "https://ScaffoldSlackPack.azurewebsites.net";
+
+			if(NetworkLocalMode)
+			{
+				//	Development on IIS Express.
+				site = "https://localhost:44328";
+			}
+
+			if(NodeFileInfo == null)
+			{
+				if(MessageBox.Show("Please save your node file before continuing.",
+					"Publish to Slack", MessageBoxButtons.OKCancel) == DialogResult.OK)
+				{
+					mnuFileSaveNodeAs_Click(sender, e);
+				}
+				else
+				{
+					bContinue = false;
+				}
+			}
+			if(NodeFileInfo == null)
+			{
+				bContinue = false;
+			}
+			if(bContinue)
+			{
+				statMessage.Text = "Preparing Slack Data...";
+				statProg.Value = 25;
+				this.Refresh();
+				//	Make sure a ticket exists.
+				if(nodeControl.NodeFile.Ticket.Length == 0)
+				{
+					nodeControl.NodeFile.Ticket =
+						Guid.NewGuid().ToString("D").ToLower();
+				}
+				//	View / Edit properties.
+				formProperties = new frmDocumentProperties();
+				formProperties.DocumentDescription = nodeControl.NodeFile.Description;
+				formProperties.DocumentName = nodeControl.NodeFile.Name;
+				formProperties.DocumentTicket = nodeControl.NodeFile.Ticket;
+				bContinue = (formProperties.ShowDialog() == DialogResult.OK);
+			}
+			if(bContinue)
+			{
+				//	Update properties.
+				statMessage.Text = $"Unpublishing Slack Data from {site}...";
+				statProg.Value = 50;
+				this.Refresh();
+				descriptor = new NodeFileDescriptor();
+				descriptor.Description = formProperties.DocumentDescription;
+				descriptor.Name = formProperties.DocumentName;
+				descriptor.Ticket = formProperties.DocumentTicket;
+				//	Convert the content to stand-alone.
+				content = JsonConvert.SerializeObject(descriptor);
+				using(WebClient webClient = new WebClient())
+				{
+					//webClient.Headers.Add(
+					//	HttpRequestHeader.ContentType, "application/json");
+					webClient.Headers.Add(
+						HttpRequestHeader.ContentType, "text/plain");
+					try
+					{
+						webClient.UploadString(
+							new Uri($"{site}/ScaffoldSlackPack/UnpublishPackage"),
+							"POST", content);
+					}
+					catch(Exception ex)
+					{
+						MessageBox.Show(
+							$"Error while processing command: {ex.Message}",
+							"Unpublish from Slack");
+						bContinue = false;
+					}
+				}
+			}
+			if(bContinue)
+			{
+				statProg.Value = 100;
+				this.Refresh();
+				MessageBox.Show("File unpublished from Slack.",
+					"Unpublish from Slack");
+			}
+
+			statMessage.Text = "Ready...";
+			statProg.Value = 0;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* mnuToolsAnimationFrameNToHTML_Click																		*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -6459,6 +6568,10 @@ namespace Scaffold
 			//	RelativeFilename(
 			//		new FileInfo("C:/Temp/Docs/InProgress/Document.doc"),
 			//		new FileInfo("C:/Temp/Images/Masters/Image.png")));
+			if(NetworkLocalMode)
+			{
+				statMessage.Text = "Running in local server mode...";
+			}
 		}
 		//*-----------------------------------------------------------------------*
 

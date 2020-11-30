@@ -668,7 +668,7 @@ namespace Scaffold
 
 			if(lvResourceGallery.SelectedItems?.Count > 0)
 			{
-				result = ScaffoldUtil.ToString(
+				result = ScaffoldNodesUtil.ToString(
 					lvResourceGallery.SelectedItems[0].Tag).ToLower();
 			}
 			return result;

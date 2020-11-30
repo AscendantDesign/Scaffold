@@ -424,14 +424,19 @@ namespace Scaffold
 		private void DrawSockets(NodeItem node, Graphics g,
 			Point mouseLocation, MouseButtons mouseButtons)
 		{
-			int index = 0;
 			Font font = null;
 			Brush highlightBrush = null;
+			Bitmap icon = null;
+			RectangleF iconArea = RectangleF.Empty;
+			SizeF iconSize = SizeF.Empty;
+			int index = 0;
 			Brush normalBrush = null;
+			PropertyItem property = null;
 			RectangleF rect = RectangleF.Empty;
 			StringFormat sf = null;
 			List<SocketItem> sockets = null;
 			Brush textBrush = null;
+			RectangleF textArea = RectangleF.Empty;
 			bool toolTipActive = false;
 
 			if(node != null && g != null)
@@ -455,6 +460,32 @@ namespace Scaffold
 				foreach(SocketItem socket in sockets)
 				{
 					//	Each input socket.
+					icon = null;
+					iconArea = RectangleF.Empty;
+					iconSize = SizeF.Empty;
+					property = socket.Properties.FirstOrDefault(p => p.Name == "Icon");
+					if(property != null)
+					{
+						icon = (Bitmap)property.Value;
+						iconSize = icon.Size;
+						if(iconSize.Width != 0f)
+						{
+							iconArea = new RectangleF(
+								socket.TextBounds.X,
+								socket.TextBounds.Y,
+								iconSize.Width,
+								iconSize.Height);
+							textArea = new RectangleF(
+								socket.TextBounds.X + iconSize.Width + 2,
+								socket.TextBounds.Y,
+								socket.TextBounds.Width,
+								socket.TextBounds.Height);
+						}
+					}
+					else
+					{
+						textArea = socket.TextBounds;
+					}
 					rect = socket.GetBounds();
 					toolTipActive = rect.Contains(
 						ScaleDrawing(mouseLocation, mDrawingScale,
@@ -476,8 +507,14 @@ namespace Scaffold
 					sf = new StringFormat();
 					sf.Alignment = StringAlignment.Near;
 					sf.LineAlignment = StringAlignment.Center;
+					//	Text bounds includes the width of any icon.
 					g.DrawString(socket[socket.TitleProperty].Value.ToString(),
-						font, textBrush, socket.TextBounds, sf);
+						font, textBrush, textArea, sf);
+
+					if(icon != null)
+					{
+						g.DrawImage(icon, iconArea);
+					}
 
 					//g.InterpolationMode = InterpolationMode.HighQualityBilinear;
 					//g.SmoothingMode = SmoothingMode.HighQuality;
@@ -492,6 +529,33 @@ namespace Scaffold
 				index = 0;
 				foreach(SocketItem socket in sockets)
 				{
+					icon = null;
+					iconArea = RectangleF.Empty;
+					iconSize = SizeF.Empty;
+					property = socket.Properties.FirstOrDefault(p => p.Name == "Icon");
+					if(property != null)
+					{
+						icon = (Bitmap)property.Value;
+						iconSize = icon.Size;
+						if(iconSize.Width != 0f)
+						{
+							iconArea = new RectangleF(
+								socket.TextBounds.X + socket.TextBounds.Width -
+									(iconSize.Width + 2f),
+								socket.TextBounds.Y,
+								iconSize.Width,
+								iconSize.Height);
+							textArea = new RectangleF(
+								socket.TextBounds.X,
+								socket.TextBounds.Y,
+								socket.TextBounds.Width - (iconSize.Width + 2),
+								socket.TextBounds.Height);
+						}
+					}
+					else
+					{
+						textArea = socket.TextBounds;
+					}
 					rect = socket.GetBounds();
 					toolTipActive = rect.Contains(
 						ScaleDrawing(mouseLocation, mDrawingScale,
@@ -514,7 +578,12 @@ namespace Scaffold
 					sf.Alignment = StringAlignment.Far;
 					sf.LineAlignment = StringAlignment.Center;
 					g.DrawString(socket[socket.TitleProperty].Value.ToString(),
-						font, textBrush, socket.TextBounds, sf);
+						font, textBrush, textArea, sf);
+
+					if(icon != null)
+					{
+						g.DrawImage(icon, iconArea);
+					}
 
 					//g.InterpolationMode = InterpolationMode.HighQualityBilinear;
 					//g.SmoothingMode = SmoothingMode.HighQuality;
@@ -656,11 +725,13 @@ namespace Scaffold
 			float hMax = 0;
 			float hMin = 0;
 			float hVal = 0;
+			SizeF iconSize = SizeF.Empty;
 			int index = 0;
 			float lastSocketY = 0f;
 			float lastTextHeight = 0f;
 			float maxHeight = 0f;
 			float maxWidth = 0f;
+			PropertyItem property = null;
 			//float ratio = 1f;
 			RectangleF rect = RectangleF.Empty;
 			float socketMaxWidth = 16f;
@@ -700,7 +771,7 @@ namespace Scaffold
 					titleTextSize.Width);
 				headerHeight = node.TitleHeight = titleTextSize.Height;
 
-				//	Thumbnails and Icons.
+				//	Main node thumbnails and icons.
 				if(MediaExists(node))
 				{
 					//	Thumbnails and icons will already exist here...
@@ -769,12 +840,20 @@ namespace Scaffold
 				fontSocket = new Font(this.Font.FontFamily, mSocketFontSize);
 				foreach(SocketItem socket in node.Sockets)
 				{
+					iconSize = SizeF.Empty;
+					property = socket.Properties.FirstOrDefault(p => p.Name == "Icon");
+					if(property != null && property.Value != null)
+					{
+						//	An icon is present.
+						iconSize = ((Bitmap)property.Value).Size;
+					}
 					if(mNodeMaxWidth > 0)
 					{
 						//	Fit title within node bounds.
 						socketTextSize =
 							g.MeasureString(socket[socket.TitleProperty].StringValue(),
-							fontSocket, mNodeMaxWidth - (int)socket.Width);
+							fontSocket,
+							mNodeMaxWidth - (int)socket.Width - (int)iconSize.Width);
 					}
 					else
 					{
@@ -782,6 +861,7 @@ namespace Scaffold
 						socketTextSize =
 							g.MeasureString(socket[socket.TitleProperty].StringValue(),
 							fontSocket);
+						socketTextSize.Width += (socket.Width + iconSize.Width);
 					}
 					//	Keep in mind that the width of the socket might push the width of
 					//	the node.
@@ -792,7 +872,7 @@ namespace Scaffold
 							node.X + (socket.Width / 2f),
 							lastSocketY + lastTextHeight + socketVSpacing,
 							node.Width - socket.Width,
-							socketTextSize.Height);
+							Math.Max(socketTextSize.Height, iconSize.Height));
 					socket.Y = socket.TextBounds.Y + (socket.TextBounds.Height / 2f) -
 						(socket.Height / 2f);
 					if(socket.SocketMode == SocketModeEnum.Input)
@@ -1790,10 +1870,28 @@ namespace Scaffold
 		/// </param>
 		protected override void OnKeyDown(KeyEventArgs e)
 		{
+			NodeEventArgs eaNode = null;
+
 			base.OnKeyDown(e);
-			if(e.KeyCode == Keys.Delete)
+			switch(e.KeyCode)
 			{
-				DeleteSelectedNodes();
+				case Keys.Delete:
+					DeleteSelectedNodes();
+					break;
+				case Keys.Escape:
+					if(mNodesMoving.Count > 0)
+					{
+						//	Cancel move.
+						while(mNodesMoving.Count > 0)
+						{
+							eaNode = mNodesMoving[0];
+							eaNode.Node.X = eaNode.OriginalNode.X;
+							eaNode.Node.Y = eaNode.OriginalNode.Y;
+							mNodesMoving.RemoveAt(0);
+						}
+						mMouseDown = false;
+					}
+					break;
 			}
 		}
 		//*-----------------------------------------------------------------------*

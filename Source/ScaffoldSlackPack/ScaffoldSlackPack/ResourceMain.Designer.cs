@@ -133,6 +133,15 @@ namespace ScaffoldSlackPack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM Conversation WHERE ConversationTicket = &apos;{0}&apos;;.
+        /// </summary>
+        internal static string sqlConversationDelete {
+            get {
+                return ResourceManager.GetString("sqlConversationDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSERT INTO Conversation(ConversationTicket, ConversationTitle, ConversationDescription)
         ///VALUES
         ///( $ConversationTicket, $ConversationTitle, $ConversationDescription);.
@@ -186,6 +195,15 @@ namespace ScaffoldSlackPack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM NodeData WHERE ConversationTicket = &apos;{0}&apos;;.
+        /// </summary>
+        internal static string sqlNodeDataDeleteConversation {
+            get {
+                return ResourceManager.GetString("sqlNodeDataDeleteConversation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSERT INTO NodeData(NodeItemTicket, ConversationTicket, NodeType, NodeText, NodeDelay, NodeImageUrl, NodeLinkUrl) VALUES ($NodeItemTicket, $ConversationTicket, $NodeType, $NodeText, $NodeDelay, $NodeImageUrl, $NodeLinkUrl);.
         /// </summary>
         internal static string sqlNodeDataInsert {
@@ -227,6 +245,20 @@ namespace ScaffoldSlackPack {
         internal static string sqlNodeDataUpdate {
             get {
                 return ResourceManager.GetString("sqlNodeDataUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM SocketData
+        ///WHERE NodeItemTicket IN(
+        ///	SELECT NodeItemTicket
+        ///	FROM NodeData
+        ///	WHERE ConversationTicket = &apos;{0}&apos;
+        ///);.
+        /// </summary>
+        internal static string sqlSocketDataDeleteConversation {
+            get {
+                return ResourceManager.GetString("sqlSocketDataDeleteConversation", resourceCulture);
             }
         }
         
@@ -308,6 +340,15 @@ namespace ScaffoldSlackPack {
         internal static string sqlUserItemUpdateSlackNameFromSlackID {
             get {
                 return ResourceManager.GetString("sqlUserItemUpdateSlackNameFromSlackID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM UserProgress WHERE ConversationTicket = &apos;{0}&apos;;.
+        /// </summary>
+        internal static string sqlUserProgressDeleteConversation {
+            get {
+                return ResourceManager.GetString("sqlUserProgressDeleteConversation", resourceCulture);
             }
         }
         

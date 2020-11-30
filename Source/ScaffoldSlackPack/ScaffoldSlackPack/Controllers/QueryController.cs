@@ -1,4 +1,4 @@
-﻿//	QueryController.cs
+//	QueryController.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -71,6 +71,13 @@ namespace ScaffoldSlackPack.Controllers
 			{
 				switch(request.Request)
 				{
+					case "delete.conversation":
+						//	Remove the course from the database.
+						if(request.Data?.Length > 0)
+						{
+							result = RemoveNodeFile(request.Data.Replace("&dquote;", "\""));
+						}
+						break;
 					case "get.block.question":
 						//	Return the formatted question message for a node.
 						parameters = request.Data.Split(',').ToList();

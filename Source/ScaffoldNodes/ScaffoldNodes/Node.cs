@@ -1,4 +1,4 @@
-﻿//	Node.cs
+//	Node.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -548,12 +548,12 @@ namespace Scaffold
 	//*-------------------------------------------------------------------------*
 
 	//*-------------------------------------------------------------------------*
-	//*	NodeFileItem																														*
+	//*	NodeFileDescriptor																											*
 	//*-------------------------------------------------------------------------*
 	/// <summary>
-	/// Decision tree file structure.
+	/// Description and top-level information about a node file.
 	/// </summary>
-	public class NodeFileItem
+	public class NodeFileDescriptor
 	{
 		//*************************************************************************
 		//*	Private																																*
@@ -564,19 +564,6 @@ namespace Scaffold
 		//*************************************************************************
 		//*	Public																																*
 		//*************************************************************************
-		//*-----------------------------------------------------------------------*
-		//*	Clear																																	*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Clear the contents of this file.
-		/// </summary>
-		public void Clear()
-		{
-			mNodes.Clear();
-			mResources.Clear();
-		}
-		//*-----------------------------------------------------------------------*
-
 		//*-----------------------------------------------------------------------*
 		//*	Description																														*
 		//*-----------------------------------------------------------------------*
@@ -606,6 +593,54 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//*	Ticket																																*
+		//*-----------------------------------------------------------------------*
+		private string mTicket = Guid.NewGuid().ToString("D");
+		/// <summary>
+		/// Get/Set the globally unique identification of this file.
+		/// </summary>
+		public string Ticket
+		{
+			get { return mTicket; }
+			set { mTicket = value; }
+		}
+		//*-----------------------------------------------------------------------*
+
+	}
+	//*-------------------------------------------------------------------------*
+
+
+	//*-------------------------------------------------------------------------*
+	//*	NodeFileItem																														*
+	//*-------------------------------------------------------------------------*
+	/// <summary>
+	/// Decision tree file structure.
+	/// </summary>
+	public class NodeFileItem : NodeFileDescriptor
+	{
+		//*************************************************************************
+		//*	Private																																*
+		//*************************************************************************
+		//*************************************************************************
+		//*	Protected																															*
+		//*************************************************************************
+		//*************************************************************************
+		//*	Public																																*
+		//*************************************************************************
+		//*-----------------------------------------------------------------------*
+		//*	Clear																																	*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Clear the contents of this file.
+		/// </summary>
+		public void Clear()
+		{
+			mNodes.Clear();
+			mResources.Clear();
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	Nodes																																	*
 		//*-----------------------------------------------------------------------*
 		private NodeCollection mNodes = new NodeCollection();
@@ -629,20 +664,6 @@ namespace Scaffold
 		public ResourceCollection Resources
 		{
 			get { return mResources; }
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//*	Ticket																																*
-		//*-----------------------------------------------------------------------*
-		private string mTicket = Guid.NewGuid().ToString("D");
-		/// <summary>
-		/// Get/Set the globally unique identification of this file.
-		/// </summary>
-		public string Ticket
-		{
-			get { return mTicket; }
-			set { mTicket = value; }
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1832,7 +1853,7 @@ namespace Scaffold
 		/// </param>
 		public NodeEventArgs(NodeItem node, string information = "")
 		{
-			mNode = node;
+			Node = node;
 			mInformation = information;
 		}
 		//*-----------------------------------------------------------------------*
@@ -1861,7 +1882,33 @@ namespace Scaffold
 		public NodeItem Node
 		{
 			get { return mNode; }
-			set { mNode = value; }
+			set
+			{
+				mNode = value;
+				mOriginalNode = new NodeItem(value);
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	OriginalNode																													*
+		//*-----------------------------------------------------------------------*
+		private NodeItem mOriginalNode = null;
+		/// <summary>
+		/// Get/Set a reference to the memberwise copy of the node in its original
+		/// condition.
+		/// </summary>
+		/// <remarks>
+		/// This value is set automatically when assigning the Node property, but
+		/// can be overridden via the local set accessor.
+		/// </remarks>
+		public NodeItem OriginalNode
+		{
+			get { return mOriginalNode; }
+			set
+			{
+				mOriginalNode = new NodeItem(value);
+			}
 		}
 		//*-----------------------------------------------------------------------*
 

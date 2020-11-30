@@ -333,6 +333,27 @@ namespace Scaffold
 							////	Create Icon.
 							//PostThumbnail(node, "IconLink", ResourceMain.Link, 32f);
 						}
+						foreach(SocketItem socketItem in node.Sockets)
+						{
+							//	Sockets only receive one thumbnail per object.
+							//	If the item is present, it is named 'Icon'.
+							if(MediaExists(socket, "MediaImage"))
+							{
+								CreateImageThumbnail(socket);
+							}
+							else if(MediaExists(socket, "MediaVideo"))
+							{
+								CreateVideoThumbnail(socket);
+							}
+							else if(MediaExists(socket, "MediaAudio"))
+							{
+								CreateAudioIcon(socket);
+							}
+							else if(MediaExists(socket, "MediaLink"))
+							{
+								CreateLinkIcon(socket);
+							}
+						}
 					}
 				}
 			}
