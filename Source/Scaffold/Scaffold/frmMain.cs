@@ -394,7 +394,7 @@ namespace Scaffold
 
 			if(nodeControl.NodeFile.Name.Length == 0)
 			{
-				if(NodeFileInfo?.Length > 0)
+				if(NodeFileInfo != null)
 				{
 					value = NodeFileInfo.Name;
 					//	Remove extension for default name.
@@ -2530,7 +2530,7 @@ namespace Scaffold
 		{
 			nodeControl.NodeFile.Clear();
 			nodeControl.Invalidate();
-			NodeFileObject = nodeControl.NodeFile;
+			//NodeFileObject = nodeControl.NodeFile;
 			//mNodeFile = null;
 			NodeFileInfo = null;
 			ResourceCollection.BasePath = "";
@@ -2922,6 +2922,8 @@ namespace Scaffold
 		{
 			string content = "";
 			SaveFileDialog dialog = new SaveFileDialog();
+			FileInfo file = null;
+			string relativeFilename = "";
 
 			statMessage.Text = "Saving Nodes...";
 			dialog.Filter = "Node JSON (*.node.json)|*.node.json|" +
@@ -2935,7 +2937,29 @@ namespace Scaffold
 			{
 				//mNodeFile = new FileInfo(dialog.FileName);
 				NodeFileInfo = new FileInfo(dialog.FileName);
+				//	New version of file gets a new name and ticket.
+				NodeFileObject.Ticket = Guid.NewGuid().ToString("D");
+				NodeFileObject.Name = "";
 				InitializeDocumentProperties();
+				//	Re-attempt relative filenames on absolute path linked resources.
+				foreach(ResourceItem resourceItem in NodeFileObject.Resources)
+				{
+					if(resourceItem.RelativeFilename.Length > 1 &&
+						(resourceItem.RelativeFilename[1] == ':' ||
+						resourceItem.RelativeFilename.StartsWith("//")))
+					{
+						//	Drive letter or UNC are present.
+						//	Resource has an absolute path.
+						file = new FileInfo(resourceItem.AbsoluteFilename);
+						relativeFilename = RelativeFilename(NodeFileInfo, file);
+						if(resourceItem.Uri == resourceItem.RelativeFilename)
+						{
+							//	The file is a local link with no relative path.
+							resourceItem.Uri = relativeFilename;
+						}
+						resourceItem.RelativeFilename = relativeFilename;
+					}
+				}
 				content = NodeDataCollection.SerializeData(nodeControl.NodeFile);
 				File.WriteAllText(dialog.FileName, content);
 				ResourceCollection.BasePath = NodeFileInfo.DirectoryName;
@@ -4827,10 +4851,10 @@ namespace Scaffold
 		{
 			frmResourceGallery dialog = new frmResourceGallery();
 
-			if(NodeFileInfo != null)
-			{
-				dialog.LoadResources(nodeControl.Resources);
-			}
+			//if(NodeFileInfo != null)
+			//{
+			//	dialog.LoadResources(nodeControl.Resources);
+			//}
 			dialog.Show();
 		}
 		//*-----------------------------------------------------------------------*

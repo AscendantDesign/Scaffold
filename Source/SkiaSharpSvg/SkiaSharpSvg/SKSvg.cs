@@ -1,9 +1,9 @@
-﻿//	SKSvg.cs
+//	SKSvg.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
 //	------
-//	Based on SkiaSharp.Extended.Svg Copyright (c) 2017 Xamarin, Inc.,
+//	Some portions Copyright(c) 2017 Xamarin, Inc.,
 //	also licensed and distributed under the MIT License.
 #define NOTPORTABLE
 using System;
@@ -610,10 +610,10 @@ namespace SkiaSharpSvg
 					}
 					break;
 				case "g":
-					//	In SVG, groups play roles both as layers and as logical
-					//	grouping sections on a layer.
-					//	They can be translated, transformed, rotated, hidden,
-					//	and changed in opacity, like any other visual object.
+					//	Group object. In SVG, groups play roles both as layers and as
+					//	logical grouping sections on a layer. They can be translated,
+					//	transformed, rotated, hidden, and changed in opacity, like any
+					//	other visual object.
 					if(element.HasElements)
 					{
 						//// get current group opacity
@@ -2018,18 +2018,14 @@ namespace SkiaSharpSvg
 						{
 							var x = ReadNumber(args[2]);
 							var y = ReadNumber(args[3]);
-							//var t1 = SKMatrix.MakeTranslation(x, y);
 							var t1 = SKMatrix.CreateTranslation(x, y);
-							//var t2 = SKMatrix.MakeRotationDegrees(a);
 							var t2 = SKMatrix.CreateRotationDegrees(a);
-							//var t3 = SKMatrix.MakeTranslation(-x, -y);
 							var t3 = SKMatrix.CreateTranslation(-x, -y);
 							SKMatrix.Concat(ref nt, ref t1, ref t2);
 							SKMatrix.Concat(ref nt, ref nt, ref t3);
 						}
 						else
 						{
-							//nt = SKMatrix.MakeRotationDegrees(a);
 							nt = SKMatrix.CreateRotationDegrees(a);
 						}
 						break;

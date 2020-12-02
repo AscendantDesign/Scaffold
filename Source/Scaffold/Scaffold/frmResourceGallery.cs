@@ -284,25 +284,6 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
-		//* frmResourceGallery_Activated																					*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The form has been displayed.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Standard event arguments.
-		/// </param>
-		private void frmResourceGallery_Activated(object sender, EventArgs e)
-		{
-			mnuFileLoadFromFileSystem.Enabled =
-				(NodeFileInfo != null && NodeFileObject != null);
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
 		//* lvResourceGallery_DoubleClick																					*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -495,7 +476,7 @@ namespace Scaffold
 		/// </param>
 		private void mnuFileLoadFromFileSystem_Click(object sender, EventArgs e)
 		{
-			string basePath = "";
+			//string basePath = "";
 			bool bContinue = true;
 			bool bEmbed = true;
 			OpenFileDialog dialog = null;
@@ -506,7 +487,7 @@ namespace Scaffold
 			string relativeFilename = "";
 			ResourceCollection resources = null;
 
-			bContinue = (NodeFileInfo != null && NodeFileObject != null);
+			bContinue = (NodeFileObject != null);
 			if(bContinue)
 			{
 				dialog = new OpenFileDialog();
@@ -515,17 +496,18 @@ namespace Scaffold
 				dialog.DereferenceLinks = true;
 				dialog.Filter =
 					"Common Resource Files (" +
-					"*.jpg;*.jpeg;*.png;*.bmp;*.webp;*.tiff;" +
+					"*.jpg;*.jpeg;*.png;*.bmp;*.webp;*.tiff;*.gif;" +
 					"*.m4a;*.flac;*.mp3;*.wav;*.wma;*.aac;" +
 					"*.mp4;*.webm;*.wmv;*.mov;*.avi" +
 					")|" +
-					"*.jpg;*.jpeg;*.png;*.bmp;*.webp;*.tiff;" +
+					"*.jpg;*.jpeg;*.png;*.bmp;*.webp;*.tiff;*.gif;" +
 					"*.m4a;*.flac;*.mp3;*.wav;*.wma;*.aac;" +
 					"*.mp4;*.webm;*.wmv;*.mov;*.avi|" +
 					"Advanced Audio Coding (*.aac)|*.aac|" +
 					"Apple QuickTime Movie (*.mov)|*.mov|" +
 					"Audio Video Interleave (*.avi)|*.avi|" +
 					"Free Lossless Audio Codec (*.flac)|*.flac|" +
+					"Graphics Interchange Format (*.gif)|*.gif|" +
 					"Joint Photographic Experts Group (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
 					"Moving Pictures Experts Group (*.mp4)|*.mp4|" +
 					"MPEG-3 Audio File (*.mp3)|*.mp3|" +
@@ -572,7 +554,7 @@ namespace Scaffold
 					}
 					if(bContinue)
 					{
-						basePath = NodeFileInfo.DirectoryName;
+						//basePath = NodeFileInfo?.DirectoryName;
 						resources = NodeFileObject.Resources;
 						foreach(string filename in filenames)
 						{
@@ -602,8 +584,8 @@ namespace Scaffold
 					statMessage.Text = "Select Image Cancelled...";
 				}
 			}
-			this.LoadResources(NodeFileObject.Resources);
-			this.Refresh();
+			LoadResources();
+			Refresh();
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -628,6 +610,39 @@ namespace Scaffold
 		//*************************************************************************
 		//*	Protected																															*
 		//*************************************************************************
+		//*-----------------------------------------------------------------------*
+		//* OnActivated																														*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Raises the Activated event whenever the form has been displayed.
+		/// </summary>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected override void OnActivated(EventArgs e)
+		{
+			base.OnActivated(e);
+			mnuFileLoadFromFileSystem.Enabled = NodeFileObject != null;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	OnLoad																																*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Raises the Load event when the form has loaded and is ready to display
+		/// for the first time.
+		/// </summary>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+			LoadResources();
+		}
+		//*-----------------------------------------------------------------------*
+
 		//*************************************************************************
 		//*	Public																																*
 		//*************************************************************************
@@ -675,28 +690,107 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
+		//	//*-----------------------------------------------------------------------*
+		//	//*	LoadResources																													*
+		//	//*-----------------------------------------------------------------------*
+		//	/// <summary>
+		//	/// Load the resources to display.
+		//	/// </summary>
+		//	/// <param name="resources">
+		//	/// Reference to the collection of resources present in the file.
+		//	/// </param>
+		//	public async void LoadResources(ResourceCollection resources)
+		//	{
+		//		Bitmap thumbnail = null;
+
+		//		mMediaActive = -1;
+		//		mResources = resources;
+
+		//		imageListImage.Images.Clear();
+		//		imageListVideo.Images.Clear();
+		//		//	Load image lists.
+		//		if(resources != null)
+		//		{
+		//			foreach(ResourceItem resource in resources)
+		//			{
+		//				switch(resource.ResourceType)
+		//				{
+		//					case "MediaAudio":
+		//						//	All audio and links share a single image.
+		//						if(mMediaActive == -1)
+		//						{
+		//							mMediaActive = 0;
+		//						}
+		//						break;
+		//					case "MediaImage":
+		//						thumbnail = CreateImageThumbnail(resource, 128, 128);
+		//						imageListImage.Images.Add(thumbnail);
+		//						if(mMediaActive == -1)
+		//						{
+		//							mMediaActive = 1;
+		//						}
+		//						break;
+		//					case "MediaLink":
+		//						if(mMediaActive == -1)
+		//						{
+		//							mMediaActive = 2;
+		//						}
+		//						break;
+		//					case "MediaVideo":
+		//						thumbnail = await CreateVideoThumbnail(resource, 128, 128);
+		//						imageListVideo.Images.Add(thumbnail);
+		//						if(mMediaActive == -1)
+		//						{
+		//							mMediaActive = 3;
+		//						}
+		//						break;
+		//				}
+		//			}
+		//		}
+		//		//	Activate the list for the selected tab.
+		//		switch(mMediaActive)
+		//		{
+		//			case 0:
+		//				mMediaActive = 1;
+		//				buttonAudio_Click(null, null);
+		//				break;
+		//			case 1:
+		//				mMediaActive = 2;
+		//				buttonImage_Click(null, null);
+		//				break;
+		//			case 2:
+		//				mMediaActive = 3;
+		//				buttonLink_Click(null, null);
+		//				break;
+		//			case 3:
+		//				mMediaActive = 4;
+		//				buttonVideo_Click(null, null);
+		//				break;
+		//		}
+		//	}
+		//	//*-----------------------------------------------------------------------*
+		//}
+		////*-------------------------------------------------------------------------*
+
 		//*-----------------------------------------------------------------------*
 		//*	LoadResources																													*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
 		/// Load the resources to display.
 		/// </summary>
-		/// <param name="resources">
-		/// Reference to the collection of resources present in the file.
-		/// </param>
-		public async void LoadResources(ResourceCollection resources)
+		public async void LoadResources()
 		{
 			Bitmap thumbnail = null;
 
 			mMediaActive = -1;
-			mResources = resources;
+			mResources = NodeFileObject.Resources;
 
 			imageListImage.Images.Clear();
 			imageListVideo.Images.Clear();
 			//	Load image lists.
-			if(resources != null)
+			if(mResources != null)
 			{
-				foreach(ResourceItem resource in resources)
+				foreach(ResourceItem resource in mResources)
 				{
 					switch(resource.ResourceType)
 					{

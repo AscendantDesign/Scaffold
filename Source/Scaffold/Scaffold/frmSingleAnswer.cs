@@ -145,7 +145,7 @@ namespace Scaffold
 			string resourceType = "";
 			string ticket = "";
 
-			dialog.LoadResources(mResources);
+			//dialog.LoadResources(mResources);
 			if(dialog.ShowDialog() == DialogResult.OK)
 			{
 				ticket = dialog.GetSelectedTicket();
@@ -1264,7 +1264,7 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 		//*	Resources																															*
 		//*-----------------------------------------------------------------------*
-		private ResourceCollection mResources = null;
+		private ResourceCollection mResources = NodeFileObject?.Resources;
 		/// <summary>
 		/// Get a reference to the active collection of resources.
 		/// </summary>
@@ -1318,7 +1318,7 @@ namespace Scaffold
 			{
 				mSocketProperties = null;
 			}
-			mResources = NodeFileObject.Resources;
+			//mResources = NodeFileObject.Resources;
 			ReadSocket();
 		}
 		//*-----------------------------------------------------------------------*

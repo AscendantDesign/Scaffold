@@ -376,7 +376,7 @@ namespace Scaffold
 			string resourceType = "";
 			string ticket = "";
 
-			dialog.LoadResources(mResources);
+			//dialog.LoadResources(mResources);
 			if(dialog.ShowDialog() == DialogResult.OK)
 			{
 				ticket = dialog.GetSelectedTicket();
@@ -423,7 +423,7 @@ namespace Scaffold
 
 			socket = mNode.Sockets.FirstOrDefault(x =>
 				x.SocketMode == SocketModeEnum.Input);
-			dialog.LoadResources(mResources);
+			//dialog.LoadResources(mResources);
 			if(dialog.ShowDialog() == DialogResult.OK)
 			{
 				ticket = dialog.GetSelectedTicket();
@@ -908,6 +908,11 @@ namespace Scaffold
 			if(btnAnswerEdit.Enabled)
 			{
 				btnAnswerEdit_Click(null, null);
+			}
+			else if(btnAnswerAdd.Enabled)
+			{
+				//	Add a new answer if edit is not enabled.
+				btnAnswerAdd_Click(null, null);
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -2321,7 +2326,7 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 		//*	Resources																															*
 		//*-----------------------------------------------------------------------*
-		private ResourceCollection mResources = null;
+		private ResourceCollection mResources = NodeFileObject?.Resources;
 		/// <summary>
 		/// Get a reference to the active collection of resources.
 		/// </summary>
@@ -2341,13 +2346,10 @@ namespace Scaffold
 		/// <param name="node">
 		/// Reference to the node being edited.
 		/// </param>
-		/// <param name="resources">
-		/// Reference to associated resource collection.
-		/// </param>
-		public void SetNode(NodeItem node, ResourceCollection resources)
+		public void SetNode(NodeItem node)
 		{
 			mNode = node;
-			mResources = resources;
+			//mResources = resources;
 			ReadNode();
 		}
 		//*-----------------------------------------------------------------------*

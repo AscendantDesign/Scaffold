@@ -1,0 +1,674 @@
+{
+  "Ticket": "285a95bd-6d7b-42c0-a29a-cdce9f7b96cc",
+  "Name": "TestDrive",
+  "Description": "",
+  "Nodes": [
+    {
+      "Ticket": "85adc975-8c03-4002-b156-62fe454b3868",
+      "TitleProperty": "Question",
+      "NodeType": "Start",
+      "ZOrder": 2,
+      "X": 262.0,
+      "Y": 127.0,
+      "Width": 219.512527,
+      "Height": 102.533844,
+      "TitleHeight": 55.0130157,
+      "Delay": 0.0,
+      "Sockets": [
+        {
+          "Ticket": "065e2374-4f40-4b90-b9af-fba0ba2a5353",
+          "TitleProperty": "Answer",
+          "SocketMode": "Output",
+          "X": 473.5125,
+          "Y": 186.893219,
+          "Width": 16.0,
+          "Height": 16.0,
+          "TextX": 270.0,
+          "TextY": 186.013016,
+          "TextWidth": 203.512527,
+          "TextHeight": 17.7604141,
+          "Properties": [
+            {
+              "Name": "Index",
+              "Value": "A"
+            },
+            {
+              "Name": "Answer",
+              "Value": "St. Charles"
+            },
+            {
+              "Name": "StoryPageNumber",
+              "Value": "1"
+            },
+            {
+              "Name": "StoryPageWidth",
+              "Value": "256"
+            },
+            {
+              "Name": "StoryPageX",
+              "Value": "0.000"
+            },
+            {
+              "Name": "StoryPageHorizontalPlacement",
+              "Value": "Right"
+            },
+            {
+              "Name": "StoryPageY",
+              "Value": "0.000"
+            },
+            {
+              "Name": "StoryPageVerticalPlacement",
+              "Value": "Top"
+            },
+            {
+              "Name": "StoryShapeType",
+              "Value": "Callout"
+            },
+            {
+              "Name": "StoryColorFill",
+              "Value": "#FFFFFF"
+            },
+            {
+              "Name": "StoryColorOutline",
+              "Value": "#000000"
+            },
+            {
+              "Name": "StoryColorText",
+              "Value": "#000000"
+            },
+            {
+              "Name": "StoryFontName",
+              "Value": "Tahoma"
+            },
+            {
+              "Name": "StoryFontSize",
+              "Value": "10.2"
+            },
+            {
+              "Name": "TextX",
+              "Value": ""
+            },
+            {
+              "Name": "TextY",
+              "Value": ""
+            },
+            {
+              "Name": "TextWidth",
+              "Value": ""
+            },
+            {
+              "Name": "TextHeight",
+              "Value": ""
+            }
+          ],
+          "Connections": [
+            "d51cd017-e4c8-48a6-b32d-7c21c9ae7f12"
+          ]
+        },
+        {
+          "Ticket": "0b64a598-12c0-4896-8dda-3897c44b0cf5",
+          "TitleProperty": "Answer",
+          "SocketMode": "Output",
+          "X": 473.5125,
+          "Y": 208.653641,
+          "Width": 16.0,
+          "Height": 16.0,
+          "TextX": 270.0,
+          "TextY": 207.773438,
+          "TextWidth": 203.512527,
+          "TextHeight": 17.7604141,
+          "Properties": [
+            {
+              "Name": "Index",
+              "Value": "B"
+            },
+            {
+              "Name": "Answer",
+              "Value": "Toledo"
+            },
+            {
+              "Name": "StoryPageNumber",
+              "Value": "1"
+            },
+            {
+              "Name": "StoryPageWidth",
+              "Value": "256"
+            },
+            {
+              "Name": "StoryPageX",
+              "Value": "0.000"
+            },
+            {
+              "Name": "StoryPageHorizontalPlacement",
+              "Value": "Right"
+            },
+            {
+              "Name": "StoryPageY",
+              "Value": "0.000"
+            },
+            {
+              "Name": "StoryPageVerticalPlacement",
+              "Value": "Top"
+            },
+            {
+              "Name": "StoryShapeType",
+              "Value": "Callout"
+            },
+            {
+              "Name": "StoryColorFill",
+              "Value": "#FFFFFF"
+            },
+            {
+              "Name": "StoryColorOutline",
+              "Value": "#000000"
+            },
+            {
+              "Name": "StoryColorText",
+              "Value": "#000000"
+            },
+            {
+              "Name": "StoryFontName",
+              "Value": "Tahoma"
+            },
+            {
+              "Name": "StoryFontSize",
+              "Value": "10.2"
+            },
+            {
+              "Name": "TextX",
+              "Value": ""
+            },
+            {
+              "Name": "TextY",
+              "Value": ""
+            },
+            {
+              "Name": "TextWidth",
+              "Value": ""
+            },
+            {
+              "Name": "TextHeight",
+              "Value": ""
+            }
+          ],
+          "Connections": [
+            "33868c31-b01c-4449-aac3-6c83df6f0c25"
+          ]
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Question",
+          "Value": "Where would you like to go today?"
+        },
+        {
+          "Name": "StoryPageNumber",
+          "Value": "1"
+        },
+        {
+          "Name": "StoryPageWidth",
+          "Value": "System.Windows.Forms.TextBox, Text: 512"
+        },
+        {
+          "Name": "StoryPageX",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageHorizontalPlacement",
+          "Value": "Left"
+        },
+        {
+          "Name": "StoryPageY",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageVerticalPlacement",
+          "Value": "Top"
+        },
+        {
+          "Name": "StoryShapeType",
+          "Value": "Callout"
+        },
+        {
+          "Name": "StoryColorFill",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Name": "StoryColorOutline",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryColorText",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryFontName",
+          "Value": "Tahoma"
+        },
+        {
+          "Name": "StoryFontSize",
+          "Value": "10.2"
+        }
+      ]
+    },
+    {
+      "Ticket": "5266c883-133a-40c5-88e4-1ffe2a8157a4",
+      "TitleProperty": "Question",
+      "NodeType": "Delay",
+      "ZOrder": 18,
+      "X": 732.0,
+      "Y": 131.0,
+      "Width": 227.150864,
+      "Height": 306.5338,
+      "TitleHeight": 55.0130157,
+      "Delay": 10.0,
+      "Sockets": [
+        {
+          "Ticket": "d51cd017-e4c8-48a6-b32d-7c21c9ae7f12",
+          "TitleProperty": "Response",
+          "SocketMode": "Input",
+          "X": 724.0,
+          "Y": 394.893219,
+          "Width": 16.0,
+          "Height": 16.0,
+          "TextX": 740.0,
+          "TextY": 394.013,
+          "TextWidth": 211.150864,
+          "TextHeight": 17.7604141,
+          "Properties": [
+            {
+              "Name": "Response",
+              "Value": "Response"
+            }
+          ]
+        },
+        {
+          "Ticket": "95e76463-2047-4670-89d0-e34d0b0e35f6",
+          "TitleProperty": "Answer",
+          "SocketMode": "Output",
+          "X": 951.1509,
+          "Y": 416.653625,
+          "Width": 16.0,
+          "Height": 16.0,
+          "TextX": 740.0,
+          "TextY": 415.7734,
+          "TextWidth": 211.150864,
+          "TextHeight": 17.7604141,
+          "Properties": [
+            {
+              "Name": "Index",
+              "Value": "A"
+            },
+            {
+              "Name": "Answer",
+              "Value": "Output"
+            }
+          ],
+          "Connections": [
+            "009f7619-aa40-4320-8aa0-a19876783ba3"
+          ]
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Question",
+          "Value": "Please wait. Driving to St. Charles."
+        },
+        {
+          "Name": "StoryPageNumber",
+          "Value": "1"
+        },
+        {
+          "Name": "StoryPageWidth",
+          "Value": "System.Windows.Forms.TextBox, Text: 512"
+        },
+        {
+          "Name": "StoryPageX",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageHorizontalPlacement",
+          "Value": "Left"
+        },
+        {
+          "Name": "StoryPageY",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageVerticalPlacement",
+          "Value": "Top"
+        },
+        {
+          "Name": "StoryShapeType",
+          "Value": "Callout"
+        },
+        {
+          "Name": "StoryColorFill",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Name": "StoryColorOutline",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryColorText",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryFontName",
+          "Value": "Tahoma"
+        },
+        {
+          "Name": "StoryFontSize",
+          "Value": "10.2"
+        },
+        {
+          "Name": "MediaImage",
+          "Value": "4cb303f2-621b-44e1-b87f-f968aa986017"
+        }
+      ]
+    },
+    {
+      "Ticket": "9282cb5d-e67c-4671-bfa6-0ab1c1641e15",
+      "TitleProperty": "Question",
+      "NodeType": "Delay",
+      "ZOrder": 10,
+      "X": 731.0,
+      "Y": 508.0,
+      "Width": 227.150864,
+      "Height": 306.533875,
+      "TitleHeight": 55.0130157,
+      "Delay": 12.5,
+      "Sockets": [
+        {
+          "Ticket": "33868c31-b01c-4449-aac3-6c83df6f0c25",
+          "TitleProperty": "Response",
+          "SocketMode": "Input",
+          "X": 723.0,
+          "Y": 771.8932,
+          "Width": 16.0,
+          "Height": 16.0,
+          "TextX": 739.0,
+          "TextY": 771.013,
+          "TextWidth": 211.150864,
+          "TextHeight": 17.7604141,
+          "Properties": [
+            {
+              "Name": "Response",
+              "Value": "Response"
+            }
+          ]
+        },
+        {
+          "Ticket": "37cb977a-ff8f-4d41-acc9-8e31f1ae443e",
+          "TitleProperty": "Answer",
+          "SocketMode": "Output",
+          "X": 950.1509,
+          "Y": 793.6536,
+          "Width": 16.0,
+          "Height": 16.0,
+          "TextX": 739.0,
+          "TextY": 792.773438,
+          "TextWidth": 211.150864,
+          "TextHeight": 17.7604141,
+          "Properties": [
+            {
+              "Name": "Index",
+              "Value": "A"
+            },
+            {
+              "Name": "Answer",
+              "Value": "Output"
+            }
+          ],
+          "Connections": [
+            "057a639b-6be4-497b-906a-5718886946a5"
+          ]
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Question",
+          "Value": "Please wait. Driving to Toledo."
+        },
+        {
+          "Name": "StoryPageNumber",
+          "Value": "1"
+        },
+        {
+          "Name": "StoryPageWidth",
+          "Value": "System.Windows.Forms.TextBox, Text: 512"
+        },
+        {
+          "Name": "StoryPageX",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageHorizontalPlacement",
+          "Value": "Left"
+        },
+        {
+          "Name": "StoryPageY",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageVerticalPlacement",
+          "Value": "Top"
+        },
+        {
+          "Name": "StoryShapeType",
+          "Value": "Callout"
+        },
+        {
+          "Name": "StoryColorFill",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Name": "StoryColorOutline",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryColorText",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryFontName",
+          "Value": "Tahoma"
+        },
+        {
+          "Name": "StoryFontSize",
+          "Value": "10.2"
+        },
+        {
+          "Name": "MediaImage",
+          "Value": "4cb303f2-621b-44e1-b87f-f968aa986017"
+        }
+      ]
+    },
+    {
+      "Ticket": "2484819d-5c26-4523-984b-fc7e8cb43565",
+      "TitleProperty": "Question",
+      "NodeType": "Termination",
+      "ZOrder": 26,
+      "X": 1251.0,
+      "Y": 304.0,
+      "Width": 219.576,
+      "Height": 133.0781,
+      "TitleHeight": 107.317696,
+      "Delay": 0.0,
+      "Sockets": [
+        {
+          "Ticket": "009f7619-aa40-4320-8aa0-a19876783ba3",
+          "TitleProperty": "Response",
+          "SocketMode": "Input",
+          "X": 1243.0,
+          "Y": 416.1979,
+          "Width": 16.0,
+          "Height": 16.0,
+          "TextX": 1259.0,
+          "TextY": 415.3177,
+          "TextWidth": 203.576,
+          "TextHeight": 17.7604141,
+          "Properties": [
+            {
+              "Name": "Response",
+              "Value": "Response"
+            }
+          ]
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Question",
+          "Value": "You have reached St. Charles. It turned out to be further than I thought!"
+        },
+        {
+          "Name": "StoryPageNumber",
+          "Value": "1"
+        },
+        {
+          "Name": "StoryPageWidth",
+          "Value": "System.Windows.Forms.TextBox, Text: 512"
+        },
+        {
+          "Name": "StoryPageX",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageHorizontalPlacement",
+          "Value": "Left"
+        },
+        {
+          "Name": "StoryPageY",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageVerticalPlacement",
+          "Value": "Top"
+        },
+        {
+          "Name": "StoryShapeType",
+          "Value": "Callout"
+        },
+        {
+          "Name": "StoryColorFill",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Name": "StoryColorOutline",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryColorText",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryFontName",
+          "Value": "Tahoma"
+        },
+        {
+          "Name": "StoryFontSize",
+          "Value": "10.2"
+        }
+      ]
+    },
+    {
+      "Ticket": "6175d3c2-b31d-4c3f-bee7-856ecee6dc6e",
+      "TitleProperty": "Question",
+      "NodeType": "Termination",
+      "ZOrder": 32,
+      "X": 1254.0,
+      "Y": 680.0,
+      "Width": 213.619781,
+      "Height": 133.078125,
+      "TitleHeight": 107.317696,
+      "Delay": 0.0,
+      "Sockets": [
+        {
+          "Ticket": "057a639b-6be4-497b-906a-5718886946a5",
+          "TitleProperty": "Response",
+          "SocketMode": "Input",
+          "X": 1246.0,
+          "Y": 792.1979,
+          "Width": 16.0,
+          "Height": 16.0,
+          "TextX": 1262.0,
+          "TextY": 791.3177,
+          "TextWidth": 197.619781,
+          "TextHeight": 17.7604141,
+          "Properties": [
+            {
+              "Name": "Response",
+              "Value": "Response"
+            }
+          ]
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Question",
+          "Value": "You have reached Toledo. It turned out to be much further than St. Charles!"
+        },
+        {
+          "Name": "StoryPageNumber",
+          "Value": "1"
+        },
+        {
+          "Name": "StoryPageWidth",
+          "Value": "System.Windows.Forms.TextBox, Text: 512"
+        },
+        {
+          "Name": "StoryPageX",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageHorizontalPlacement",
+          "Value": "Left"
+        },
+        {
+          "Name": "StoryPageY",
+          "Value": "0.000"
+        },
+        {
+          "Name": "StoryPageVerticalPlacement",
+          "Value": "Top"
+        },
+        {
+          "Name": "StoryShapeType",
+          "Value": "Callout"
+        },
+        {
+          "Name": "StoryColorFill",
+          "Value": "#FFFFFF"
+        },
+        {
+          "Name": "StoryColorOutline",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryColorText",
+          "Value": "#000000"
+        },
+        {
+          "Name": "StoryFontName",
+          "Value": "Tahoma"
+        },
+        {
+          "Name": "StoryFontSize",
+          "Value": "10.2"
+        }
+      ]
+    }
+  ],
+  "Resources": [
+    {
+      "AbsoluteFilename": "C:/Users/Daniel/Documents/GitHub/Scaffold/Images/DrivingHandsAni-2020120101.gif",
+      "DataUriHeaderLength": 0,
+      "Properties": [],
+      "RelativeFilename": "../Images/DrivingHandsAni-2020120101.gif",
+      "ResourceType": "MediaImage",
+      "Ticket": "4cb303f2-621b-44e1-b87f-f968aa986017",
+      "Uri": "../Images/DrivingHandsAni-2020120101.gif"
+    }
+  ]
+}

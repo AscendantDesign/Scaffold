@@ -1,0 +1,107 @@
+{
+	"SourceArtFilename": "%USERPROFILE%/Documents/Github/Scaffold/Drawings/DrivingHands.svg",
+	"CompiledHTMLFilename": "C:/Temp/Scaffold-DrivingHands.html",
+	"Scenes":
+	[
+		{
+			"SceneName": "Scene",
+			"Marks":
+			[
+				{
+					"MarkName": "Center1",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "WheelAndHands",
+							"Properties":
+							{
+								"x": 0.897,
+								"y": 137.5,
+								"width": 252.206,
+								"height": 305.000,
+								"rotation": 0.0
+							}
+						}
+					]
+				},
+				{
+					"MarkName": "LeftAngle1",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "WheelAndHands",
+							"Properties":
+							{
+								"rotation": -32.0
+							}
+						}
+					]
+				},
+				{
+					"MarkName": "RightAngle1",
+					"MarkCharacters":
+					[
+						{
+							"CharacterName": "WheelAndHands",
+							"Properties":
+							{
+								"rotation": 27.0
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"Frames":
+	[
+		{
+			"FrameIndex": 0,
+			"Description": "Start",
+			"Elements":
+			[
+				{
+					"ElementID": "WheelAndHands",
+					"ElementType": "SceneMark",
+					"ElementMark": "Scene.Center1"
+				}
+			]
+		},
+		{
+			"FrameIndex": 24,
+			"Description": "Right",
+			"Elements":
+			[
+				{
+					"ElementID": "WheelAndHands",
+					"ElementType": "SceneMark",
+					"ElementMark": "Scene.RightAngle1"
+				}
+			]
+		},
+		{
+			"FrameIndex": 48,
+			"Description": "Left",
+			"Elements":
+			[
+				{
+					"ElementID": "WheelAndHands",
+					"ElementType": "SceneMark",
+					"ElementMark": "Scene.LeftAngle1"
+				}
+			]
+		},
+		{
+			"FrameIndex": 60,
+			"Description": "Center",
+			"Elements":
+			[
+				{
+					"ElementID": "WheelAndHands",
+					"ElementType": "SceneMark",
+					"ElementMark": "Scene.Center1"
+				}
+			]
+		}
+	]
+}

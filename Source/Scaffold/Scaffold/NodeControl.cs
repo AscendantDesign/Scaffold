@@ -1021,7 +1021,7 @@ namespace Scaffold
 					if(mClickedNodeLast != null)
 					{
 						frmDecisionNode frm = new frmDecisionNode();
-						frm.SetNode(mClickedNodeLast, mResources);
+						frm.SetNode(mClickedNodeLast);
 						frm.ShowDialog();
 						QueueInvalidate();
 					}
@@ -1056,7 +1056,7 @@ namespace Scaffold
 			if(mClickedNodeLast != null)
 			{
 				frmDecisionNode frm = new frmDecisionNode();
-				frm.SetNode(mClickedNodeLast, mResources);
+				frm.SetNode(mClickedNodeLast);
 				frm.ShowDialog();
 				QueueInvalidate();
 			}
@@ -2320,7 +2320,9 @@ namespace Scaffold
 			typeof(System.Windows.Forms.Panel).InvokeMember("DoubleBuffered",
 				BindingFlags.SetProperty | BindingFlags.Instance |
 				BindingFlags.NonPublic, null, pnlView, new object[] { true });
-			NodeFile = new NodeFileItem();
+			//NodeFile = new NodeFileItem();
+			BindNodes(mNodes);
+			BindResources(mResources);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -2600,35 +2602,36 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 		//*	NodeFile																															*
 		//*-----------------------------------------------------------------------*
-		private NodeFileItem mNodeFile = null;
+		private NodeFileItem mNodeFile = NodeFileObject;
 		/// <summary>
 		/// Get/Set a reference to the data structure for the layout.
 		/// </summary>
 		public NodeFileItem NodeFile
 		{
 			get { return mNodeFile; }
-			set
-			{
-				if(mNodes != null)
-				{
-					UnbindNodes(mNodes);
-				}
-				if(mResources != null)
-				{
-					UnbindResources(mResources);
-				}
-				mNodes = null;
-				mResources = null;
-				mNodeFile = value;
-				if(value == null)
-				{
-					mNodeFile = new NodeFileItem();
-				}
-				mNodes = mNodeFile.Nodes;
-				BindNodes(mNodes);
-				mResources = mNodeFile.Resources;
-				BindResources(mResources);
-			}
+			//set
+			//{
+			//	if(mNodes != null)
+			//	{
+			//		UnbindNodes(mNodes);
+			//	}
+			//	if(mResources != null)
+			//	{
+			//		UnbindResources(mResources);
+			//	}
+			//	mNodes = null;
+			//	mResources = null;
+			//	mNodeFile = value;
+			//	if(value == null)
+			//	{
+			//		mNodeFile = new NodeFileItem();
+			//		NodeFileObject = mNodeFile;
+			//	}
+			//	mNodes = mNodeFile.Nodes;
+			//	BindNodes(mNodes);
+			//	mResources = mNodeFile.Resources;
+			//	BindResources(mResources);
+			//}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -2704,7 +2707,7 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 		//*	Nodes																																	*
 		//*-----------------------------------------------------------------------*
-		private NodeCollection mNodes = null;
+		private NodeCollection mNodes = NodeFileObject.Nodes;
 		/// <summary>
 		/// Get a reference to the collection of nodes on this canvas.
 		/// </summary>
@@ -2749,7 +2752,7 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 		//*	Resources																															*
 		//*-----------------------------------------------------------------------*
-		private ResourceCollection mResources = null;
+		private ResourceCollection mResources = NodeFileObject.Resources;
 		/// <summary>
 		/// Get a reference to the collection of resources in the loaded layout.
 		/// </summary>

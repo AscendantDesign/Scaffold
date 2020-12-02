@@ -35,7 +35,6 @@ namespace Scaffold
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			Scaffold.NodeFileItem nodeFileItem1 = new Scaffold.NodeFileItem();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			this.menuMain = new System.Windows.Forms.MenuStrip();
 			this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -1067,10 +1066,6 @@ namespace Scaffold
 			this.nodeControl.Name = "nodeControl";
 			this.nodeControl.NeedsInvalidate = true;
 			this.nodeControl.NodeBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(155)))), ((int)(((byte)(236)))));
-			nodeFileItem1.Description = "";
-			nodeFileItem1.Name = "";
-			nodeFileItem1.Ticket = "633c447a-e1c7-4e83-b54a-2845dfa5a5b4";
-			this.nodeControl.NodeFile = nodeFileItem1;
 			this.nodeControl.NodeLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(149)))));
 			this.nodeControl.NodeLineWidth = 4;
 			this.nodeControl.NodeMaxWidth = 256;

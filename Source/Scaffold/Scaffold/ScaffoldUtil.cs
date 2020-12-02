@@ -541,6 +541,7 @@ namespace Scaffold
 						result = "MediaAudio";
 						break;
 					case "bmp":
+					case "gif":
 					case "jpeg":
 					case "jpg":
 					case "png":
@@ -963,7 +964,7 @@ namespace Scaffold
 				}
 				else
 				{
-					result = relativeFile.FullName;
+					result = relativeFile.FullName.Replace('\\', '/');
 				}
 			}
 			return result;

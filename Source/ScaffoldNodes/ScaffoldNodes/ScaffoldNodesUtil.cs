@@ -3451,7 +3451,7 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 		//*	NodeFileObject																												*
 		//*-----------------------------------------------------------------------*
-		private static NodeFileItem mNodeFileObject = null;
+		private static NodeFileItem mNodeFileObject = new NodeFileItem();
 		/// <summary>
 		/// Get/Set a reference to the currently loaded node file object.
 		/// </summary>

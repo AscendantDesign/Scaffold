@@ -635,6 +635,9 @@ namespace Scaffold
 		/// </summary>
 		public void Clear()
 		{
+			this.Description = "";
+			this.Name = "";
+			this.Ticket = Guid.NewGuid().ToString("D");
 			mNodes.Clear();
 			mResources.Clear();
 		}
