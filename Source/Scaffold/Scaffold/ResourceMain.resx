@@ -151,6 +151,15 @@
   <data name="DrawToolText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\DrawToolText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Filmstrip32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Filmstrip32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilmstripArrow32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\FilmstripArrow32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilmstripTrash32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\FilmstripTrash32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="htmlBlankLine" xml:space="preserve">
     <value>&lt;p&gt;&amp;nbsp;&lt;/p&gt;</value>
     <comment>A single blank line of physical space.</comment>
@@ -355,6 +364,10 @@
   <data name="Pinpoint" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Pinpoint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rxCommandParams" xml:space="preserve">
+    <value>(?i:(?&lt;command&gt;[^\(]+)\((?&lt;params&gt;[^\)]*)\))</value>
+    <comment>Regular expression to separate a command and its parameters.</comment>
+  </data>
   <data name="rxFilenameInPath" xml:space="preserve">
     <value>(?s:(?i:(?&lt;filenameextension&gt;(?&lt;filename&gt;[^\\/\?]+)(?!.*(\\|/))\.(?&lt;extension&gt;[^\\/\?]+))(?&lt;parameters&gt;\?.*){0,1}))</value>
     <comment>Regular expression to match the filename and extension in a path, including http-style parameters.</comment>
@@ -387,13 +400,58 @@
     <value>(?s:(?i:(?&lt;outer&gt;xlink\:href\s*=\s*\"(?!(\#|data\:))(?&lt;inner&gt;[^\"]+)\")))</value>
     <comment>Find the outer and inner matches for hrefs in SVG content.</comment>
   </data>
+  <data name="ScaffoldIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ScaffoldIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScaffoldIcon24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ScaffoldIcon24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Socket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Socket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TransportBack32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TransportBack32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TransportNext32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TransportNext32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TransportPause32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TransportPause32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TransportPlay32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TransportPlay32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TransportStop32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TransportStop32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VSliderHandleL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\VSliderHandleL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VSliderHandleR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\VSliderHandleR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinControlH0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WinControlH0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinControlH1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WinControlH1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinControlM0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WinControlM0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinControlM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WinControlM1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinControlN0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WinControlN0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinControlN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WinControlN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinControlX0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WinControlX0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WinControlX1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\WinControlX1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

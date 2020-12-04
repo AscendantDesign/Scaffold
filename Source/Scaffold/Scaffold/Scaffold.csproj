@@ -128,6 +128,9 @@
     <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\HarfBuzzSharp.2.6.1.7-preview.33\lib\net462\HarfBuzzSharp.dll</HintPath>
     </Reference>
+    <Reference Include="ImageListView, Version=13.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageListView.13.8.2\lib\net35\ImageListView.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.PowerPoint.15.0.4420.1017\lib\net20\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -216,6 +219,16 @@
     <Compile Include="ContextStack.cs" />
     <Compile Include="DarkThemeMenuColorTable.cs" />
     <Compile Include="BrowserDriver.cs" />
+    <Compile Include="Flipbook.cs" />
+    <Compile Include="FlipbookListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FlipbookItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FlipbookItemControl.Designer.cs">
+      <DependentUpon>FlipbookItemControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDecisionNode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +252,12 @@
     </Compile>
     <Compile Include="frmFind.Designer.cs">
       <DependentUpon>frmFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFrameFlipbook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFrameFlipbook.Designer.cs">
+      <DependentUpon>frmFrameFlipbook.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHTML.cs">
       <SubType>Form</SubType>
@@ -301,6 +320,7 @@
     <Compile Include="LabelButtonControl.Designer.cs">
       <DependentUpon>LabelButtonControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuControl.cs" />
     <Compile Include="MessageEvent.cs" />
     <Compile Include="NamedBuffer.cs" />
     <Compile Include="NamedObject.cs" />
@@ -311,6 +331,7 @@
     <Compile Include="NodeControl.Designer.cs">
       <DependentUpon>NodeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="NoirRenderer2.cs" />
     <Compile Include="OfficeDriver.cs" />
     <Compile Include="PanelWindowContent.cs" />
     <Compile Include="PanelWindowControl.cs">
@@ -336,6 +357,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ToolTypeEnum.cs" />
+    <EmbeddedResource Include="FlipbookItemControl.resx">
+      <DependentUpon>FlipbookItemControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDecisionNode.resx">
       <DependentUpon>frmDecisionNode.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFind.resx">
       <DependentUpon>frmFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFrameFlipbook.resx">
+      <DependentUpon>frmFrameFlipbook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHTML.resx">
       <DependentUpon>frmHTML.cs</DependentUpon>
@@ -515,6 +542,24 @@
     <None Include="Resources\Link32.png" />
     <None Include="Resources\Audio128.png" />
     <None Include="Resources\Link128.png" />
+    <None Include="Resources\ScaffoldIcon.ico" />
+    <None Include="Resources\ScaffoldIcon24.png" />
+    <None Include="Resources\WinControlX1.png" />
+    <None Include="Resources\WinControlM0.png" />
+    <None Include="Resources\WinControlM1.png" />
+    <None Include="Resources\WinControlN0.png" />
+    <None Include="Resources\WinControlN1.png" />
+    <None Include="Resources\WinControlX0.png" />
+    <None Include="Resources\WinControlH0.png" />
+    <None Include="Resources\WinControlH1.png" />
+    <None Include="Resources\Filmstrip32.png" />
+    <None Include="Resources\FilmstripArrow32.png" />
+    <None Include="Resources\FilmstripTrash32.png" />
+    <None Include="Resources\TransportStop32.png" />
+    <None Include="Resources\TransportBack32.png" />
+    <None Include="Resources\TransportNext32.png" />
+    <None Include="Resources\TransportPlay32.png" />
+    <None Include="Resources\TransportPause32.png" />
     <Content Include="ScaffoldIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

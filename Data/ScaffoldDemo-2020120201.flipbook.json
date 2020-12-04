@@ -1,0 +1,588 @@
+{
+	"Folder": "C:/Temp/Movies/Frames/ScaffoldDemo",
+	"Filter": "*.png",
+	"DefaultTimer": 500,
+	"Frames":
+	[
+		{
+			"Index": "Frame-100071.png",
+			"Name": "First frame",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100170.png",
+			"Name": "Start action",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100175.png",
+			"Name": "Start click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100191.png",
+			"Name": "Hover layout",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100234.png",
+			"Name": "Start drop",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100303.png",
+			"Name": "Start double click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100312.png",
+			"Name": "Decision visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100641.png",
+			"Name": "Question highlighted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100642.png",
+			"Name": "Question pasted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100897.png",
+			"Name": "Answer double click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-100906.png",
+			"Name": "Answer visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101009.png",
+			"Name": "Answer pasted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101058.png",
+			"Name": "Mouse move to OK",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101065.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101156.png",
+			"Name": "Answer double click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101171.png",
+			"Name": "Answer visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101379.png",
+			"Name": "Answer pasted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101422.png",
+			"Name": "Mouse move to OK",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101445.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101459.png",
+			"Name": "Answers completed",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101581.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101588.png",
+			"Name": "Dialog dismissed",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101600.png",
+			"Name": "Start node finished",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101942.png",
+			"Name": "Delay hover",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-101987.png",
+			"Name": "Delay drop",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102031.png",
+			"Name": "Delay double click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102050.png",
+			"Name": "Decision visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102092.png",
+			"Name": "Question pasted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102170.png",
+			"Name": "Delay highlighted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102209.png",
+			"Name": "Delay amount completed",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102286.png",
+			"Name": "Media tab hover",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102300.png",
+			"Name": "Media tab selected",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102335.png",
+			"Name": "Add media mouse",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102342.png",
+			"Name": "Add media click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102354.png",
+			"Name": "Resource visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102374.png",
+			"Name": "File menu",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102401.png",
+			"Name": "Load menu",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102425.png",
+			"Name": "File dialog",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102562.png",
+			"Name": "Mouse file select",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102618.png",
+			"Name": "Mouse double click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102631.png",
+			"Name": "Link or embed visible",
+			"Action": "DeleteSpace",
+			"EditCommands":
+			[
+				"FillColor(#efefef, 395, 324, 81, 15)"
+			]
+		},
+		{
+			"Index": "Frame-102658.png",
+			"Name": "Mouse move to OK",
+			"Action": "DeleteSpace",
+			"EditCommands":
+			[
+				"FillColor(#efefef, 395, 324, 81, 15)"
+			]
+		},
+		{
+			"Index": "Frame-102672.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace",
+			"EditCommands":
+			[
+				"FillColor(#efefef, 395, 324, 81, 15)"
+			]
+		},
+		{
+			"Index": "Frame-102687.png",
+			"Name": "Resource visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102738.png",
+			"Name": "Mouse ready",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102740.png",
+			"Name": "Mouse select",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102754.png",
+			"Name": "Mouse move to OK",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102774.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102823.png",
+			"Name": "Mouse move to OK",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102844.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102892.png",
+			"Name": "Mouse node move",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102916.png",
+			"Name": "Mouse node stop",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102937.png",
+			"Name": "Mouse node move",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102955.png",
+			"Name": "Mouse node stop",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-102983.png",
+			"Name": "Mouse hover delay",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103036.png",
+			"Name": "Mouse drop delay",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103061.png",
+			"Name": "Mouse node move",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103095.png",
+			"Name": "Mouse node stop",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103123.png",
+			"Name": "Decision visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103397.png",
+			"Name": "Question pasted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103463.png",
+			"Name": "Delay highlighted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103540.png",
+			"Name": "Delay set",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103579.png",
+			"Name": "Mouse move to OK",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103595.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103605.png",
+			"Name": "Node with no thumb",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103778.png",
+			"Name": "Decision visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103809.png",
+			"Name": "Media tab hover",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103842.png",
+			"Name": "Media tab selected",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103919.png",
+			"Name": "Mouse add media",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103926.png",
+			"Name": "Add media click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103943.png",
+			"Name": "Resource visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103959.png",
+			"Name": "Mouse select",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103963.png",
+			"Name": "Resource selected",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103981.png",
+			"Name": "Mouse move to OK",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-103989.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104004.png",
+			"Name": "Decision visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104023.png",
+			"Name": "Mouse move to OK",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104034.png",
+			"Name": "Mouse OK click",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104043.png",
+			"Name": "Node visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104736.png",
+			"Name": "Reposition",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104816.png",
+			"Name": "Select both nodes",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104880.png",
+			"Name": "Menu edit",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104899.png",
+			"Name": "Menu visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104926.png",
+			"Name": "Menu align and distribute",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104937.png",
+			"Name": "Menu visible",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104959.png",
+			"Name": "Menu align left",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-104977.png",
+			"Name": "Nodes aligned",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-105033.png",
+			"Name": "Hover St. Charles",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-105109.png",
+			"Name": "Drop",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-105247.png",
+			"Name": "Hover Toledo",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-105300.png",
+			"Name": "Drop",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-105362.png",
+			"Name": "Grab terminator",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-105435.png",
+			"Name": "Drop terminator",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-105762.png",
+			"Name": "Terminator text",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-105843.png",
+			"Name": "Terminator completed",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-107676.png",
+			"Name": "Terminator connected",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-107819.png",
+			"Name": "Grab terminator",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-107876.png",
+			"Name": "Terminator hover",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-107882.png",
+			"Name": "Drop terminator",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-111373.png",
+			"Name": "Statement pasted",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-111518.png",
+			"Name": "Node updated",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-111592.png",
+			"Name": "Node connected",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-111671.png",
+			"Name": "Node moved",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-112304.png",
+			"Name": "Tools menu",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-112354.png",
+			"Name": "Chatbot emulator menu",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-112375.png",
+			"Name": "Emulate from beginning menu",
+			"Action": "DeleteSpace"
+		},
+		{
+			"Index": "Frame-112428.png",
+			"Name": "Emulator",
+			"Action": "DeleteSpace",
+			"Timer": 1000,
+			"EditCommands":
+			[
+				"FillColor(#fdffff, 205, 34, 561, 21)",
+				"FillColor(#f9f9f9, 2, 58, 1276, 25)"
+			]
+		},
+		{
+			"Index": "Frame-112537.png",
+			"Name": "Active",
+			"Action": "Keep",
+			"Timer": 100,
+			"EditCommands":
+			[
+				"FillColor(#fdffff, 205, 34, 561, 21)",
+				"FillColor(#f9f9f9, 2, 58, 1276, 25)"
+			]
+		},
+		{
+			"Index": "Frame-113065.png",
+			"Name": "End",
+			"Action": "DeleteSpace",
+			"Timer": 100,
+			"EditCommands":
+			[
+				"FillColor(#fdffff, 205, 34, 561, 21)",
+				"FillColor(#f9f9f9, 2, 58, 1276, 25)"
+			]
+		},
+		{
+			"Index": "Frame-113534.png",
+			"Name": "Last",
+			"Action": "Keep"
+		}
+	]
+}

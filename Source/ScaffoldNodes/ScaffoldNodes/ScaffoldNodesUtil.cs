@@ -1313,6 +1313,80 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* CreateThumbnail																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Create a thumbnail of the original image and return it to the caller.
+		/// </summary>
+		/// <param name="image">
+		/// A reference to the image to be represented.
+		/// </param>
+		/// <param name="targetSize">
+		/// Predefined size of the target opening.
+		/// </param>
+		/// <param name="fitInTarget">
+		/// Value indicating whether the thumbnail will be drawn to fit exactly
+		/// into the target area, using transparent space if necessary. If false,
+		/// The resulting thumbnail will have the same size ratio as the original.
+		/// </param>
+		/// <returns>
+		/// Newly created thumbnail image representing the original.
+		/// </returns>
+		public static Bitmap CreateThumbnail(Bitmap image, Size targetSize,
+			bool fitInTarget)
+		{
+			float height = 0f;
+			float scale = 0f;
+			float scaleHeight = 0f;
+			float scaleWidth = 0f;
+			Bitmap thumbnail = null;
+			Size thumbSize = Size.Empty;
+			float width = 0f;
+
+			if(image != null && targetSize != Size.Empty)
+			{
+				width = (float)image.Width;
+				height = (float)image.Height;
+				if(width != 0f)
+				{
+					scaleWidth = (float)targetSize.Width / width;
+				}
+				if(height != 0f)
+				{
+					scaleHeight = (float)targetSize.Height / height;
+				}
+				scale = Math.Min(scaleWidth, scaleHeight);
+				thumbSize = new Size(
+					(int)(width * scale),
+					(int)(height * scale));
+				if(fitInTarget)
+				{
+					thumbnail = new Bitmap(targetSize.Width, targetSize.Height);
+				}
+				else
+				{
+					thumbnail = new Bitmap(thumbSize.Width, thumbSize.Height);
+				}
+				using(Graphics g = Graphics.FromImage(thumbnail))
+				{
+					g.CompositingQuality =
+						System.Drawing.Drawing2D.
+						CompositingQuality.HighQuality;
+					g.InterpolationMode =
+						System.Drawing.Drawing2D.InterpolationMode.High;
+					g.SmoothingMode =
+						System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+					g.DrawImage(image,
+						new RectangleF(0f, 0f, width * scale, height * scale),
+						new RectangleF(0f, 0f, width, height),
+						GraphicsUnit.Pixel);
+				}
+			}
+			return thumbnail;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* CreateVideoResource																										*
 		//*-----------------------------------------------------------------------*
 		/// <summary>

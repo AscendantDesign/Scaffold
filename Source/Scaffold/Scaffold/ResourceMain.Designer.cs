@@ -171,6 +171,36 @@ namespace Scaffold {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Filmstrip32 {
+            get {
+                object obj = ResourceManager.GetObject("Filmstrip32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FilmstripArrow32 {
+            get {
+                object obj = ResourceManager.GetObject("FilmstripArrow32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FilmstripTrash32 {
+            get {
+                object obj = ResourceManager.GetObject("FilmstripTrash32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;&amp;nbsp;&lt;/p&gt;.
         /// </summary>
         internal static string htmlBlankLine {
@@ -346,6 +376,15 @@ namespace Scaffold {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (?i:(?&lt;command&gt;[^\(]+)\((?&lt;params&gt;[^\)]*)\)).
+        /// </summary>
+        internal static string rxCommandParams {
+            get {
+                return ResourceManager.GetString("rxCommandParams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to (?s:(?i:(?&lt;filenameextension&gt;(?&lt;filename&gt;[^\\/\?]+)(?!.*(\\|/))\.(?&lt;extension&gt;[^\\/\?]+))(?&lt;parameters&gt;\?.*){0,1})).
         /// </summary>
         internal static string rxFilenameInPath {
@@ -418,11 +457,81 @@ namespace Scaffold {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon ScaffoldIcon {
+            get {
+                object obj = ResourceManager.GetObject("ScaffoldIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ScaffoldIcon24 {
+            get {
+                object obj = ResourceManager.GetObject("ScaffoldIcon24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Socket {
             get {
                 object obj = ResourceManager.GetObject("Socket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TransportBack32 {
+            get {
+                object obj = ResourceManager.GetObject("TransportBack32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TransportNext32 {
+            get {
+                object obj = ResourceManager.GetObject("TransportNext32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TransportPause32 {
+            get {
+                object obj = ResourceManager.GetObject("TransportPause32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TransportPlay32 {
+            get {
+                object obj = ResourceManager.GetObject("TransportPlay32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TransportStop32 {
+            get {
+                object obj = ResourceManager.GetObject("TransportStop32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,6 +552,86 @@ namespace Scaffold {
         internal static System.Drawing.Bitmap VSliderHandleR {
             get {
                 object obj = ResourceManager.GetObject("VSliderHandleR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinControlH0 {
+            get {
+                object obj = ResourceManager.GetObject("WinControlH0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinControlH1 {
+            get {
+                object obj = ResourceManager.GetObject("WinControlH1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinControlM0 {
+            get {
+                object obj = ResourceManager.GetObject("WinControlM0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinControlM1 {
+            get {
+                object obj = ResourceManager.GetObject("WinControlM1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinControlN0 {
+            get {
+                object obj = ResourceManager.GetObject("WinControlN0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinControlN1 {
+            get {
+                object obj = ResourceManager.GetObject("WinControlN1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinControlX0 {
+            get {
+                object obj = ResourceManager.GetObject("WinControlX0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinControlX1 {
+            get {
+                object obj = ResourceManager.GetObject("WinControlX1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

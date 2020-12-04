@@ -3791,6 +3791,27 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* mnuToolsAnimationFrameFlipbook_Click																	*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Tools / Animation / Frame Switcher menu option has been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuToolsAnimationFrameFlipbook_Click(object sender,
+			EventArgs e)
+		{
+			frmFrameFlipbook form = new frmFrameFlipbook();
+
+			form.Show();
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* mnuToolsAnimationSaveFrames_Click																			*
 		//*-----------------------------------------------------------------------*
 		/// <summary>

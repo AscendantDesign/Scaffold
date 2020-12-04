@@ -972,6 +972,37 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* RemoveExtension																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return the portion of the filename without the extension.
+		/// </summary>
+		/// <param name="filename">
+		/// Name of the file to inspect.
+		/// </param>
+		/// <returns>
+		/// Main body of the filename without the extension.
+		/// </returns>
+		public static string RemoveExtension(string filename)
+		{
+			string result = "";
+
+			if(filename?.Length > 0)
+			{
+				if(filename.IndexOf('.') > -1)
+				{
+					result = filename.Substring(0, filename.IndexOf('.'));
+				}
+				else
+				{
+					result = filename;
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	ResolveEnvironment																										*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
