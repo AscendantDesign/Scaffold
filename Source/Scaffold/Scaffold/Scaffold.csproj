@@ -125,6 +125,9 @@
     <ApplicationIcon>ScaffoldIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AnimatedGif, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AnimatedGif.1.0.5\lib\netstandard2.0\AnimatedGif.dll</HintPath>
+    </Reference>
     <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\HarfBuzzSharp.2.6.1.7-preview.33\lib\net462\HarfBuzzSharp.dll</HintPath>
     </Reference>

@@ -59,6 +59,7 @@ namespace Scaffold
 			this.mnuFileClose = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuEdit = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuEditCaptureFrame = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuEditRunCommands = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuView = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuViewThumbsize = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuViewThumbsize96 = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +75,9 @@ namespace Scaffold
 			this.mnuTransportStop = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuTransportPause = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuTransportPlay = new System.Windows.Forms.ToolStripMenuItem();
-			this.mnuEditRunCommands = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuFileSep1 = new System.Windows.Forms.ToolStripSeparator();
+			this.mnuFileExportGIF = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuFileSep2 = new System.Windows.Forms.ToolStripSeparator();
 			this.pnlTitle.SuspendLayout();
 			this.pnlClose.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
@@ -350,6 +353,9 @@ namespace Scaffold
 			// 
 			this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFileOpen,
+            this.mnuFileSep1,
+            this.mnuFileExportGIF,
+            this.mnuFileSep2,
             this.mnuFileClose});
 			this.mnuFile.Name = "mnuFile";
 			this.mnuFile.Size = new System.Drawing.Size(46, 24);
@@ -382,6 +388,13 @@ namespace Scaffold
 			this.mnuEditCaptureFrame.Name = "mnuEditCaptureFrame";
 			this.mnuEditCaptureFrame.Size = new System.Drawing.Size(226, 26);
 			this.mnuEditCaptureFrame.Text = "&Capture Frame";
+			// 
+			// mnuEditRunCommands
+			// 
+			this.mnuEditRunCommands.Name = "mnuEditRunCommands";
+			this.mnuEditRunCommands.Size = new System.Drawing.Size(226, 26);
+			this.mnuEditRunCommands.Text = "Run Edit &Commands";
+			this.mnuEditRunCommands.ToolTipText = "Run user-defined edit commands on each of the keyframes";
 			// 
 			// mnuView
 			// 
@@ -501,12 +514,21 @@ namespace Scaffold
 			this.mnuTransportPlay.Size = new System.Drawing.Size(182, 26);
 			this.mnuTransportPlay.Text = "&Play";
 			// 
-			// mnuEditRunCommands
+			// mnuFileSep1
 			// 
-			this.mnuEditRunCommands.Name = "mnuEditRunCommands";
-			this.mnuEditRunCommands.Size = new System.Drawing.Size(226, 26);
-			this.mnuEditRunCommands.Text = "Run Edit &Commands";
-			this.mnuEditRunCommands.ToolTipText = "Run user-defined edit commands on each of the keyframes";
+			this.mnuFileSep1.Name = "mnuFileSep1";
+			this.mnuFileSep1.Size = new System.Drawing.Size(267, 6);
+			// 
+			// mnuFileExportGIF
+			// 
+			this.mnuFileExportGIF.Name = "mnuFileExportGIF";
+			this.mnuFileExportGIF.Size = new System.Drawing.Size(270, 26);
+			this.mnuFileExportGIF.Text = "Export to &Animated GIF";
+			// 
+			// mnuFileSep2
+			// 
+			this.mnuFileSep2.Name = "mnuFileSep2";
+			this.mnuFileSep2.Size = new System.Drawing.Size(267, 6);
 			// 
 			// frmFrameFlipbook
 			// 
@@ -593,5 +615,8 @@ namespace Scaffold
 		private System.Windows.Forms.StatusStrip statusFrameSwitch;
 		private System.Windows.Forms.ToolStripStatusLabel statMessage;
 		private System.Windows.Forms.ToolStripMenuItem mnuEditRunCommands;
+		private System.Windows.Forms.ToolStripSeparator mnuFileSep1;
+		private System.Windows.Forms.ToolStripMenuItem mnuFileExportGIF;
+		private System.Windows.Forms.ToolStripSeparator mnuFileSep2;
 	}
 }

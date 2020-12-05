@@ -1,3 +1,7 @@
+//	Flipbook.cs
+//	Copyright(c) 2020. Ascendant Design and Training, LLC
+//	This file is licensed under the MIT License.
+//	Please see the LICENSE file in this project.
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -209,6 +213,34 @@ namespace Scaffold
 		public FlipbookFrameCollection Frames
 		{
 			get { return mFrames; }
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	OutputHeight																													*
+		//*-----------------------------------------------------------------------*
+		private int mOutputHeight = 576;
+		/// <summary>
+		/// Get/Set the height of the GIF output image.
+		/// </summary>
+		public int OutputHeight
+		{
+			get { return mOutputHeight; }
+			set { mOutputHeight = value; }
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	OutputWidth																														*
+		//*-----------------------------------------------------------------------*
+		private int mOutputWidth = 1024;
+		/// <summary>
+		/// Get/Set the width of the GIF output image.
+		/// </summary>
+		public int OutputWidth
+		{
+			get { return mOutputWidth; }
+			set { mOutputWidth = value; }
 		}
 		//*-----------------------------------------------------------------------*
 

@@ -2,6 +2,8 @@
 	"Folder": "C:/Temp/Movies/Frames/ScaffoldDemo",
 	"Filter": "*.png",
 	"DefaultTimer": 500,
+	"OutputWidth": 512,
+	"OutputHeight": 288,
 	"Frames":
 	[
 		{
@@ -558,8 +560,30 @@
 			]
 		},
 		{
-			"Index": "Frame-112537.png",
+			"Index": "Frame-112639.png",
 			"Name": "Active",
+			"Action": "Keep",
+			"Timer": 100,
+			"EditCommands":
+			[
+				"FillColor(#fdffff, 205, 34, 561, 21)",
+				"FillColor(#f9f9f9, 2, 58, 1276, 25)"
+			]
+		},
+		{
+			"Index": "Frame-112733.png",
+			"Name": "End active",
+			"Action": "DeleteSpace",
+			"Timer": 100,
+			"EditCommands":
+			[
+				"FillColor(#fdffff, 205, 34, 561, 21)",
+				"FillColor(#f9f9f9, 2, 58, 1276, 25)"
+			]
+		},
+		{
+			"Index": "Frame-113012.png",
+			"Name": "End",
 			"Action": "Keep",
 			"Timer": 100,
 			"EditCommands":

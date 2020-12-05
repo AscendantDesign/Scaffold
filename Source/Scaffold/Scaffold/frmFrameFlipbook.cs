@@ -1,3 +1,7 @@
+//	frmFrameFlipbook.cs
+//	Copyright(c) 2020. Ascendant Design and Training, LLC
+//	This file is licensed under the MIT License.
+//	Please see the LICENSE file in this project.
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +14,10 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Manina.Windows.Forms;
+
+using AnimatedGif;
 using Newtonsoft.Json;
+
 using static Scaffold.ScaffoldNodesUtil;
 using static Scaffold.ScaffoldUtil;
 
@@ -309,6 +316,111 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//*	mnuFileExportGIF_Click																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Export an animated GIF file from the current animation.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuFileExportGIF_Click(object sender, EventArgs e)
+		{
+			Bitmap bitmap = null;
+			bool bKeep = false;
+			SaveFileDialog dialog = null;
+			int fileIndex = 0;
+			string filePath = "";
+			FlipbookFrameItem frame = null;
+			FlipbookFrameItem frameNext = null;
+			int frameCount = 0;
+			int frameIndex = 0;
+			string fullFilename = "";
+			int indexBegin = 0;
+			int indexEnd = 0;
+			Size targetSize = Size.Empty;
+
+			if(mFlipbook != null && mFlipbook.Frames.Count > 0)
+			{
+				dialog = new SaveFileDialog();
+				dialog.AddExtension = true;
+				dialog.CheckPathExists = true;
+				dialog.DefaultExt = ".gif";
+				dialog.DereferenceLinks = true;
+				dialog.Filter = "GIF Files (*.gif)|*.gif|" +
+					"All Files (*.*)|*.gif";
+				dialog.FilterIndex = 0;
+				dialog.OverwritePrompt = true;
+				dialog.SupportMultiDottedExtensions = true;
+				dialog.Title = "Save GIF File As";
+				dialog.ValidateNames = true;
+				if(dialog.ShowDialog() == DialogResult.OK)
+				{
+					targetSize = new Size(mFlipbook.OutputWidth, mFlipbook.OutputHeight);
+					using(AnimatedGifCreator gif =
+						AnimatedGif.AnimatedGif.Create(dialog.FileName, 100))
+					{
+						filePath = mFlipbook.Folder;
+						frameCount = mFlipbook.Frames.Count;
+						for(frameIndex = 0; frameIndex < frameCount; frameIndex++)
+						{
+							frame = mFlipbook.Frames[frameIndex];
+							statMessage.Text = $"Exporting frame {frame.Index}...";
+							statusFrameSwitch.Refresh();
+							fileIndex = GetFileIndex(frame.Index);
+							bKeep = (frame.Action == FlipbookActionTypeEnum.Keep);
+							if(bKeep)
+							{
+								indexBegin = fileIndex;
+								if(mFlipbook.Frames.Count > frameIndex + 1)
+								{
+									frameNext = mFlipbook.Frames[frameIndex + 1];
+									indexEnd = GetFileIndex(frameNext.Index);
+									if(indexEnd > indexBegin)
+									{
+										indexEnd--;
+									}
+								}
+							}
+							else
+							{
+								indexBegin = indexEnd = fileIndex;
+							}
+							for(fileIndex = indexBegin;
+								fileIndex > -1 && fileIndex <= indexEnd; fileIndex++)
+							{
+								bitmap = null;
+								//fullFilename = Path.Combine(path, frame.Index);
+								fullFilename = mFileList[fileIndex].FullName;
+								using(FileStream stream = File.OpenRead(fullFilename))
+								{
+									bitmap = (Bitmap)Bitmap.FromStream(stream);
+								}
+								if(bitmap != null)
+								{
+									//	The image is loaded.
+									bitmap = CreateThumbnail(bitmap, targetSize, false);
+									gif.AddFrame(bitmap,
+										frame.Timer != 0 ? frame.Timer : mFlipbook.DefaultTimer,
+										GifQuality.Bit8);
+								}
+							}
+						}
+					}
+				}
+			}
+			else
+			{
+				MessageBox.Show("There are no frames to save.", "Export GIF");
+			}
+			statMessage.Text = "Export to GIF finished...";
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* mnuFileOpen_Click																											*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -372,6 +484,44 @@ namespace Scaffold
 				}
 				//	Fill the list control with the current entries.
 				pnlFlow.Frames = mFlipbook.Frames;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* mnuTransport_CheckedChanged																						*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state of an item on the transport menu has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuTransport_CheckedChanged(object sender, EventArgs e)
+		{
+			foreach(MenuControlItem menuItem in mMenusTransport)
+			{
+				switch(menuItem.MenuItem.Name)
+				{
+					case "mnuTransportBack":
+					case "mnuTransportNext":
+						break;
+					case "mnuTransportPause":
+					case "mnuTransportPlay":
+					case "mnuTransportStop":
+						if(menuItem.MenuItem.Checked)
+						{
+							((Panel)menuItem.ControlItem).BackColor = mColorBackgroundActive;
+						}
+						else
+						{
+							((Panel)menuItem.ControlItem).BackColor = mColorBackground;
+						}
+						break;
+				}
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -491,7 +641,7 @@ namespace Scaffold
 				{
 					menuItem.MenuItem.Checked = false;
 				}
-				mnuTransportPlay.Checked = true;
+				mnuTransportStop.Checked = true;
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -722,6 +872,7 @@ namespace Scaffold
 					for(frameIndex = 0; frameIndex < frameCount; frameIndex++)
 					{
 						frame = mFlipbook.Frames[frameIndex];
+						SafeMessageWrite($"Playing frames {frame.Index}...");
 						indexFile = GetFileIndex(frame.Index);
 						bKeep = (frame.Action == FlipbookActionTypeEnum.Keep);
 						if(bKeep)
@@ -1402,6 +1553,29 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* SafeMessageWrite																											*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Set the status message using UI thread safety.
+		/// </summary>
+		/// <param name="message">
+		/// Text of the message to display.
+		/// </param>
+		private void SafeMessageWrite(string message)
+		{
+			if(statusFrameSwitch.InvokeRequired)
+			{
+				var d = new SafeCallDelegate(SafeMessageWrite);
+				statusFrameSwitch.Invoke(d, new object[] { message });
+			}
+			else
+			{
+				statusFrameSwitch.Items[0].Text = message;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* SafePictureImageLocation																							*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -1638,6 +1812,7 @@ namespace Scaffold
 
 			mnuEditRunCommands.Click += mnuEditRunCommands_Click;
 			mnuFileOpen.Click += mnuFileOpen_Click;
+			mnuFileExportGIF.Click += mnuFileExportGIF_Click;
 			mnuFileClose.Click += mnuFileClose_Click;
 			mnuEditCaptureFrame.Click += mnuEditCaptureFrame_Click;
 			mnuViewThumbsize96.Click += mnuViewThumbsize96_Click;
@@ -1651,6 +1826,12 @@ namespace Scaffold
 			mnuTransportStop.Click += mnuTransportStop_Click;
 			mnuTransportPause.Click += mnuTransportPause_Click;
 			mnuTransportPlay.Click += mnuTransportPlay_Click;
+
+			mnuTransportBack.CheckedChanged += mnuTransport_CheckedChanged;
+			mnuTransportNext.CheckedChanged += mnuTransport_CheckedChanged;
+			mnuTransportPause.CheckedChanged += mnuTransport_CheckedChanged;
+			mnuTransportPlay.CheckedChanged += mnuTransport_CheckedChanged;
+			mnuTransportStop.CheckedChanged += mnuTransport_CheckedChanged;
 
 			mnuViewThumbsize96.CheckedChanged += mnuViewThumbsize_CheckedChanged;
 			mnuViewThumbsize128.CheckedChanged += mnuViewThumbsize_CheckedChanged;
