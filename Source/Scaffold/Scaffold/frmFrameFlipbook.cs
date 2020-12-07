@@ -34,12 +34,6 @@ namespace Scaffold
 		//*************************************************************************
 		//*	Private																																*
 		//*************************************************************************
-		private readonly Color mColorBackground = FromHex("#333333");
-		private readonly Color mColorBackgroundActive = FromHex("#204060");
-		private readonly Color mColorBackgroundHighlight = FromHex("#606060");
-		private readonly Color mColorWinControlClose = FromHex("#e91122");
-		private readonly Color mColorWinControlColor = FromHex("#404040");
-		private readonly Color mColorWinControlHover = FromHex("#606060");
 		private FileInfo[] mFileList = new FileInfo[0];
 		private FlipbookFile mFlipbook = null;
 		private FileInfo mFrameFile = null;
@@ -514,11 +508,13 @@ namespace Scaffold
 					case "mnuTransportStop":
 						if(menuItem.MenuItem.Checked)
 						{
-							((Panel)menuItem.ControlItem).BackColor = mColorBackgroundActive;
+							((Panel)menuItem.ControlItem).BackColor =
+								FromHex(ResourceMain.colorBackgroundActive);
 						}
 						else
 						{
-							((Panel)menuItem.ControlItem).BackColor = mColorBackground;
+							((Panel)menuItem.ControlItem).BackColor =
+								FromHex(ResourceMain.colorBackground);
 						}
 						break;
 				}
@@ -957,7 +953,7 @@ namespace Scaffold
 		/// </param>
 		private void pnlClose_MouseEnter(object sender, EventArgs e)
 		{
-			pnlClose.BackColor = mColorWinControlClose;
+			pnlClose.BackColor = FromHex(ResourceMain.colorWinControlClose);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -975,7 +971,7 @@ namespace Scaffold
 		/// </param>
 		private void pnlClose_MouseLeave(object sender, EventArgs e)
 		{
-			pnlClose.BackColor = mColorWinControlColor;
+			pnlClose.BackColor = FromHex(ResourceMain.colorWinControlNormal);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1080,7 +1076,7 @@ namespace Scaffold
 		/// </param>
 		private void pnlMaximize_MouseEnter(object sender, EventArgs e)
 		{
-			pnlMaximize.BackColor = mColorWinControlHover;
+			pnlMaximize.BackColor = FromHex(ResourceMain.colorWinControlHover);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1098,7 +1094,7 @@ namespace Scaffold
 		/// </param>
 		private void pnlMaximize_MouseLeave(object sender, EventArgs e)
 		{
-			pnlMaximize.BackColor = mColorWinControlColor;
+			pnlMaximize.BackColor = FromHex(ResourceMain.colorWinControlNormal);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1134,7 +1130,7 @@ namespace Scaffold
 		/// </param>
 		private void pnlMinimize_MouseEnter(object sender, EventArgs e)
 		{
-			pnlMinimize.BackColor = mColorWinControlHover;
+			pnlMinimize.BackColor = FromHex(ResourceMain.colorWinControlHover);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1152,7 +1148,7 @@ namespace Scaffold
 		/// </param>
 		private void pnlMinimize_MouseLeave(object sender, EventArgs e)
 		{
-			pnlMinimize.BackColor = mColorWinControlColor;
+			pnlMinimize.BackColor = FromHex(ResourceMain.colorWinControlNormal);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1249,7 +1245,8 @@ namespace Scaffold
 		/// </param>
 		private void pnlTransportBack_MouseEnter(object sender, EventArgs e)
 		{
-			pnlTransportBack.BackColor = mColorBackgroundHighlight;
+			pnlTransportBack.BackColor =
+				FromHex(ResourceMain.colorBackgroundHighlight);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1267,7 +1264,7 @@ namespace Scaffold
 		/// </param>
 		private void pnlTransportBack_MouseLeave(object sender, EventArgs e)
 		{
-			pnlTransportBack.BackColor = mColorBackground;
+			pnlTransportBack.BackColor = FromHex(ResourceMain.colorBackground);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1303,7 +1300,8 @@ namespace Scaffold
 		/// </param>
 		private void pnlTransportNext_MouseEnter(object sender, EventArgs e)
 		{
-			pnlTransportNext.BackColor = mColorBackgroundHighlight;
+			pnlTransportNext.BackColor =
+				FromHex(ResourceMain.colorBackgroundHighlight);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1321,7 +1319,7 @@ namespace Scaffold
 		/// </param>
 		private void pnlTransportNext_MouseLeave(object sender, EventArgs e)
 		{
-			pnlTransportNext.BackColor = mColorBackground;
+			pnlTransportNext.BackColor = FromHex(ResourceMain.colorBackground);
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1359,11 +1357,13 @@ namespace Scaffold
 		{
 			if(mnuTransportPause.Checked)
 			{
-				pnlTransportPause.BackColor = mColorBackgroundActive;
+				pnlTransportPause.BackColor =
+					FromHex(ResourceMain.colorBackgroundActive);
 			}
 			else
 			{
-				pnlTransportPause.BackColor = mColorBackgroundHighlight;
+				pnlTransportPause.BackColor =
+					FromHex(ResourceMain.colorBackgroundHighlight);
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -1384,11 +1384,12 @@ namespace Scaffold
 		{
 			if(mnuTransportPause.Checked)
 			{
-				pnlTransportPause.BackColor = mColorBackgroundActive;
+				pnlTransportPause.BackColor =
+					FromHex(ResourceMain.colorBackgroundActive);
 			}
 			else
 			{
-				pnlTransportPause.BackColor = mColorBackground;
+				pnlTransportPause.BackColor = FromHex(ResourceMain.colorBackground);
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -1427,11 +1428,13 @@ namespace Scaffold
 		{
 			if(mnuTransportPlay.Checked)
 			{
-				pnlTransportPlay.BackColor = mColorBackgroundActive;
+				pnlTransportPlay.BackColor =
+					FromHex(ResourceMain.colorBackgroundActive);
 			}
 			else
 			{
-				pnlTransportPlay.BackColor = mColorBackgroundHighlight;
+				pnlTransportPlay.BackColor =
+					FromHex(ResourceMain.colorBackgroundHighlight);
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -1452,11 +1455,12 @@ namespace Scaffold
 		{
 			if(mnuTransportPlay.Checked)
 			{
-				pnlTransportPlay.BackColor = mColorBackgroundActive;
+				pnlTransportPlay.BackColor =
+					FromHex(ResourceMain.colorBackgroundActive);
 			}
 			else
 			{
-				pnlTransportPlay.BackColor = mColorBackground;
+				pnlTransportPlay.BackColor = FromHex(ResourceMain.colorBackground);
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -1495,11 +1499,13 @@ namespace Scaffold
 		{
 			if(mnuTransportStop.Checked)
 			{
-				pnlTransportStop.BackColor = mColorBackgroundActive;
+				pnlTransportStop.BackColor =
+					FromHex(ResourceMain.colorBackgroundActive);
 			}
 			else
 			{
-				pnlTransportStop.BackColor = mColorBackgroundHighlight;
+				pnlTransportStop.BackColor =
+					FromHex(ResourceMain.colorBackgroundHighlight);
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -1520,11 +1526,12 @@ namespace Scaffold
 		{
 			if(mnuTransportStop.Checked)
 			{
-				pnlTransportStop.BackColor = mColorBackgroundActive;
+				pnlTransportStop.BackColor =
+					FromHex(ResourceMain.colorBackgroundActive);
 			}
 			else
 			{
-				pnlTransportStop.BackColor = mColorBackground;
+				pnlTransportStop.BackColor = FromHex(ResourceMain.colorBackground);
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -1615,7 +1622,7 @@ namespace Scaffold
 			FlipbookItemControl item = null;
 
 			base.OnActivated(e);
-			lblTitle.ForeColor = Color.FromKnownColor(KnownColor.WhiteSmoke);
+			lblTitle.ForeColor = FromHex(ResourceMain.colorTitleTextActive);
 			picMinimize.Image = ResourceMain.WinControlH1;
 			if(this.WindowState == FormWindowState.Maximized)
 			{
@@ -1648,7 +1655,7 @@ namespace Scaffold
 		{
 			base.OnDeactivate(e);
 			base.OnLeave(e);
-			lblTitle.ForeColor = Color.FromKnownColor(KnownColor.DarkGray);
+			lblTitle.ForeColor = FromHex(ResourceMain.colorTitleTextInactive);
 			picMinimize.Image = ResourceMain.WinControlH0;
 			if(this.WindowState == FormWindowState.Maximized)
 			{
@@ -1772,6 +1779,7 @@ namespace Scaffold
 				mnuViewImage
 			};
 
+			//	Form controls.
 			pnlClose.MouseClick += pnlClose_MouseClick;
 			pnlClose.MouseEnter += pnlClose_MouseEnter;
 			pnlClose.MouseLeave += pnlClose_MouseLeave;

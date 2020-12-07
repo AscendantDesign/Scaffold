@@ -111,6 +111,96 @@ namespace Scaffold {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #333333.
+        /// </summary>
+        internal static string colorBackground {
+            get {
+                return ResourceManager.GetString("colorBackground", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #204060.
+        /// </summary>
+        internal static string colorBackgroundActive {
+            get {
+                return ResourceManager.GetString("colorBackgroundActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #606060.
+        /// </summary>
+        internal static string colorBackgroundHighlight {
+            get {
+                return ResourceManager.GetString("colorBackgroundHighlight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #dcdcdc.
+        /// </summary>
+        internal static string colorTextNormal {
+            get {
+                return ResourceManager.GetString("colorTextNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #404040.
+        /// </summary>
+        internal static string colorTitleBackgroundNormal {
+            get {
+                return ResourceManager.GetString("colorTitleBackgroundNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #f5f5f5.
+        /// </summary>
+        internal static string colorTitleTextActive {
+            get {
+                return ResourceManager.GetString("colorTitleTextActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #a9a9a9.
+        /// </summary>
+        internal static string colorTitleTextInactive {
+            get {
+                return ResourceManager.GetString("colorTitleTextInactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #e91122.
+        /// </summary>
+        internal static string colorWinControlClose {
+            get {
+                return ResourceManager.GetString("colorWinControlClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #606060.
+        /// </summary>
+        internal static string colorWinControlHover {
+            get {
+                return ResourceManager.GetString("colorWinControlHover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #404040.
+        /// </summary>
+        internal static string colorWinControlNormal {
+            get {
+                return ResourceManager.GetString("colorWinControlNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap DrawToolCircle {

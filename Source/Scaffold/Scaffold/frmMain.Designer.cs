@@ -167,6 +167,11 @@ namespace Scaffold
 			this.btnDecisionTreeEditor = new Scaffold.LabelButtonControl();
 			this.panelWindowControl = new Scaffold.PanelWindowControl();
 			this.timerAutoSave = new System.Windows.Forms.Timer(this.components);
+			this.mnuToolsPowerPoint = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuToolsPPPlaceholderToTextboxes = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuToolsPPAlignment = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuToolsPPRemoveBullet = new System.Windows.Forms.ToolStripMenuItem();
+			this.mnuToolsPPQuickAnimation = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuMain.SuspendLayout();
 			this.statusMain.SuspendLayout();
 			this.tctlDocument.SuspendLayout();
@@ -233,7 +238,6 @@ namespace Scaffold
 			this.mnuFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this.mnuFileOpen.Size = new System.Drawing.Size(273, 26);
 			this.mnuFileOpen.Text = "&Open File";
-			this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
 			// 
 			// mnuFileSave
 			// 
@@ -241,7 +245,6 @@ namespace Scaffold
 			this.mnuFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
 			this.mnuFileSave.Size = new System.Drawing.Size(273, 26);
 			this.mnuFileSave.Text = "&Save File";
-			this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
 			// 
 			// mnuFileSaveAs
 			// 
@@ -250,7 +253,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.S)));
 			this.mnuFileSaveAs.Size = new System.Drawing.Size(273, 26);
 			this.mnuFileSaveAs.Text = "Save File &As ...";
-			this.mnuFileSaveAs.Click += new System.EventHandler(this.mnuFileSaveAs_Click);
 			// 
 			// mnuFileNew
 			// 
@@ -258,7 +260,6 @@ namespace Scaffold
 			this.mnuFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
 			this.mnuFileNew.Size = new System.Drawing.Size(273, 26);
 			this.mnuFileNew.Text = "&New";
-			this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
 			// 
 			// mnuFileSep1
 			// 
@@ -279,14 +280,12 @@ namespace Scaffold
 			this.mnuFileConvertPPToHTML.Name = "mnuFileConvertPPToHTML";
 			this.mnuFileConvertPPToHTML.Size = new System.Drawing.Size(242, 26);
 			this.mnuFileConvertPPToHTML.Text = "PowerPoint to &HTML";
-			this.mnuFileConvertPPToHTML.Click += new System.EventHandler(this.mnuFileConvertPPToHTML_Click);
 			// 
 			// mnuFileConvertPPToTinyLMS
 			// 
 			this.mnuFileConvertPPToTinyLMS.Name = "mnuFileConvertPPToTinyLMS";
 			this.mnuFileConvertPPToTinyLMS.Size = new System.Drawing.Size(242, 26);
 			this.mnuFileConvertPPToTinyLMS.Text = "PowerPoint to &TinyLMS";
-			this.mnuFileConvertPPToTinyLMS.Click += new System.EventHandler(this.mnuFileConvertPPToTinyLMS_Click);
 			// 
 			// mnuFileExport
 			// 
@@ -301,7 +300,6 @@ namespace Scaffold
 			this.mnuFileExportDecisionTreeToPP.Name = "mnuFileExportDecisionTreeToPP";
 			this.mnuFileExportDecisionTreeToPP.Size = new System.Drawing.Size(276, 26);
 			this.mnuFileExportDecisionTreeToPP.Text = "Decision Tree to &PowerPoint";
-			this.mnuFileExportDecisionTreeToPP.Click += new System.EventHandler(this.mnuFileExportDecisionTreeToPP_Click);
 			// 
 			// mnuFilePublish
 			// 
@@ -316,7 +314,6 @@ namespace Scaffold
 			this.mnuFilePublishSlackChatConversation.Name = "mnuFilePublishSlackChatConversation";
 			this.mnuFilePublishSlackChatConversation.Size = new System.Drawing.Size(293, 26);
 			this.mnuFilePublishSlackChatConversation.Text = "As &Slack Chatbot Conversation";
-			this.mnuFilePublishSlackChatConversation.Click += new System.EventHandler(this.mnuFilePublishSlackChatConversation_Click);
 			// 
 			// mnuFileUnpublish
 			// 
@@ -331,7 +328,6 @@ namespace Scaffold
 			this.mnuFileUnpublishSlackChatConversation.Name = "mnuFileUnpublishSlackChatConversation";
 			this.mnuFileUnpublishSlackChatConversation.Size = new System.Drawing.Size(273, 26);
 			this.mnuFileUnpublishSlackChatConversation.Text = "&Slack Chatbot Conversation";
-			this.mnuFileUnpublishSlackChatConversation.Click += new System.EventHandler(this.mnuFileUnpublishSlackChatConversation_Click);
 			// 
 			// mnuFileSep2
 			// 
@@ -343,7 +339,6 @@ namespace Scaffold
 			this.mnuFileDocumentProperties.Name = "mnuFileDocumentProperties";
 			this.mnuFileDocumentProperties.Size = new System.Drawing.Size(273, 26);
 			this.mnuFileDocumentProperties.Text = "&Document Properties";
-			this.mnuFileDocumentProperties.Click += new System.EventHandler(this.mnuFileDocumentProperties_Click);
 			// 
 			// mnuFileSep3
 			// 
@@ -355,7 +350,6 @@ namespace Scaffold
 			this.mnuFileExit.Name = "mnuFileExit";
 			this.mnuFileExit.Size = new System.Drawing.Size(273, 26);
 			this.mnuFileExit.Text = "E&xit";
-			this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
 			// 
 			// mnuEdit
 			// 
@@ -380,7 +374,6 @@ namespace Scaffold
 			this.mnuEditUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
 			this.mnuEditUndo.Size = new System.Drawing.Size(264, 26);
 			this.mnuEditUndo.Text = "&Undo";
-			this.mnuEditUndo.Click += new System.EventHandler(this.mnuEditUndo_Click);
 			// 
 			// mnuEditSep1
 			// 
@@ -393,7 +386,6 @@ namespace Scaffold
 			this.mnuEditSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
 			this.mnuEditSelectAll.Size = new System.Drawing.Size(264, 26);
 			this.mnuEditSelectAll.Text = "Select &All";
-			this.mnuEditSelectAll.Click += new System.EventHandler(this.mnuEditSelectAll_Click);
 			// 
 			// mnuEditSelectNone
 			// 
@@ -402,7 +394,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.A)));
 			this.mnuEditSelectNone.Size = new System.Drawing.Size(264, 26);
 			this.mnuEditSelectNone.Text = "Select N&one";
-			this.mnuEditSelectNone.Click += new System.EventHandler(this.mnuEditSelectNone_Click);
 			// 
 			// mnuEditSep2
 			// 
@@ -415,7 +406,6 @@ namespace Scaffold
 			this.mnuEditFind.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
 			this.mnuEditFind.Size = new System.Drawing.Size(264, 26);
 			this.mnuEditFind.Text = "&Find";
-			this.mnuEditFind.Click += new System.EventHandler(this.mnuEditFind_Click);
 			// 
 			// mnuEditSep3
 			// 
@@ -449,7 +439,6 @@ namespace Scaffold
 			this.mnuEditNodeColor.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
 			this.mnuEditNodeColor.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeColor.Text = "&Color Selected Background";
-			this.mnuEditNodeColor.Click += new System.EventHandler(this.mnuEditNodeColor_Click);
 			// 
 			// mnuEditNodeColorText
 			// 
@@ -457,7 +446,6 @@ namespace Scaffold
 			this.mnuEditNodeColorText.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
 			this.mnuEditNodeColorText.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeColorText.Text = "Color Selected &Text";
-			this.mnuEditNodeColorText.Click += new System.EventHandler(this.mnuEditNodeColorText_Click);
 			// 
 			// mnuEditNodeDuplicate
 			// 
@@ -465,7 +453,6 @@ namespace Scaffold
 			this.mnuEditNodeDuplicate.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
 			this.mnuEditNodeDuplicate.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeDuplicate.Text = "&Duplicate Selected";
-			this.mnuEditNodeDuplicate.Click += new System.EventHandler(this.mnuEditNodeDuplicate_Click);
 			// 
 			// mnuEditNodeSep1
 			// 
@@ -479,7 +466,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.A)));
 			this.mnuEditNodeAddAudio.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeAddAudio.Text = "Add &Audio To Selected";
-			this.mnuEditNodeAddAudio.Click += new System.EventHandler(this.mnuEditNodeAddAudio_Click);
 			// 
 			// mnuEditNodeAddImage
 			// 
@@ -488,7 +474,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.I)));
 			this.mnuEditNodeAddImage.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeAddImage.Text = "Add &Image To Selected";
-			this.mnuEditNodeAddImage.Click += new System.EventHandler(this.mnuEditNodeAddImage_Click);
 			// 
 			// mnuEditNodeAddLink
 			// 
@@ -497,7 +482,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.L)));
 			this.mnuEditNodeAddLink.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeAddLink.Text = "Add &Link To Selected";
-			this.mnuEditNodeAddLink.Click += new System.EventHandler(this.mnuEditNodeAddLink_Click);
 			// 
 			// mnuEditNodeAddVideo
 			// 
@@ -506,7 +490,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.V)));
 			this.mnuEditNodeAddVideo.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeAddVideo.Text = "Add &Video To Selected";
-			this.mnuEditNodeAddVideo.Click += new System.EventHandler(this.mnuEditNodeAddVideo_Click);
 			// 
 			// mnuEditNodeAddResources
 			// 
@@ -515,7 +498,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.R)));
 			this.mnuEditNodeAddResources.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeAddResources.Text = "Add One Or More &Resouces To File";
-			this.mnuEditNodeAddResources.Click += new System.EventHandler(this.mnuEditNodeAddResources_Click);
 			// 
 			// mnuEditNodeSep2
 			// 
@@ -530,7 +512,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.A)));
 			this.mnuEditNodeRemoveAudio.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeRemoveAudio.Text = "Remove A&udio From Selected";
-			this.mnuEditNodeRemoveAudio.Click += new System.EventHandler(this.mnuEditNodeRemoveAudio_Click);
 			// 
 			// mnuEditNodeRemoveImage
 			// 
@@ -540,7 +521,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.I)));
 			this.mnuEditNodeRemoveImage.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeRemoveImage.Text = "Remove I&mage From Selected";
-			this.mnuEditNodeRemoveImage.Click += new System.EventHandler(this.mnuEditNodeRemoveImage_Click);
 			// 
 			// mnuEditNodeRemoveLink
 			// 
@@ -550,7 +530,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.L)));
 			this.mnuEditNodeRemoveLink.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeRemoveLink.Text = "Remove Li&nk From Selected";
-			this.mnuEditNodeRemoveLink.Click += new System.EventHandler(this.mnuEditNodeRemoveLink_Click);
 			// 
 			// mnuEditNodeRemoveVideo
 			// 
@@ -560,7 +539,6 @@ namespace Scaffold
             | System.Windows.Forms.Keys.V)));
 			this.mnuEditNodeRemoveVideo.Size = new System.Drawing.Size(410, 26);
 			this.mnuEditNodeRemoveVideo.Text = "Remove Vid&eo From Selected";
-			this.mnuEditNodeRemoveVideo.Click += new System.EventHandler(this.mnuEditNodeRemoveVideo_Click);
 			// 
 			// mnuEditAlign
 			// 
@@ -583,42 +561,36 @@ namespace Scaffold
 			this.mnuEditAlignLeft.Name = "mnuEditAlignLeft";
 			this.mnuEditAlignLeft.Size = new System.Drawing.Size(259, 26);
 			this.mnuEditAlignLeft.Text = "Align &Left";
-			this.mnuEditAlignLeft.Click += new System.EventHandler(this.mnuEditAlignLeft_Click);
 			// 
 			// mnuEditAlignCenter
 			// 
 			this.mnuEditAlignCenter.Name = "mnuEditAlignCenter";
 			this.mnuEditAlignCenter.Size = new System.Drawing.Size(259, 26);
 			this.mnuEditAlignCenter.Text = "Align &Center Horizontally";
-			this.mnuEditAlignCenter.Click += new System.EventHandler(this.mnuEditAlignCenter_Click);
 			// 
 			// mnuEditAlignRight
 			// 
 			this.mnuEditAlignRight.Name = "mnuEditAlignRight";
 			this.mnuEditAlignRight.Size = new System.Drawing.Size(259, 26);
 			this.mnuEditAlignRight.Text = "Align &Right";
-			this.mnuEditAlignRight.Click += new System.EventHandler(this.mnuEditAlignRight_Click);
 			// 
 			// mnuEditAlignTop
 			// 
 			this.mnuEditAlignTop.Name = "mnuEditAlignTop";
 			this.mnuEditAlignTop.Size = new System.Drawing.Size(259, 26);
 			this.mnuEditAlignTop.Text = "Align &Top";
-			this.mnuEditAlignTop.Click += new System.EventHandler(this.mnuEditAlignTop_Click);
 			// 
 			// mnuEditAlignMiddle
 			// 
 			this.mnuEditAlignMiddle.Name = "mnuEditAlignMiddle";
 			this.mnuEditAlignMiddle.Size = new System.Drawing.Size(259, 26);
 			this.mnuEditAlignMiddle.Text = "Align &Middle Vertically";
-			this.mnuEditAlignMiddle.Click += new System.EventHandler(this.mnuEditAlignMiddle_Click);
 			// 
 			// mnuEditAlignBottom
 			// 
 			this.mnuEditAlignBottom.Name = "mnuEditAlignBottom";
 			this.mnuEditAlignBottom.Size = new System.Drawing.Size(259, 26);
 			this.mnuEditAlignBottom.Text = "Align &Bottom";
-			this.mnuEditAlignBottom.Click += new System.EventHandler(this.mnuEditAlignBottom_Click);
 			// 
 			// mnuEditAlignSep1
 			// 
@@ -630,14 +602,12 @@ namespace Scaffold
 			this.mnuEditAlignHorizontal.Name = "mnuEditAlignHorizontal";
 			this.mnuEditAlignHorizontal.Size = new System.Drawing.Size(259, 26);
 			this.mnuEditAlignHorizontal.Text = "Distribute &Horizontally";
-			this.mnuEditAlignHorizontal.Click += new System.EventHandler(this.mnuEditAlignHorizontal_Click);
 			// 
 			// mnuEditAlignVertical
 			// 
 			this.mnuEditAlignVertical.Name = "mnuEditAlignVertical";
 			this.mnuEditAlignVertical.Size = new System.Drawing.Size(259, 26);
 			this.mnuEditAlignVertical.Text = "Distribute &Vertically";
-			this.mnuEditAlignVertical.Click += new System.EventHandler(this.mnuEditAlignVertical_Click);
 			// 
 			// mnuView
 			// 
@@ -657,7 +627,7 @@ namespace Scaffold
             this.mnuViewZoomOut,
             this.mnuViewZoom100});
 			this.mnuViewZoom.Name = "mnuViewZoom";
-			this.mnuViewZoom.Size = new System.Drawing.Size(132, 26);
+			this.mnuViewZoom.Size = new System.Drawing.Size(224, 26);
 			this.mnuViewZoom.Text = "&Zoom";
 			// 
 			// mnuViewZoomIn
@@ -665,27 +635,24 @@ namespace Scaffold
 			this.mnuViewZoomIn.Name = "mnuViewZoomIn";
 			this.mnuViewZoomIn.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.I)));
-			this.mnuViewZoomIn.Size = new System.Drawing.Size(219, 26);
+			this.mnuViewZoomIn.Size = new System.Drawing.Size(224, 26);
 			this.mnuViewZoomIn.Text = "&In";
-			this.mnuViewZoomIn.Click += new System.EventHandler(this.mnuViewZoomIn_Click);
 			// 
 			// mnuViewZoomOut
 			// 
 			this.mnuViewZoomOut.Name = "mnuViewZoomOut";
 			this.mnuViewZoomOut.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.O)));
-			this.mnuViewZoomOut.Size = new System.Drawing.Size(219, 26);
+			this.mnuViewZoomOut.Size = new System.Drawing.Size(224, 26);
 			this.mnuViewZoomOut.Text = "&Out";
-			this.mnuViewZoomOut.Click += new System.EventHandler(this.mnuViewZoomOut_Click);
 			// 
 			// mnuViewZoom100
 			// 
 			this.mnuViewZoom100.Name = "mnuViewZoom100";
 			this.mnuViewZoom100.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.Z)));
-			this.mnuViewZoom100.Size = new System.Drawing.Size(219, 26);
+			this.mnuViewZoom100.Size = new System.Drawing.Size(224, 26);
 			this.mnuViewZoom100.Text = "&100%";
-			this.mnuViewZoom100.Click += new System.EventHandler(this.mnuViewZoom100_Click);
 			// 
 			// mnuViewScroll
 			// 
@@ -693,7 +660,7 @@ namespace Scaffold
             this.mnuViewScrollLayout,
             this.mnuViewScrollNode});
 			this.mnuViewScroll.Name = "mnuViewScroll";
-			this.mnuViewScroll.Size = new System.Drawing.Size(132, 26);
+			this.mnuViewScroll.Size = new System.Drawing.Size(224, 26);
 			this.mnuViewScroll.Text = "&Scroll";
 			// 
 			// mnuViewScrollLayout
@@ -701,7 +668,6 @@ namespace Scaffold
 			this.mnuViewScrollLayout.Name = "mnuViewScrollLayout";
 			this.mnuViewScrollLayout.Size = new System.Drawing.Size(350, 26);
 			this.mnuViewScrollLayout.Text = "Scroll &Layout Into View";
-			this.mnuViewScrollLayout.Click += new System.EventHandler(this.mnuViewScrollLayout_Click);
 			// 
 			// mnuViewScrollNode
 			// 
@@ -709,7 +675,6 @@ namespace Scaffold
 			this.mnuViewScrollNode.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F2)));
 			this.mnuViewScrollNode.Size = new System.Drawing.Size(350, 26);
 			this.mnuViewScrollNode.Text = "Scroll Selected &Node Into View";
-			this.mnuViewScrollNode.Click += new System.EventHandler(this.mnuViewScrollNode_Click);
 			// 
 			// mnuTools
 			// 
@@ -719,6 +684,7 @@ namespace Scaffold
             this.mnuToolsChatbotEmulator,
             this.mnuToolsResourceGallery,
             this.mnuToolsAnimation,
+            this.mnuToolsPowerPoint,
             this.toolStripMenuItem1,
             this.mnuToolsClipboard,
             this.mnuToolsControl,
@@ -735,7 +701,6 @@ namespace Scaffold
 			this.mnuToolsColorPalette.Name = "mnuToolsColorPalette";
 			this.mnuToolsColorPalette.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsColorPalette.Text = "&Color Palette";
-			this.mnuToolsColorPalette.Click += new System.EventHandler(this.mnuToolsColorPalette_Click);
 			// 
 			// mnuToolsChatbotEmulator
 			// 
@@ -752,7 +717,6 @@ namespace Scaffold
 			this.mnuToolsChatbotEmulateBeginning.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
 			this.mnuToolsChatbotEmulateBeginning.Size = new System.Drawing.Size(339, 26);
 			this.mnuToolsChatbotEmulateBeginning.Text = "Emulate From &Beginning";
-			this.mnuToolsChatbotEmulateBeginning.Click += new System.EventHandler(this.mnuToolsChatbotEmulateBeginning_Click);
 			// 
 			// mnuToolsChatbotEmulateSelected
 			// 
@@ -760,14 +724,12 @@ namespace Scaffold
 			this.mnuToolsChatbotEmulateSelected.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F3)));
 			this.mnuToolsChatbotEmulateSelected.Size = new System.Drawing.Size(339, 26);
 			this.mnuToolsChatbotEmulateSelected.Text = "Emulate From &Selected Node";
-			this.mnuToolsChatbotEmulateSelected.Click += new System.EventHandler(this.mnuToolsChatbotEmulateSelected_Click);
 			// 
 			// mnuToolsResourceGallery
 			// 
 			this.mnuToolsResourceGallery.Name = "mnuToolsResourceGallery";
 			this.mnuToolsResourceGallery.Size = new System.Drawing.Size(249, 26);
 			this.mnuToolsResourceGallery.Text = "&Resource Gallery";
-			this.mnuToolsResourceGallery.Click += new System.EventHandler(this.mnuToolsResourceGallery_Click);
 			// 
 			// mnuToolsAnimation
 			// 
@@ -790,28 +752,24 @@ namespace Scaffold
 			this.mnuToolsAnimationTimelineFileReport.Size = new System.Drawing.Size(297, 26);
 			this.mnuToolsAnimationTimelineFileReport.Text = "Timeline File &Report";
 			this.mnuToolsAnimationTimelineFileReport.ToolTipText = "Read a Timeline.JSON file and display a report.";
-			this.mnuToolsAnimationTimelineFileReport.Click += new System.EventHandler(this.mnuToolsAnimationTimelineFileReport_Click);
 			// 
 			// mnuToolsAnimationFrameNToHTML
 			// 
 			this.mnuToolsAnimationFrameNToHTML.Name = "mnuToolsAnimationFrameNToHTML";
 			this.mnuToolsAnimationFrameNToHTML.Size = new System.Drawing.Size(297, 26);
 			this.mnuToolsAnimationFrameNToHTML.Text = "Draw &Frame [N] to HTML View";
-			this.mnuToolsAnimationFrameNToHTML.Click += new System.EventHandler(this.mnuToolsAnimationFrameNToHTML_Click);
 			// 
 			// mnuToolsAnimationFrameNToSVG
 			// 
 			this.mnuToolsAnimationFrameNToSVG.Name = "mnuToolsAnimationFrameNToSVG";
 			this.mnuToolsAnimationFrameNToSVG.Size = new System.Drawing.Size(297, 26);
 			this.mnuToolsAnimationFrameNToSVG.Text = "Draw Frame [N] to &SVG View";
-			this.mnuToolsAnimationFrameNToSVG.Click += new System.EventHandler(this.mnuToolsAnimationFrameNToSVG_Click);
 			// 
 			// mnuToolsAnimationSaveFrames
 			// 
 			this.mnuToolsAnimationSaveFrames.Name = "mnuToolsAnimationSaveFrames";
 			this.mnuToolsAnimationSaveFrames.Size = new System.Drawing.Size(297, 26);
 			this.mnuToolsAnimationSaveFrames.Text = "Save &Animation Frames to Disk";
-			this.mnuToolsAnimationSaveFrames.Click += new System.EventHandler(this.mnuToolsAnimationSaveFrames_Click);
 			// 
 			// mnuToolsAnimationSep1
 			// 
@@ -823,7 +781,6 @@ namespace Scaffold
 			this.mnuToolsAnimationFrameFlipbook.Name = "mnuToolsAnimationFrameFlipbook";
 			this.mnuToolsAnimationFrameFlipbook.Size = new System.Drawing.Size(297, 26);
 			this.mnuToolsAnimationFrameFlipbook.Text = "Fra&me Flipbook";
-			this.mnuToolsAnimationFrameFlipbook.Click += new System.EventHandler(this.mnuToolsAnimationFrameFlipbook_Click);
 			// 
 			// toolStripMenuItem1
 			// 
@@ -845,28 +802,25 @@ namespace Scaffold
 			// mnuToolsClipboardSave
 			// 
 			this.mnuToolsClipboardSave.Name = "mnuToolsClipboardSave";
-			this.mnuToolsClipboardSave.Size = new System.Drawing.Size(199, 26);
+			this.mnuToolsClipboardSave.Size = new System.Drawing.Size(224, 26);
 			this.mnuToolsClipboardSave.Text = "&Save As File...";
-			this.mnuToolsClipboardSave.Click += new System.EventHandler(this.mnuToolsClipboardSave_Click);
 			// 
 			// mnuToolsClipboardLoad
 			// 
 			this.mnuToolsClipboardLoad.Name = "mnuToolsClipboardLoad";
-			this.mnuToolsClipboardLoad.Size = new System.Drawing.Size(199, 26);
+			this.mnuToolsClipboardLoad.Size = new System.Drawing.Size(224, 26);
 			this.mnuToolsClipboardLoad.Text = "&Load From File...";
-			this.mnuToolsClipboardLoad.Click += new System.EventHandler(this.mnuToolsClipboardLoad_Click);
 			// 
 			// mnuToolsClipboardSep1
 			// 
 			this.mnuToolsClipboardSep1.Name = "mnuToolsClipboardSep1";
-			this.mnuToolsClipboardSep1.Size = new System.Drawing.Size(196, 6);
+			this.mnuToolsClipboardSep1.Size = new System.Drawing.Size(221, 6);
 			// 
 			// mnuToolsClipboardClear
 			// 
 			this.mnuToolsClipboardClear.Name = "mnuToolsClipboardClear";
-			this.mnuToolsClipboardClear.Size = new System.Drawing.Size(199, 26);
+			this.mnuToolsClipboardClear.Size = new System.Drawing.Size(224, 26);
 			this.mnuToolsClipboardClear.Text = "&Clear";
-			this.mnuToolsClipboardClear.Click += new System.EventHandler(this.mnuToolsClipboardClear_Click);
 			// 
 			// mnuToolsControl
 			// 
@@ -883,21 +837,18 @@ namespace Scaffold
 			this.mnuToolsControlUndo.Name = "mnuToolsControlUndo";
 			this.mnuToolsControlUndo.Size = new System.Drawing.Size(260, 26);
 			this.mnuToolsControlUndo.Text = "&Undo Buffer Contents";
-			this.mnuToolsControlUndo.Click += new System.EventHandler(this.mnuToolsControlUndo_Click);
 			// 
 			// mnuToolsControlNodeControl
 			// 
 			this.mnuToolsControlNodeControl.Name = "mnuToolsControlNodeControl";
 			this.mnuToolsControlNodeControl.Size = new System.Drawing.Size(260, 26);
 			this.mnuToolsControlNodeControl.Text = "Node&Control Information";
-			this.mnuToolsControlNodeControl.Click += new System.EventHandler(this.mnuToolsControlNodeControl_Click);
 			// 
 			// mnuToolsControlNodeMeasurement
 			// 
 			this.mnuToolsControlNodeMeasurement.Name = "mnuToolsControlNodeMeasurement";
 			this.mnuToolsControlNodeMeasurement.Size = new System.Drawing.Size(260, 26);
 			this.mnuToolsControlNodeMeasurement.Text = "&Node Measurements";
-			this.mnuToolsControlNodeMeasurement.Click += new System.EventHandler(this.mnuToolsControlNodeMeasurement_Click);
 			// 
 			// mnuToolsBase64
 			// 
@@ -913,23 +864,20 @@ namespace Scaffold
 			// mnuToolsBase64SRC
 			// 
 			this.mnuToolsBase64SRC.Name = "mnuToolsBase64SRC";
-			this.mnuToolsBase64SRC.Size = new System.Drawing.Size(212, 26);
+			this.mnuToolsBase64SRC.Size = new System.Drawing.Size(224, 26);
 			this.mnuToolsBase64SRC.Text = "To HTML IMG &SRC";
-			this.mnuToolsBase64SRC.Click += new System.EventHandler(this.mnuToolsBase64SRC_Click);
 			// 
 			// mnuToolsBase64URL
 			// 
 			this.mnuToolsBase64URL.Name = "mnuToolsBase64URL";
-			this.mnuToolsBase64URL.Size = new System.Drawing.Size(212, 26);
+			this.mnuToolsBase64URL.Size = new System.Drawing.Size(224, 26);
 			this.mnuToolsBase64URL.Text = "To CSS &URL";
-			this.mnuToolsBase64URL.Click += new System.EventHandler(this.mnuToolsBase64URL_Click);
 			// 
 			// mnuToolsBase64Raw
 			// 
 			this.mnuToolsBase64Raw.Name = "mnuToolsBase64Raw";
-			this.mnuToolsBase64Raw.Size = new System.Drawing.Size(212, 26);
+			this.mnuToolsBase64Raw.Size = new System.Drawing.Size(224, 26);
 			this.mnuToolsBase64Raw.Text = "To &Raw String";
-			this.mnuToolsBase64Raw.Click += new System.EventHandler(this.mnuToolsBase64Raw_Click);
 			// 
 			// mnuToolsBase64U
 			// 
@@ -943,16 +891,14 @@ namespace Scaffold
 			// mnuToolsBase64UClipboard
 			// 
 			this.mnuToolsBase64UClipboard.Name = "mnuToolsBase64UClipboard";
-			this.mnuToolsBase64UClipboard.Size = new System.Drawing.Size(196, 26);
+			this.mnuToolsBase64UClipboard.Size = new System.Drawing.Size(224, 26);
 			this.mnuToolsBase64UClipboard.Text = "From &Clipboard";
-			this.mnuToolsBase64UClipboard.Click += new System.EventHandler(this.mnuToolsBase64UClipboard_Click);
 			// 
 			// mnuToolsBase64UFile
 			// 
 			this.mnuToolsBase64UFile.Name = "mnuToolsBase64UFile";
-			this.mnuToolsBase64UFile.Size = new System.Drawing.Size(196, 26);
+			this.mnuToolsBase64UFile.Size = new System.Drawing.Size(224, 26);
 			this.mnuToolsBase64UFile.Text = "From &File";
-			this.mnuToolsBase64UFile.Click += new System.EventHandler(this.mnuToolsBase64UFile_Click);
 			// 
 			// mnuWindow
 			// 
@@ -974,7 +920,6 @@ namespace Scaffold
 			this.mnuWindowDecision.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
 			this.mnuWindowDecision.Size = new System.Drawing.Size(231, 26);
 			this.mnuWindowDecision.Text = "&Decision Tree";
-			this.mnuWindowDecision.Click += new System.EventHandler(this.mnuWindowDecision_Click);
 			// 
 			// mnuWindowSlide
 			// 
@@ -982,7 +927,6 @@ namespace Scaffold
 			this.mnuWindowSlide.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
 			this.mnuWindowSlide.Size = new System.Drawing.Size(231, 26);
 			this.mnuWindowSlide.Text = "&Slide Editor";
-			this.mnuWindowSlide.Click += new System.EventHandler(this.mnuWindowSlide_Click);
 			// 
 			// mnuWindowHTMLViewer
 			// 
@@ -990,7 +934,6 @@ namespace Scaffold
 			this.mnuWindowHTMLViewer.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
 			this.mnuWindowHTMLViewer.Size = new System.Drawing.Size(231, 26);
 			this.mnuWindowHTMLViewer.Text = "&HTML Viewer";
-			this.mnuWindowHTMLViewer.Click += new System.EventHandler(this.mnuWindowHTMLViewer_Click);
 			// 
 			// statusMain
 			// 
@@ -1413,6 +1356,41 @@ namespace Scaffold
 			this.timerAutoSave.Interval = 300000;
 			this.timerAutoSave.Tick += new System.EventHandler(this.timerAutoSave_Tick);
 			// 
+			// mnuToolsPowerPoint
+			// 
+			this.mnuToolsPowerPoint.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuToolsPPPlaceholderToTextboxes,
+            this.mnuToolsPPAlignment,
+            this.mnuToolsPPRemoveBullet,
+            this.mnuToolsPPQuickAnimation});
+			this.mnuToolsPowerPoint.Name = "mnuToolsPowerPoint";
+			this.mnuToolsPowerPoint.Size = new System.Drawing.Size(249, 26);
+			this.mnuToolsPowerPoint.Text = "&PowerPoint";
+			// 
+			// mnuToolsPPPlaceholderToTextboxes
+			// 
+			this.mnuToolsPPPlaceholderToTextboxes.Name = "mnuToolsPPPlaceholderToTextboxes";
+			this.mnuToolsPPPlaceholderToTextboxes.Size = new System.Drawing.Size(370, 26);
+			this.mnuToolsPPPlaceholderToTextboxes.Text = "Change &Content Placeholder To Textboxes";
+			// 
+			// mnuToolsPPAlignment
+			// 
+			this.mnuToolsPPAlignment.Name = "mnuToolsPPAlignment";
+			this.mnuToolsPPAlignment.Size = new System.Drawing.Size(370, 26);
+			this.mnuToolsPPAlignment.Text = "Text And Shape A&lignment";
+			// 
+			// mnuToolsPPRemoveBullet
+			// 
+			this.mnuToolsPPRemoveBullet.Name = "mnuToolsPPRemoveBullet";
+			this.mnuToolsPPRemoveBullet.Size = new System.Drawing.Size(370, 26);
+			this.mnuToolsPPRemoveBullet.Text = "Remove &Bullet From Paragraphs";
+			// 
+			// mnuToolsPPQuickAnimation
+			// 
+			this.mnuToolsPPQuickAnimation.Name = "mnuToolsPPQuickAnimation";
+			this.mnuToolsPPQuickAnimation.Size = new System.Drawing.Size(370, 26);
+			this.mnuToolsPPQuickAnimation.Text = "Quick &Animation";
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1595,6 +1573,11 @@ namespace Scaffold
 		private ToolStripMenuItem mnuFileUnpublishSlackChatConversation;
 		private ToolStripSeparator mnuToolsAnimationSep1;
 		private ToolStripMenuItem mnuToolsAnimationFrameFlipbook;
+		private ToolStripMenuItem mnuToolsPowerPoint;
+		private ToolStripMenuItem mnuToolsPPPlaceholderToTextboxes;
+		private ToolStripMenuItem mnuToolsPPAlignment;
+		private ToolStripMenuItem mnuToolsPPRemoveBullet;
+		private ToolStripMenuItem mnuToolsPPQuickAnimation;
 	}
 }
 

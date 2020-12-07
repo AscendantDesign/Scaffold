@@ -4857,6 +4857,83 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* mnuToolsPPAlignment_Click																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Tools / PowerPoint / Text And Shape Alignment menu option has
+		/// been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuToolsPPAlignment_Click(object sender, EventArgs e)
+		{
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* mnuToolsPPPlaceholderToTextboxes_Click																*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Tools / PowerPoint / Change Content Placeholder To Textboxes menu
+		/// option has been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuToolsPPPlaceholderToTextboxes_Click(object sender,
+			EventArgs e)
+		{
+			OfficeDriver driver = new OfficeDriver();
+
+			driver.EnsurePowerPointRunning(true);
+			driver.PlaceholderToTextboxes();
+
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* mnuToolsPPQuickAnimation_Click																				*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Tools / PowerPoint / Quick Animation menu option has been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuToolsPPQuickAnimation_Click(object sender, EventArgs e)
+		{
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* mnuToolsPPRemoveBullet_Click																					*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Tools / PowerPoint / Remove Bullet From Paragraphs menu option has
+		/// been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuToolsPPRemoveBullet_Click(object sender, EventArgs e)
+		{
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* mnuToolsResourceGallery_Click																					*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -6675,6 +6752,89 @@ namespace Scaffold
 			nodeControl.SelectionChanged += nodeControl_SelectionChanged;
 
 			nodeControl_SelectionChanged(null, null);
+
+			//	Menu items.
+			mnuEditAlignBottom.Click += mnuEditAlignBottom_Click;
+			mnuEditAlignCenter.Click += mnuEditAlignCenter_Click;
+			mnuEditAlignHorizontal.Click += mnuEditAlignHorizontal_Click;
+			mnuEditAlignLeft.Click += mnuEditAlignLeft_Click;
+			mnuEditAlignMiddle.Click += mnuEditAlignMiddle_Click;
+			mnuEditAlignRight.Click += mnuEditAlignRight_Click;
+			mnuEditAlignTop.Click += mnuEditAlignTop_Click;
+			mnuEditAlignVertical.Click += mnuEditAlignVertical_Click;
+			mnuEditFind.Click += mnuEditFind_Click;
+			mnuEditSelectAll.Click += mnuEditSelectAll_Click;
+			mnuEditSelectNone.Click += mnuEditSelectNone_Click;
+			mnuEditNodeAddAudio.Click += mnuEditNodeAddAudio_Click;
+			mnuEditNodeAddImage.Click += mnuEditNodeAddImage_Click;
+			mnuEditNodeAddLink.Click += mnuEditNodeAddLink_Click;
+			mnuEditNodeAddResources.Click += mnuEditNodeAddResources_Click;
+			mnuEditNodeAddVideo.Click += mnuEditNodeAddVideo_Click;
+			mnuEditNodeColor.Click += mnuEditNodeColor_Click;
+			mnuEditNodeColorText.Click += mnuEditNodeColorText_Click;
+			mnuEditNodeDuplicate.Click += mnuEditNodeDuplicate_Click;
+			mnuEditNodeRemoveAudio.Click += mnuEditNodeRemoveAudio_Click;
+			mnuEditNodeRemoveImage.Click += mnuEditNodeRemoveImage_Click;
+			mnuEditNodeRemoveLink.Click += mnuEditNodeRemoveLink_Click;
+			mnuEditNodeRemoveVideo.Click += mnuEditNodeRemoveVideo_Click;
+			mnuEditUndo.Click += mnuEditUndo_Click;
+
+			mnuFileConvertPPToHTML.Click += mnuFileConvertPPToHTML_Click;
+			mnuFileConvertPPToTinyLMS.Click += mnuFileConvertPPToTinyLMS_Click;
+			mnuFileDocumentProperties.Click += mnuFileDocumentProperties_Click;
+			mnuFileExit.Click += mnuFileExit_Click;
+			mnuFileExportDecisionTreeToPP.Click +=
+				mnuFileExportDecisionTreeToPP_Click;
+			mnuFileNew.Click += mnuFileNew_Click;
+			mnuFileOpen.Click += mnuFileOpen_Click;
+			mnuFilePublishSlackChatConversation.Click +=
+				mnuFilePublishSlackChatConversation_Click;
+			mnuFileSave.Click += mnuFileSave_Click;
+			mnuFileSaveAs.Click += mnuFileSaveAs_Click;
+			mnuFileUnpublishSlackChatConversation.Click +=
+				mnuFileUnpublishSlackChatConversation_Click;
+
+			mnuToolsAnimationFrameFlipbook.Click +=
+				mnuToolsAnimationFrameFlipbook_Click;
+			mnuToolsAnimationFrameNToHTML.Click +=
+				mnuToolsAnimationFrameNToHTML_Click;
+			mnuToolsAnimationFrameNToSVG.Click += mnuToolsAnimationFrameNToSVG_Click;
+			mnuToolsAnimationSaveFrames.Click += mnuToolsAnimationSaveFrames_Click;
+			mnuToolsAnimationTimelineFileReport.Click +=
+				mnuToolsAnimationTimelineFileReport_Click;
+			mnuToolsBase64Raw.Click += mnuToolsBase64Raw_Click;
+			mnuToolsBase64SRC.Click += mnuToolsBase64SRC_Click;
+			mnuToolsBase64UClipboard.Click += mnuToolsBase64UClipboard_Click;
+			mnuToolsBase64UFile.Click += mnuToolsBase64UFile_Click;
+			mnuToolsBase64URL.Click += mnuToolsBase64URL_Click;
+			mnuToolsChatbotEmulateBeginning.Click +=
+				mnuToolsChatbotEmulateBeginning_Click;
+			mnuToolsChatbotEmulateSelected.Click +=
+				mnuToolsChatbotEmulateSelected_Click;
+			mnuToolsClipboardClear.Click += mnuToolsClipboardClear_Click;
+			mnuToolsClipboardLoad.Click += mnuToolsClipboardLoad_Click;
+			mnuToolsClipboardSave.Click += mnuToolsClipboardSave_Click;
+			mnuToolsColorPalette.Click += mnuToolsColorPalette_Click;
+			mnuToolsControlNodeControl.Click += mnuToolsControlNodeControl_Click;
+			mnuToolsControlNodeMeasurement.Click +=
+				mnuToolsControlNodeMeasurement_Click;
+			mnuToolsControlUndo.Click += mnuToolsControlUndo_Click;
+			mnuToolsPPAlignment.Click += mnuToolsPPAlignment_Click;
+			mnuToolsPPPlaceholderToTextboxes.Click +=
+				mnuToolsPPPlaceholderToTextboxes_Click;
+			mnuToolsPPQuickAnimation.Click += mnuToolsPPQuickAnimation_Click;
+			mnuToolsPPRemoveBullet.Click += mnuToolsPPRemoveBullet_Click;
+			mnuToolsResourceGallery.Click += mnuToolsResourceGallery_Click;
+
+			mnuViewScrollLayout.Click += mnuViewScrollLayout_Click;
+			mnuViewScrollNode.Click += mnuViewScrollNode_Click;
+			mnuViewZoom100.Click += mnuViewZoom100_Click;
+			mnuViewZoomIn.Click += mnuViewZoomIn_Click;
+			mnuViewZoomOut.Click += mnuViewZoomOut_Click;
+
+			mnuWindowDecision.Click += mnuWindowDecision_Click;
+			mnuWindowHTMLViewer.Click += mnuWindowHTMLViewer_Click;
+			mnuWindowSlide.Click += mnuWindowSlide_Click;
 		}
 		//*-----------------------------------------------------------------------*
 

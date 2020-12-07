@@ -133,6 +133,46 @@
   <data name="CaptionRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\CaptionRight.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="colorBackground" xml:space="preserve">
+    <value>#333333</value>
+    <comment>General form color background.</comment>
+  </data>
+  <data name="colorBackgroundActive" xml:space="preserve">
+    <value>#204060</value>
+    <comment>Background color of an active tool button.</comment>
+  </data>
+  <data name="colorBackgroundHighlight" xml:space="preserve">
+    <value>#606060</value>
+    <comment>Background color of a highlighted or hovered tool button.</comment>
+  </data>
+  <data name="colorTextNormal" xml:space="preserve">
+    <value>#dcdcdc</value>
+    <comment>Text color on normal surfaces.</comment>
+  </data>
+  <data name="colorTitleBackgroundNormal" xml:space="preserve">
+    <value>#404040</value>
+    <comment>Background color of the title bar in normal conditions.</comment>
+  </data>
+  <data name="colorTitleTextActive" xml:space="preserve">
+    <value>#f5f5f5</value>
+    <comment>Title bar text color when form is active.</comment>
+  </data>
+  <data name="colorTitleTextInactive" xml:space="preserve">
+    <value>#a9a9a9</value>
+    <comment>Title bar text color when form is inactive.</comment>
+  </data>
+  <data name="colorWinControlClose" xml:space="preserve">
+    <value>#e91122</value>
+    <comment>Background color of the highlighted window close button.</comment>
+  </data>
+  <data name="colorWinControlHover" xml:space="preserve">
+    <value>#606060</value>
+    <comment>Background color of the window control button when hovered.</comment>
+  </data>
+  <data name="colorWinControlNormal" xml:space="preserve">
+    <value>#404040</value>
+    <comment>Background color of the normal window control button.</comment>
+  </data>
   <data name="DrawToolCircle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\DrawToolCircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

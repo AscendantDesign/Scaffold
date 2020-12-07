@@ -15,6 +15,7 @@ using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 using static Scaffold.ScaffoldNodesUtil;
 using static Scaffold.ScaffoldUtil;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace Scaffold
 {
@@ -240,6 +241,33 @@ namespace Scaffold
 			else
 			{
 				MessageBox.Show(message, "Export Decision Tree to PowerPoint");
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	PlaceholderToTextboxes																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Convert placeholder content text to individual textboxes.
+		/// </summary>
+		public void PlaceholderToTextboxes()
+		{
+			Presentation presentation = mPowerPoint.ActivePresentation;
+			int slideIndex = 12;
+
+			if(presentation != null && presentation.Slides.Count > 0)
+			{
+				foreach(Slide slide in presentation.Slides)
+				{
+					if(slide.SlideIndex == slideIndex)
+					{
+						foreach(PowerPoint.Shape shape in slide.Shapes)
+						{
+							//Debug.WriteLine(shape.MediaFormat.ToString());
+						}
+					}
+				}
 			}
 		}
 		//*-----------------------------------------------------------------------*

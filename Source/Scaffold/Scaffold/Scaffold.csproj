@@ -286,6 +286,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPPPlaceholderToTextbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPPPlaceholderToTextbox.Designer.cs">
+      <DependentUpon>frmPPPlaceholderToTextbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPropertyAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,9 @@
     <Compile Include="ScaffoldUtil.cs" />
     <Compile Include="ScenarioStep.cs" />
     <Compile Include="RelaxedTypeConverter.cs" />
+    <Compile Include="ThemedFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Undo.cs" />
     <Compile Include="WizardTabControl.cs">
       <SubType>Component</SubType>
@@ -389,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPPPlaceholderToTextbox.resx">
+      <DependentUpon>frmPPPlaceholderToTextbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPropertyAssignment.resx">
       <DependentUpon>frmPropertyAssignment.cs</DependentUpon>
