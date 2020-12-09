@@ -781,6 +781,27 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* PointsToPixels																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return the pixel size occupied by the specified number of points.
+		/// </summary>
+		/// <param name="pointSize">
+		/// Size to convert, in points.
+		/// </param>
+		/// <returns>
+		/// Count of pixels occupying the caller's point space.
+		/// </returns>
+		public static int PointsToPixels(float pointSize)
+		{
+			int result = 0;
+
+			result = (int)(pointSize * 1.333333f);
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* ProgressUpdate																												*
 		//*-----------------------------------------------------------------------*
 		/// <summary>

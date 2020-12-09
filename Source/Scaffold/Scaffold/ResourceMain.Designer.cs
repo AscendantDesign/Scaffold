@@ -63,6 +63,66 @@ namespace Scaffold {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AlignBottom32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignBottom32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlignCenter32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignCenter32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlignLeft32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignLeft32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlignMiddle32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignMiddle32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlignRight32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignRight32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlignTop32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignTop32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AlphaCheckerLarge {
             get {
                 object obj = ResourceManager.GetObject("AlphaCheckerLarge", resourceCulture);
@@ -197,6 +257,26 @@ namespace Scaffold {
         internal static string colorWinControlNormal {
             get {
                 return ResourceManager.GetString("colorWinControlNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DistributeHorz32 {
+            get {
+                object obj = ResourceManager.GetObject("DistributeHorz32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DistributeVert32 {
+            get {
+                object obj = ResourceManager.GetObject("DistributeVert32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -543,6 +623,15 @@ namespace Scaffold {
         internal static string rxSVGHREFFind {
             get {
                 return ResourceManager.GetString("rxSVGHREFFind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (?&lt;line&gt;[^\r\n]+)\s*(\r|\n|$)\s*.
+        /// </summary>
+        internal static string rxTextLine {
+            get {
+                return ResourceManager.GetString("rxTextLine", resourceCulture);
             }
         }
         

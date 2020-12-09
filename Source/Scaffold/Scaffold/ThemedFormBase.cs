@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using static Scaffold.ScaffoldNodesUtil;
+//using static Scaffold.ScaffoldNodesUtil;
 
 namespace Scaffold
 {
@@ -36,265 +36,16 @@ namespace Scaffold
 		protected bool mWindowActive = false;
 
 		//	Local controls.
-		protected Label lblTitle = null;
+		private Label lblTitle = null;
 		protected MenuStrip menuThemedForm = null;
-		protected Panel pnlClose = null;
-		protected Panel pnlIcon = null;
+		private Panel pnlClose = null;
+		private Panel pnlIcon = null;
 		protected Panel pnlMain = null;
-		protected Panel pnlMaximize = null;
-		protected Panel pnlMinimize = null;
-		protected Panel pnlTitle = null;
+		private Panel pnlMaximize = null;
+		private Panel pnlMinimize = null;
+		private Panel pnlTitle = null;
 		protected ToolStripStatusLabel statMessage = null;
 		protected StatusStrip statusThemedForm = null;
-
-		//*-----------------------------------------------------------------------*
-		//* pnlClose_MouseClick																										*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has clicked the window close button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Mouse event arguments.
-		/// </param>
-		protected virtual void pnlClose_MouseClick(object sender, MouseEventArgs e)
-		{
-			this.DialogResult = DialogResult.Cancel;
-			this.Hide();
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlClose_MouseEnter																										*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has entered the area of the window close button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Standard event arguments.
-		/// </param>
-		protected virtual void pnlClose_MouseEnter(object sender, EventArgs e)
-		{
-			pnlClose.BackColor = FromHex(ResourceMain.colorWinControlClose);
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlClose_MouseLeave																										*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has left the area of the window close button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Standard event arguments.
-		/// </param>
-		protected virtual void pnlClose_MouseLeave(object sender, EventArgs e)
-		{
-			pnlClose.BackColor = FromHex(ResourceMain.colorWinControlNormal);
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlMaximize_MouseClick																								*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has clicked the window maximize button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Mouse event arguments.
-		/// </param>
-		protected virtual void pnlMaximize_MouseClick(object sender, MouseEventArgs e)
-		{
-			if(this.WindowState == FormWindowState.Maximized)
-			{
-				this.WindowState = FormWindowState.Normal;
-			}
-			else
-			{
-				this.WindowState = FormWindowState.Maximized;
-			}
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlMaximize_MouseEnter																								*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has entered the area of the maximize button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Standard event arguments.
-		/// </param>
-		protected virtual void pnlMaximize_MouseEnter(object sender, EventArgs e)
-		{
-			pnlMaximize.BackColor = FromHex(ResourceMain.colorWinControlHover);
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlMaximize_MouseLeave																								*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has left the area of the maximize button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Standard event arguments.
-		/// </param>
-		protected virtual void pnlMaximize_MouseLeave(object sender, EventArgs e)
-		{
-			pnlMaximize.BackColor = FromHex(ResourceMain.colorWinControlNormal);
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlMinimize_MouseClick																								*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has clicked the minimize button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Mouse event arguments.
-		/// </param>
-		protected virtual void pnlMinimize_MouseClick(object sender, MouseEventArgs e)
-		{
-			this.WindowState = FormWindowState.Minimized;
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlMinimize_MouseEnter																								*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has entered the area of the minimize button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Standard event arguments.
-		/// </param>
-		protected virtual void pnlMinimize_MouseEnter(object sender, EventArgs e)
-		{
-			pnlMinimize.BackColor = FromHex(ResourceMain.colorWinControlHover);
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlMinimize_MouseLeave																								*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has left the area of the minimize button.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Standard event arguments.
-		/// </param>
-		protected virtual void pnlMinimize_MouseLeave(object sender, EventArgs e)
-		{
-			pnlMinimize.BackColor = FromHex(ResourceMain.colorWinControlNormal);
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlTitle_MouseDown																										*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// A mouse button has been depressed on the title bar.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Mouse event arguments.
-		/// </param>
-		protected virtual void pnlTitle_MouseDown(object sender, MouseEventArgs e)
-		{
-			mMouseDown = true;
-			mMouseLocation = e.Location;
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlTitle_MouseMove																										*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// The mouse has been moved on the title bar.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Mouse event arguments.
-		/// </param>
-		protected virtual void pnlTitle_MouseMove(object sender, MouseEventArgs e)
-		{
-			if(mMouseDown)
-			{
-				this.Location =
-					new Point(
-						this.Location.X + (e.X - mMouseLocation.X),
-						this.Location.Y + (e.Y - mMouseLocation.Y));
-			}
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//* pnlTitle_MouseUp																											*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// A mouse button has been released on the title bar.
-		/// </summary>
-		/// <param name="sender">
-		/// The object raising this event.
-		/// </param>
-		/// <param name="e">
-		/// Mouse event arguments.
-		/// </param>
-		protected virtual void pnlTitle_MouseUp(object sender, MouseEventArgs e)
-		{
-			mMouseDown = false;
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*************************************************************************
-		//*	Protected																															*
-		//*************************************************************************
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		/// <param name="disposing">
-		/// True if managed resources should be disposed. Otherwise, false.
-		/// </param>
-		protected override void Dispose(bool disposing)
-		{
-			if(disposing && (components != null))
-			{
-				components.Dispose();
-			}
-			base.Dispose(disposing);
-		}
 
 		//*-----------------------------------------------------------------------*
 		//* InitializeComponent																										*
@@ -302,10 +53,8 @@ namespace Scaffold
 		/// <summary>
 		/// Initialize the form.
 		/// </summary>
-		protected virtual void InitializeComponent()
+		private void InitializeComponent()
 		{
-			//	TODO: !1 - Stopped here.
-			//	TODO: Working on themed form base.
 			pnlTitle = new System.Windows.Forms.Panel();
 			pnlClose = new System.Windows.Forms.Panel();
 			pnlMaximize = new System.Windows.Forms.Panel();
@@ -323,7 +72,9 @@ namespace Scaffold
 			// 
 			// pnlTitle
 			// 
-			pnlTitle.BackColor = FromHex(ResourceMain.colorTitleBackgroundNormal);
+			pnlTitle.BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(
+					ResourceMain.colorTitleBackgroundNormal);
 			pnlTitle.Controls.Add(pnlClose);
 			pnlTitle.Controls.Add(pnlMaximize);
 			pnlTitle.Controls.Add(pnlMinimize);
@@ -410,7 +161,8 @@ namespace Scaffold
 			// 
 			// statusThemedForm
 			// 
-			statusThemedForm.BackColor = FromHex(ResourceMain.colorBackground);
+			statusThemedForm.BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorBackground);
 			statusThemedForm.ImageScalingSize = new Size(20, 20);
 			statusThemedForm.Items.AddRange(new ToolStripItem[] {
 				statMessage});
@@ -422,7 +174,8 @@ namespace Scaffold
 			// 
 			// statMessage
 			// 
-			statMessage.ForeColor = FromHex(ResourceMain.colorTextNormal);
+			statMessage.ForeColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorTextNormal);
 			statMessage.Name = "statMessage";
 			statMessage.Size = new Size(59, 20);
 			statMessage.Text = "Ready...";
@@ -431,7 +184,8 @@ namespace Scaffold
 			// 
 			AutoScaleDimensions = new SizeF(10F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = FromHex(ResourceMain.colorBackground);
+			BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorBackground);
 			ClientSize = new System.Drawing.Size(800, 480);
 			Controls.Add(pnlMain);
 			Controls.Add(pnlTitle);
@@ -452,6 +206,28 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
+		//*************************************************************************
+		//*	Protected																															*
+		//*************************************************************************
+		//*-----------------------------------------------------------------------*
+		//* Dispose																																*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">
+		/// True if managed resources should be disposed. Otherwise, false.
+		/// </param>
+		protected override void Dispose(bool disposing)
+		{
+			if(disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+		//*-----------------------------------------------------------------------*
+
 		//*-----------------------------------------------------------------------*
 		//* OnActivated																														*
 		//*-----------------------------------------------------------------------*
@@ -463,10 +239,11 @@ namespace Scaffold
 		/// </param>
 		protected override void OnActivated(EventArgs e)
 		{
-			FlipbookItemControl item = null;
+			//FlipbookItemControl item = null;
 
 			base.OnActivated(e);
-			lblTitle.ForeColor = FromHex(ResourceMain.colorTitleTextActive);
+			lblTitle.ForeColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorTitleTextActive);
 			pnlMinimize.BackgroundImage = ResourceMain.WinControlH1;
 			if(this.WindowState == FormWindowState.Maximized)
 			{
@@ -494,7 +271,9 @@ namespace Scaffold
 		{
 			base.OnDeactivate(e);
 			base.OnLeave(e);
-			lblTitle.ForeColor = FromHex(ResourceMain.colorTitleTextInactive);
+			lblTitle.ForeColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(
+					ResourceMain.colorTitleTextInactive);
 			pnlMinimize.BackgroundImage = ResourceMain.WinControlH0;
 			if(this.WindowState == FormWindowState.Maximized)
 			{
@@ -534,7 +313,255 @@ namespace Scaffold
 		/// </param>
 		protected override void OnLeave(EventArgs e)
 		{
+			base.OnLeave(e);
 			mWindowActive = false;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelCloseMouseClick																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has clicked the window close panel.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Mouse event arguments.
+		/// </param>
+		protected virtual void OnPanelCloseMouseClick(object sender,
+			MouseEventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;
+			this.Hide();
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelCloseMouseEnter																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has entered the area of the window close panel.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected virtual void OnPanelCloseMouseEnter(object sender, EventArgs e)
+		{
+			pnlClose.BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorWinControlClose);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelCloseMouseLeave																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has left the area of the window close panel.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected virtual void OnPanelCloseMouseLeave(object sender, EventArgs e)
+		{
+			pnlClose.BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorWinControlNormal);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelMaximizeMouseClick																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has clicked the window maximize button.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Mouse event arguments.
+		/// </param>
+		protected virtual void OnPanelMaximizeMouseClick(object sender,
+			MouseEventArgs e)
+		{
+			if(this.WindowState == FormWindowState.Maximized)
+			{
+				this.WindowState = FormWindowState.Normal;
+			}
+			else
+			{
+				this.WindowState = FormWindowState.Maximized;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelMaximizeMouseEnter																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has entered the area of the maximize button.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected virtual void OnPanelMaximizeMouseEnter(object sender,
+			EventArgs e)
+		{
+			pnlMaximize.BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorWinControlHover);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelMaximizeMouseLeave																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has left the area of the maximize button.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected virtual void OnPanelMaximizeMouseLeave(object sender,
+			EventArgs e)
+		{
+			pnlMaximize.BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorWinControlNormal);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelMinimizeMouseClick																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has clicked the minimize button.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Mouse event arguments.
+		/// </param>
+		protected virtual void OnPanelMinimizeMouseClick(object sender,
+			MouseEventArgs e)
+		{
+			this.WindowState = FormWindowState.Minimized;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelMinimizeMouseEnter																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has entered the area of the minimize button.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected virtual void OnPanelMinimizeMouseEnter(object sender,
+			EventArgs e)
+		{
+			pnlMinimize.BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorWinControlHover);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelMinimizeMouseLeave																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has left the area of the minimize panel.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected virtual void OnPanelMinimizeMouseLeave(object sender,
+			EventArgs e)
+		{
+			pnlMinimize.BackColor =
+				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorWinControlNormal);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelTitleMouseDown																									*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// A mouse button has been depressed on the title bar.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Mouse event arguments.
+		/// </param>
+		protected virtual void OnPanelTitleMouseDown(object sender,
+			MouseEventArgs e)
+		{
+			mMouseDown = true;
+			mMouseLocation = e.Location;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelTitleMouseMove																									*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The mouse has been moved on the title bar.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Mouse event arguments.
+		/// </param>
+		protected virtual void OnPanelTitleMouseMove(object sender,
+			MouseEventArgs e)
+		{
+			if(mMouseDown)
+			{
+				this.Location =
+					new Point(
+						this.Location.X + (e.X - mMouseLocation.X),
+						this.Location.Y + (e.Y - mMouseLocation.Y));
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnPanelTitleMouseUp																										*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// A mouse button has been released on the title bar.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Mouse event arguments.
+		/// </param>
+		protected virtual void OnPanelTitleMouseUp(object sender,
+			MouseEventArgs e)
+		{
+			mMouseDown = false;
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -592,23 +619,46 @@ namespace Scaffold
 				new DarkThemeMenuRenderer(new DarkThemeMenuColorTable());
 
 			//	Form controls.
-			pnlClose.MouseClick += pnlClose_MouseClick;
-			pnlClose.MouseEnter += pnlClose_MouseEnter;
-			pnlClose.MouseLeave += pnlClose_MouseLeave;
-			pnlMaximize.MouseClick += pnlMaximize_MouseClick;
-			pnlMaximize.MouseEnter += pnlMaximize_MouseEnter;
-			pnlMaximize.MouseLeave += pnlMaximize_MouseLeave;
-			pnlMinimize.MouseClick += pnlMinimize_MouseClick;
-			pnlMinimize.MouseEnter += pnlMinimize_MouseEnter;
-			pnlMinimize.MouseLeave += pnlMinimize_MouseLeave;
-			pnlTitle.MouseDown += pnlTitle_MouseDown;
-			pnlTitle.MouseMove += pnlTitle_MouseMove;
-			pnlTitle.MouseUp += pnlTitle_MouseUp;
+			pnlClose.MouseClick += OnPanelCloseMouseClick;
+			pnlClose.MouseEnter += OnPanelCloseMouseEnter;
+			pnlClose.MouseLeave += OnPanelCloseMouseLeave;
+			pnlMaximize.MouseClick += OnPanelMaximizeMouseClick;
+			pnlMaximize.MouseEnter += OnPanelMaximizeMouseEnter;
+			pnlMaximize.MouseLeave += OnPanelMaximizeMouseLeave;
+			pnlMinimize.MouseClick += OnPanelMinimizeMouseClick;
+			pnlMinimize.MouseEnter += OnPanelMinimizeMouseEnter;
+			pnlMinimize.MouseLeave += OnPanelMinimizeMouseLeave;
+			pnlTitle.MouseDown += OnPanelTitleMouseDown;
+			pnlTitle.MouseMove += OnPanelTitleMouseMove;
+			pnlTitle.MouseUp += OnPanelTitleMouseUp;
 		}
 		//*-----------------------------------------------------------------------*
 
+		//*-----------------------------------------------------------------------*
+		//*	MainPanel																															*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get a reference to the main panel on the base form.
+		/// </summary>
+		public Panel MainPanel
+		{
+			get { return pnlMain; }
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	Title																																	*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get/Set the title text for this form.
+		/// </summary>
+		public string Title
+		{
+			get { return lblTitle.Text; }
+			set { lblTitle.Text = value; }
+		}
+		//*-----------------------------------------------------------------------*
 
 	}
 	//*-------------------------------------------------------------------------*
-
 }

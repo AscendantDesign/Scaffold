@@ -4890,10 +4890,36 @@ namespace Scaffold
 		private void mnuToolsPPPlaceholderToTextboxes_Click(object sender,
 			EventArgs e)
 		{
+			Dictionary<string, int> counts = null;
 			OfficeDriver driver = new OfficeDriver();
+			frmPPPlaceholderToTextbox form = null;
+			string s1 = "";
+			string s2 = "";
 
-			driver.EnsurePowerPointRunning(true);
-			driver.PlaceholderToTextboxes();
+			driver.EnsurePowerPointRunning(false);
+			if(driver.SlideCount > 0)
+			{
+				form = new frmPPPlaceholderToTextbox();
+				if(form.ShowDialog() == DialogResult.OK)
+				{
+					//	User clicked OK.
+					counts = driver.PlaceholderToTextboxes(form.SlideScope,
+						form.PlaceholderOnly, form.SlideScopeText);
+					s1 = (counts["Slides"] != 1 ? "s" : "");
+					s2 = (counts["Shapes"] != 1 ? "s" : "");
+					MessageBox.Show(
+						"Conversion finished. " +
+						$"{counts["Shapes"]} shape{s2} on " +
+						$"{counts["Slides"]} slide{s1} were converted to textboxes.",
+						"Change Content Placeholder To Textboxes");
+				}
+			}
+			else
+			{
+				MessageBox.Show("There are no slides in the active PowerPoint " +
+					"presentation. Please open the file you wish to update.",
+					"Change Content Placeholder To Textboxes");
+			}
 
 		}
 		//*-----------------------------------------------------------------------*

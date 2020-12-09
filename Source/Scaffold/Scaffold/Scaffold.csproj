@@ -286,11 +286,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPPPlaceholderToTextbox.cs">
+    <Compile Include="frmPPAlignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPPPlaceholderToTextbox.Designer.cs">
-      <DependentUpon>frmPPPlaceholderToTextbox.cs</DependentUpon>
+    <Compile Include="frmPPPlaceholderToTextbox.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPropertyAssignment.cs">
       <SubType>Form</SubType>
@@ -361,6 +361,7 @@
     <Compile Include="ScaffoldUtil.cs" />
     <Compile Include="ScenarioStep.cs" />
     <Compile Include="RelaxedTypeConverter.cs" />
+    <Compile Include="SlideScopeEnum.cs" />
     <Compile Include="ThemedFormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPPAlignment.resx">
+      <DependentUpon>frmPPAlignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPPPlaceholderToTextbox.resx">
       <DependentUpon>frmPPPlaceholderToTextbox.cs</DependentUpon>
@@ -575,6 +579,14 @@
     <None Include="Resources\TransportNext32.png" />
     <None Include="Resources\TransportPlay32.png" />
     <None Include="Resources\TransportPause32.png" />
+    <None Include="Resources\AlignTop32.png" />
+    <None Include="Resources\AlignBottom32.png" />
+    <None Include="Resources\AlignCenter32.png" />
+    <None Include="Resources\AlignLeft32.png" />
+    <None Include="Resources\AlignMiddle32.png" />
+    <None Include="Resources\AlignRight32.png" />
+    <None Include="Resources\DistributeHorz32.png" />
+    <None Include="Resources\DistributeVert32.png" />
     <Content Include="ScaffoldIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
