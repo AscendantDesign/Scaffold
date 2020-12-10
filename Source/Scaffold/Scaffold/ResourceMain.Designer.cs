@@ -198,11 +198,56 @@ namespace Scaffold {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #ffffff.
+        /// </summary>
+        internal static string colorBackgroundWriting {
+            get {
+                return ResourceManager.GetString("colorBackgroundWriting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #e0e0e0.
+        /// </summary>
+        internal static string colorBackgroundWritingDisabled {
+            get {
+                return ResourceManager.GetString("colorBackgroundWritingDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #ffc3cc.
+        /// </summary>
+        internal static string colorBackgroundWritingError {
+            get {
+                return ResourceManager.GetString("colorBackgroundWritingError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #999999.
+        /// </summary>
+        internal static string colorTextDisabled {
+            get {
+                return ResourceManager.GetString("colorTextDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to #dcdcdc.
         /// </summary>
         internal static string colorTextNormal {
             get {
                 return ResourceManager.GetString("colorTextNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #000000.
+        /// </summary>
+        internal static string colorTextWriting {
+            get {
+                return ResourceManager.GetString("colorTextWriting", resourceCulture);
             }
         }
         
@@ -451,6 +496,276 @@ namespace Scaffold {
         internal static System.Drawing.Bitmap Link32 {
             get {
                 object obj = ResourceManager.GetObject("Link32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoAutoShape32 {
+            get {
+                object obj = ResourceManager.GetObject("msoAutoShape32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoCallout32 {
+            get {
+                object obj = ResourceManager.GetObject("msoCallout32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoCanvas32 {
+            get {
+                object obj = ResourceManager.GetObject("msoCanvas32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoChart32 {
+            get {
+                object obj = ResourceManager.GetObject("msoChart32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoComment32 {
+            get {
+                object obj = ResourceManager.GetObject("msoComment32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoContentApp32 {
+            get {
+                object obj = ResourceManager.GetObject("msoContentApp32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoDiagram32 {
+            get {
+                object obj = ResourceManager.GetObject("msoDiagram32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoEmbeddedOLEObject32 {
+            get {
+                object obj = ResourceManager.GetObject("msoEmbeddedOLEObject32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoFormControl32 {
+            get {
+                object obj = ResourceManager.GetObject("msoFormControl32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoFreeform32 {
+            get {
+                object obj = ResourceManager.GetObject("msoFreeform32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoGroup32 {
+            get {
+                object obj = ResourceManager.GetObject("msoGroup32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoInk32 {
+            get {
+                object obj = ResourceManager.GetObject("msoInk32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoInkComment32 {
+            get {
+                object obj = ResourceManager.GetObject("msoInkComment32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoLinkedOLEObject32 {
+            get {
+                object obj = ResourceManager.GetObject("msoLinkedOLEObject32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoLinkedPicture32 {
+            get {
+                object obj = ResourceManager.GetObject("msoLinkedPicture32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoMedia32 {
+            get {
+                object obj = ResourceManager.GetObject("msoMedia32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoOLEControlObject32 {
+            get {
+                object obj = ResourceManager.GetObject("msoOLEControlObject32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoPicture32 {
+            get {
+                object obj = ResourceManager.GetObject("msoPicture32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoPlaceholder32 {
+            get {
+                object obj = ResourceManager.GetObject("msoPlaceholder32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoScriptAnchor32 {
+            get {
+                object obj = ResourceManager.GetObject("msoScriptAnchor32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoShapeTypeMixed32 {
+            get {
+                object obj = ResourceManager.GetObject("msoShapeTypeMixed32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoSlicer32 {
+            get {
+                object obj = ResourceManager.GetObject("msoSlicer32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoSmartArt32 {
+            get {
+                object obj = ResourceManager.GetObject("msoSmartArt32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoTable32 {
+            get {
+                object obj = ResourceManager.GetObject("msoTable32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoTextBox32 {
+            get {
+                object obj = ResourceManager.GetObject("msoTextBox32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoTextEffect32 {
+            get {
+                object obj = ResourceManager.GetObject("msoTextEffect32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap msoWebVideo32 {
+            get {
+                object obj = ResourceManager.GetObject("msoWebVideo32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

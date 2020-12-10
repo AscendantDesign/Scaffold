@@ -163,9 +163,29 @@
     <value>#606060</value>
     <comment>Background color of a highlighted or hovered tool button.</comment>
   </data>
+  <data name="colorBackgroundWriting" xml:space="preserve">
+    <value>#ffffff</value>
+    <comment>Background color in writing controls such as textboxes and listboxes.</comment>
+  </data>
+  <data name="colorBackgroundWritingDisabled" xml:space="preserve">
+    <value>#e0e0e0</value>
+    <comment>Background color of disabled writing controls.</comment>
+  </data>
+  <data name="colorBackgroundWritingError" xml:space="preserve">
+    <value>#ffc3cc</value>
+    <comment>Writing control background color when an error exists.</comment>
+  </data>
+  <data name="colorTextDisabled" xml:space="preserve">
+    <value>#999999</value>
+    <comment>Text color on disabled controls.</comment>
+  </data>
   <data name="colorTextNormal" xml:space="preserve">
     <value>#dcdcdc</value>
     <comment>Text color on normal surfaces.</comment>
+  </data>
+  <data name="colorTextWriting" xml:space="preserve">
+    <value>#000000</value>
+    <comment>Text color in writing controls such as textboxes.</comment>
   </data>
   <data name="colorTitleBackgroundNormal" xml:space="preserve">
     <value>#404040</value>
@@ -400,6 +420,87 @@
   </data>
   <data name="Link32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Link32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoAutoShape32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoAutoShape32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoCallout32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoCallout32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoCanvas32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoCanvas32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoChart32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoChart32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoComment32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoComment32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoContentApp32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoContentApp32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoDiagram32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoDiagram32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoEmbeddedOLEObject32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoEmbeddedOLEObject32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoFormControl32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoFormControl32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoFreeform32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoFreeform32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoGroup32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoGroup32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoInk32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoInk32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoInkComment32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoInkComment32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoLinkedOLEObject32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoLinkedOLEObject32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoLinkedPicture32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoLinkedPicture32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoMedia32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoMedia32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoOLEControlObject32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoOLEControlObject32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoPicture32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoPicture32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoPlaceholder32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoPlaceholder32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoScriptAnchor32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoScriptAnchor32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoShapeTypeMixed32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoShapeTypeMixed32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoSlicer32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoSlicer32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoSmartArt32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoSmartArt32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoTable32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoTable32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoTextBox32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoTextBox32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoTextEffect32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoTextEffect32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="msoWebVideo32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\msoWebVideo32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NodeDelay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\NodeDelay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

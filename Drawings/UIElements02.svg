@@ -20,6 +20,18 @@
    inkscape:export-ydpi="96">
   <defs
      id="defs2">
+    <rect
+       x="15.949309"
+       y="-1.4499372"
+       width="14.125194"
+       height="13.891334"
+       id="rect2098" />
+    <rect
+       x="15.715448"
+       y="1.8708867"
+       width="14.405828"
+       height="15.388043"
+       id="rect1714" />
     <marker
        style="overflow:visible"
        id="DiamondS"
@@ -440,27 +452,39 @@
        width="15.033911"
        y="23.880834"
        x="27.729214" />
+    <rect
+       x="15.949309"
+       y="-1.4499372"
+       width="14.125194"
+       height="13.891334"
+       id="rect2122" />
+    <rect
+       x="15.949309"
+       y="-1.4499372"
+       width="14.125194"
+       height="13.891334"
+       id="rect2173" />
   </defs>
   <sodipodi:namedview
      inkscape:snap-global="false"
      id="base"
-     pagecolor="#333333"
+     pagecolor="#404040"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6568542"
-     inkscape:cx="52.922197"
-     inkscape:cy="21.226949"
+     inkscape:cx="30.822909"
+     inkscape:cy="25.532464"
      inkscape:document-units="px"
-     inkscape:current-layer="layer22"
+     inkscape:current-layer="g2171"
      showgrid="false"
      units="px"
-     inkscape:window-width="1566"
-     inkscape:window-height="1019"
-     inkscape:window-x="224"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
      inkscape:document-rotation="0"
      inkscape:snap-object-midpoints="true" />
   <metadata
@@ -4338,7 +4362,7 @@
      inkscape:groupmode="layer"
      id="layer22"
      inkscape:label="DistributeVert"
-     style="display:inline">
+     style="display:none">
     <g
        id="g2319-0"
        style="display:inline"
@@ -4423,6 +4447,1434 @@
            d="M 1.7030961,7.6403001 V 8.7638676"
            id="path2300-7" />
       </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer23"
+     inkscape:label="msoAutoShape"
+     style="display:none">
+    <g
+       id="g2504"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoAutoShape32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1710"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g1733"
+         transform="translate(-0.13229179)">
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect1718"
+           width="7.1437497"
+           height="4.2333331"
+           x="0.79375023"
+           y="2.1166668" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect1720"
+           width="1.058333"
+           height="1.058332"
+           x="6.8791666"
+           y="2.1166668" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect1722"
+           width="1.058333"
+           height="1.058332"
+           x="6.8791666"
+           y="5.291667" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect1724"
+           width="1.058333"
+           height="1.058332"
+           x="0.79375017"
+           y="2.1166668" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect1726"
+           width="1.058333"
+           height="1.058332"
+           x="0.79375017"
+           y="5.291667" />
+      </g>
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect2487"
+         width="1.9176589"
+         height="1.7773423"
+         x="4.8067241"
+         y="0.65978211"
+         transform="rotate(29.4907)" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1760"
+     inkscape:label="msoCallout"
+     style="display:none">
+    <g
+       id="g1758"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoCallout32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1744"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g1756"
+         transform="translate(-0.13229181,-0.72408452)">
+        <path
+           id="rect1746"
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-opacity:1"
+           d="M 7.0078125,8 C 4.5104882,8 2.5,10.010488 2.5,12.507812 v 6.984376 C 2.5,21.989512 4.5104882,24 7.0078125,24 H 17.476562 L 16.263672,28.285156 23.261719,24 h 1.730469 C 27.489512,24 29.5,21.989512 29.5,19.492188 V 12.507812 C 29.5,10.010488 27.489512,8 24.992188,8 Z"
+           transform="matrix(0.26458333,0,0,0.26458333,0.13229179,0)" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1782"
+     inkscape:label="msoCanvas"
+     style="display:none">
+    <g
+       id="g1803"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoCanvas32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1766"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect1768"
+         width="7.1437497"
+         height="4.7624998"
+         x="0.66145843"
+         y="1.8520833" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 1.0289877,6.5247173 2.3619944,3.3208237 3.2038935,5.1215522 4.5369001,2.4789248 5.9634513,5.4489574 6.7819642,4.3498116 7.7407936,5.7997486"
+         id="path1785" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="m 3.9054759,3.9054759 1.145918,1e-7"
+         id="path1787"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 3.1746608,5.1741709 2.6192414,6.454559"
+         id="path1789"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 5.9166792,5.4723436 5.2852548,6.4019404"
+         id="path1791"
+         sodipodi:nodetypes="cc" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1819"
+     inkscape:label="msoChart"
+     style="display:none">
+    <g
+       id="g1817"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoChart32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1805"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect1807"
+         width="7.1437497"
+         height="4.7624998"
+         x="0.66145843"
+         y="1.8520833" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect1821"
+         width="0.52916634"
+         height="2.1166663"
+         x="1.2761447"
+         y="4.4979167" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect1823"
+         width="0.52916634"
+         height="3.0635769"
+         x="2.6107545"
+         y="3.5510063" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect1825"
+         width="0.52916634"
+         height="2.221678"
+         x="3.9453642"
+         y="4.3929052" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529166;stroke-linecap:round;stroke-opacity:1"
+         id="rect1827"
+         width="0.52916634"
+         height="1.5902536"
+         x="5.279974"
+         y="5.0243301" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect1829"
+         width="0.52916634"
+         height="2.221678"
+         x="6.6145835"
+         y="4.3929052" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1839"
+     inkscape:label="msoComment"
+     style="display:none">
+    <g
+       id="g1872"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoComment32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1831"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g1835"
+         transform="translate(-0.13229181,-0.72408452)">
+        <path
+           id="path1833"
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-opacity:1"
+           d="M 7.0078125,8 C 4.5104882,8 2.5,10.010488 2.5,12.507812 v 6.984376 C 2.5,21.989512 4.5104882,24 7.0078125,24 H 17.476562 L 16.263672,28.285156 23.261719,24 h 1.730469 C 27.489512,24 29.5,21.989512 29.5,19.492188 V 12.507812 C 29.5,10.010488 27.489512,8 24.992188,8 Z"
+           transform="matrix(0.26458333,0,0,0.26458333,0.13229179,0)" />
+      </g>
+      <g
+         id="g1858"
+         transform="translate(0.79512685)">
+        <g
+           id="g1849">
+          <path
+             style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+             d="M 3.086963,2.1281336 2.3500764,4.8782319"
+             id="path1841" />
+          <path
+             style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+             d="M 4.5135141,2.1281336 3.7766275,4.8782319"
+             id="path1843" />
+        </g>
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 1.8573817,3.1103491 H 5.0997532"
+           id="path1845" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 1.5767487,4.0457924 H 4.8191202"
+           id="path1851" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1894"
+     inkscape:label="msoContentApp"
+     style="display:none">
+    <g
+       id="g2311"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoContentApp32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         id="rect1874"
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         d="M 0.2645835,0.2645835 H 8.202083 V 8.202083 H 0.2645835 Z" />
+      <path
+         id="rect1905"
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="m 1.0645188,0.36293665 h 6.3376289 c 1.2465633,2.65493775 -0.8187683,5.39443755 0,7.74079325 H 1.0645188 c -1.00651439,-2.3695868 1.4602941,-5.3187376 0,-7.74079325 z"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 2.7467297,2.2918362 H 6.3738429"
+         id="path1909" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 2.6570762,3.7027967 H 6.159477"
+         id="path1911"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="m 2.3037577,5.1137569 h 3.624386"
+         id="path1913"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 2.1047475,6.5247173 H 5.7062043"
+         id="path1915" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1935"
+     inkscape:label="msoDiagram"
+     style="display:none">
+    <g
+       id="g1972"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoDiagram32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1919"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g1953"
+         transform="translate(0.19398642,-0.30309842)">
+        <path
+           sodipodi:type="star"
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="path1944"
+           sodipodi:sides="3"
+           sodipodi:cx="2.782944"
+           sodipodi:cy="3.2038932"
+           sodipodi:r1="1.5402893"
+           sodipodi:r2="1.8101192"
+           sodipodi:arg1="0.52479578"
+           sodipodi:arg2="1.5719933"
+           inkscape:flatsided="true"
+           inkscape:rounded="0"
+           inkscape:randomized="0"
+           d="M 4.1159508,3.975634 1.4480934,3.9724406 2.7847877,1.663605 Z" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect1946"
+           width="2.3812497"
+           height="2.3812497"
+           x="4.4433556"
+           y="3.0869629" />
+        <circle
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="path1948"
+           cx="3.6849108"
+           cy="6.350925"
+           r="1.3229165" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1965"
+     inkscape:label="msoEmbeddedOLEObject"
+     style="display:none">
+    <g
+       id="g2023"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoEmbeddedOLEObject32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1955"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <path
+         id="path1974"
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="m 2.7668908,4.1437821 c 0,1.5107112 -0.019639,2.7353844 -1.078051,2.7353844 -1.05841193,0 -1.07805098,-1.2246733 -1.07805098,-2.7353844 0,-1.510711 0.0692483,-2.5562818 1.06151448,-2.5562819 0.9922662,-1e-7 1.0945875,1.0455708 1.0945875,2.5562819 z"
+         sodipodi:nodetypes="szszs" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 3.5606413,1.5875001 V 6.8791665 H 5.148141"
+         id="path1976" />
+      <g
+         id="g1999"
+         transform="translate(0.15200954,0.18388301)">
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 6.0544651,1.4036172 V 6.6952836 H 7.6419647"
+           id="path1978" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 6.0544651,4.2567193 H 7.2380715"
+           id="path1980" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529168;stroke-linecap:round;stroke-opacity:1"
+           d="m 6.0544656,1.4036177 h 1.649402"
+           id="path1982" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2039"
+     inkscape:label="msoFormControl"
+     style="display:none">
+    <g
+       id="g2074"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoFormControl32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2025"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect2027"
+         width="7.1437497"
+         height="4.7624998"
+         x="0.66145843"
+         y="1.8520833" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect2047"
+         width="2.2158854"
+         height="2.2489583"
+         x="5.5536633"
+         y="1.8677887" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="m 5.7521006,2.0331534 1.752865,1.8851562"
+         id="path2049" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 7.7364756,1.9339346 5.7851736,4.0175283"
+         id="path2051" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="m 1.5200954,3.1603273 h 0.841899"
+         id="path2053" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 3.1454283,3.1603273 H 4.770761"
+         id="path2055" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="m 1.5200954,5.2299957 h 0.841899"
+         id="path2061" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 3.1454283,5.2299957 H 4.770761"
+         id="path2063" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2096"
+     inkscape:label="msoFreeform"
+     style="display:none">
+    <g
+       id="g2115"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoFreeform32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2076"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 1.3507652,7.0968958 C 4.6463355,5.9958135 5.9296988,4.5804003 5.7703882,2.288231 5.5842344,-0.39016049 1.8097582,3.5976227 2.3259654,4.0413401 2.8421726,4.4850575 6.8666284,4.8644348 7.0701795,5.4688799 7.3241518,6.2230513 6.5006895,6.5429138 5.7005767,6.6525603"
+         id="path2111"
+         sodipodi:nodetypes="csssc" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2123"
+     inkscape:label="msoGroup"
+     style="display:none">
+    <g
+       id="g2139"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoGroup32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2117"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2133"
+         transform="translate(0.6697093,0.89187714)">
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2127"
+           width="3.1749997"
+           height="3.1749997"
+           x="1.2628485"
+           y="1.1926903" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2129"
+           width="3.1749997"
+           height="3.1749997"
+           x="2.6893997"
+           y="2.3152223" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2151"
+     inkscape:label="msoInk"
+     style="display:none">
+    <g
+       id="g2180"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoInk32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2141"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2173"
+         transform="rotate(-40.075317,3.8073605,3.40307)">
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2164"
+           width="1.2394624"
+           height="4.9578495"
+           x="3.1103494"
+           y="0.95882946" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="m 3.1968784,5.9166788 0.4556005,1.894273 0.594262,-1.894273 z"
+           id="path2166" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="m 3.1688143,2.233371 h 1.145918"
+           id="path2168" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2202"
+     inkscape:label="msoInkComment"
+     style="display:none">
+    <g
+       id="g2261"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoInkComment32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2182"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2245"
+         transform="matrix(0.73148148,0,0,0.71070724,2.4888788,3.0918106)"
+         style="stroke-width:1.38692">
+        <g
+           id="g2186"
+           transform="translate(-0.13229181,-0.72408452)"
+           style="stroke-width:1.38692">
+          <path
+             id="path2184"
+             style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:2.77385;stroke-linecap:round;stroke-opacity:1"
+             d="M 7.0078125,8 C 4.5104882,8 2.5,10.010488 2.5,12.507812 v 6.984376 C 2.5,21.989512 4.5104882,24 7.0078125,24 H 17.476562 L 16.263672,28.285156 23.261719,24 h 1.730469 C 27.489512,24 29.5,21.989512 29.5,19.492188 V 12.507812 C 29.5,10.010488 27.489512,8 24.992188,8 Z"
+             transform="matrix(0.26458333,0,0,0.26458333,0.13229179,0)" />
+        </g>
+        <g
+           id="g2198"
+           transform="translate(0.79512685)"
+           style="stroke-width:1.38692">
+          <g
+             id="g2192"
+             style="stroke-width:1.38692">
+            <path
+               style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.733915;stroke-linecap:round;stroke-opacity:1"
+               d="M 3.086963,2.1281336 2.3500764,4.8782319"
+               id="path2188" />
+            <path
+               style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.733915;stroke-linecap:round;stroke-opacity:1"
+               d="M 4.5135141,2.1281336 3.7766275,4.8782319"
+               id="path2190" />
+          </g>
+          <path
+             style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.733915;stroke-linecap:round;stroke-opacity:1"
+             d="M 1.8573817,3.1103491 H 5.0997532"
+             id="path2194" />
+          <path
+             style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.733915;stroke-linecap:round;stroke-opacity:1"
+             d="M 1.5767487,4.0457924 H 4.8191202"
+             id="path2196" />
+        </g>
+      </g>
+      <g
+         id="g2173-8"
+         transform="matrix(0.53484696,-0.45024235,0.44998931,0.53514772,-1.7223323,1.8182553)"
+         style="display:inline;stroke-width:1.43029">
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.75686;stroke-linecap:round;stroke-opacity:1"
+           id="rect2164-4"
+           width="1.2394624"
+           height="4.9578495"
+           x="3.1103494"
+           y="0.95882946" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.75686;stroke-linecap:round;stroke-opacity:1"
+           d="m 3.1968784,5.9166788 0.4556005,1.894273 0.594262,-1.894273 z"
+           id="path2166-7" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.75686;stroke-linecap:round;stroke-opacity:1"
+           d="m 3.1688143,2.233371 h 1.145918"
+           id="path2168-6" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2279"
+     inkscape:label="msoLinkedOLEObject"
+     style="display:none">
+    <g
+       id="g2307"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoLinkedOLEObject32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2263"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <path
+         id="path2265"
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="m 2.7668908,4.1437821 c 0,1.5107112 -0.019639,2.7353844 -1.078051,2.7353844 -1.05841193,0 -1.07805098,-1.2246733 -1.07805098,-2.7353844 0,-1.510711 0.0692483,-2.5562818 1.06151448,-2.5562819 0.9922662,-1e-7 1.0945875,1.0455708 1.0945875,2.5562819 z"
+         sodipodi:nodetypes="szszs" />
+      <path
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 3.5606413,1.5875001 V 6.8791665 H 5.148141"
+         id="path2267" />
+      <g
+         id="g2275"
+         transform="translate(0.15200954,0.18388301)">
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 6.0544651,1.4036172 V 6.6952836 H 7.6419647"
+           id="path2269" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 6.0544651,4.2567193 H 7.2380715"
+           id="path2271" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529168;stroke-linecap:round;stroke-opacity:1"
+           d="m 6.0544656,1.4036177 h 1.649402"
+           id="path2273" />
+      </g>
+      <g
+         id="g2295"
+         transform="translate(0,-2.6825151)">
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 1.683798,5.6296139 V 8.202083"
+           id="path2281" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 2.9700325,6.9158485 H 0.39756345"
+           id="path2283" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2324"
+     inkscape:label="msoLinkedPicture"
+     style="display:none">
+    <g
+       id="g2323"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoLinkedPicture32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2310"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2358"
+         transform="matrix(0.73148147,0,0,0.7222222,1.1367284,1.175926)"
+         style="stroke-width:1.37582">
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.728041;stroke-linecap:round;stroke-opacity:1"
+           id="rect2312"
+           width="7.1437497"
+           height="4.7624998"
+           x="0.66145843"
+           y="1.8520833" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.728041;stroke-linecap:round;stroke-opacity:1"
+           d="M 1.0289877,6.5247173 2.3619944,3.3208237 3.2038935,5.1215522 4.5369001,2.4789248 5.9634513,5.4489574 6.7819642,4.3498116 7.7407936,5.7997486"
+           id="path2314" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.728041;stroke-linecap:round;stroke-opacity:1"
+           d="m 3.9054759,3.9054759 1.145918,1e-7"
+           id="path2316"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.728041;stroke-linecap:round;stroke-opacity:1"
+           d="M 3.1746608,5.1741709 2.6192414,6.454559"
+           id="path2318"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.728041;stroke-linecap:round;stroke-opacity:1"
+           d="M 5.9166792,5.4723436 5.2852548,6.4019404"
+           id="path2320"
+           sodipodi:nodetypes="cc" />
+      </g>
+      <g
+         id="g2295-0"
+         transform="matrix(0.69857402,0,0,0.69857402,-0.01314398,-3.6681185)"
+         style="display:inline;stroke-width:1.43149">
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.757496;stroke-linecap:round;stroke-opacity:1"
+           d="M 1.683798,5.6296139 V 8.202083"
+           id="path2281-4" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.757496;stroke-linecap:round;stroke-opacity:1"
+           d="M 2.9700325,6.9158485 H 0.39756345"
+           id="path2283-1" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2380"
+     inkscape:label="msoMedia"
+     style="display:none">
+    <g
+       id="g2330"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoMedia32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2360"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2392"
+         transform="translate(0.29277816,-0.57250676)">
+        <ellipse
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="path2382"
+           cx="3.0168047"
+           cy="4.80584"
+           rx="1.5434815"
+           ry="2.6777067" />
+        <ellipse
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="ellipse2384"
+           cx="4.8643055"
+           cy="4.80584"
+           rx="1.5434815"
+           ry="2.6777067" />
+        <path
+           id="rect2386"
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           d="M 1.9644309,3.4611405 H 5.0981661 C 5.6236176,4.055049 5.592114,5.6099207 4.9578496,6.2908566 H 1.9644309 c -0.4555756,-1.1337399 -0.6003716,-1.7580908 0,-2.8297161 z"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2410"
+     inkscape:label="msoOLEControlObject"
+     style="display:none">
+    <g
+       id="g2445"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoOLEControlObject32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2394"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2432"
+         transform="matrix(0.73174044,0,0,0.72499998,1.6033537,2.2866987)"
+         style="stroke-width:1.37294">
+        <path
+           id="path2396"
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.726516;stroke-linecap:round;stroke-opacity:1"
+           d="m 2.7668908,4.1437821 c 0,1.5107112 -0.019639,2.7353844 -1.078051,2.7353844 -1.05841193,0 -1.07805098,-1.2246733 -1.07805098,-2.7353844 0,-1.510711 0.0692483,-2.5562818 1.06151448,-2.5562819 0.9922662,-1e-7 1.0945875,1.0455708 1.0945875,2.5562819 z"
+           sodipodi:nodetypes="szszs" />
+        <path
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.726516;stroke-linecap:round;stroke-opacity:1"
+           d="M 3.5606413,1.5875001 V 6.8791665 H 5.148141"
+           id="path2398" />
+        <g
+           id="g2406"
+           transform="translate(0.15200954,0.18388301)"
+           style="stroke-width:1.37294">
+          <path
+             style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.726516;stroke-linecap:round;stroke-opacity:1"
+             d="M 6.0544651,1.4036172 V 6.6952836 H 7.6419647"
+             id="path2400" />
+          <path
+             style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.726516;stroke-linecap:round;stroke-opacity:1"
+             d="M 6.0544651,4.2567193 H 7.2380715"
+             id="path2402" />
+          <path
+             style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.726517;stroke-linecap:round;stroke-opacity:1"
+             d="m 6.0544656,1.4036177 h 1.649402"
+             id="path2404" />
+        </g>
+      </g>
+      <path
+         sodipodi:type="star"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="path2434"
+         sodipodi:sides="3"
+         sodipodi:cx="0.87262172"
+         sodipodi:cy="1.5114251"
+         sodipodi:r1="1.2160764"
+         sodipodi:r2="0.60803813"
+         sodipodi:arg1="0"
+         sodipodi:arg2="1.0471976"
+         inkscape:flatsided="true"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 2.0886981,1.5114251 -1.82411457,1.0531531 0,-2.1063061 z"
+         inkscape:transform-center-x="-0.30401907" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2461"
+     inkscape:label="msoPicture"
+     style="display:none">
+    <g
+       id="g2485"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoPicture32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2447"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2478"
+         transform="translate(-10.160801,0.44478771)">
+        <rect
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2469"
+           width="5.1683245"
+           height="4.1159506"
+           x="11.809972"
+           y="2.221678"
+           ry="0.84189904" />
+        <ellipse
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="path2471"
+           cx="14.394135"
+           cy="4.4316626"
+           rx="1.2745415"
+           ry="1.2277695" />
+        <rect
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2473"
+           width="1.4265511"
+           height="0.91205728"
+           x="13.938106"
+           y="1.2394625" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2524"
+     inkscape:label="msoPlaceholder"
+     style="display:none">
+    <g
+       id="g2522"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoPlaceholder32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2506"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2518"
+         transform="translate(-0.13229179)">
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2508"
+           width="7.1437497"
+           height="4.2333331"
+           x="0.79375023"
+           y="2.1166668" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2510"
+           width="1.058333"
+           height="1.058332"
+           x="6.8791666"
+           y="2.1166668" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2512"
+           width="1.058333"
+           height="1.058332"
+           x="6.8791666"
+           y="5.291667" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2514"
+           width="1.058333"
+           height="1.058332"
+           x="0.79375017"
+           y="2.1166668" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+           id="rect2516"
+           width="1.058333"
+           height="1.058332"
+           x="0.79375017"
+           y="5.291667" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1892"
+     inkscape:label="msoScriptAnchor"
+     style="display:none">
+    <g
+       id="g1917"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoScriptAnchor32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1876"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g1910"
+         transform="matrix(1.276311,0,0,1.2799303,-1.1691399,-2.737336)"
+         style="stroke-width:0.7824">
+        <ellipse
+           style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.41402;stroke-linecap:round;stroke-opacity:0.941176"
+           id="path1901"
+           cx="4.2562666"
+           cy="3.8792639"
+           rx="0.63142431"
+           ry="0.64311731" />
+        <path
+           style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.41402;stroke-linecap:round;stroke-opacity:0.941176"
+           d="M 4.2328814,4.5223814 V 7.6561165"
+           id="path1903" />
+        <path
+           style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.41402;stroke-linecap:round;stroke-opacity:0.941176"
+           d="m 1.7188774,6.0569958 c 1.4187558,2.1778206 3.3520054,2.0860156 5.0280081,0"
+           id="path1905"
+           sodipodi:nodetypes="cc" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1932"
+     inkscape:label="msoShapeTypeMixed"
+     style="display:none">
+    <g
+       id="g1960"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoShapeTypeMixed32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1920"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g1928"
+         transform="matrix(0.71637355,0,0,0.71698341,-0.57898274,-0.66338571)"
+         style="stroke-width:1.39533">
+        <path
+           sodipodi:type="star"
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.73836;stroke-linecap:round;stroke-opacity:1"
+           id="path1922"
+           sodipodi:sides="3"
+           sodipodi:cx="2.782944"
+           sodipodi:cy="3.2038932"
+           sodipodi:r1="1.5402893"
+           sodipodi:r2="1.8101192"
+           sodipodi:arg1="0.52479578"
+           sodipodi:arg2="1.5719933"
+           inkscape:flatsided="true"
+           inkscape:rounded="0"
+           inkscape:randomized="0"
+           d="M 4.1159508,3.975634 1.4480934,3.9724406 2.7847877,1.663605 Z" />
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.73836;stroke-linecap:round;stroke-opacity:1"
+           id="rect1924"
+           width="2.3812497"
+           height="2.3812497"
+           x="4.4433556"
+           y="3.0869629" />
+        <circle
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.73836;stroke-linecap:round;stroke-opacity:1"
+           id="circle1926"
+           cx="3.6849108"
+           cy="6.350925"
+           r="1.3229165" />
+      </g>
+      <path
+         style="display:inline;fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         d="M 4.0105242,8.202083 C 6.4067607,7.4017047 7.3399047,6.372839 7.2240687,4.7066579 7.0887147,2.7597315 4.3442617,5.6584566 4.7196007,5.9809954 c 0.375338,0.3225387 3.301554,0.5983086 3.449557,1.0376806 0.184665,0.5482081 -0.414081,0.7807167 -0.995849,0.8604188"
+         id="path2111-8"
+         sodipodi:nodetypes="csssc" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1976"
+     inkscape:label="msoSlicer"
+     style="display:none">
+    <g
+       id="g1994"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoSlicer32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1962"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <path
+         style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+         d="M 7.9375,0.52916667 0.52916667,7.9375"
+         id="path1984"
+         sodipodi:nodetypes="cc" />
+      <rect
+         style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+         id="rect1986"
+         width="2.3812497"
+         height="2.3812497"
+         x="1.0583335"
+         y="1.0583335" />
+      <rect
+         style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+         id="rect1988"
+         width="2.3812497"
+         height="2.3812497"
+         x="5.0270834"
+         y="5.0270834" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2006"
+     inkscape:label="msoSmartArt"
+     style="display:none">
+    <g
+       id="g2336"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoSmartArt32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect1996"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2016"
+         transform="translate(0.16825685,0.19580977)">
+        <path
+           style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+           d="M 4.2299259,4.2299259 7.0430708,7.0898431"
+           id="path1998"
+           sodipodi:nodetypes="cc" />
+        <path
+           sodipodi:type="star"
+           style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+           id="path2012"
+           sodipodi:sides="5"
+           sodipodi:cx="3.5780709"
+           sodipodi:cy="3.6248431"
+           sodipodi:r1="2.238477"
+           sodipodi:r2="1.3252918"
+           sodipodi:arg1="1.0088748"
+           sodipodi:arg2="1.6371933"
+           inkscape:flatsided="false"
+           inkscape:rounded="0"
+           inkscape:randomized="0"
+           d="M 4.7707611,5.5191159 3.4901402,4.9472146 2.1450719,5.3445214 2.2932487,3.9498513 1.4997386,2.7933899 2.8719379,2.5033377 3.7265899,1.3912985 4.4264788,2.6067065 5.7481929,3.0758898 4.8085488,4.1171055 Z"
+           transform="rotate(12.413303,4.6901121,1.1283902)" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2034"
+     inkscape:label="msoTable"
+     style="display:none">
+    <g
+       id="g2066"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoTable32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2018"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect2020"
+         width="7.1437497"
+         height="4.7624998"
+         x="0.66145843"
+         y="1.8520833" />
+      <path
+         style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+         d="M 0.72496862,3.0635771 H 7.7407938"
+         id="path2043" />
+      <path
+         style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+         d="M 0.65481035,4.3147322 H 7.7174078"
+         id="path2045" />
+      <path
+         style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+         d="M 0.83374865,5.5658881 H 7.678786"
+         id="path2047" />
+      <g
+         id="g2056">
+        <path
+           style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+           d="M 4.3498116,1.9644311 V 6.5714898"
+           id="path2050"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;fill-opacity:0.8;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.941176"
+           d="m 2.5490833,1.9176589 0.011693,4.6187517"
+           id="path2052"
+           sodipodi:nodetypes="cc" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2086"
+     inkscape:label="msoTextBox"
+     style="display:none">
+    <g
+       id="g2108"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoTextBox32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2068"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <rect
+         style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="rect2070"
+         width="7.1437497"
+         height="4.7624998"
+         x="0.66145843"
+         y="1.8520833" />
+      <text
+         xml:space="preserve"
+         id="text2096"
+         style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2098);fill:#000000;fill-opacity:1;stroke:none;"
+         transform="translate(-18.708867,3.8221992)"><tspan
+           x="20.724174"
+           y="1.6720398"><tspan
+             style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">Aa</tspan></tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2120"
+     inkscape:label="msoTextEffect"
+     style="display:none">
+    <g
+       id="g2344"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoTextEffect32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2110"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <g
+         id="g2146"
+         transform="matrix(1,0,0,0.85268608,0,2.5619201)"
+         style="stroke-width:1.08294">
+        <rect
+           style="fill:#323232;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.573057;stroke-linecap:round;stroke-opacity:1"
+           id="rect2112"
+           width="7.1437497"
+           height="4.7624998"
+           x="0.66145843"
+           y="1.8520833" />
+        <text
+           xml:space="preserve"
+           id="text2116"
+           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2122);fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.08294;"
+           transform="translate(-18.708867,3.8221992)"><tspan
+             x="20.724174"
+             y="1.6720398"><tspan
+               style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:1.08294">Aa</tspan></tspan></text>
+      </g>
+      <path
+         sodipodi:type="star"
+         style="display:inline;fill:#000000;fill-opacity:0.952206;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1"
+         id="path2012-6"
+         sodipodi:sides="5"
+         sodipodi:cx="3.5780709"
+         sodipodi:cy="3.6248431"
+         sodipodi:r1="2.7304771"
+         sodipodi:r2="1.3252918"
+         sodipodi:arg1="0.9371952"
+         sodipodi:arg2="1.5655137"
+         inkscape:flatsided="false"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         transform="rotate(71.094329,4.6302206,4.6937479)"
+         d="M 5.1946519,5.8253365 3.5850719,4.9501164 1.9848283,5.8422929 2.3198245,4.0410334 0.97681184,2.7948091 2.7934309,2.5567896 3.5636469,0.89440412 4.351383,2.5485595 6.1704154,2.7673731 4.8406441,4.0277167 Z" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g2171"
+     inkscape:label="msoWebVideo"
+     style="display:none">
+    <g
+       id="g2303"
+       inkscape:export-filename="C:\Users\Daniel\Documents\GitHub\Scaffold\Images\msoWebVideo32.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <rect
+         style="display:inline;fill:#000000;fill-opacity:0.00392157;fill-rule:evenodd;stroke:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:0.00392157"
+         id="rect2110-5"
+         width="7.9374995"
+         height="7.9374995"
+         x="0.2645835"
+         y="0.2645835"
+         ry="0" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2205-6"
+         width="4.3250489"
+         height="4.3250489"
+         x="2.0708089"
+         y="2.0708089"
+         ry="0.52557868" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2181-9"
+         width="0.79375035"
+         height="0.79375035"
+         x="7.2605133"
+         y="0.42622086"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2183-2"
+         width="0.79375035"
+         height="0.79375035"
+         x="7.2605133"
+         y="1.8013227"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2185-6"
+         width="0.79375035"
+         height="0.79375035"
+         x="7.2605133"
+         y="3.1764243"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2187-3"
+         width="0.79375035"
+         height="0.79375035"
+         x="7.2605133"
+         y="4.5515256"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2189-1"
+         width="0.79375035"
+         height="0.79375035"
+         x="7.2605133"
+         y="5.9266276"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2191-6"
+         width="0.79375035"
+         height="0.79375035"
+         x="7.2605133"
+         y="7.3017292"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2193-3"
+         width="0.79375035"
+         height="0.79375035"
+         x="0.45516297"
+         y="0.42622086"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2195-9"
+         width="0.79375035"
+         height="0.79375035"
+         x="0.45516297"
+         y="1.8013227"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2197-3"
+         width="0.79375035"
+         height="0.79375035"
+         x="0.45516297"
+         y="3.1764243"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2199-5"
+         width="0.79375035"
+         height="0.79375035"
+         x="0.45516297"
+         y="4.5515256"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2201-6"
+         width="0.79375035"
+         height="0.79375035"
+         x="0.45516297"
+         y="5.9266276"
+         ry="0.096456304" />
+      <rect
+         style="fill:none;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2203-5"
+         width="0.79375035"
+         height="0.79375035"
+         x="0.45516297"
+         y="7.3017292"
+         ry="0.096456304" />
+      <path
+         id="rect2267"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.999999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 7.8261719,1 v 2.5625 c 0,1.1004874 0.8858408,1.9863281 1.9863281,1.9863281 h 12.375 c 1.100487,0 1.986328,-0.8858407 1.986328,-1.9863281 V 1 Z"
+         transform="scale(0.26458333)" />
+      <path
+         id="rect2269"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.999999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 9.8125,26.326172 c -1.1004873,0 -1.9863281,0.885841 -1.9863281,1.986328 V 31 H 24.173828 v -2.6875 c 0,-1.100487 -0.885841,-1.986328 -1.986328,-1.986328 z"
+         transform="scale(0.26458333)" />
     </g>
   </g>
 </svg>

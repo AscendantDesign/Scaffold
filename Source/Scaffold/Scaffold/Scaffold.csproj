@@ -362,6 +362,7 @@
     <Compile Include="ScenarioStep.cs" />
     <Compile Include="RelaxedTypeConverter.cs" />
     <Compile Include="SlideScopeEnum.cs" />
+    <Compile Include="ShapeListEvent.cs" />
     <Compile Include="ThemedFormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -587,6 +588,33 @@
     <None Include="Resources\AlignRight32.png" />
     <None Include="Resources\DistributeHorz32.png" />
     <None Include="Resources\DistributeVert32.png" />
+    <None Include="Resources\msoWebVideo32.png" />
+    <None Include="Resources\msoAutoShape32.png" />
+    <None Include="Resources\msoCallout32.png" />
+    <None Include="Resources\msoCanvas32.png" />
+    <None Include="Resources\msoChart32.png" />
+    <None Include="Resources\msoComment32.png" />
+    <None Include="Resources\msoContentApp32.png" />
+    <None Include="Resources\msoDiagram32.png" />
+    <None Include="Resources\msoEmbeddedOLEObject32.png" />
+    <None Include="Resources\msoFormControl32.png" />
+    <None Include="Resources\msoFreeform32.png" />
+    <None Include="Resources\msoGroup32.png" />
+    <None Include="Resources\msoInk32.png" />
+    <None Include="Resources\msoInkComment32.png" />
+    <None Include="Resources\msoLinkedOLEObject32.png" />
+    <None Include="Resources\msoLinkedPicture32.png" />
+    <None Include="Resources\msoMedia32.png" />
+    <None Include="Resources\msoOLEControlObject32.png" />
+    <None Include="Resources\msoPicture32.png" />
+    <None Include="Resources\msoPlaceholder32.png" />
+    <None Include="Resources\msoScriptAnchor32.png" />
+    <None Include="Resources\msoShapeTypeMixed32.png" />
+    <None Include="Resources\msoSlicer32.png" />
+    <None Include="Resources\msoSmartArt32.png" />
+    <None Include="Resources\msoTable32.png" />
+    <None Include="Resources\msoTextBox32.png" />
+    <None Include="Resources\msoTextEffect32.png" />
     <Content Include="ScaffoldIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

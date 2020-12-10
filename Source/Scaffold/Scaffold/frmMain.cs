@@ -4871,6 +4871,16 @@ namespace Scaffold
 		/// </param>
 		private void mnuToolsPPAlignment_Click(object sender, EventArgs e)
 		{
+			OfficeDriver driver = new OfficeDriver();
+			frmPPAlignment form = new frmPPAlignment();
+
+			driver.EnsurePowerPointRunning(false);
+			form.Driver = driver;
+			if(form.ShowDialog() == DialogResult.OK)
+			{
+
+			}
+
 		}
 		//*-----------------------------------------------------------------------*
 
