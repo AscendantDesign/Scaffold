@@ -9,6 +9,7 @@ using Microsoft.Office.Interop.PowerPoint;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 
 using static Scaffold.ScaffoldNodesUtil;
+using static Scaffold.ScaffoldUtil;
 using System.Diagnostics;
 
 namespace Scaffold
@@ -49,22 +50,26 @@ namespace Scaffold
 		private Button btnOK;
 		private CheckBox chkDistribute;
 		private CheckBox chkAlign;
+		private ImageList ilShapes;
+		private GroupBox grpReference;
+		private RadioButton optReferenceAnchor;
+		private TextBox txtAnchor;
+		private RadioButton optReferenceTop;
+		private RadioButton optReferenceLeft;
+		private TextBox txtReferenceTop;
+		private TextBox txtReferenceLeft;
+		private NumericUpDown txtSlide;
+		private Label lblReferenceTop;
+		private Label lblReferenceLeft;
+		private Panel pnlAlignCenter;
+		private Panel pnlAlignMiddle;
+		private RadioButton optAlignCenter;
+		private RadioButton optAlignMiddle;
+
 
 		RadioButton[] mGroupAlign = null;
 		RadioButton[] mGroupDistribute = null;
 		string mSelectionAnchor = "";
-		private ImageList ilShapes;
-		private GroupBox grpReference;
-		private RadioButton radioButton1;
-		private TextBox txtAnchor;
-		private RadioButton radioButton3;
-		private RadioButton radioButton2;
-		private TextBox textBox2;
-		private TextBox textBox1;
-		private NumericUpDown txtSlide;
-		private Label label2;
-		private Label label1;
-		List<string> mSelectionList = new List<string>();
 
 		//*-----------------------------------------------------------------------*
 		//* btnCancel_Click																												*
@@ -119,23 +124,24 @@ namespace Scaffold
 		/// </param>
 		private void chkAlign_CheckedChanged(object sender, EventArgs e)
 		{
+			UpdateOKEnabled();
 			if(chkAlign.Checked)
 			{
-				//grpAlign.Enabled = true;
+				grpAlign.Enabled = true;
 				grpAlign.ForeColor = FromHex(ResourceMain.colorTextNormal);
-				foreach(RadioButton opt in mGroupAlign)
-				{
-					opt.ForeColor = FromHex(ResourceMain.colorTextNormal);
-				}
+				//foreach(RadioButton opt in mGroupAlign)
+				//{
+				//	opt.ForeColor = FromHex(ResourceMain.colorTextNormal);
+				//}
 			}
 			else
 			{
-				//grpAlign.Enabled = false;
+				grpAlign.Enabled = false;
 				grpAlign.ForeColor = FromHex(ResourceMain.colorTextDisabled);
-				foreach(RadioButton opt in mGroupAlign)
-				{
-					opt.ForeColor = FromHex(ResourceMain.colorTextDisabled);
-				}
+				//foreach(RadioButton opt in mGroupAlign)
+				//{
+				//	opt.ForeColor = FromHex(ResourceMain.colorTextDisabled);
+				//}
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -154,23 +160,24 @@ namespace Scaffold
 		/// </param>
 		private void chkDistribute_CheckedChanged(object sender, EventArgs e)
 		{
+			UpdateOKEnabled();
 			if(chkDistribute.Checked)
 			{
-				//grpDistribute.Enabled = true;
+				grpDistribute.Enabled = true;
 				grpDistribute.ForeColor = FromHex(ResourceMain.colorTextNormal);
-				foreach(RadioButton opt in mGroupDistribute)
-				{
-					opt.ForeColor = FromHex(ResourceMain.colorTextNormal);
-				}
+				//foreach(RadioButton opt in mGroupDistribute)
+				//{
+				//	opt.ForeColor = FromHex(ResourceMain.colorTextNormal);
+				//}
 			}
 			else
 			{
-				//grpDistribute.Enabled = false;
+				grpDistribute.Enabled = false;
 				grpDistribute.ForeColor = FromHex(ResourceMain.colorTextDisabled);
-				foreach(RadioButton opt in mGroupDistribute)
-				{
-					opt.ForeColor = FromHex(ResourceMain.colorTextDisabled);
-				}
+				//foreach(RadioButton opt in mGroupDistribute)
+				//{
+				//	opt.ForeColor = FromHex(ResourceMain.colorTextDisabled);
+				//}
 			}
 		}
 		//*-----------------------------------------------------------------------*
@@ -190,11 +197,15 @@ namespace Scaffold
 			this.ilShapes = new System.Windows.Forms.ImageList(this.components);
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.grpAlign = new System.Windows.Forms.GroupBox();
+			this.pnlAlignCenter = new System.Windows.Forms.Panel();
 			this.pnlAlignBottom = new System.Windows.Forms.Panel();
+			this.pnlAlignMiddle = new System.Windows.Forms.Panel();
 			this.pnlAlignRight = new System.Windows.Forms.Panel();
 			this.pnlAlignTop = new System.Windows.Forms.Panel();
 			this.pnlAlignLeft = new System.Windows.Forms.Panel();
+			this.optAlignCenter = new System.Windows.Forms.RadioButton();
 			this.optAlignBottom = new System.Windows.Forms.RadioButton();
+			this.optAlignMiddle = new System.Windows.Forms.RadioButton();
 			this.optAlignRight = new System.Windows.Forms.RadioButton();
 			this.optAlignTop = new System.Windows.Forms.RadioButton();
 			this.optAlignLeft = new System.Windows.Forms.RadioButton();
@@ -207,13 +218,13 @@ namespace Scaffold
 			this.chkAlign = new System.Windows.Forms.CheckBox();
 			this.chkDistribute = new System.Windows.Forms.CheckBox();
 			this.grpReference = new System.Windows.Forms.GroupBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.radioButton3 = new System.Windows.Forms.RadioButton();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.lblReferenceTop = new System.Windows.Forms.Label();
+			this.lblReferenceLeft = new System.Windows.Forms.Label();
+			this.optReferenceTop = new System.Windows.Forms.RadioButton();
+			this.optReferenceLeft = new System.Windows.Forms.RadioButton();
+			this.optReferenceAnchor = new System.Windows.Forms.RadioButton();
+			this.txtReferenceTop = new System.Windows.Forms.TextBox();
+			this.txtReferenceLeft = new System.Windows.Forms.TextBox();
 			this.txtAnchor = new System.Windows.Forms.TextBox();
 			this.txtSlide = new System.Windows.Forms.NumericUpDown();
 			this.pnlMain.SuspendLayout();
@@ -236,7 +247,7 @@ namespace Scaffold
 			this.pnlMain.Controls.Add(this.lvShapes);
 			this.pnlMain.Controls.Add(this.lblShapes);
 			this.pnlMain.Controls.Add(this.lblSlide);
-			this.pnlMain.Size = new System.Drawing.Size(602, 416);
+			this.pnlMain.Size = new System.Drawing.Size(710, 498);
 			this.pnlMain.Controls.SetChildIndex(this.lblSlide, 0);
 			this.pnlMain.Controls.SetChildIndex(this.lblShapes, 0);
 			this.pnlMain.Controls.SetChildIndex(this.lvShapes, 0);
@@ -276,7 +287,7 @@ namespace Scaffold
 			this.lvShapes.HideSelection = false;
 			this.lvShapes.Location = new System.Drawing.Point(12, 74);
 			this.lvShapes.Name = "lvShapes";
-			this.lvShapes.Size = new System.Drawing.Size(242, 273);
+			this.lvShapes.Size = new System.Drawing.Size(297, 339);
 			this.lvShapes.SmallImageList = this.ilShapes;
 			this.lvShapes.TabIndex = 3;
 			this.lvShapes.UseCompatibleStateImageBehavior = false;
@@ -292,7 +303,7 @@ namespace Scaffold
 			// 
 			this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new System.Drawing.Point(403, 359);
+			this.btnCancel.Location = new System.Drawing.Point(511, 441);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(88, 45);
 			this.btnCancel.TabIndex = 9;
@@ -301,42 +312,65 @@ namespace Scaffold
 			// 
 			// grpAlign
 			// 
+			this.grpAlign.Controls.Add(this.pnlAlignCenter);
 			this.grpAlign.Controls.Add(this.pnlAlignBottom);
+			this.grpAlign.Controls.Add(this.pnlAlignMiddle);
 			this.grpAlign.Controls.Add(this.pnlAlignRight);
 			this.grpAlign.Controls.Add(this.pnlAlignTop);
 			this.grpAlign.Controls.Add(this.pnlAlignLeft);
+			this.grpAlign.Controls.Add(this.optAlignCenter);
 			this.grpAlign.Controls.Add(this.optAlignBottom);
+			this.grpAlign.Controls.Add(this.optAlignMiddle);
 			this.grpAlign.Controls.Add(this.optAlignRight);
 			this.grpAlign.Controls.Add(this.optAlignTop);
 			this.grpAlign.Controls.Add(this.optAlignLeft);
+			this.grpAlign.Enabled = false;
 			this.grpAlign.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-			this.grpAlign.Location = new System.Drawing.Point(277, 175);
+			this.grpAlign.Location = new System.Drawing.Point(334, 175);
 			this.grpAlign.Name = "grpAlign";
-			this.grpAlign.Size = new System.Drawing.Size(141, 172);
+			this.grpAlign.Size = new System.Drawing.Size(357, 104);
 			this.grpAlign.TabIndex = 6;
 			this.grpAlign.TabStop = false;
 			// 
+			// pnlAlignCenter
+			// 
+			this.pnlAlignCenter.BackgroundImage = global::Scaffold.ResourceMain.AlignCenterGray32;
+			this.pnlAlignCenter.Location = new System.Drawing.Point(103, 54);
+			this.pnlAlignCenter.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlAlignCenter.Name = "pnlAlignCenter";
+			this.pnlAlignCenter.Size = new System.Drawing.Size(32, 32);
+			this.pnlAlignCenter.TabIndex = 8;
+			// 
 			// pnlAlignBottom
 			// 
-			this.pnlAlignBottom.BackgroundImage = global::Scaffold.ResourceMain.AlignBottom32;
-			this.pnlAlignBottom.Location = new System.Drawing.Point(4, 130);
+			this.pnlAlignBottom.BackgroundImage = global::Scaffold.ResourceMain.AlignBottomGray32;
+			this.pnlAlignBottom.Location = new System.Drawing.Point(224, 16);
 			this.pnlAlignBottom.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlAlignBottom.Name = "pnlAlignBottom";
 			this.pnlAlignBottom.Size = new System.Drawing.Size(32, 32);
-			this.pnlAlignBottom.TabIndex = 6;
+			this.pnlAlignBottom.TabIndex = 4;
+			// 
+			// pnlAlignMiddle
+			// 
+			this.pnlAlignMiddle.BackgroundImage = global::Scaffold.ResourceMain.AlignMiddleGray32;
+			this.pnlAlignMiddle.Location = new System.Drawing.Point(103, 16);
+			this.pnlAlignMiddle.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlAlignMiddle.Name = "pnlAlignMiddle";
+			this.pnlAlignMiddle.Size = new System.Drawing.Size(32, 32);
+			this.pnlAlignMiddle.TabIndex = 2;
 			// 
 			// pnlAlignRight
 			// 
-			this.pnlAlignRight.BackgroundImage = global::Scaffold.ResourceMain.AlignRight32;
-			this.pnlAlignRight.Location = new System.Drawing.Point(4, 92);
+			this.pnlAlignRight.BackgroundImage = global::Scaffold.ResourceMain.AlignRightGray32;
+			this.pnlAlignRight.Location = new System.Drawing.Point(224, 54);
 			this.pnlAlignRight.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlAlignRight.Name = "pnlAlignRight";
 			this.pnlAlignRight.Size = new System.Drawing.Size(32, 32);
-			this.pnlAlignRight.TabIndex = 4;
+			this.pnlAlignRight.TabIndex = 10;
 			// 
 			// pnlAlignTop
 			// 
-			this.pnlAlignTop.BackgroundImage = global::Scaffold.ResourceMain.AlignTop32;
+			this.pnlAlignTop.BackgroundImage = global::Scaffold.ResourceMain.AlignTopGray32;
 			this.pnlAlignTop.Location = new System.Drawing.Point(4, 16);
 			this.pnlAlignTop.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlAlignTop.Name = "pnlAlignTop";
@@ -350,30 +384,54 @@ namespace Scaffold
 			this.pnlAlignLeft.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlAlignLeft.Name = "pnlAlignLeft";
 			this.pnlAlignLeft.Size = new System.Drawing.Size(32, 32);
-			this.pnlAlignLeft.TabIndex = 2;
+			this.pnlAlignLeft.TabIndex = 6;
+			// 
+			// optAlignCenter
+			// 
+			this.optAlignCenter.AutoSize = true;
+			this.optAlignCenter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.optAlignCenter.Location = new System.Drawing.Point(139, 58);
+			this.optAlignCenter.Name = "optAlignCenter";
+			this.optAlignCenter.Size = new System.Drawing.Size(80, 24);
+			this.optAlignCenter.TabIndex = 9;
+			this.optAlignCenter.TabStop = true;
+			this.optAlignCenter.Text = "Cente&r";
+			this.optAlignCenter.UseVisualStyleBackColor = false;
 			// 
 			// optAlignBottom
 			// 
 			this.optAlignBottom.AutoSize = true;
 			this.optAlignBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.optAlignBottom.Location = new System.Drawing.Point(40, 133);
+			this.optAlignBottom.Location = new System.Drawing.Point(260, 20);
 			this.optAlignBottom.Name = "optAlignBottom";
 			this.optAlignBottom.Size = new System.Drawing.Size(84, 24);
-			this.optAlignBottom.TabIndex = 7;
+			this.optAlignBottom.TabIndex = 5;
 			this.optAlignBottom.TabStop = true;
 			this.optAlignBottom.Text = "&Bottom";
 			this.optAlignBottom.UseVisualStyleBackColor = false;
+			// 
+			// optAlignMiddle
+			// 
+			this.optAlignMiddle.AutoSize = true;
+			this.optAlignMiddle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.optAlignMiddle.Location = new System.Drawing.Point(139, 20);
+			this.optAlignMiddle.Name = "optAlignMiddle";
+			this.optAlignMiddle.Size = new System.Drawing.Size(79, 24);
+			this.optAlignMiddle.TabIndex = 3;
+			this.optAlignMiddle.TabStop = true;
+			this.optAlignMiddle.Text = "&Middle";
+			this.optAlignMiddle.UseVisualStyleBackColor = false;
 			// 
 			// optAlignRight
 			// 
 			this.optAlignRight.AutoSize = true;
 			this.optAlignRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.optAlignRight.Location = new System.Drawing.Point(40, 95);
+			this.optAlignRight.Location = new System.Drawing.Point(260, 58);
 			this.optAlignRight.Name = "optAlignRight";
 			this.optAlignRight.Size = new System.Drawing.Size(69, 24);
-			this.optAlignRight.TabIndex = 5;
+			this.optAlignRight.TabIndex = 11;
 			this.optAlignRight.TabStop = true;
-			this.optAlignRight.Text = "&Right";
+			this.optAlignRight.Text = "R&ight";
 			this.optAlignRight.UseVisualStyleBackColor = false;
 			// 
 			// optAlignTop
@@ -398,7 +456,7 @@ namespace Scaffold
 			this.optAlignLeft.Name = "optAlignLeft";
 			this.optAlignLeft.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.optAlignLeft.Size = new System.Drawing.Size(59, 24);
-			this.optAlignLeft.TabIndex = 3;
+			this.optAlignLeft.TabIndex = 7;
 			this.optAlignLeft.TabStop = true;
 			this.optAlignLeft.Text = "L&eft";
 			this.optAlignLeft.UseVisualStyleBackColor = true;
@@ -409,8 +467,9 @@ namespace Scaffold
 			this.grpDistribute.Controls.Add(this.pnlDistributeVert);
 			this.grpDistribute.Controls.Add(this.optDistributeHorz);
 			this.grpDistribute.Controls.Add(this.optDistributeVert);
+			this.grpDistribute.Enabled = false;
 			this.grpDistribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-			this.grpDistribute.Location = new System.Drawing.Point(433, 175);
+			this.grpDistribute.Location = new System.Drawing.Point(334, 311);
 			this.grpDistribute.Name = "grpDistribute";
 			this.grpDistribute.Size = new System.Drawing.Size(152, 102);
 			this.grpDistribute.TabIndex = 8;
@@ -418,7 +477,7 @@ namespace Scaffold
 			// 
 			// pnlDistributeHorz
 			// 
-			this.pnlDistributeHorz.BackgroundImage = global::Scaffold.ResourceMain.DistributeHorz32;
+			this.pnlDistributeHorz.BackgroundImage = global::Scaffold.ResourceMain.DistributeHorzGray32;
 			this.pnlDistributeHorz.Location = new System.Drawing.Point(4, 16);
 			this.pnlDistributeHorz.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlDistributeHorz.Name = "pnlDistributeHorz";
@@ -463,7 +522,8 @@ namespace Scaffold
 			// btnOK
 			// 
 			this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnOK.Location = new System.Drawing.Point(497, 359);
+			this.btnOK.Enabled = false;
+			this.btnOK.Location = new System.Drawing.Point(605, 441);
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(88, 45);
 			this.btnOK.TabIndex = 10;
@@ -474,7 +534,7 @@ namespace Scaffold
 			// 
 			this.chkAlign.AutoSize = true;
 			this.chkAlign.ForeColor = System.Drawing.Color.Gainsboro;
-			this.chkAlign.Location = new System.Drawing.Point(280, 156);
+			this.chkAlign.Location = new System.Drawing.Point(337, 156);
 			this.chkAlign.Name = "chkAlign";
 			this.chkAlign.Size = new System.Drawing.Size(68, 24);
 			this.chkAlign.TabIndex = 5;
@@ -485,7 +545,7 @@ namespace Scaffold
 			// 
 			this.chkDistribute.AutoSize = true;
 			this.chkDistribute.ForeColor = System.Drawing.Color.Gainsboro;
-			this.chkDistribute.Location = new System.Drawing.Point(433, 156);
+			this.chkDistribute.Location = new System.Drawing.Point(334, 292);
 			this.chkDistribute.Name = "chkDistribute";
 			this.chkDistribute.Size = new System.Drawing.Size(104, 24);
 			this.chkDistribute.TabIndex = 7;
@@ -494,102 +554,104 @@ namespace Scaffold
 			// 
 			// grpReference
 			// 
-			this.grpReference.Controls.Add(this.label2);
-			this.grpReference.Controls.Add(this.label1);
-			this.grpReference.Controls.Add(this.radioButton3);
-			this.grpReference.Controls.Add(this.radioButton2);
-			this.grpReference.Controls.Add(this.radioButton1);
-			this.grpReference.Controls.Add(this.textBox2);
-			this.grpReference.Controls.Add(this.textBox1);
+			this.grpReference.Controls.Add(this.lblReferenceTop);
+			this.grpReference.Controls.Add(this.lblReferenceLeft);
+			this.grpReference.Controls.Add(this.optReferenceTop);
+			this.grpReference.Controls.Add(this.optReferenceLeft);
+			this.grpReference.Controls.Add(this.optReferenceAnchor);
+			this.grpReference.Controls.Add(this.txtReferenceTop);
+			this.grpReference.Controls.Add(this.txtReferenceLeft);
 			this.grpReference.Controls.Add(this.txtAnchor);
 			this.grpReference.ForeColor = System.Drawing.Color.Gainsboro;
-			this.grpReference.Location = new System.Drawing.Point(277, 3);
+			this.grpReference.Location = new System.Drawing.Point(334, 3);
 			this.grpReference.Name = "grpReference";
 			this.grpReference.Size = new System.Drawing.Size(308, 137);
 			this.grpReference.TabIndex = 4;
 			this.grpReference.TabStop = false;
 			this.grpReference.Text = "&Reference Point";
 			// 
-			// label2
+			// lblReferenceTop
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(245, 98);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(26, 20);
-			this.label2.TabIndex = 6;
-			this.label2.Text = "in.";
+			this.lblReferenceTop.AutoSize = true;
+			this.lblReferenceTop.Location = new System.Drawing.Point(245, 98);
+			this.lblReferenceTop.Name = "lblReferenceTop";
+			this.lblReferenceTop.Size = new System.Drawing.Size(26, 20);
+			this.lblReferenceTop.TabIndex = 7;
+			this.lblReferenceTop.Text = "in.";
 			// 
-			// label1
+			// lblReferenceLeft
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(245, 68);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(26, 20);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "in.";
+			this.lblReferenceLeft.AutoSize = true;
+			this.lblReferenceLeft.Location = new System.Drawing.Point(245, 68);
+			this.lblReferenceLeft.Name = "lblReferenceLeft";
+			this.lblReferenceLeft.Size = new System.Drawing.Size(26, 20);
+			this.lblReferenceLeft.TabIndex = 4;
+			this.lblReferenceLeft.Text = "in.";
 			// 
-			// radioButton3
+			// optReferenceTop
 			// 
-			this.radioButton3.AutoSize = true;
-			this.radioButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.radioButton3.ForeColor = System.Drawing.Color.Gainsboro;
-			this.radioButton3.Location = new System.Drawing.Point(19, 96);
-			this.radioButton3.Name = "radioButton3";
-			this.radioButton3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.radioButton3.Size = new System.Drawing.Size(58, 24);
-			this.radioButton3.TabIndex = 4;
-			this.radioButton3.Text = "&Top";
-			this.radioButton3.UseVisualStyleBackColor = true;
+			this.optReferenceTop.AutoSize = true;
+			this.optReferenceTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.optReferenceTop.ForeColor = System.Drawing.Color.Gainsboro;
+			this.optReferenceTop.Location = new System.Drawing.Point(19, 96);
+			this.optReferenceTop.Name = "optReferenceTop";
+			this.optReferenceTop.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optReferenceTop.Size = new System.Drawing.Size(58, 24);
+			this.optReferenceTop.TabIndex = 5;
+			this.optReferenceTop.Text = "&Top";
+			this.optReferenceTop.UseVisualStyleBackColor = true;
 			// 
-			// radioButton2
+			// optReferenceLeft
 			// 
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.radioButton2.ForeColor = System.Drawing.Color.Gainsboro;
-			this.radioButton2.Location = new System.Drawing.Point(19, 63);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.radioButton2.Size = new System.Drawing.Size(59, 24);
-			this.radioButton2.TabIndex = 2;
-			this.radioButton2.Text = "&Left";
-			this.radioButton2.UseVisualStyleBackColor = true;
+			this.optReferenceLeft.AutoSize = true;
+			this.optReferenceLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.optReferenceLeft.ForeColor = System.Drawing.Color.Gainsboro;
+			this.optReferenceLeft.Location = new System.Drawing.Point(19, 63);
+			this.optReferenceLeft.Name = "optReferenceLeft";
+			this.optReferenceLeft.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optReferenceLeft.Size = new System.Drawing.Size(59, 24);
+			this.optReferenceLeft.TabIndex = 2;
+			this.optReferenceLeft.Text = "&Left";
+			this.optReferenceLeft.UseVisualStyleBackColor = true;
 			// 
-			// radioButton1
+			// optReferenceAnchor
 			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.radioButton1.Checked = true;
-			this.radioButton1.ForeColor = System.Drawing.Color.Gainsboro;
-			this.radioButton1.Location = new System.Drawing.Point(19, 30);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.radioButton1.Size = new System.Drawing.Size(83, 24);
-			this.radioButton1.TabIndex = 0;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "A&nchor";
-			this.radioButton1.UseVisualStyleBackColor = true;
+			this.optReferenceAnchor.AutoSize = true;
+			this.optReferenceAnchor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.optReferenceAnchor.Checked = true;
+			this.optReferenceAnchor.ForeColor = System.Drawing.Color.Gainsboro;
+			this.optReferenceAnchor.Location = new System.Drawing.Point(19, 30);
+			this.optReferenceAnchor.Name = "optReferenceAnchor";
+			this.optReferenceAnchor.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optReferenceAnchor.Size = new System.Drawing.Size(83, 24);
+			this.optReferenceAnchor.TabIndex = 0;
+			this.optReferenceAnchor.TabStop = true;
+			this.optReferenceAnchor.Text = "A&nchor";
+			this.optReferenceAnchor.UseVisualStyleBackColor = true;
 			// 
-			// textBox2
+			// txtReferenceTop
 			// 
-			this.textBox2.BackColor = System.Drawing.Color.White;
-			this.textBox2.ForeColor = System.Drawing.Color.Black;
-			this.textBox2.Location = new System.Drawing.Point(108, 94);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(131, 27);
-			this.textBox2.TabIndex = 5;
-			this.textBox2.TabStop = false;
-			this.textBox2.Text = "0.0";
+			this.txtReferenceTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.txtReferenceTop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+			this.txtReferenceTop.Location = new System.Drawing.Point(108, 94);
+			this.txtReferenceTop.Name = "txtReferenceTop";
+			this.txtReferenceTop.ReadOnly = true;
+			this.txtReferenceTop.Size = new System.Drawing.Size(131, 27);
+			this.txtReferenceTop.TabIndex = 6;
+			this.txtReferenceTop.TabStop = false;
+			this.txtReferenceTop.Text = "0.0";
 			// 
-			// textBox1
+			// txtReferenceLeft
 			// 
-			this.textBox1.BackColor = System.Drawing.Color.White;
-			this.textBox1.ForeColor = System.Drawing.Color.Black;
-			this.textBox1.Location = new System.Drawing.Point(108, 61);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(131, 27);
-			this.textBox1.TabIndex = 3;
-			this.textBox1.TabStop = false;
-			this.textBox1.Text = "0.0";
+			this.txtReferenceLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.txtReferenceLeft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+			this.txtReferenceLeft.Location = new System.Drawing.Point(108, 61);
+			this.txtReferenceLeft.Name = "txtReferenceLeft";
+			this.txtReferenceLeft.ReadOnly = true;
+			this.txtReferenceLeft.Size = new System.Drawing.Size(131, 27);
+			this.txtReferenceLeft.TabIndex = 3;
+			this.txtReferenceLeft.TabStop = false;
+			this.txtReferenceLeft.Text = "0.0";
 			// 
 			// txtAnchor
 			// 
@@ -624,7 +686,7 @@ namespace Scaffold
 			this.AcceptButton = this.btnOK;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.CancelButton = this.btnCancel;
-			this.ClientSize = new System.Drawing.Size(602, 464);
+			this.ClientSize = new System.Drawing.Size(710, 546);
 			this.Name = "frmPPAlignment";
 			this.pnlMain.ResumeLayout(false);
 			this.pnlMain.PerformLayout();
@@ -655,15 +717,15 @@ namespace Scaffold
 		private void lvShapes_ItemSelectionChanged(object sender,
 			ListViewItemSelectionChangedEventArgs e)
 		{
-			mSelectionList.Clear();
+			UpdateOKEnabled();
 			if(lvShapes.SelectedItems.Count == 0)
 			{
 				mSelectionAnchor = "";
 			}
 			else if(lvShapes.SelectedItems.Count == 1)
 			{
-				mSelectionAnchor = lvShapes.SelectedItems[0].Text;
-				mSelectionList.Add(mSelectionAnchor);
+				mSelectionAnchor = (string)lvShapes.SelectedItems[0].Tag;
+				txtAnchor.Text = lvShapes.SelectedItems[0].Text;
 			}
 			else
 			{
@@ -671,14 +733,274 @@ namespace Scaffold
 				if(mSelectionAnchor.Length == 0)
 				{
 					//	Set the anchor.
-					mSelectionAnchor = lvShapes.SelectedItems[0].Text;
-				}
-				foreach(ListViewItem listItem in lvShapes.SelectedItems)
-				{
-					mSelectionList.Add(listItem.Text);
+					mSelectionAnchor = (string)lvShapes.SelectedItems[0].Tag;
+					txtAnchor.Text = lvShapes.SelectedItems[0].Text;
 				}
 			}
-			txtAnchor.Text = mSelectionAnchor;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optAlignBottom_CheckedChanged																					*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state on the bottom alignment radio button has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optAlignBottom_CheckedChanged(object sender, EventArgs e)
+		{
+			pnlAlignBottom.BackgroundImage =
+				(optAlignBottom.Checked ?
+				ResourceMain.AlignBottom32 :
+				ResourceMain.AlignBottomGray32);
+			if(optAlignBottom.Checked && optReferenceLeft.Checked)
+			{
+				optReferenceTop.Checked = true;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optAlignCenter_CheckedChanged																					*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state on the center alignment radio button has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optAlignCenter_CheckedChanged(object sender, EventArgs e)
+		{
+			pnlAlignCenter.BackgroundImage =
+				(optAlignCenter.Checked ?
+				ResourceMain.AlignCenter32 :
+				ResourceMain.AlignCenterGray32);
+			if(optAlignCenter.Checked && optReferenceTop.Checked)
+			{
+				optReferenceLeft.Checked = true;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optAlignLeft_CheckedChanged																						*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state on the left alignment radio button has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optAlignLeft_CheckedChanged(object sender, EventArgs e)
+		{
+			pnlAlignLeft.BackgroundImage =
+				(optAlignLeft.Checked ?
+				ResourceMain.AlignLeft32 :
+				ResourceMain.AlignLeftGray32);
+			if(optAlignLeft.Checked && optReferenceTop.Checked)
+			{
+				optReferenceLeft.Checked = true;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optAlignMiddle_CheckedChanged																					*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state on the middle alignment radio button has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optAlignMiddle_CheckedChanged(object sender, EventArgs e)
+		{
+			pnlAlignMiddle.BackgroundImage =
+				(optAlignMiddle.Checked ?
+				ResourceMain.AlignMiddle32 :
+				ResourceMain.AlignMiddleGray32);
+			if(optAlignMiddle.Checked && optReferenceLeft.Checked)
+			{
+				optReferenceTop.Checked = true;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optAlignRight_CheckedChanged																					*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state on the right alignment radio button has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optAlignRight_CheckedChanged(object sender, EventArgs e)
+		{
+			pnlAlignRight.BackgroundImage =
+				(optAlignRight.Checked ?
+				ResourceMain.AlignRight32 :
+				ResourceMain.AlignRightGray32);
+			if(optAlignRight.Checked && optReferenceTop.Checked)
+			{
+				optReferenceLeft.Checked = true;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optAlignTop_CheckedChanged																						*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state on the top alignment radio button has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optAlignTop_CheckedChanged(object sender, EventArgs e)
+		{
+			pnlAlignTop.BackgroundImage =
+				(optAlignTop.Checked ?
+				ResourceMain.AlignTop32 :
+				ResourceMain.AlignTopGray32);
+			if(optAlignTop.Checked && optReferenceLeft.Checked)
+			{
+				optReferenceTop.Checked = true;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optDistributeHorz_CheckedChanged																			*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state on the horizontal distribution radio button has
+		/// changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optDistributeHorz_CheckedChanged(object sender, EventArgs e)
+		{
+			pnlDistributeHorz.BackgroundImage =
+				(optDistributeHorz.Checked ?
+				ResourceMain.DistributeHorz32 :
+				ResourceMain.DistributeHorzGray32);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optDistributeVert_CheckedChanged																			*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state on the vertical distribution radio button has
+		/// changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optDistributeVert_CheckedChanged(object sender, EventArgs e)
+		{
+			pnlDistributeVert.BackgroundImage =
+				(optDistributeVert.Checked ?
+				ResourceMain.DistributeVert32 :
+				ResourceMain.DistributeVertGray32);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optReferenceLeft_CheckedChanged																				*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state of the reference left radio button has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optReferenceLeft_CheckedChanged(object sender, EventArgs e)
+		{
+			if(optReferenceLeft.Checked)
+			{
+				txtReferenceLeft.ReadOnly = false;
+				txtReferenceLeft.TabStop = true;
+				txtReferenceLeft.BackColor =
+					FromHex(ResourceMain.colorBackgroundWriting);
+				txtReferenceLeft.ForeColor =
+					FromHex(ResourceMain.colorTextWriting);
+			}
+			else
+			{
+				txtReferenceLeft.ReadOnly = true;
+				txtReferenceLeft.TabStop = false;
+				txtReferenceLeft.BackColor =
+					FromHex(ResourceMain.colorBackgroundWritingDisabled);
+				txtReferenceLeft.ForeColor =
+					FromHex(ResourceMain.colorTextWritingDisabled);
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* optReferenceTop_CheckedChanged																				*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The checked state of the reference top radio button has changed.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void optReferenceTop_CheckedChanged(object sender, EventArgs e)
+		{
+			if(optReferenceTop.Checked)
+			{
+				txtReferenceTop.ReadOnly = false;
+				txtReferenceTop.TabStop = true;
+				txtReferenceTop.BackColor =
+					FromHex(ResourceMain.colorBackgroundWriting);
+				txtReferenceTop.ForeColor =
+					FromHex(ResourceMain.colorTextWriting);
+			}
+			else
+			{
+				txtReferenceTop.ReadOnly = true;
+				txtReferenceTop.TabStop = false;
+				txtReferenceTop.BackColor =
+					FromHex(ResourceMain.colorBackgroundWritingDisabled);
+				txtReferenceTop.ForeColor =
+					FromHex(ResourceMain.colorTextWritingDisabled);
+			}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -696,20 +1018,20 @@ namespace Scaffold
 		/// </param>
 		private void txtSlide_TextChanged(object sender, EventArgs e)
 		{
-			//OnShapeListRequest(new ShapeListEventArgs(ToInt(txtSlide.Text)));
+			ListViewItem item = null;
+			string name = "";
 			int slideIndex = ToInt(txtSlide.Text);
 			Shapes shapes = null;
 			Slide slide = null;
 
 			mSelectionAnchor = "";
-			mSelectionList.Clear();
 
 			lvShapes.Items.Clear();
 			if(mDriver != null)
 			{
 				if(slideIndex > 0)
 				{
-					slide = OfficeDriver.GetSlideBySlideIndex(
+					slide = PowerPointDriver.GetSlideBySlideIndex(
 						mDriver.ActivePresentation, slideIndex);
 					if(slide != null)
 					{
@@ -719,8 +1041,13 @@ namespace Scaffold
 						shapes = slide.Shapes;
 						foreach(PowerPoint.Shape shape in shapes)
 						{
-							Debug.WriteLine(shape.Type.ToString());
-							lvShapes.Items.Add(shape.Name, shape.Type.ToString());
+							name = LimitLength(PowerPointDriver.GetText(shape), 32);
+							if(name == null || name.Length == 0)
+							{
+								name = shape.Name;
+							}
+							item = lvShapes.Items.Add(name, shape.Type.ToString());
+							item.Tag = shape.Name;
 						}
 					}
 					else
@@ -742,6 +1069,21 @@ namespace Scaffold
 				//	Driver not assigned.
 				txtSlide.BackColor = FromHex(ResourceMain.colorBackgroundWritingError);
 			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* UpdateOKEnabled																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Update the OK button enabled state based upon current conditions on
+		/// the form.
+		/// </summary>
+		private void UpdateOKEnabled()
+		{
+			btnOK.Enabled =
+				(lvShapes.SelectedItems.Count > 0 &&
+				(chkAlign.Checked || chkDistribute.Checked));
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -782,7 +1124,7 @@ namespace Scaffold
 			base.OnLoad(e);
 			if(mDriver != null)
 			{
-				//txtSlide.Text = mDriver.ActiveSlideIndex.ToString();
+				txtSlide.Text = mDriver.ActiveSlideIndex.ToString();
 			}
 			foreach(RadioButton opt in mGroupAlign)
 			{
@@ -794,60 +1136,6 @@ namespace Scaffold
 			}
 		}
 		//*-----------------------------------------------------------------------*
-
-		////*-----------------------------------------------------------------------*
-		////* OnShapeListRequest																										*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Raises the ShapeListRequest event when a new list of shapes is being
-		///// requested for the currently selected slide.
-		///// </summary>
-		///// <param name="e">
-		///// Reference to a shape list event arguments object containing a valid
-		///// 1-base slide index for the current presentation.
-		///// </param>
-		//protected virtual void OnShapeListRequest(ShapeListEventArgs e)
-		//{
-		//	bool bTypes = false;
-		//	int index = 0;
-		//	string typeName = "";
-
-		//	ShapeListRequest?.Invoke(this, e);
-		//	if(e != null)
-		//	{
-		//		lvShapes.Items.Clear();
-		//		if(e.SlideIndexValid)
-		//		{
-		//			txtSlide.BackColor = FromHex(ResourceMain.colorBackgroundWriting);
-		//		}
-		//		else
-		//		{
-		//			txtSlide.BackColor =
-		//				FromHex(ResourceMain.colorBackgroundWritingError);
-		//		}
-		//		if(e.Handled)
-		//		{
-		//			//	The event was handled.
-		//			bTypes = (e.Names.Count == e.ShapeTypes.Count);
-		//			foreach(string name in e.Names)
-		//			{
-		//				if(bTypes)
-		//				{
-		//					//	Name and type image.
-		//					typeName = e.ShapeTypes[index];
-		//					lvShapes.Items.Add(name, typeName);
-		//				}
-		//				else
-		//				{
-		//					//	Names only.
-		//					lvShapes.Items.Add(name);
-		//				}
-		//				index++;
-		//			}
-		//		}
-		//	}
-		//}
-		////*-----------------------------------------------------------------------*
 
 		//*************************************************************************
 		//*	Public																																*
@@ -871,14 +1159,27 @@ namespace Scaffold
 			chkAlign.CheckedChanged += chkAlign_CheckedChanged;
 			chkDistribute.CheckedChanged += chkDistribute_CheckedChanged;
 			lvShapes.ItemSelectionChanged += lvShapes_ItemSelectionChanged;
-			//txtSlide.TextChanged += txtSlide_TextChanged;
+			optAlignBottom.CheckedChanged += optAlignBottom_CheckedChanged;
+			optAlignCenter.CheckedChanged += optAlignCenter_CheckedChanged;
+			optAlignLeft.CheckedChanged += optAlignLeft_CheckedChanged;
+			optAlignMiddle.CheckedChanged += optAlignMiddle_CheckedChanged;
+			optAlignRight.CheckedChanged += optAlignRight_CheckedChanged;
+			optAlignTop.CheckedChanged += optAlignTop_CheckedChanged;
+			optDistributeHorz.CheckedChanged += optDistributeHorz_CheckedChanged;
+			optDistributeVert.CheckedChanged += optDistributeVert_CheckedChanged;
+			optReferenceLeft.CheckedChanged += optReferenceLeft_CheckedChanged;
+			optReferenceTop.CheckedChanged += optReferenceTop_CheckedChanged;
+			txtSlide.TextChanged += txtSlide_TextChanged;
 
+			//	Option handlers.
 			mGroupAlign = new RadioButton[]
 			{
 				optAlignTop,
+				optAlignMiddle,
+				optAlignBottom,
 				optAlignLeft,
-				optAlignRight,
-				optAlignBottom
+				optAlignCenter,
+				optAlignRight
 			};
 			mGroupDistribute = new RadioButton[]
 			{
@@ -886,6 +1187,7 @@ namespace Scaffold
 				optDistributeVert
 			};
 
+			//	List shapes.
 			ilShapes.Images.Add("msoAutoShape", ResourceMain.msoAutoShape32);
 			ilShapes.Images.Add("msoCallout", ResourceMain.msoCallout32);
 			ilShapes.Images.Add("msoCanvas", ResourceMain.msoCanvas32);
@@ -921,18 +1223,228 @@ namespace Scaffold
 		}
 		//*-----------------------------------------------------------------------*
 
-		//	TODO: !1 - Stopped here.
-		//	TODO: Re-wire form with new controls.
+		//*-----------------------------------------------------------------------*
+		//*	AlignmentReference																										*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get/Set the coordinate reference for this alignment.
+		/// </summary>
+		public AlignmentReferenceEnum AlignmentReference
+		{
+			get
+			{
+				AlignmentReferenceEnum result = AlignmentReferenceEnum.None;
+				if(optReferenceAnchor.Checked)
+				{
+					result = AlignmentReferenceEnum.Anchor;
+				}
+				else if(optReferenceLeft.Checked)
+				{
+					result = AlignmentReferenceEnum.LeftCoord;
+				}
+				else if(optReferenceTop.Checked)
+				{
+					result = AlignmentReferenceEnum.TopCoord;
+				}
+				return result;
+			}
+			set
+			{
+				switch(value)
+				{
+					case AlignmentReferenceEnum.Anchor:
+						optReferenceAnchor.Checked = true;
+						break;
+					case AlignmentReferenceEnum.LeftCoord:
+						optReferenceLeft.Checked = true;
+						break;
+					case AlignmentReferenceEnum.TopCoord:
+						optReferenceTop.Checked = true;
+						break;
+				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	AlignmentReferenceValue																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get/Set the value associated to the selected coordinate alignment
+		/// reference.
+		/// </summary>
+		public string AlignmentReferenceValue
+		{
+			get
+			{
+				string result = "";
+				if(optReferenceAnchor.Checked)
+				{
+					result = mSelectionAnchor;
+				}
+				else if(optReferenceLeft.Checked)
+				{
+					result =
+						InchesToPoints(ToFloat(txtReferenceLeft.Text)).ToString();
+				}
+				else if(optReferenceTop.Checked)
+				{
+					result =
+						InchesToPoints(ToFloat(txtReferenceTop.Text)).ToString();
+				}
+				return result;
+			}
+			set
+			{
+				if(optReferenceAnchor.Checked)
+				{
+					mSelectionAnchor = txtAnchor.Text = value;
+				}
+				else if(optReferenceLeft.Checked)
+				{
+					txtReferenceLeft.Text = PointsToInches(ToFloat(value)).ToString();
+				}
+				else if(optReferenceTop.Checked)
+				{
+					txtReferenceTop.Text = PointsToInches(ToFloat(value)).ToString();
+				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	AlignmentType																													*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get/Set the selected alignment type.
+		/// </summary>
+		public AlignmentTypeEnum AlignmentType
+		{
+			get
+			{
+				AlignmentTypeEnum result = AlignmentTypeEnum.None;
+
+				if(chkAlign.Checked)
+				{
+					if(optAlignBottom.Checked)
+					{
+						result = AlignmentTypeEnum.Bottom;
+					}
+					else if(optAlignCenter.Checked)
+					{
+						result = AlignmentTypeEnum.Center;
+					}
+					else if(optAlignLeft.Checked)
+					{
+						result = AlignmentTypeEnum.Left;
+					}
+					else if(optAlignMiddle.Checked)
+					{
+						result = AlignmentTypeEnum.Middle;
+					}
+					else if(optAlignRight.Checked)
+					{
+						result = AlignmentTypeEnum.Right;
+					}
+					else if(optAlignTop.Checked)
+					{
+						result = AlignmentTypeEnum.Top;
+					}
+				}
+				return result;
+			}
+			set
+			{
+				if(value == AlignmentTypeEnum.None)
+				{
+					chkAlign.Checked = false;
+				}
+				else
+				{
+					chkAlign.Checked = true;
+					switch(value)
+					{
+						case AlignmentTypeEnum.Bottom:
+							optAlignBottom.Checked = true;
+							break;
+						case AlignmentTypeEnum.Center:
+							optAlignCenter.Checked = true;
+							break;
+						case AlignmentTypeEnum.Left:
+							optAlignLeft.Checked = true;
+							break;
+						case AlignmentTypeEnum.Middle:
+							optAlignMiddle.Checked = true;
+							break;
+						case AlignmentTypeEnum.Right:
+							optAlignRight.Checked = true;
+							break;
+						case AlignmentTypeEnum.Top:
+							optAlignTop.Checked = true;
+							break;
+					}
+				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	DistributionType																											*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get/Set the selected distribution type.
+		/// </summary>
+		public DistributionTypeEnum DistributionType
+		{
+			get
+			{
+				DistributionTypeEnum result = DistributionTypeEnum.None;
+
+				if(chkDistribute.Checked)
+				{
+					if(optDistributeHorz.Checked)
+					{
+						result = DistributionTypeEnum.Horizontal;
+					}
+					else if(optDistributeVert.Checked)
+					{
+						result = DistributionTypeEnum.Vertical;
+					}
+				}
+				return result;
+			}
+			set
+			{
+				if(value == DistributionTypeEnum.None)
+				{
+					chkDistribute.Checked = false;
+				}
+				else
+				{
+					chkDistribute.Checked = true;
+					switch(value)
+					{
+						case DistributionTypeEnum.Horizontal:
+							optDistributeHorz.Checked = true;
+							break;
+						case DistributionTypeEnum.Vertical:
+							optDistributeVert.Checked = true;
+							break;
+					}
+				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//*	Driver																																*
 		//*-----------------------------------------------------------------------*
-		private OfficeDriver mDriver = null;
+		private PowerPointDriver mDriver = null;
 		/// <summary>
 		/// Get/Set a reference to the active PowerPoint office driver for this
 		/// instance.
 		/// </summary>
-		public OfficeDriver Driver
+		public PowerPointDriver Driver
 		{
 			get { return mDriver; }
 			set
@@ -944,18 +1456,41 @@ namespace Scaffold
 				}
 			}
 		}
-
 		//*-----------------------------------------------------------------------*
 
-		////*-----------------------------------------------------------------------*
-		////* ShapeListRequest																											*
-		////*-----------------------------------------------------------------------*
-		///// <summary>
-		///// Fired when the shape list is being requested for a selected sheet
-		///// index.
-		///// </summary>
-		//public event ShapeListEventHandler ShapeListRequest;
-		////*-----------------------------------------------------------------------*
+		//*-----------------------------------------------------------------------*
+		//*	SelectedShapeNames																										*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get a reference to the list of selected object names.
+		/// </summary>
+		public List<string> SelectedShapeNames
+		{
+			get
+			{
+				List<string> result = new List<string>();
+
+				foreach(ListViewItem listItem in lvShapes.SelectedItems)
+				{
+					result.Add((string)listItem.Tag);
+				}
+				return result;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//*	SlideIndex																														*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get/Set the selected slide index.
+		/// </summary>
+		public int SlideIndex
+		{
+			get { return Convert.ToInt32(txtSlide.Value); }
+			set { txtSlide.Value = value; }
+		}
+		//*-----------------------------------------------------------------------*
 
 	}
 	//*-------------------------------------------------------------------------*

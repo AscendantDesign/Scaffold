@@ -121,20 +121,38 @@
   <data name="AlignBottom32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AlignBottom32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AlignBottomGray32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AlignBottomGray32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AlignCenter32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AlignCenter32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlignCenterGray32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AlignCenterGray32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AlignLeft32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AlignLeft32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AlignLeftGray32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AlignLeftGray32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AlignMiddle32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AlignMiddle32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlignMiddleGray32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AlignMiddleGray32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AlignRight32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AlignRight32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AlignRightGray32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AlignRightGray32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AlignTop32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AlignTop32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AlignTopGray32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\AlignTopGray32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AlphaCheckerLarge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\AlphaCheckerLarge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +205,10 @@
     <value>#000000</value>
     <comment>Text color in writing controls such as textboxes.</comment>
   </data>
+  <data name="colorTextWritingDisabled" xml:space="preserve">
+    <value>#999999</value>
+    <comment>Text color of disabled writing controls.</comment>
+  </data>
   <data name="colorTitleBackgroundNormal" xml:space="preserve">
     <value>#404040</value>
     <comment>Background color of the title bar in normal conditions.</comment>
@@ -214,8 +236,14 @@
   <data name="DistributeHorz32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\DistributeHorz32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DistributeHorzGray32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DistributeHorzGray32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DistributeVert32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\DistributeVert32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DistributeVertGray32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DistributeVertGray32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DrawToolCircle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\DrawToolCircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -209,6 +209,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlignmentReferenceEnum.cs" />
+    <Compile Include="AlignmentTypeEnum.cs" />
     <Compile Include="AnswerItem.cs" />
     <Compile Include="CefControlExtensions.cs" />
     <Compile Include="CollapsibleSplitter.cs">
@@ -222,6 +224,7 @@
     <Compile Include="ContextStack.cs" />
     <Compile Include="DarkThemeMenuColorTable.cs" />
     <Compile Include="BrowserDriver.cs" />
+    <Compile Include="DistributionTypeEnum.cs" />
     <Compile Include="Flipbook.cs" />
     <Compile Include="FlipbookListControl.cs">
       <SubType>Component</SubType>
@@ -334,6 +337,7 @@
     <Compile Include="NamedBuffer.cs" />
     <Compile Include="NamedObject.cs" />
     <Compile Include="NamedStringCollection.cs" />
+    <Compile Include="NameValue.cs" />
     <Compile Include="NodeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -341,7 +345,7 @@
       <DependentUpon>NodeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="NoirRenderer2.cs" />
-    <Compile Include="OfficeDriver.cs" />
+    <Compile Include="PowerPointDriver.cs" />
     <Compile Include="PanelWindowContent.cs" />
     <Compile Include="PanelWindowControl.cs">
       <SubType>UserControl</SubType>
@@ -615,6 +619,14 @@
     <None Include="Resources\msoTable32.png" />
     <None Include="Resources\msoTextBox32.png" />
     <None Include="Resources\msoTextEffect32.png" />
+    <None Include="Resources\DistributeVertGray32.png" />
+    <None Include="Resources\AlignBottomGray32.png" />
+    <None Include="Resources\AlignCenterGray32.png" />
+    <None Include="Resources\AlignLeftGray32.png" />
+    <None Include="Resources\AlignMiddleGray32.png" />
+    <None Include="Resources\AlignRightGray32.png" />
+    <None Include="Resources\AlignTopGray32.png" />
+    <None Include="Resources\DistributeHorzGray32.png" />
     <Content Include="ScaffoldIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

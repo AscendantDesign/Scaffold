@@ -616,6 +616,25 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* InchesToPoints																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return the number of points corresponding to the specified number of
+		/// inches.
+		/// </summary>
+		/// <param name="value">
+		/// Value, in inches.
+		/// </param>
+		/// <returns>
+		/// Value, in points.
+		/// </returns>
+		public static float InchesToPoints(float value)
+		{
+			return value * 72f;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* InsideOf																															*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -677,6 +696,70 @@ namespace Scaffold
 				}
 			}
 			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* LimitLength																														*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return the length-limited version of the caller's string.
+		/// </summary>
+		/// <param name="value">
+		/// The value to limit.
+		/// </param>
+		/// <param name="length">
+		/// The maximum allowable length.
+		/// </param>
+		/// <param name="ellipsis">
+		/// Value indicating whether ellipsis will be used.
+		/// </param>
+		/// <returns>
+		/// Caller's string, limited to the specified length.
+		/// </returns>
+		public static string LimitLength(string value, int length,
+			bool ellipsis = true)
+		{
+			int sourceLength = length;
+			StringBuilder result = new StringBuilder();
+
+			if(value?.Length > 0 && length > 0)
+			{
+				if(value.Length > length)
+				{
+					if(ellipsis)
+					{
+						if(length > 3)
+						{
+							sourceLength = length - 3;
+						}
+						else
+						{
+							sourceLength = 0;
+						}
+					}
+					if(sourceLength > 0)
+					{
+						result.Append(value.Substring(0, sourceLength));
+					}
+					if(ellipsis)
+					{
+						if(length > 3)
+						{
+							result.Append("...");
+						}
+						else
+						{
+							result.Append(new string('.', length));
+						}
+					}
+				}
+				else
+				{
+					result.Append(value);
+				}
+			}
+			return result.ToString();
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -777,6 +860,25 @@ namespace Scaffold
 			}
 			g.Dispose();
 			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* PointsToInches																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return the number of inches corresponding to the specified number of
+		/// points.
+		/// </summary>
+		/// <param name="value">
+		/// Value, in points.
+		/// </param>
+		/// <returns>
+		/// Value, in inches.
+		/// </returns>
+		public static float PointsToInches(float value)
+		{
+			return value / 72f;
 		}
 		//*-----------------------------------------------------------------------*
 

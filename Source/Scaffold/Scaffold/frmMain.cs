@@ -2404,7 +2404,7 @@ namespace Scaffold
 		private void mnuFileExportDecisionTreeToPP_Click(object sender,
 			EventArgs e)
 		{
-			OfficeDriver driver = null;
+			PowerPointDriver driver = null;
 			int page = 0;
 			int pg = 0;
 			List<SocketItem> sockets = null;
@@ -2419,7 +2419,7 @@ namespace Scaffold
 				if(wizard.ShowDialog() == DialogResult.OK)
 				{
 					//	Wizard has completed. Prepare for export.
-					driver = new OfficeDriver();
+					driver = new PowerPointDriver();
 					page = 0;
 					//	Check to see the highest known page reference.
 					foreach(NodeItem node in nodeControl.Nodes)
@@ -4871,14 +4871,18 @@ namespace Scaffold
 		/// </param>
 		private void mnuToolsPPAlignment_Click(object sender, EventArgs e)
 		{
-			OfficeDriver driver = new OfficeDriver();
+			PowerPointDriver driver = new PowerPointDriver();
 			frmPPAlignment form = new frmPPAlignment();
 
 			driver.EnsurePowerPointRunning(false);
 			form.Driver = driver;
 			if(form.ShowDialog() == DialogResult.OK)
 			{
-
+				driver.AlignContent(form.SlideIndex,
+					form.AlignmentReference, form.AlignmentReferenceValue,
+					form.AlignmentType, form.DistributionType,
+					form.SelectedShapeNames);
+				MessageBox.Show("Conversion finished.", "Text And Shape Alignment");
 			}
 
 		}
@@ -4901,7 +4905,7 @@ namespace Scaffold
 			EventArgs e)
 		{
 			Dictionary<string, int> counts = null;
-			OfficeDriver driver = new OfficeDriver();
+			PowerPointDriver driver = new PowerPointDriver();
 			frmPPPlaceholderToTextbox form = null;
 			string s1 = "";
 			string s2 = "";

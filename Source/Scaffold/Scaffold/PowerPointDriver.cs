@@ -22,12 +22,12 @@ using System.Drawing;
 namespace Scaffold
 {
 	//*-------------------------------------------------------------------------*
-	//*	OfficeDriver																														*
+	//*	PowerPointDriver																												*
 	//*-------------------------------------------------------------------------*
 	/// <summary>
-	/// Office namespace isolation and functionality.
+	/// Microsoft PowerPoint namespace isolation and functionality.
 	/// </summary>
-	public class OfficeDriver
+	public class PowerPointDriver
 	{
 		//*************************************************************************
 		//*	Private																																*
@@ -127,6 +127,235 @@ namespace Scaffold
 			}
 			catch { }
 			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* AlignContent																													*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Align and/or distribute all of the named shapes in the specified
+		/// slide.
+		/// </summary>
+		/// <param name="slideIndex">
+		/// Index of the slide containing the shapes to update.
+		/// </param>
+		/// <param name="alignmentReference">
+		/// Coordinate reference type for alignment operation.
+		/// </param>
+		/// <param name="alignmentReferenceValue">
+		/// Value associated with the coordinate reference type.
+		/// </param>
+		/// <param name="alignmentType">
+		/// Type of alignment to perform. AlignmentTypeEnum.None if none.
+		/// </param>
+		/// <param name="distributionType">
+		/// TYpe of distribution to perform. DistributionTypeEnum.None if none.
+		/// </param>
+		/// <param name="shapeNames">
+		/// Collection of names of shapes to be updated by this operation.
+		/// </param>
+		public void AlignContent(int slideIndex,
+			AlignmentReferenceEnum alignmentReference,
+			string alignmentReferenceValue, AlignmentTypeEnum alignmentType,
+			DistributionTypeEnum distributionType, List<string> shapeNames)
+		{
+			float coord = 0f;
+			float coordMax = 0f;
+			float coordMin = 0f;
+			int count = 0;
+			float delta = 0f;
+			List<NameValue<float>> floatList = new List<NameValue<float>>();
+			int index = 0;
+			PowerPoint.Shape shape = null;
+			Slide slide = null;
+
+			if(slideIndex != 0 &&
+				alignmentReference != AlignmentReferenceEnum.None &&
+				alignmentReferenceValue?.Length > 0 &&
+				(alignmentType != AlignmentTypeEnum.None ||
+				distributionType != DistributionTypeEnum.None) &&
+				shapeNames?.Count > 0)
+			{
+				//	Parameters are legal.
+				slide = GetSlideBySlideIndex(ActivePresentation, slideIndex);
+				if(slide != null)
+				{
+					//	Slide found.
+					switch(alignmentReference)
+					{
+						case AlignmentReferenceEnum.Anchor:
+							shape = GetShape(slide, alignmentReferenceValue);
+							if(shape != null)
+							{
+								switch(alignmentType)
+								{
+									case AlignmentTypeEnum.Top:
+									case AlignmentTypeEnum.Middle:
+									case AlignmentTypeEnum.Bottom:
+										try
+										{
+											coord = shape.Top;
+										}
+										catch { }
+										break;
+									case AlignmentTypeEnum.Left:
+									case AlignmentTypeEnum.Center:
+									case AlignmentTypeEnum.Right:
+										try
+										{
+											coord = shape.Left;
+										}
+										catch { }
+										break;
+								}
+							}
+							break;
+						case AlignmentReferenceEnum.LeftCoord:
+						case AlignmentReferenceEnum.TopCoord:
+							coord = ToFloat(alignmentReferenceValue);
+							break;
+					}
+					//	Align the shapes.
+					if(alignmentType != AlignmentTypeEnum.None)
+					{
+						switch(alignmentType)
+						{
+							case AlignmentTypeEnum.Bottom:
+								foreach(string shapeName in shapeNames)
+								{
+									shape = GetShape(slide, shapeName);
+									if(shape != null)
+									{
+										try
+										{
+											shape.Top = coord - shape.Height;
+										}
+										catch { }
+									}
+								}
+								break;
+							case AlignmentTypeEnum.Center:
+								foreach(string shapeName in shapeNames)
+								{
+									shape = GetShape(slide, shapeName);
+									if(shape != null)
+									{
+										try
+										{
+											shape.Left = coord - (shape.Width / 2f);
+										}
+										catch { }
+									}
+								}
+								break;
+							case AlignmentTypeEnum.Left:
+								foreach(string shapeName in shapeNames)
+								{
+									shape = GetShape(slide, shapeName);
+									if(shape != null)
+									{
+										try
+										{
+											shape.Left = coord;
+										}
+										catch { }
+									}
+								}
+								break;
+							case AlignmentTypeEnum.Middle:
+								foreach(string shapeName in shapeNames)
+								{
+									shape = GetShape(slide, shapeName);
+									if(shape != null)
+									{
+										try
+										{
+											shape.Top = coord - (shape.Height / 2f);
+										}
+										catch { }
+									}
+								}
+								break;
+							case AlignmentTypeEnum.Right:
+								foreach(string shapeName in shapeNames)
+								{
+									shape = GetShape(slide, shapeName);
+									if(shape != null)
+									{
+										try
+										{
+											shape.Left = coord - shape.Width;
+										}
+										catch { }
+									}
+								}
+								break;
+							case AlignmentTypeEnum.Top:
+								foreach(string shapeName in shapeNames)
+								{
+									shape = GetShape(slide, shapeName);
+									if(shape != null)
+									{
+										try
+										{
+											shape.Top = coord;
+										}
+										catch { }
+									}
+								}
+								break;
+						}
+					}
+					//	Distribute the shapes.
+					if(distributionType != DistributionTypeEnum.None)
+					{
+						floatList.Clear();
+						foreach(string shapeName in shapeNames)
+						{
+							shape = GetShape(slide, shapeName);
+							if(shape != null)
+							{
+								switch(distributionType)
+								{
+									case DistributionTypeEnum.Horizontal:
+										floatList.Add(
+											new NameValue<float>(shapeName, shape.Left));
+										break;
+									case DistributionTypeEnum.Vertical:
+										floatList.Add(
+											new NameValue<float>(shapeName, shape.Top));
+										break;
+								}
+							}
+						}
+						if(floatList.Count > 1)
+						{
+							floatList.Sort((x, y) => x.Value.CompareTo(y.Value));
+							coordMin = floatList[0].Value;
+							coordMax = floatList[floatList.Count - 1].Value;
+							delta = ((coordMax - coordMin) / (float)(shapeNames.Count - 1));
+							count = floatList.Count;
+							for(index = 0; index < count; index++)
+							{
+								shape = GetShape(slide, floatList[index].Name);
+								if(shape != null)
+								{
+									switch(distributionType)
+									{
+										case DistributionTypeEnum.Horizontal:
+											shape.Left = coordMin + (delta * (float)index);
+											break;
+										case DistributionTypeEnum.Vertical:
+											shape.Top = coordMin + (delta * (float)index);
+											break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -503,6 +732,64 @@ namespace Scaffold
 				if(shape != null)
 				{
 					result = shape.PlaceholderFormat.Type;
+				}
+			}
+			catch { }
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* GetShape																															*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return the shape referenced by ordinal index.
+		/// </summary>
+		/// <param name="slide">
+		/// Reference to the slide containing the shape.
+		/// </param>
+		/// <param name="shapeIndex">
+		/// Ordinal index of the shape within the collection.
+		/// </param>
+		/// <returns>
+		/// Reference to the referenced shape, if found. Otherwise, null.
+		/// </returns>
+		public static PowerPoint.Shape GetShape(Slide slide, int shapeIndex)
+		{
+			PowerPoint.Shape result = null;
+
+			try
+			{
+				if(slide != null && shapeIndex > 0 && shapeIndex <= slide.Shapes.Count)
+				{
+					result = slide.Shapes[shapeIndex];
+				}
+			}
+			catch { }
+			return result;
+		}
+		//*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+		/// <summary>
+		/// Return the shape referenced by name.
+		/// </summary>
+		/// <param name="slide">
+		/// Reference to the slide containing the shape.
+		/// </param>
+		/// <param name="shapeName">
+		/// Name of the shape to find.
+		/// </param>
+		/// <returns>
+		/// Reference to the referenced shape, if found. Otherwise, null.
+		/// </returns>
+		public static PowerPoint.Shape GetShape(Slide slide, string shapeName)
+		{
+			PowerPoint.Shape result = null;
+
+			try
+			{
+				if(slide != null && shapeName?.Length > 0)
+				{
+					result = slide.Shapes[shapeName];
 				}
 			}
 			catch { }

@@ -73,9 +73,29 @@ namespace Scaffold {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AlignBottomGray32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignBottomGray32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AlignCenter32 {
             get {
                 object obj = ResourceManager.GetObject("AlignCenter32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlignCenterGray32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignCenterGray32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +113,29 @@ namespace Scaffold {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AlignLeftGray32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignLeftGray32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AlignMiddle32 {
             get {
                 object obj = ResourceManager.GetObject("AlignMiddle32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlignMiddleGray32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignMiddleGray32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +153,29 @@ namespace Scaffold {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AlignRightGray32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignRightGray32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AlignTop32 {
             get {
                 object obj = ResourceManager.GetObject("AlignTop32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlignTopGray32 {
+            get {
+                object obj = ResourceManager.GetObject("AlignTopGray32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -252,6 +312,15 @@ namespace Scaffold {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to #999999.
+        /// </summary>
+        internal static string colorTextWritingDisabled {
+            get {
+                return ResourceManager.GetString("colorTextWritingDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to #404040.
         /// </summary>
         internal static string colorTitleBackgroundNormal {
@@ -318,9 +387,29 @@ namespace Scaffold {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DistributeHorzGray32 {
+            get {
+                object obj = ResourceManager.GetObject("DistributeHorzGray32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DistributeVert32 {
             get {
                 object obj = ResourceManager.GetObject("DistributeVert32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DistributeVertGray32 {
+            get {
+                object obj = ResourceManager.GetObject("DistributeVertGray32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
