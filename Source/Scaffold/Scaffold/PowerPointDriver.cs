@@ -838,6 +838,81 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* GetSlideIndicesInScope																								*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return the index values of all slides in the specified scope.
+		/// </summary>
+		/// <param name="presentation">
+		/// Reference to the presentation containing the slides to inspect.
+		/// </param>
+		/// <param name="slideScope">
+		/// Scope of slides to identify.
+		/// </param>
+		/// <param name="slideScopeValue">
+		/// Value to use in the case that slideScope is SlideScopeEnum.Custom.
+		/// </param>
+		/// <returns>
+		/// List of integer values identifying the indexes of the specified slides.
+		/// </returns>
+		public static List<int> GetSlideIndicesInScope(Presentation presentation,
+			SlideScopeEnum slideScope, string slideScopeValue)
+		{
+			List<int> result = new List<int>();
+			int slideIndex = 0;
+
+			if(presentation != null && presentation.Slides.Count > 0)
+			{
+				switch(slideScope)
+				{
+					case SlideScopeEnum.All:
+						foreach(Slide slideItem in presentation.Slides)
+						{
+							try
+							{
+								result.Add(slideItem.SlideIndex);
+							}
+							catch { }
+						}
+						break;
+					case SlideScopeEnum.Current:
+						try
+						{
+							slideIndex =
+								presentation.Application.ActiveWindow.View.Slide.SlideIndex;
+						}
+						catch { }
+						if(slideIndex != 0)
+						{
+							result.Add(slideIndex);
+						}
+						break;
+					case SlideScopeEnum.Custom:
+						//	In this version, custom can only be a certain number.
+						slideIndex = ToInt(slideScopeValue);
+						if(slideIndex != 0)
+						{
+							foreach(Slide slideItem in presentation.Slides)
+							{
+								try
+								{
+									if(slideItem.SlideIndex == slideIndex)
+									{
+										result.Add(slideIndex);
+										break;
+									}
+								}
+								catch { }
+							}
+						}
+						break;
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* GetText																																*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -1043,50 +1118,12 @@ namespace Scaffold
 			SizeF size = SizeF.Empty;
 			SizeF sizeRef = SizeF.Empty;
 			Slide slide = null;
-			int slideIndex = 0;
-			List<int> slideIndices = new List<int>();
+			List<int> slideIndices = null;
 
 			if(presentation != null && presentation.Slides.Count > 0)
 			{
-				switch(slideScope)
-				{
-					case SlideScopeEnum.All:
-						foreach(Slide slideItem in presentation.Slides)
-						{
-							try
-							{
-								slideIndices.Add(slideItem.SlideIndex);
-							}
-							catch { }
-						}
-						break;
-					case SlideScopeEnum.Current:
-						slideIndex = ActiveSlideIndex;
-						if(slideIndex != 0)
-						{
-							slideIndices.Add(slideIndex);
-						}
-						break;
-					case SlideScopeEnum.Custom:
-						//	In this version, custom can only be a certain number.
-						slideIndex = ToInt(slideScopeText);
-						if(slideIndex != 0)
-						{
-							foreach(Slide slideItem in presentation.Slides)
-							{
-								try
-								{
-									if(slideItem.SlideIndex == slideIndex)
-									{
-										slideIndices.Add(slideIndex);
-										break;
-									}
-								}
-								catch { }
-							}
-						}
-						break;
-				}
+				slideIndices = GetSlideIndicesInScope(presentation,
+					slideScope, slideScopeText);
 				foreach(int slideIndexItem in slideIndices)
 				{
 					//	Convert on each specified slide.
@@ -1106,12 +1143,7 @@ namespace Scaffold
 								count = slide.Shapes.Count;
 								for(index = 1; index <= count; index++)
 								{
-									shape = null;
-									try
-									{
-										shape = slide.Shapes[index];
-									}
-									catch { }
+									shape = GetShape(slide, index);
 									if(shape != null && ShapeIsContentPlaceholder(shape) &&
 										!ShapeHasChart(shape) &&
 										!ShapeHasDiagram(shape) && !ShapeHasDiagramNode(shape) &&
@@ -1167,12 +1199,7 @@ namespace Scaffold
 								count = slide.Shapes.Count;
 								for(index = 1; index <= count; index++)
 								{
-									shape = null;
-									try
-									{
-										shape = slide.Shapes[index];
-									}
-									catch { }
+									shape = GetShape(slide, index);
 									if(shape != null &&
 										(GetPlaceholderContainedType(shape) == null &&
 										GetPlaceholderType(shape) == null &&
@@ -1230,6 +1257,86 @@ namespace Scaffold
 			result.Add("Slides", countSlide);
 			result.Add("Shapes", countShape);
 			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* RemoveBullet																													*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Remove bullet formatting from the specified areas of the presentation.
+		/// </summary>
+		/// <param name="slideScope">
+		/// Scope of slides to handle.
+		/// </param>
+		/// <param name="slideScopeText">
+		/// An index value to process when slideScope is SlideScopeEnum.Custom.
+		/// </param>
+		/// <param name="selectedOnly">
+		/// Handle only selected items when true. Handle all items with bullet
+		/// formatting when false.
+		/// </param>
+		/// <param name="selectedShapeNames">
+		/// List of shape names to update when selectedOnly is true.
+		/// </param>
+		public Dictionary<string, int> RemoveBullet(
+			SlideScopeEnum slideScope, string slideScopeText,
+			bool selectedOnly = false, List<string> selectedShapeNames = null)
+		{
+			int countedSlide = 0;
+			int countShape = 0;
+			int countSlide = 0;
+			Dictionary<string, int> counts = new Dictionary<string, int>();
+			Presentation presentation = null;
+			Slide slide = null;
+			List<int> slideIndices = null;
+
+			if(slideScope != SlideScopeEnum.None &&
+				(slideScope != SlideScopeEnum.Custom || slideScopeText?.Length > 0) &&
+				(selectedOnly == false || selectedShapeNames.Count > 0))
+			{
+				presentation = ActivePresentation;
+				if(presentation != null && presentation.Slides.Count > 0)
+				{
+					slideIndices = GetSlideIndicesInScope(presentation,
+						slideScope, slideScopeText);
+					foreach(int slideIndexItem in slideIndices)
+					{
+						slide = GetSlideBySlideIndex(presentation, slideIndexItem);
+						if(slide != null)
+						{
+							foreach(PowerPoint.Shape shape in slide.Shapes)
+							{
+								try
+								{
+									if(shape.HasTextFrame == MsoTriState.msoTrue &&
+										shape.TextFrame.TextRange.ParagraphFormat.Bullet.
+										Visible == MsoTriState.msoTrue)
+									{
+										if(!selectedOnly ||
+											selectedShapeNames.Exists(x => x == shape.Name))
+										{
+											//	Remove the bullet formatting on this item.
+											if(countedSlide != slideIndexItem)
+											{
+												countSlide++;
+												countedSlide = slideIndexItem;
+											}
+											shape.TextFrame.TextRange.ParagraphFormat.Bullet.
+												Visible = MsoTriState.msoFalse;
+											countShape++;
+										}
+									}
+								}
+								catch { }
+							}
+						}
+					}
+				}
+			}
+			counts.Add("Slides", countSlide);
+			counts.Add("Shapes", countShape);
+			return counts;
 		}
 		//*-----------------------------------------------------------------------*
 

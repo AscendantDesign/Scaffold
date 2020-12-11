@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//using static Scaffold.ScaffoldNodesUtil;
+using static Scaffold.ScaffoldNodesUtil;
 
 namespace Scaffold
 {
@@ -39,6 +39,7 @@ namespace Scaffold
 		private Label lblTitle = null;
 		protected MenuStrip menuThemedForm = null;
 		private Panel pnlClose = null;
+		private Panel pnlForm = null;
 		private Panel pnlIcon = null;
 		protected Panel pnlMain = null;
 		private Panel pnlMaximize = null;
@@ -55,154 +56,180 @@ namespace Scaffold
 		/// </summary>
 		private void InitializeComponent()
 		{
-			pnlTitle = new System.Windows.Forms.Panel();
-			pnlClose = new System.Windows.Forms.Panel();
-			pnlMaximize = new System.Windows.Forms.Panel();
-			pnlMinimize = new System.Windows.Forms.Panel();
-			lblTitle = new System.Windows.Forms.Label();
-			pnlIcon = new System.Windows.Forms.Panel();
-			pnlMain = new System.Windows.Forms.Panel();
-			menuThemedForm = new System.Windows.Forms.MenuStrip();
-			statusThemedForm = new System.Windows.Forms.StatusStrip();
-			statMessage = new System.Windows.Forms.ToolStripStatusLabel();
-			pnlTitle.SuspendLayout();
-			pnlMain.SuspendLayout();
-			statusThemedForm.SuspendLayout();
-			SuspendLayout();
+			this.pnlTitle = new System.Windows.Forms.Panel();
+			this.pnlClose = new System.Windows.Forms.Panel();
+			this.pnlMaximize = new System.Windows.Forms.Panel();
+			this.pnlMinimize = new System.Windows.Forms.Panel();
+			this.lblTitle = new System.Windows.Forms.Label();
+			this.pnlIcon = new System.Windows.Forms.Panel();
+			this.pnlForm = new System.Windows.Forms.Panel();
+			this.statusThemedForm = new System.Windows.Forms.StatusStrip();
+			this.statMessage = new System.Windows.Forms.ToolStripStatusLabel();
+			this.menuThemedForm = new System.Windows.Forms.MenuStrip();
+			this.pnlMain = new System.Windows.Forms.Panel();
+			this.pnlTitle.SuspendLayout();
+			this.pnlForm.SuspendLayout();
+			this.statusThemedForm.SuspendLayout();
+			this.SuspendLayout();
 			// 
 			// pnlTitle
 			// 
-			pnlTitle.BackColor =
-				Scaffold.ScaffoldNodesUtil.FromHex(
-					ResourceMain.colorTitleBackgroundNormal);
-			pnlTitle.Controls.Add(pnlClose);
-			pnlTitle.Controls.Add(pnlMaximize);
-			pnlTitle.Controls.Add(pnlMinimize);
-			pnlTitle.Controls.Add(lblTitle);
-			pnlTitle.Controls.Add(pnlIcon);
-			pnlTitle.Dock = DockStyle.Top;
-			pnlTitle.Location = new Point(0, 0);
-			pnlTitle.Margin = new Padding(0);
-			pnlTitle.Name = "pnlTitle";
-			pnlTitle.Size = new Size(800, 48);
-			pnlTitle.TabIndex = 0;
+			this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.pnlTitle.Controls.Add(this.pnlClose);
+			this.pnlTitle.Controls.Add(this.pnlMaximize);
+			this.pnlTitle.Controls.Add(this.pnlMinimize);
+			this.pnlTitle.Controls.Add(this.lblTitle);
+			this.pnlTitle.Controls.Add(this.pnlIcon);
+			this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+			this.pnlTitle.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlTitle.Name = "pnlTitle";
+			this.pnlTitle.Size = new System.Drawing.Size(800, 48);
+			this.pnlTitle.TabIndex = 0;
 			// 
 			// pnlClose
 			// 
-			pnlClose.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
-			pnlClose.BackgroundImage = global::Scaffold.ResourceMain.WinControlX0;
-			pnlClose.BackgroundImageLayout = ImageLayout.Center;
-			pnlClose.Location = new Point(752, 0);
-			pnlClose.Margin = new Padding(0);
-			pnlClose.Name = "pnlClose";
-			pnlClose.Size = new Size(48, 48);
-			pnlClose.TabIndex = 4;
+			this.pnlClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pnlClose.BackgroundImage = global::Scaffold.ResourceMain.WinControlX0;
+			this.pnlClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pnlClose.Location = new System.Drawing.Point(752, 0);
+			this.pnlClose.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlClose.Name = "pnlClose";
+			this.pnlClose.Size = new System.Drawing.Size(48, 48);
+			this.pnlClose.TabIndex = 4;
 			// 
 			// pnlMaximize
 			// 
-			pnlMaximize.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
-			pnlMaximize.BackgroundImage = global::Scaffold.ResourceMain.WinControlM0;
-			pnlMaximize.BackgroundImageLayout = ImageLayout.Center;
-			pnlMaximize.Location = new Point(704, 0);
-			pnlMaximize.Margin = new Padding(0);
-			pnlMaximize.Name = "pnlMaximize";
-			pnlMaximize.Size = new Size(48, 48);
-			pnlMaximize.TabIndex = 3;
+			this.pnlMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pnlMaximize.BackgroundImage = global::Scaffold.ResourceMain.WinControlM0;
+			this.pnlMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pnlMaximize.Location = new System.Drawing.Point(704, 0);
+			this.pnlMaximize.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlMaximize.Name = "pnlMaximize";
+			this.pnlMaximize.Size = new System.Drawing.Size(48, 48);
+			this.pnlMaximize.TabIndex = 3;
 			// 
 			// pnlMinimize
 			// 
-			pnlMinimize.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
-			pnlMinimize.BackgroundImage = global::Scaffold.ResourceMain.WinControlH0;
-			pnlMinimize.BackgroundImageLayout = ImageLayout.Center;
-			pnlMinimize.Location = new Point(656, 0);
-			pnlMinimize.Margin = new Padding(0);
-			pnlMinimize.Name = "pnlMinimize";
-			pnlMinimize.Size = new Size(48, 48);
-			pnlMinimize.TabIndex = 2;
+			this.pnlMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pnlMinimize.BackgroundImage = global::Scaffold.ResourceMain.WinControlH0;
+			this.pnlMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pnlMinimize.Location = new System.Drawing.Point(656, 0);
+			this.pnlMinimize.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlMinimize.Name = "pnlMinimize";
+			this.pnlMinimize.Size = new System.Drawing.Size(48, 48);
+			this.pnlMinimize.TabIndex = 2;
 			// 
 			// lblTitle
 			// 
-			lblTitle.AutoSize = true;
-			lblTitle.ForeColor = Color.DarkGray;
-			lblTitle.Location = new Point(57, 14);
-			lblTitle.Name = "lblTitle";
-			lblTitle.Size = new Size(202, 20);
-			lblTitle.TabIndex = 1;
-			lblTitle.Text = "Form Title";
+			this.lblTitle.AutoSize = true;
+			this.lblTitle.ForeColor = System.Drawing.Color.DarkGray;
+			this.lblTitle.Location = new System.Drawing.Point(57, 14);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(85, 20);
+			this.lblTitle.TabIndex = 1;
+			this.lblTitle.Text = "Form Title";
 			// 
 			// pnlIcon
 			// 
-			pnlIcon.BackgroundImage = global::Scaffold.ResourceMain.ScaffoldIcon24;
-			pnlIcon.BackgroundImageLayout = ImageLayout.Center;
-			pnlIcon.Location = new Point(12, 12);
-			pnlIcon.Margin = new Padding(0);
-			pnlIcon.Name = "pnlIcon";
-			pnlIcon.Size = new Size(24, 24);
-			pnlIcon.TabIndex = 0;
+			this.pnlIcon.BackgroundImage = global::Scaffold.ResourceMain.ScaffoldIcon24;
+			this.pnlIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pnlIcon.Location = new System.Drawing.Point(12, 12);
+			this.pnlIcon.Margin = new System.Windows.Forms.Padding(0);
+			this.pnlIcon.Name = "pnlIcon";
+			this.pnlIcon.Size = new System.Drawing.Size(24, 24);
+			this.pnlIcon.TabIndex = 0;
 			// 
-			// pnlMain
+			// pnlForm
 			// 
-			pnlMain.Controls.Add(statusThemedForm);
-			pnlMain.Controls.Add(menuThemedForm);
-			pnlMain.Dock = DockStyle.Fill;
-			pnlMain.Location = new Point(0, 48);
-			pnlMain.Name = "pnlMain";
-			pnlMain.Size = new Size(800, 432);
-			pnlMain.TabIndex = 1;
-			// 
-			// menuThemedForm
-			// 
-			menuThemedForm.ImageScalingSize = new Size(20, 20);
-			menuThemedForm.Location = new Point(0, 0);
-			menuThemedForm.Name = "menuThemedForm";
-			menuThemedForm.Size = new Size(800, 24);
-			menuThemedForm.TabIndex = 0;
-			menuThemedForm.Text = "menuThemedForm";
+			this.pnlForm.Controls.Add(this.pnlMain);
+			this.pnlForm.Controls.Add(this.statusThemedForm);
+			this.pnlForm.Controls.Add(this.menuThemedForm);
+			this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlForm.Location = new System.Drawing.Point(0, 48);
+			this.pnlForm.Name = "pnlForm";
+			this.pnlForm.Size = new System.Drawing.Size(800, 432);
+			this.pnlForm.TabIndex = 1;
 			// 
 			// statusThemedForm
 			// 
-			statusThemedForm.BackColor =
-				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorBackground);
-			statusThemedForm.ImageScalingSize = new Size(20, 20);
-			statusThemedForm.Items.AddRange(new ToolStripItem[] {
-				statMessage});
-			statusThemedForm.Location = new Point(0, 406);
-			statusThemedForm.Name = "statusThemedForm";
-			statusThemedForm.Size = new Size(800, 26);
-			statusThemedForm.TabIndex = 1;
-			statusThemedForm.Text = "statusThemedForm";
+			this.statusThemedForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+			this.statusThemedForm.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.statusThemedForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statMessage});
+			this.statusThemedForm.Location = new System.Drawing.Point(0, 406);
+			this.statusThemedForm.Name = "statusThemedForm";
+			this.statusThemedForm.Size = new System.Drawing.Size(800, 26);
+			this.statusThemedForm.TabIndex = 1;
+			this.statusThemedForm.Text = "statusThemedForm";
 			// 
 			// statMessage
 			// 
-			statMessage.ForeColor =
-				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorTextNormal);
-			statMessage.Name = "statMessage";
-			statMessage.Size = new Size(59, 20);
-			statMessage.Text = "Ready...";
+			this.statMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+			this.statMessage.Name = "statMessage";
+			this.statMessage.Size = new System.Drawing.Size(59, 20);
+			this.statMessage.Text = "Ready...";
 			// 
-			// ThemedFormBase
+			// menuThemedForm
 			// 
-			AutoScaleDimensions = new SizeF(10F, 20F);
-			AutoScaleMode = AutoScaleMode.Font;
-			BackColor =
-				Scaffold.ScaffoldNodesUtil.FromHex(ResourceMain.colorBackground);
-			ClientSize = new System.Drawing.Size(800, 480);
-			Controls.Add(pnlMain);
-			Controls.Add(pnlTitle);
-			Font = new Font("Microsoft Sans Serif", 10.2F,
-				FontStyle.Regular, GraphicsUnit.Point, (byte)0);
-			FormBorderStyle = FormBorderStyle.None;
-			MainMenuStrip = menuThemedForm;
-			Margin = new Padding(4);
-			Name = "ThemedFormBase";
-			Text = "ThemedFormBase";
-			pnlTitle.ResumeLayout(false);
-			pnlTitle.PerformLayout();
-			pnlMain.ResumeLayout(false);
-			pnlMain.PerformLayout();
-			statusThemedForm.ResumeLayout(false);
-			statusThemedForm.PerformLayout();
-			ResumeLayout(false);
+			this.menuThemedForm.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.menuThemedForm.Location = new System.Drawing.Point(0, 0);
+			this.menuThemedForm.Name = "menuThemedForm";
+			this.menuThemedForm.Size = new System.Drawing.Size(800, 30);
+			this.menuThemedForm.TabIndex = 0;
+			this.menuThemedForm.Text = "menuThemedForm";
+			// 
+			// pnlMain
+			// 
+			this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlMain.Location = new System.Drawing.Point(0, 30);
+			this.pnlMain.Name = "pnlMain";
+			this.pnlMain.Size = new System.Drawing.Size(800, 376);
+			this.pnlMain.TabIndex = 1;
+			// 
+			// ThemedForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+			this.ClientSize = new System.Drawing.Size(800, 480);
+			this.Controls.Add(this.pnlForm);
+			this.Controls.Add(this.pnlTitle);
+			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.MainMenuStrip = this.menuThemedForm;
+			this.Margin = new System.Windows.Forms.Padding(4);
+			this.Name = "ThemedForm";
+			this.Text = "ThemedFormBase";
+			this.pnlTitle.ResumeLayout(false);
+			this.pnlTitle.PerformLayout();
+			this.pnlForm.ResumeLayout(false);
+			this.pnlForm.PerformLayout();
+			this.statusThemedForm.ResumeLayout(false);
+			this.statusThemedForm.PerformLayout();
+			this.ResumeLayout(false);
+
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* pnlMain_Paint																													*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The main panel is being painted.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Paint event arguments.
+		/// </param>
+		private void pnlMain_Paint(object sender, PaintEventArgs e)
+		{
+			Graphics g = e.Graphics;
+			Pen pen = new Pen(FromHex("#505050"), 2f);
+
+			g.DrawRectangle(pen, new Rectangle(0, 0, pnlMain.Width, pnlMain.Height));
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -622,6 +649,7 @@ namespace Scaffold
 			pnlClose.MouseClick += OnPanelCloseMouseClick;
 			pnlClose.MouseEnter += OnPanelCloseMouseEnter;
 			pnlClose.MouseLeave += OnPanelCloseMouseLeave;
+			pnlMain.Paint += pnlMain_Paint;
 			pnlMaximize.MouseClick += OnPanelMaximizeMouseClick;
 			pnlMaximize.MouseEnter += OnPanelMaximizeMouseEnter;
 			pnlMaximize.MouseLeave += OnPanelMaximizeMouseLeave;

@@ -814,6 +814,53 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* LoadImageListMsoShapeType																							*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Load the provided image list with entries corresponding to the
+		/// enumeration entries of MsoShapeType.
+		/// </summary>
+		/// <param name="imageList">
+		/// Reference to the image list to populate.
+		/// </param>
+		public static void LoadImageListMsoShapeType(ImageList imageList)
+		{
+			imageList.Images.Add("msoAutoShape", ResourceMain.msoAutoShape32);
+			imageList.Images.Add("msoCallout", ResourceMain.msoCallout32);
+			imageList.Images.Add("msoCanvas", ResourceMain.msoCanvas32);
+			imageList.Images.Add("msoChart", ResourceMain.msoChart32);
+			imageList.Images.Add("msoComment", ResourceMain.msoComment32);
+			imageList.Images.Add("msoContentApp", ResourceMain.msoContentApp32);
+			imageList.Images.Add("msoDiagram", ResourceMain.msoDiagram32);
+			imageList.Images.Add("msoEmbeddedOLEObject",
+				ResourceMain.msoEmbeddedOLEObject32);
+			imageList.Images.Add("msoFormControl", ResourceMain.msoFormControl32);
+			imageList.Images.Add("msoFreeform", ResourceMain.msoFreeform32);
+			imageList.Images.Add("msoGroup", ResourceMain.msoGroup32);
+			imageList.Images.Add("msoInk", ResourceMain.msoInk32);
+			imageList.Images.Add("msoInkComment", ResourceMain.msoInkComment32);
+			imageList.Images.Add("msoLinkedOLEObject",
+				ResourceMain.msoLinkedOLEObject32);
+			imageList.Images.Add("msoLinkedPicture",
+				ResourceMain.msoLinkedPicture32);
+			imageList.Images.Add("msoMedia", ResourceMain.msoMedia32);
+			imageList.Images.Add("msoOLEControlObject",
+				ResourceMain.msoOLEControlObject32);
+			imageList.Images.Add("msoPicture", ResourceMain.msoPicture32);
+			imageList.Images.Add("msoPlaceholder", ResourceMain.msoPlaceholder32);
+			imageList.Images.Add("msoScriptAnchor", ResourceMain.msoScriptAnchor32);
+			imageList.Images.Add("msoShapeTypeMixed",
+				ResourceMain.msoShapeTypeMixed32);
+			imageList.Images.Add("msoSlicer", ResourceMain.msoSlicer32);
+			imageList.Images.Add("msoSmartArt", ResourceMain.msoSmartArt32);
+			imageList.Images.Add("msoTable", ResourceMain.msoTable32);
+			imageList.Images.Add("msoTextBox", ResourceMain.msoTextBox32);
+			imageList.Images.Add("msoTextEffect", ResourceMain.msoTextEffect32);
+			imageList.Images.Add("msoWebVideo", ResourceMain.msoWebVideo32);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	MeasureString																													*
 		//*-----------------------------------------------------------------------*
 		/// <summary>

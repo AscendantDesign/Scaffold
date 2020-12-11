@@ -4884,7 +4884,6 @@ namespace Scaffold
 					form.SelectedShapeNames);
 				MessageBox.Show("Conversion finished.", "Text And Shape Alignment");
 			}
-
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -4952,6 +4951,15 @@ namespace Scaffold
 		/// </param>
 		private void mnuToolsPPQuickAnimation_Click(object sender, EventArgs e)
 		{
+			PowerPointDriver driver = new PowerPointDriver();
+			frmPPAnimation form = new frmPPAnimation();
+
+			driver.EnsurePowerPointRunning(false);
+			form.Driver = driver;
+			if(form.ShowDialog() == DialogResult.OK)
+			{
+
+			}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -4970,6 +4978,26 @@ namespace Scaffold
 		/// </param>
 		private void mnuToolsPPRemoveBullet_Click(object sender, EventArgs e)
 		{
+			Dictionary<string, int> counts = null;
+			PowerPointDriver driver = new PowerPointDriver();
+			frmPPRemoveBullet form = new frmPPRemoveBullet();
+			string s1 = "";
+			string s2 = "";
+
+			driver.EnsurePowerPointRunning(false);
+			form.Driver = driver;
+			if(form.ShowDialog() == DialogResult.OK)
+			{
+				counts = driver.RemoveBullet(form.SlideScope, form.SlideScopeText,
+					form.SelectedOnly, form.SelectedShapeNames);
+				s1 = (counts["Slides"] == 1 ? "" : "s");
+				s2 = (counts["Shapes"] == 1 ? "" : "s");
+				MessageBox.Show(
+						"Conversion finished. " +
+						$"{counts["Shapes"]} shape{s2} on " +
+						$"{counts["Slides"]} slide{s1} were updated.",
+					"Remove Bullet From Paragraphs");
+			}
 		}
 		//*-----------------------------------------------------------------------*
 

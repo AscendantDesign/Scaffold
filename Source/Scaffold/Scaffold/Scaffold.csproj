@@ -225,6 +225,7 @@
     <Compile Include="DarkThemeMenuColorTable.cs" />
     <Compile Include="BrowserDriver.cs" />
     <Compile Include="DistributionTypeEnum.cs" />
+    <Compile Include="EventDelayTypeEnum.cs" />
     <Compile Include="Flipbook.cs" />
     <Compile Include="FlipbookListControl.cs">
       <SubType>Component</SubType>
@@ -292,7 +293,13 @@
     <Compile Include="frmPPAlignment.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPPAnimation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPPPlaceholderToTextbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPPRemoveBullet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPropertyAssignment.cs">
@@ -408,8 +415,14 @@
     <EmbeddedResource Include="frmPPAlignment.resx">
       <DependentUpon>frmPPAlignment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPPAnimation.resx">
+      <DependentUpon>frmPPAnimation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPPPlaceholderToTextbox.resx">
       <DependentUpon>frmPPPlaceholderToTextbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPPRemoveBullet.resx">
+      <DependentUpon>frmPPRemoveBullet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPropertyAssignment.resx">
       <DependentUpon>frmPropertyAssignment.cs</DependentUpon>
@@ -447,6 +460,9 @@
     <EmbeddedResource Include="ResourceMain.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceMain.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemedFormBase.resx">
+      <DependentUpon>ThemedFormBase.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />

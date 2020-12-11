@@ -1,3 +1,7 @@
+//	frmPPAlignment.cs
+//	Copyright(c) 2020. Ascendant Design and Training, LLC
+//	This file is licensed under the MIT License.
+//	Please see the LICENSE file in this project.
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -1188,38 +1192,7 @@ namespace Scaffold
 			};
 
 			//	List shapes.
-			ilShapes.Images.Add("msoAutoShape", ResourceMain.msoAutoShape32);
-			ilShapes.Images.Add("msoCallout", ResourceMain.msoCallout32);
-			ilShapes.Images.Add("msoCanvas", ResourceMain.msoCanvas32);
-			ilShapes.Images.Add("msoChart", ResourceMain.msoChart32);
-			ilShapes.Images.Add("msoComment", ResourceMain.msoComment32);
-			ilShapes.Images.Add("msoContentApp", ResourceMain.msoContentApp32);
-			ilShapes.Images.Add("msoDiagram", ResourceMain.msoDiagram32);
-			ilShapes.Images.Add("msoEmbeddedOLEObject",
-				ResourceMain.msoEmbeddedOLEObject32);
-			ilShapes.Images.Add("msoFormControl", ResourceMain.msoFormControl32);
-			ilShapes.Images.Add("msoFreeform", ResourceMain.msoFreeform32);
-			ilShapes.Images.Add("msoGroup", ResourceMain.msoGroup32);
-			ilShapes.Images.Add("msoInk", ResourceMain.msoInk32);
-			ilShapes.Images.Add("msoInkComment", ResourceMain.msoInkComment32);
-			ilShapes.Images.Add("msoLinkedOLEObject",
-				ResourceMain.msoLinkedOLEObject32);
-			ilShapes.Images.Add("msoLinkedPicture", ResourceMain.msoLinkedPicture32);
-			ilShapes.Images.Add("msoMedia", ResourceMain.msoMedia32);
-			ilShapes.Images.Add("msoOLEControlObject",
-				ResourceMain.msoOLEControlObject32);
-			ilShapes.Images.Add("msoPicture", ResourceMain.msoPicture32);
-			ilShapes.Images.Add("msoPlaceholder", ResourceMain.msoPlaceholder32);
-			ilShapes.Images.Add("msoScriptAnchor", ResourceMain.msoScriptAnchor32);
-			ilShapes.Images.Add("msoShapeTypeMixed",
-				ResourceMain.msoShapeTypeMixed32);
-			ilShapes.Images.Add("msoSlicer", ResourceMain.msoSlicer32);
-			ilShapes.Images.Add("msoSmartArt", ResourceMain.msoSmartArt32);
-			ilShapes.Images.Add("msoTable", ResourceMain.msoTable32);
-			ilShapes.Images.Add("msoTextBox", ResourceMain.msoTextBox32);
-			ilShapes.Images.Add("msoTextEffect", ResourceMain.msoTextEffect32);
-			ilShapes.Images.Add("msoWebVideo", ResourceMain.msoWebVideo32);
-
+			LoadImageListMsoShapeType(ilShapes);
 		}
 		//*-----------------------------------------------------------------------*
 
