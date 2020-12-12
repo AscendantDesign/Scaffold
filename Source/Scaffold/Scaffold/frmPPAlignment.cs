@@ -1128,7 +1128,7 @@ namespace Scaffold
 			base.OnLoad(e);
 			if(mDriver != null)
 			{
-				txtSlide.Text = mDriver.ActiveSlideIndex.ToString();
+				txtSlide.Value = mDriver.ActiveSlideIndex;
 			}
 			foreach(RadioButton opt in mGroupAlign)
 			{

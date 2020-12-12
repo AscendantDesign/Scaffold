@@ -4953,12 +4953,29 @@ namespace Scaffold
 		{
 			PowerPointDriver driver = new PowerPointDriver();
 			frmPPAnimation form = new frmPPAnimation();
+			PowerPointQuickAnimationEventArgs q = null;
 
 			driver.EnsurePowerPointRunning(false);
 			form.Driver = driver;
 			if(form.ShowDialog() == DialogResult.OK)
 			{
-
+				q = new PowerPointQuickAnimationEventArgs()
+				{
+					Effect = form.Effect,
+					EffectDirection = form.EffectDirection,
+					EffectDuration = form.EffectDuration,
+					EffectExit = form.EffectExit,
+					NextDelayTime = form.NextDelayTime,
+					NextDelayType = form.NextDelayType,
+					ShapeNames = form.SelectedShapeNames,
+					SlideIndex = form.SlideIndex,
+					StartDelayTime = form.StartDelayTime,
+					StartDelayType = form.StartDelayType
+				};
+				driver.AnimateObjects(q);
+				MessageBox.Show(
+					"Animations were applied.",
+					"Quick Animation");
 			}
 		}
 		//*-----------------------------------------------------------------------*

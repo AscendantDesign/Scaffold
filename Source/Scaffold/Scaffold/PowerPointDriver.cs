@@ -360,6 +360,160 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* AnimateObjects																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Animate the objects specified in the event arguments object.
+		/// </summary>
+		/// <param name="e">
+		/// PowerPoint quick animation event arguments containing information about
+		/// the animation.
+		/// </param>
+		public void AnimateObjects(PowerPointQuickAnimationEventArgs e)
+		{
+			int count = 0;
+			Effect effect = null;
+			int index = 0;
+			Presentation presentation = mPowerPoint.ActivePresentation;
+			PowerPoint.Shape shape = null;
+			Slide slide = null;
+			MsoAnimTriggerType triggerType = MsoAnimTriggerType.msoAnimTriggerNone;
+
+			if(presentation != null && e != null && e.Effect != null &&
+				e.ShapeNames?.Count > 0)
+			{
+				slide = GetSlideBySlideIndex(presentation, e.SlideIndex);
+				if(slide != null)
+				{
+					count = e.ShapeNames.Count;
+					index = 0;
+					shape = GetShape(slide, e.ShapeNames[index]);
+					if(shape != null)
+					{
+						//	First shape in order of execution.
+						effect = null;
+						switch(e.StartDelayType)
+						{
+							case EventDelayTypeEnum.AfterClick:
+								triggerType = MsoAnimTriggerType.msoAnimTriggerOnPageClick;
+								break;
+							case EventDelayTypeEnum.AfterDelay:
+								triggerType = MsoAnimTriggerType.msoAnimTriggerAfterPrevious;
+								break;
+							case EventDelayTypeEnum.Immediately:
+							case EventDelayTypeEnum.None:
+							default:
+								triggerType = MsoAnimTriggerType.msoAnimTriggerWithPrevious;
+								break;
+						}
+						try
+						{
+							effect = slide.TimeLine.MainSequence.AddEffect(Shape: shape,
+								effectId: (MsoAnimEffect)e.Effect, trigger: triggerType);
+						}
+						catch { }
+						if(effect != null)
+						{
+							try
+							{
+								effect.Timing.TriggerDelayTime = e.StartDelayTime;
+							}
+							catch { }
+							if(e.EffectDirection != null)
+							{
+								try
+								{
+									effect.EffectParameters.Direction =
+										(MsoAnimDirection)e.EffectDirection;
+								}
+								catch { }
+							}
+							try
+							{
+								effect.Timing.Duration = e.EffectDuration;
+							}
+							catch { }
+							if(e.EffectExit)
+							{
+								try
+								{
+									effect.Exit = MsoTriState.msoTrue;
+								}
+								catch { }
+							}
+						}
+					}
+					for(index = 1; index < count; index ++)
+					{
+						shape = GetShape(slide, e.ShapeNames[index]);
+						if(shape != null)
+						{
+							//	Next shape in order of execution.
+							if(index == 1)
+							{
+								switch(e.NextDelayType)
+								{
+									case EventDelayTypeEnum.AfterClick:
+										triggerType =
+											MsoAnimTriggerType.msoAnimTriggerOnPageClick;
+										break;
+									case EventDelayTypeEnum.AfterDelay:
+										triggerType =
+											MsoAnimTriggerType.msoAnimTriggerAfterPrevious;
+										break;
+									case EventDelayTypeEnum.Immediately:
+									case EventDelayTypeEnum.None:
+									default:
+										triggerType =
+											MsoAnimTriggerType.msoAnimTriggerWithPrevious;
+										break;
+								}
+							}
+							effect = null;
+							try
+							{
+								effect = slide.TimeLine.MainSequence.AddEffect(Shape: shape,
+									effectId: (MsoAnimEffect)e.Effect, trigger: triggerType);
+							}
+							catch { }
+							if(effect != null)
+							{
+								try
+								{
+									effect.Timing.TriggerDelayTime = e.NextDelayTime;
+								}
+								catch { }
+								if(e.EffectDirection != null)
+								{
+									try
+									{
+										effect.EffectParameters.Direction =
+											(MsoAnimDirection)e.EffectDirection;
+									}
+									catch { }
+								}
+								try
+								{
+									effect.Timing.Duration = e.EffectDuration;
+								}
+								catch { }
+								if(e.EffectExit)
+								{
+									try
+									{
+										effect.Exit = MsoTriState.msoTrue;
+									}
+									catch { }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	EnsurePowerPointRunning																								*
 		//*-----------------------------------------------------------------------*
 		/// <summary>

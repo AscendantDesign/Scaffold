@@ -352,6 +352,7 @@
       <DependentUpon>NodeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="NoirRenderer2.cs" />
+    <Compile Include="PowerPointAnimationEvent.cs" />
     <Compile Include="PowerPointDriver.cs" />
     <Compile Include="PanelWindowContent.cs" />
     <Compile Include="PanelWindowControl.cs">

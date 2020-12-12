@@ -16,8 +16,8 @@ using static Scaffold.ScaffoldNodesUtil;
 using static Scaffold.ScaffoldUtil;
 using System.Diagnostics;
 
-//	TODO: !1 - Stopped here.
-//	TODO: Return the values to the caller and call the PowerPoint driver.
+//	TODO: !1. Stopped here.
+//	TODO: Pre-select the current slide when loading form.
 namespace Scaffold
 {
 	//*-------------------------------------------------------------------------*
@@ -58,6 +58,8 @@ namespace Scaffold
 		private Label lblPerItem;
 		private Label lblNext;
 		private Label label1;
+
+		List<string> mSelectedNames = new List<string>();
 
 		//*-----------------------------------------------------------------------*
 		//* btnCancel_Click																												*
@@ -494,6 +496,42 @@ namespace Scaffold
 		private void lvShapes_ItemSelectionChanged(object sender,
 			ListViewItemSelectionChangedEventArgs e)
 		{
+			bool bFound = false;
+			int count = 0;
+			int index = 0;
+			string name = "";
+
+			//	Maintain a list of names in the order they were selected.
+			//	Remove any items no longer found in the selection.
+			count = mSelectedNames.Count;
+			for(index = 0; index < count; index++)
+			{
+				bFound = false;
+				name = mSelectedNames[index];
+				foreach(ListViewItem listItem in lvShapes.SelectedItems)
+				{
+					if((string)listItem.Tag == name)
+					{
+						//	The item still exists in the selection.
+						bFound = true;
+						break;
+					}
+				}
+				if(!bFound)
+				{
+					mSelectedNames.RemoveAt(index);
+					index--;
+					count--;
+				}
+			}
+			//	Add any items in the selection not found in the ordered list.
+			foreach(ListViewItem listItem in lvShapes.SelectedItems)
+			{
+				if(!mSelectedNames.Exists(x => x == (string)listItem.Tag))
+				{
+					mSelectedNames.Add((string)listItem.Tag);
+				}
+			}
 			UpdateOKEnabled();
 		}
 		//*-----------------------------------------------------------------------*
@@ -612,6 +650,10 @@ namespace Scaffold
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);
+			if(mDriver != null)
+			{
+				txtSlide.Value = mDriver.ActiveSlideIndex;
+			}
 			cmboStartType.SelectedItem = "After delay";
 			cmboEffect.SelectedItem = "Appear";
 			cmboNext.SelectedItem = "After delay";
@@ -644,96 +686,6 @@ namespace Scaffold
 
 			//	List shapes.
 			LoadImageListMsoShapeType(ilShapes);
-		}
-		//*-----------------------------------------------------------------------*
-
-		//*-----------------------------------------------------------------------*
-		//*	Direction																															*
-		//*-----------------------------------------------------------------------*
-		/// <summary>
-		/// Get the direction of the effect in this instance.
-		/// </summary>
-		public MsoAnimDirection Direction
-		{
-			get
-			{
-				MsoAnimDirection result = MsoAnimDirection.msoAnimDirectionNone;
-				string value = "";
-
-				if(cmboEffect.SelectedItem != null)
-				{
-					value = (string)cmboEffect.SelectedItem;
-				}
-				switch(value)
-				{
-					case "Appear":
-						break;
-					case "Bounce":
-						result = MsoAnimDirection.msoAnimDirectionUp;
-						break;
-					case "Fade":
-						break;
-					case "Flash Once":
-						break;
-					case "Float Down":
-						result = MsoAnimDirection.msoAnimDirectionDown;
-						break;
-					case "Float Up":
-						result = MsoAnimDirection.msoAnimDirectionUp;
-						break;
-					case "Fly Down":
-						result = MsoAnimDirection.msoAnimDirectionDown;
-						break;
-					case "Fly Down And Left":
-						result = MsoAnimDirection.msoAnimDirectionDownLeft;
-						break;
-					case "Fly Down And Right":
-						result = MsoAnimDirection.msoAnimDirectionDownRight;
-						break;
-					case "Fly Left":
-						result = MsoAnimDirection.msoAnimDirectionLeft;
-						break;
-					case "Fly Right":
-						result = MsoAnimDirection.msoAnimDirectionRight;
-						break;
-					case "Fly Up":
-						result = MsoAnimDirection.msoAnimDirectionUp;
-						break;
-					case "Fly Up And Left":
-						result = MsoAnimDirection.msoAnimDirectionUpLeft;
-						break;
-					case "Fly Up And Right":
-						result = MsoAnimDirection.msoAnimDirectionUpRight;
-						break;
-					case "Split Horizontal In":
-						result = MsoAnimDirection.msoAnimDirectionIn;
-						break;
-					case "Split Horizontal Out":
-						result = MsoAnimDirection.msoAnimDirectionOut;
-						break;
-					case "Split Vertical In":
-						result = MsoAnimDirection.msoAnimDirectionIn;
-						break;
-					case "Split Vertical Out":
-						result = MsoAnimDirection.msoAnimDirectionOut;
-						break;
-					case "Teeter":
-						break;
-					case "Wipe Down":
-						result = MsoAnimDirection.msoAnimDirectionDown;
-						break;
-					case "Wipe Left":
-						result = MsoAnimDirection.msoAnimDirectionLeft;
-						break;
-					case "Wipe Right":
-						result = MsoAnimDirection.msoAnimDirectionRight;
-						break;
-					case "Wipe Up":
-						result = MsoAnimDirection.msoAnimDirectionUp;
-						break;
-				}
-				return result;
-			}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -826,6 +778,96 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//*	EffectDirection																												*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Get the direction of the effect in this instance.
+		/// </summary>
+		public MsoAnimDirection EffectDirection
+		{
+			get
+			{
+				MsoAnimDirection result = MsoAnimDirection.msoAnimDirectionNone;
+				string value = "";
+
+				if(cmboEffect.SelectedItem != null)
+				{
+					value = (string)cmboEffect.SelectedItem;
+				}
+				switch(value)
+				{
+					case "Appear":
+						break;
+					case "Bounce":
+						result = MsoAnimDirection.msoAnimDirectionUp;
+						break;
+					case "Fade":
+						break;
+					case "Flash Once":
+						break;
+					case "Float Down":
+						result = MsoAnimDirection.msoAnimDirectionDown;
+						break;
+					case "Float Up":
+						result = MsoAnimDirection.msoAnimDirectionUp;
+						break;
+					case "Fly Down":
+						result = MsoAnimDirection.msoAnimDirectionDown;
+						break;
+					case "Fly Down And Left":
+						result = MsoAnimDirection.msoAnimDirectionDownLeft;
+						break;
+					case "Fly Down And Right":
+						result = MsoAnimDirection.msoAnimDirectionDownRight;
+						break;
+					case "Fly Left":
+						result = MsoAnimDirection.msoAnimDirectionLeft;
+						break;
+					case "Fly Right":
+						result = MsoAnimDirection.msoAnimDirectionRight;
+						break;
+					case "Fly Up":
+						result = MsoAnimDirection.msoAnimDirectionUp;
+						break;
+					case "Fly Up And Left":
+						result = MsoAnimDirection.msoAnimDirectionUpLeft;
+						break;
+					case "Fly Up And Right":
+						result = MsoAnimDirection.msoAnimDirectionUpRight;
+						break;
+					case "Split Horizontal In":
+						result = MsoAnimDirection.msoAnimDirectionIn;
+						break;
+					case "Split Horizontal Out":
+						result = MsoAnimDirection.msoAnimDirectionOut;
+						break;
+					case "Split Vertical In":
+						result = MsoAnimDirection.msoAnimDirectionIn;
+						break;
+					case "Split Vertical Out":
+						result = MsoAnimDirection.msoAnimDirectionOut;
+						break;
+					case "Teeter":
+						break;
+					case "Wipe Down":
+						result = MsoAnimDirection.msoAnimDirectionDown;
+						break;
+					case "Wipe Left":
+						result = MsoAnimDirection.msoAnimDirectionLeft;
+						break;
+					case "Wipe Right":
+						result = MsoAnimDirection.msoAnimDirectionRight;
+						break;
+					case "Wipe Up":
+						result = MsoAnimDirection.msoAnimDirectionUp;
+						break;
+				}
+				return result;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	EffectDuration																												*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -906,16 +948,7 @@ namespace Scaffold
 		/// </summary>
 		public List<string> SelectedShapeNames
 		{
-			get
-			{
-				List<string> result = new List<string>();
-
-				foreach(ListViewItem listItem in lvShapes.SelectedItems)
-				{
-					result.Add((string)listItem.Tag);
-				}
-				return result;
-			}
+			get { return mSelectedNames; }
 		}
 		//*-----------------------------------------------------------------------*
 
