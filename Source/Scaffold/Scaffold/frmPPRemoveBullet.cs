@@ -118,11 +118,7 @@ namespace Scaffold
 			this.pnlMain.Controls.Add(this.btnCancel);
 			this.pnlMain.Controls.Add(this.grpResolution);
 			this.pnlMain.Controls.Add(this.grpScope);
-			this.pnlMain.Size = new System.Drawing.Size(617, 301);
-			this.pnlMain.Controls.SetChildIndex(this.grpScope, 0);
-			this.pnlMain.Controls.SetChildIndex(this.grpResolution, 0);
-			this.pnlMain.Controls.SetChildIndex(this.btnCancel, 0);
-			this.pnlMain.Controls.SetChildIndex(this.btnOK, 0);
+			this.pnlMain.Size = new System.Drawing.Size(617, 282);
 			// 
 			// grpScope
 			// 
@@ -144,20 +140,20 @@ namespace Scaffold
 			this.txtScopeIndex.ForeColor = System.Drawing.SystemColors.ControlDark;
 			this.txtScopeIndex.Location = new System.Drawing.Point(162, 85);
 			this.txtScopeIndex.Minimum = new decimal(new int[] {
-						1,
-						0,
-						0,
-						0});
+            1,
+            0,
+            0,
+            0});
 			this.txtScopeIndex.Name = "txtScopeIndex";
 			this.txtScopeIndex.ReadOnly = true;
 			this.txtScopeIndex.Size = new System.Drawing.Size(66, 27);
 			this.txtScopeIndex.TabIndex = 3;
 			this.txtScopeIndex.TabStop = false;
 			this.txtScopeIndex.Value = new decimal(new int[] {
-						1,
-						0,
-						0,
-						0});
+            1,
+            0,
+            0,
+            0});
 			// 
 			// optScopeIndex
 			// 
@@ -207,8 +203,8 @@ namespace Scaffold
 			// lvShapes
 			// 
 			this.lvShapes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-						| System.Windows.Forms.AnchorStyles.Left) 
-						| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lvShapes.HideSelection = false;
 			this.lvShapes.Location = new System.Drawing.Point(25, 86);
 			this.lvShapes.Name = "lvShapes";
@@ -248,7 +244,6 @@ namespace Scaffold
 			// 
 			// btnCancel
 			// 
-			this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Location = new System.Drawing.Point(415, 239);
 			this.btnCancel.Name = "btnCancel";
@@ -259,7 +254,6 @@ namespace Scaffold
 			// 
 			// btnOK
 			// 
-			this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnOK.Location = new System.Drawing.Point(513, 239);
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(92, 39);
@@ -272,10 +266,9 @@ namespace Scaffold
 			this.AcceptButton = this.btnOK;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.CancelButton = this.btnCancel;
-			this.ClientSize = new System.Drawing.Size(617, 349);
+			this.ClientSize = new System.Drawing.Size(617, 380);
 			this.Name = "frmPPRemoveBullet";
 			this.pnlMain.ResumeLayout(false);
-			this.pnlMain.PerformLayout();
 			this.grpScope.ResumeLayout(false);
 			this.grpScope.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.txtScopeIndex)).EndInit();

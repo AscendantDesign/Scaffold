@@ -251,18 +251,7 @@ namespace Scaffold
 			this.pnlMain.Controls.Add(this.lvShapes);
 			this.pnlMain.Controls.Add(this.lblShapes);
 			this.pnlMain.Controls.Add(this.lblSlide);
-			this.pnlMain.Size = new System.Drawing.Size(710, 498);
-			this.pnlMain.Controls.SetChildIndex(this.lblSlide, 0);
-			this.pnlMain.Controls.SetChildIndex(this.lblShapes, 0);
-			this.pnlMain.Controls.SetChildIndex(this.lvShapes, 0);
-			this.pnlMain.Controls.SetChildIndex(this.btnCancel, 0);
-			this.pnlMain.Controls.SetChildIndex(this.btnOK, 0);
-			this.pnlMain.Controls.SetChildIndex(this.grpAlign, 0);
-			this.pnlMain.Controls.SetChildIndex(this.grpReference, 0);
-			this.pnlMain.Controls.SetChildIndex(this.grpDistribute, 0);
-			this.pnlMain.Controls.SetChildIndex(this.chkAlign, 0);
-			this.pnlMain.Controls.SetChildIndex(this.chkDistribute, 0);
-			this.pnlMain.Controls.SetChildIndex(this.txtSlide, 0);
+			this.pnlMain.Size = new System.Drawing.Size(710, 428);
 			// 
 			// lblSlide
 			// 
@@ -305,9 +294,8 @@ namespace Scaffold
 			// 
 			// btnCancel
 			// 
-			this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new System.Drawing.Point(511, 441);
+			this.btnCancel.Location = new System.Drawing.Point(509, 368);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(88, 45);
 			this.btnCancel.TabIndex = 9;
@@ -525,9 +513,8 @@ namespace Scaffold
 			// 
 			// btnOK
 			// 
-			this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnOK.Enabled = false;
-			this.btnOK.Location = new System.Drawing.Point(605, 441);
+			this.btnOK.Location = new System.Drawing.Point(603, 368);
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(88, 45);
 			this.btnOK.TabIndex = 10;
@@ -690,7 +677,7 @@ namespace Scaffold
 			this.AcceptButton = this.btnOK;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.CancelButton = this.btnCancel;
-			this.ClientSize = new System.Drawing.Size(710, 546);
+			this.ClientSize = new System.Drawing.Size(710, 526);
 			this.Name = "frmPPAlignment";
 			this.pnlMain.ResumeLayout(false);
 			this.pnlMain.PerformLayout();
