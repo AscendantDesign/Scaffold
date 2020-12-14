@@ -218,6 +218,7 @@ namespace Scaffold
 			Pen pen = null;
 			PropertyItem property = null;
 			RectangleF rect = RectangleF.Empty;
+			SizeF size = SizeF.Empty;
 			bool toolTipActive = false;
 
 			Verbose("    Draw node...", 2);
@@ -282,25 +283,33 @@ namespace Scaffold
 				if(MediaExists(node))
 				{
 					//	At least one media resource is defined.
+					//	In this version, the thumbnail image will have been pre-scaled.
 					if(node.Properties.Exists(p => p.Name == "ThumbImage"))
 					{
-						//	In this version, the thumbnail image will have been pre-scaled.
 						bitmap = (Bitmap)node.Properties.FirstOrDefault(p =>
 							p.Name == "ThumbImage").Value;
+						size = GetScaledSize(bitmap.Size, width: node.Width - 8f);
+						//image = new RectangleF(
+						//	(node.X + (node.Width / 2f) - ((float)bitmap.Width / 2f)),
+						//	caption.Bottom + 2f,
+						//	bitmap.Width, bitmap.Height);
 						image = new RectangleF(
-							(node.X + (node.Width / 2f) - ((float)bitmap.Width / 2f)),
-							caption.Bottom + 2f,
-							bitmap.Width, bitmap.Height);
+							node.X + 4f, caption.Bottom + 2f,
+							size.Width, size.Height);
 						g.DrawImage(bitmap, image);
 					}
 					else if(node.Properties.Exists(p => p.Name == "ThumbVideo"))
 					{
 						bitmap = (Bitmap)node.Properties.FirstOrDefault(p =>
 							p.Name == "ThumbVideo").Value;
+						size = GetScaledSize(bitmap.Size, width: node.Width - 8f);
+						//image = new RectangleF(
+						//	node.X + (node.Width / 2f) - ((float)bitmap.Width / 2f),
+						//	caption.Bottom + 2f,
+						//	bitmap.Width, bitmap.Height);
 						image = new RectangleF(
-							node.X + (node.Width / 2f) - ((float)bitmap.Width / 2f),
-							caption.Bottom + 2f,
-							bitmap.Width, bitmap.Height);
+							node.X + 4f, caption.Bottom + 2f,
+							size.Width, size.Height);
 						g.DrawImage(bitmap, image);
 					}
 					if(node.Properties.Exists(p => p.Name == "IconAudio"))
@@ -2123,12 +2132,14 @@ namespace Scaffold
 		protected virtual void OnSelectionChanged(object sender, NodeEventArgs e)
 		{
 			//	Update the queue before passing the event out to subscribers.
+			NodeItem node = null;
+
 			if(e.Node != null)
 			{
 				if(e.Node.Selected)
 				{
 					//	This item will be added if not already a member.
-					if(!mSelectionQueue.Exists(x => x == e.Node))
+					if(!mSelectionQueue.Exists(x => x.Ticket == e.Node.Ticket))
 					{
 						mSelectionQueue.Add(e.Node);
 					}
@@ -2136,9 +2147,11 @@ namespace Scaffold
 				else
 				{
 					//	This item will be removed if present.
-					if(mSelectionQueue.Exists(x => x == e.Node))
+					node =
+						mSelectionQueue.FirstOrDefault(x => x.Ticket == e.Node.Ticket);
+					if(node != null)
 					{
-						mSelectionQueue.Remove(e.Node);
+						mSelectionQueue.Remove(node);
 					}
 				}
 			}
@@ -2450,9 +2463,18 @@ namespace Scaffold
 				cloned.Add(nodeNew);
 			}
 			mNodes.ForEach(x => x.Selected = false);
-			cloned.ForEach(x => x.Selected = true);
+			cloned.ForEach(x => x.Selected = false);
 			cloned.ForEach(x => x.Sockets.ForEach(y => y.Connections.Clear()));
-			mNodes.AddRange(cloned);
+			//	TODO: Allow node groups to be added using AddRange method.
+			//	Don't use addrange for event-sensitive nodes until a suitable
+			//	override is found that can accomodate wiring of each item without
+			//	potential for override holes.
+			foreach(NodeItem nodeItem in cloned)
+			{
+				mNodes.Add(nodeItem);
+			}
+			//	Reselect all of the new nodes after the events have been wired.
+			cloned.ForEach(x => x.Selected = true);
 			pnlView.Invalidate();
 		}
 		//*-----------------------------------------------------------------------*

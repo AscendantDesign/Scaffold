@@ -1096,7 +1096,6 @@ namespace Scaffold
 			RectangleF bounds = RectangleF.Empty;
 			int count = 0;
 			int index = 0;
-			float offset = 0f;
 			NodeItem node = null;
 			NodeItem nodePrev = null;
 			List<NodeItem> nodes = null;
@@ -1109,18 +1108,12 @@ namespace Scaffold
 				nodes = nodeControl.SelectionQueue.OrderBy(x => x.X).ToList();
 				//	Get the space between the two objects.
 				nodePrev = nodes[0];
-				node = nodes[1];
-				space = node.X - (nodePrev.X + nodePrev.Width);
-				nodePrev = node;
-				for(index = 2; index < count; index ++)
+				node = nodes[nodes.Count - 1];
+				space = (node.X - nodePrev.X) / ((float)nodes.Count - 1f);
+				for(index = 1; index < count; index ++)
 				{
 					node = nodes[index];
-					offset = space - (node.X - (nodePrev.X + nodePrev.Width));
-					if(offset != 0f)
-					{
-						node.X += offset;
-					}
-					nodePrev = node;
+					node.X = nodePrev.X + (space * (float)index);
 				}
 			}
 		}
@@ -1295,7 +1288,6 @@ namespace Scaffold
 			RectangleF bounds = RectangleF.Empty;
 			int count = 0;
 			int index = 0;
-			float offset = 0f;
 			NodeItem node = null;
 			NodeItem nodePrev = null;
 			List<NodeItem> nodes = null;
@@ -1308,18 +1300,12 @@ namespace Scaffold
 				nodes = nodeControl.SelectionQueue.OrderBy(y => y.Y).ToList();
 				//	Get the space between the two objects.
 				nodePrev = nodes[0];
-				node = nodes[1];
-				space = node.Y - (nodePrev.Y + nodePrev.Height);
-				nodePrev = node;
-				for(index = 2; index < count; index++)
+				node = nodes[nodes.Count - 1];
+				space = (node.Y - nodePrev.Y) / ((float)nodes.Count - 1f);
+				for(index = 1; index < count; index++)
 				{
 					node = nodes[index];
-					offset = space - (node.Y - (nodePrev.Y + nodePrev.Height));
-					if(offset != 0f)
-					{
-						node.Y += offset;
-					}
-					nodePrev = node;
+					node.Y = nodePrev.Y + (space * (float)index);
 				}
 			}
 		}
@@ -1418,6 +1404,46 @@ namespace Scaffold
 		private void mnuEditNodeDuplicate_Click(object sender, EventArgs e)
 		{
 			nodeControl.DuplicateSelectedNodes();
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* mnuEditNodeOutSocketNext_Click																				*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// The Edit / Node / Set Output Sockets On Selected To Following Question
+		/// menu option has been clicked.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		private void mnuEditNodeOutSocketNext_Click(object sender, EventArgs e)
+		{
+			NodeItem next = null;
+			List<NodeItem> nodes = nodeControl.SelectionQueue;
+			string ticket = "";
+
+			foreach(NodeItem node in nodes)
+			{
+				foreach(SocketItem socket in node.Sockets)
+				{
+					if(socket.SocketMode == SocketModeEnum.Output &&
+						socket.Connections.Count > 0)
+					{
+						ticket = socket.Connections[0].Ticket;
+						next = nodeControl.Nodes.FirstOrDefault(x =>
+							x.Sockets.FirstOrDefault(y => y.Ticket == ticket) != null);
+						if(next != null && next.TitleProperty?.Length > 0)
+						{
+							socket[socket.TitleProperty].Value =
+								next[next.TitleProperty].StringValue();
+						}
+					}
+				}
+			}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -6862,6 +6888,7 @@ namespace Scaffold
 			mnuEditNodeRemoveImage.Click += mnuEditNodeRemoveImage_Click;
 			mnuEditNodeRemoveLink.Click += mnuEditNodeRemoveLink_Click;
 			mnuEditNodeRemoveVideo.Click += mnuEditNodeRemoveVideo_Click;
+			mnuEditNodeOutSocketNext.Click += mnuEditNodeOutSocketNext_Click;
 			mnuEditUndo.Click += mnuEditUndo_Click;
 
 			mnuFileConvertPPToHTML.Click += mnuFileConvertPPToHTML_Click;

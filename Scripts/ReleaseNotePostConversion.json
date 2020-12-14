@@ -1,0 +1,7 @@
+[
+	{
+		"FindPattern": "(?i:(?s:(?<bracket>\\\\\\[\\s*(?<text>[a-z0-9-_\\r\\n ]+)\\s*\\\\\\])\\s*(?<paren>\\(\\s*\\<{0,1}\\s*(?<link>[^\\>\\)]*)\\s*\\>{0,1}\\s*\\)\\s*)))",
+		"ReplacePattern": "[${text}](${link})",
+		"UseRegEx": 1
+	}
+]

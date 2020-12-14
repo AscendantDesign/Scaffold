@@ -30,6 +30,7 @@ namespace Scaffold
 		//*************************************************************************
 		private Control mFocusControl = null;
 		private bool mOriginalColorSet = false;
+		private static List<Color> mRecentColors = new List<Color>();
 		private ColorSliderManagerCollection mSliders =
 			new ColorSliderManagerCollection();
 		private bool mTextBusy = false;
@@ -68,6 +69,13 @@ namespace Scaffold
 		/// </param>
 		private void btnOK_Click(object sender, EventArgs e)
 		{
+			btnOK.Focus();
+			if(this.Color != Color.White && this.Color != Color.Black &&
+				!mRecentColors.Exists(x => ToHex(this.Color) == ToHex(x)))
+			{
+				//	This color can be placed in the recent colors list.
+				mRecentColors.Add(this.Color);
+			}
 			DialogResult = DialogResult.OK;
 			this.Hide();
 		}
@@ -773,6 +781,31 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* UpdateRecentColors																										*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Update the recent colors display with the values held over from
+		/// previous accesses.
+		/// </summary>
+		private void UpdateRecentColors()
+		{
+			Label[] controls = new Label[]
+			{
+				lblRecent0, lblRecent1, lblRecent2, lblRecent3,
+				lblRecent4, lblRecent5, lblRecent6, lblRecent7
+			};
+			int count = Math.Min(mRecentColors.Count, controls.Length);
+			int index = 0;
+			int offset = (mRecentColors.Count > 8 ? mRecentColors.Count - 8 : 0);
+
+			for(index = 0; index < count; index ++)
+			{
+				controls[index].BackColor = mRecentColors[index + offset];
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	UpdateRGB																															*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -821,6 +854,23 @@ namespace Scaffold
 				//	If no default color has been set, use black.
 				Color = FromHex("#000000FF");
 			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* OnLoad																																*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Raises the Load event when the form has loaded and is ready to display
+		/// for the first time.
+		/// </summary>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+			UpdateRecentColors();
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -885,6 +935,7 @@ namespace Scaffold
 			set
 			{
 				Color original = mColor;
+
 				mColor = value;
 				if(!mColorBusy)
 				{

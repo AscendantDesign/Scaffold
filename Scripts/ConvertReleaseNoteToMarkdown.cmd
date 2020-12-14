@@ -8,11 +8,11 @@
 :: Released for public access under the MIT License.
 :: https://opensource.org/licenses/MIT
 @ECHO OFF
-SET NOTE=Scaffold-v00-2020-1212-alpha-preview-1-4a
+SET NOTE=Scaffold-v00-2020-1214-alpha-preview-1-4b
 SET SOURCE=%USERPROFILE%\Documents\GitHub\Scaffold\Docs\ReleaseNotes\%NOTE%.docx
 SET TARGET=%USERPROFILE%\Documents\GitHub\Scaffold\Docs\ReleaseNotes\%NOTE%.md
-::SET POSTCONFIG=%USERPROFILE%\Documents\GitHub\Scaffold\Scripts\ReleaseNotePostConversion.json
-::SET FAR=C:\Scripts\FindAndReplace\FindAndReplace.exe
+SET POSTCONFIG=%USERPROFILE%\Documents\GitHub\Scaffold\Scripts\ReleaseNotePostConversion.json
+SET FAR=C:\Scripts\FindAndReplace\FindAndReplace.exe
 
 PANDOC -f docx -t markdown_strict+pipe_tables -s "%SOURCE%" -o "%TARGET%"
-::"%FAR%" /files:"%TARGET%" /patternfile:"%POSTCONFIG%"
+"%FAR%" /files:"%TARGET%" /patternfile:"%POSTCONFIG%"

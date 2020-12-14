@@ -1416,6 +1416,7 @@ namespace Scaffold
 		private void PropertiesEditColor(DataRow row)
 		{
 			frmColorSelect form = null;
+			string value = "";
 
 			if(row != null &&
 				row.Table.Columns.Contains("Name") &&
@@ -1425,6 +1426,11 @@ namespace Scaffold
 				form.StartPosition = FormStartPosition.Manual;
 				form.Location = CenterOver(this, form);
 				form.Text = $"Select Color For [{row.Field<string>("Name")}]";
+				value = row.Field<string>("Value");
+				if(value?.Length > 0 && value.StartsWith("#"))
+				{
+					form.Color = FromHex(value);
+				}
 				if(form.ShowDialog() == DialogResult.OK)
 				{
 					row.SetField<string>("Value", ToHex(form.Color, true));
@@ -1871,6 +1877,7 @@ namespace Scaffold
 			{
 				//	Node is present.
 				mNode["Question"].Value = txtQuestion.Text;
+				//	Direct properties.
 				mNode.X = ToFloat(txtX.Text);
 				mNode.Y = ToFloat(txtY.Text);
 				mNode.Delay = ToFloat(txtDelay.Text);

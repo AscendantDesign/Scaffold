@@ -616,6 +616,62 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* GetScaledSize																													*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a size representing the scaled dimensions of an area given
+		/// either a new width or height.
+		/// </summary>
+		/// <param name="size">
+		/// The original size to compare.
+		/// </param>
+		/// <param name="width">
+		/// The optional target width.
+		/// </param>
+		/// <param name="height">
+		/// The optional target height. To use this parameter, set width to
+		/// zero or omit width from the parameter list when calling.
+		/// </param>
+		/// <returns>
+		/// New size in the same ratio as the original area. If width and height
+		/// were both zero, the return size is Empty.
+		/// </returns>
+		/// <remarks>
+		/// If width and height are both non-zero, the height parameter is
+		/// ignored.
+		/// </remarks>
+		public static SizeF GetScaledSize(SizeF size, float width = 0f,
+			float height = 0f)
+		{
+			float scale = 0f;
+			SizeF result = Size.Empty;
+
+			if(!size.IsEmpty)
+			{
+				if(width != 0f)
+				{
+					if(size.Width != 0f)
+					{
+						scale = width / size.Width;
+						result.Width = width;
+						result.Height = size.Height * scale;
+					}
+				}
+				else if(height != 0f)
+				{
+					if(size.Height != 0f)
+					{
+						scale = height / size.Height;
+						result.Width = size.Width * scale;
+						result.Height = height;
+					}
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//* InchesToPoints																												*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -1555,6 +1611,10 @@ namespace Scaffold
 				else if(IsBoolean(value))
 				{
 					result = ToBoolean(value);
+				}
+				else if(value.StartsWith("#"))
+				{
+					result = FromHex(value);
 				}
 				else
 				{
