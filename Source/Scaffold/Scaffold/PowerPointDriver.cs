@@ -416,7 +416,14 @@ namespace Scaffold
 						{
 							try
 							{
-								effect.Timing.TriggerDelayTime = e.StartDelayTime;
+								if(e.StartDelayType == EventDelayTypeEnum.AfterDelay)
+								{
+									effect.Timing.TriggerDelayTime = e.StartDelayTime;
+								}
+								else
+								{
+									effect.Timing.TriggerDelayTime = 0f;
+								}
 							}
 							catch { }
 							if(e.EffectDirection != null)
@@ -480,7 +487,14 @@ namespace Scaffold
 							{
 								try
 								{
-									effect.Timing.TriggerDelayTime = e.NextDelayTime;
+									if(e.NextDelayType == EventDelayTypeEnum.AfterDelay)
+									{
+										effect.Timing.TriggerDelayTime = e.NextDelayTime;
+									}
+									else
+									{
+										effect.Timing.TriggerDelayTime = 0f;
+									}
 								}
 								catch { }
 								if(e.EffectDirection != null)

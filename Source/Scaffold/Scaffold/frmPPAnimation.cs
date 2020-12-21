@@ -16,8 +16,6 @@ using static Scaffold.ScaffoldNodesUtil;
 using static Scaffold.ScaffoldUtil;
 using System.Diagnostics;
 
-//	TODO: !1. Stopped here.
-//	TODO: Pre-select the current slide when loading form.
 namespace Scaffold
 {
 	//*-------------------------------------------------------------------------*
@@ -59,6 +57,20 @@ namespace Scaffold
 		private Label lblNext;
 		private Label label1;
 
+		private bool mActivated = false;
+		private static MsoAnimEffect mPrevEffect =
+			MsoAnimEffect.msoAnimEffectAppear;
+		private static MsoAnimDirection mPrevEffectDirection =
+			MsoAnimDirection.msoAnimDirectionNone;
+		private static float mPrevEffectDuration = 0f;
+		private static bool mPrevEffectExit = false;
+		private static float mPrevNextDelayTime = 0f;
+		private static EventDelayTypeEnum mPrevNextDelayType =
+			EventDelayTypeEnum.None;
+		private static float mPrevStartDelayTime = 0f;
+		private static EventDelayTypeEnum mPrevStartDelayType =
+			EventDelayTypeEnum.None;
+
 		List<string> mSelectedNames = new List<string>();
 
 		//*-----------------------------------------------------------------------*
@@ -95,6 +107,15 @@ namespace Scaffold
 		private void btnOK_Click(object sender, EventArgs e)
 		{
 			btnOK.Focus();
+			//	Store settings for next use.
+			mPrevEffect = this.Effect;
+			mPrevEffectDirection = this.EffectDirection;
+			mPrevEffectDuration = this.EffectDuration;
+			mPrevEffectExit = this.EffectExit;
+			mPrevNextDelayTime = this.NextDelayTime;
+			mPrevNextDelayType = this.NextDelayType;
+			mPrevStartDelayTime = this.StartDelayTime;
+			mPrevStartDelayType = this.StartDelayType;
 			this.DialogResult = DialogResult.OK;
 			this.Hide();
 		}
@@ -638,6 +659,150 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* OnActivated																														*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Raises the Activated event when the form has been activated.
+		/// </summary>
+		/// <param name="e">
+		/// Standard event arguments.
+		/// </param>
+		protected override void OnActivated(EventArgs e)
+		{
+			base.OnActivated(e);
+			if(!mActivated)
+			{
+				//	Form is being activated for the first time.
+				//	Initialize the form from previous values.
+				if(mPrevStartDelayType != EventDelayTypeEnum.None)
+				{
+					//	Animation form has been used.
+					switch(mPrevEffect)
+					{
+						case MsoAnimEffect.msoAnimEffectAppear:
+							cmboEffect.SelectedItem = "Appear";
+							break;
+						case MsoAnimEffect.msoAnimEffectBounce:
+							cmboEffect.SelectedItem = "Bounce";
+							break;
+						case MsoAnimEffect.msoAnimEffectFade:
+							cmboEffect.SelectedItem = "Fade";
+							break;
+						case MsoAnimEffect.msoAnimEffectFlashOnce:
+							cmboEffect.SelectedItem = "Flash Once";
+							break;
+						case MsoAnimEffect.msoAnimEffectFloat:
+							if(mPrevEffectDirection == MsoAnimDirection.msoAnimDirectionDown)
+							{
+								cmboEffect.SelectedItem = "Float Down";
+							}
+							else
+							{
+								cmboEffect.SelectedItem = "Float Up";
+							}
+							break;
+						case MsoAnimEffect.msoAnimEffectFly:
+							switch(mPrevEffectDirection)
+							{
+								case MsoAnimDirection.msoAnimDirectionDown:
+									cmboEffect.SelectedItem = "Fly Down";
+									break;
+								case MsoAnimDirection.msoAnimDirectionDownLeft:
+									cmboEffect.SelectedItem = "Fly Down and Left";
+									break;
+								case MsoAnimDirection.msoAnimDirectionDownRight:
+									cmboEffect.SelectedItem = "Fly Down and Right";
+									break;
+								case MsoAnimDirection.msoAnimDirectionLeft:
+									cmboEffect.SelectedItem = "Fly Left";
+									break;
+								case MsoAnimDirection.msoAnimDirectionRight:
+									cmboEffect.SelectedItem = "Fly Right";
+									break;
+								case MsoAnimDirection.msoAnimDirectionUp:
+									cmboEffect.SelectedItem = "Fly Up";
+									break;
+								case MsoAnimDirection.msoAnimDirectionUpLeft:
+									cmboEffect.SelectedItem = "Fly Up and Left";
+									break;
+								case MsoAnimDirection.msoAnimDirectionUpRight:
+									cmboEffect.SelectedItem = "Fly Up and Right";
+									break;
+							}
+							break;
+						case MsoAnimEffect.msoAnimEffectSplit:
+							switch(mPrevEffectDirection)
+							{
+								case MsoAnimDirection.msoAnimDirectionHorizontalIn:
+									cmboEffect.SelectedItem = "Split Horizontal In";
+									break;
+								case MsoAnimDirection.msoAnimDirectionHorizontalOut:
+									cmboEffect.SelectedItem = "Split Horizontal Out";
+									break;
+								case MsoAnimDirection.msoAnimDirectionVerticalIn:
+									cmboEffect.SelectedItem = "Split Vertical In";
+									break;
+								case MsoAnimDirection.msoAnimDirectionVerticalOut:
+									cmboEffect.SelectedItem = "Split Vertical Out";
+									break;
+							}
+							break;
+						case MsoAnimEffect.msoAnimEffectTeeter:
+							cmboEffect.SelectedItem = "Teeter";
+							break;
+						case MsoAnimEffect.msoAnimEffectWipe:
+							switch(mPrevEffectDirection)
+							{
+								case MsoAnimDirection.msoAnimDirectionDown:
+									cmboEffect.SelectedItem = "Wipe Up";
+									break;
+								case MsoAnimDirection.msoAnimDirectionLeft:
+									cmboEffect.SelectedItem = "Wipe Right";
+									break;
+								case MsoAnimDirection.msoAnimDirectionRight:
+									cmboEffect.SelectedItem = "Wipe Left";
+									break;
+								case MsoAnimDirection.msoAnimDirectionUp:
+									cmboEffect.SelectedItem = "Wipe Down";
+									break;
+							}
+							break;
+					}
+					txtEffectDuration.Text = mPrevEffectDuration.ToString();
+					chkEffectExit.Checked = mPrevEffectExit;
+					txtNextDelay.Text = mPrevNextDelayTime.ToString();
+					switch(mPrevNextDelayType)
+					{
+						case EventDelayTypeEnum.AfterClick:
+							cmboNext.SelectedItem = "After click";
+							break;
+						case EventDelayTypeEnum.AfterDelay:
+							cmboNext.SelectedItem = "After delay";
+							break;
+						case EventDelayTypeEnum.Immediately:
+							cmboNext.SelectedItem = "Immediately";
+							break;
+					}
+					txtStartDelay.Text = mPrevStartDelayTime.ToString();
+					switch(mPrevStartDelayType)
+					{
+						case EventDelayTypeEnum.AfterClick:
+							cmboStartType.SelectedItem = "After click";
+							break;
+						case EventDelayTypeEnum.AfterDelay:
+							cmboStartType.SelectedItem = "After delay";
+							break;
+						case EventDelayTypeEnum.Immediately:
+							cmboStartType.SelectedItem = "Immediately";
+							break;
+					}
+				}
+				mActivated = true;
+			}
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	OnLoad																																*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
@@ -652,7 +817,14 @@ namespace Scaffold
 			base.OnLoad(e);
 			if(mDriver != null)
 			{
-				txtSlide.Value = mDriver.ActiveSlideIndex;
+				if(mDriver.ActiveSlideIndex == 1)
+				{
+					txtSlide_TextChanged(this, null);
+				}
+				else
+				{
+					txtSlide.Value = mDriver.ActiveSlideIndex;
+				}
 			}
 			cmboStartType.SelectedItem = "After delay";
 			cmboEffect.SelectedItem = "Appear";
@@ -671,6 +843,7 @@ namespace Scaffold
 		/// </summary>
 		public frmPPAnimation()
 		{
+
 			InitializeComponent();
 			this.StartPosition = FormStartPosition.CenterParent;
 			this.Title = "Quick Animation";
@@ -686,6 +859,8 @@ namespace Scaffold
 
 			//	List shapes.
 			LoadImageListMsoShapeType(ilShapes);
+
+
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -836,30 +1011,30 @@ namespace Scaffold
 						result = MsoAnimDirection.msoAnimDirectionUpRight;
 						break;
 					case "Split Horizontal In":
-						result = MsoAnimDirection.msoAnimDirectionIn;
+						result = MsoAnimDirection.msoAnimDirectionHorizontalIn;
 						break;
 					case "Split Horizontal Out":
-						result = MsoAnimDirection.msoAnimDirectionOut;
+						result = MsoAnimDirection.msoAnimDirectionHorizontalOut;
 						break;
 					case "Split Vertical In":
-						result = MsoAnimDirection.msoAnimDirectionIn;
+						result = MsoAnimDirection.msoAnimDirectionVerticalIn;
 						break;
 					case "Split Vertical Out":
-						result = MsoAnimDirection.msoAnimDirectionOut;
+						result = MsoAnimDirection.msoAnimDirectionVerticalOut;
 						break;
 					case "Teeter":
 						break;
 					case "Wipe Down":
-						result = MsoAnimDirection.msoAnimDirectionDown;
+						result = MsoAnimDirection.msoAnimDirectionUp;
 						break;
 					case "Wipe Left":
-						result = MsoAnimDirection.msoAnimDirectionLeft;
-						break;
-					case "Wipe Right":
 						result = MsoAnimDirection.msoAnimDirectionRight;
 						break;
+					case "Wipe Right":
+						result = MsoAnimDirection.msoAnimDirectionLeft;
+						break;
 					case "Wipe Up":
-						result = MsoAnimDirection.msoAnimDirectionUp;
+						result = MsoAnimDirection.msoAnimDirectionDown;
 						break;
 				}
 				return result;
