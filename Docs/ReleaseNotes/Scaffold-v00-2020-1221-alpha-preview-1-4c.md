@@ -6,10 +6,7 @@ Alpha Testing and Technology Preview Release 1.4c
 
 ### Background
 
-This revision is an intermediate release for the **Adobe Flash To HTML**
-sprint of December 2020, the major focus of which is to increase
-automation capabilities between Scaffold, Adobe Flash, and Microsoft
-PowerPoint.
+This revision is an intermediate release for the **Adobe Flash To HTML** sprint of December 2020, the major focus of which is to increase automation capabilities between Scaffold, Adobe Flash, and Microsoft PowerPoint.
 
 ### Bugs Fixed
 
