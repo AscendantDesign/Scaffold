@@ -8,7 +8,7 @@
 :: Released for public access under the MIT License.
 :: https://opensource.org/licenses/MIT
 @ECHO OFF
-SET NOTE=Scaffold-v00-2020-1221-alpha-preview-1-4c
+SET NOTE=Scaffold-v00-2020-1230-alpha-preview-1-4d
 SET SOURCE=%USERPROFILE%\Documents\GitHub\Scaffold\Docs\ReleaseNotes\%NOTE%.docx
 SET TARGET=%USERPROFILE%\Documents\GitHub\Scaffold\Docs\ReleaseNotes\%NOTE%.md
 SET POSTCONFIG=%USERPROFILE%\Documents\GitHub\Scaffold\Scripts\ReleaseNotePostConversion.json
