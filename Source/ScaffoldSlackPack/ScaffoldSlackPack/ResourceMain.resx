@@ -130,7 +130,7 @@
     <comment>Regular expression to match all words in the phrase.</comment>
   </data>
   <data name="rxCommandWordCommand" xml:space="preserve">
-    <value>(?i:(\W+|^)(?&lt;command&gt;(list|start|stop|pause|resume))(\W+|$))</value>
+    <value>(?i:(\W+|^)(?&lt;command&gt;(list|play|start|show|stop|pause|resume))(\W+|$))</value>
     <comment>Regular expression to match any of the command words.</comment>
   </data>
   <data name="rxCommandWordNoun" xml:space="preserve">

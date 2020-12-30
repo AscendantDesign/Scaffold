@@ -375,13 +375,13 @@ namespace Scaffold
 					nodeCount += nodes.Count(x =>
 						x.Properties.Exists(y =>
 							y.Name == resource.ResourceType &&
-							y.StringValue() == ticket));
+							y.ToString() == ticket));
 					foreach(NodeItem nodeItem in nodes)
 					{
 						nodeCount += nodeItem.Sockets.Count(x =>
 							x.Properties.Exists(y =>
 								y.Name == resource.ResourceType &&
-								y.StringValue() == ticket));
+								y.ToString() == ticket));
 					}
 				}
 			}
@@ -429,7 +429,7 @@ namespace Scaffold
 						{
 							property = nodeItem.Properties.FirstOrDefault(x =>
 								x.Name == resource.ResourceType &&
-								x.StringValue() == ticket);
+								x.ToString() == ticket);
 							if(property != null)
 							{
 								nodeItem.Properties.Remove(property);
@@ -438,7 +438,7 @@ namespace Scaffold
 							{
 								property = socketItem.Properties.FirstOrDefault(x =>
 									x.Name == resource.ResourceType &&
-									x.StringValue() == ticket);
+									x.ToString() == ticket);
 								if(property != null)
 								{
 									socketItem.Properties.Remove(property);

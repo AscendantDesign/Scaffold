@@ -88,7 +88,7 @@ namespace ScaffoldSlackPack {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (?i:(\W+|^)(?&lt;command&gt;(list|start|stop|pause|resume))(\W+|$)).
+        ///   Looks up a localized string similar to (?i:(\W+|^)(?&lt;command&gt;(list|play|start|show|stop|pause|resume))(\W+|$)).
         /// </summary>
         internal static string rxCommandWordCommand {
             get {

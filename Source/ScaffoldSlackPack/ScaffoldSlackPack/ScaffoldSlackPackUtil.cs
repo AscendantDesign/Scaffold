@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 
 using Scaffold;
 using System.Web;
+using System.Threading;
 
 namespace ScaffoldSlackPack
 {
@@ -51,7 +52,12 @@ namespace ScaffoldSlackPack
 		/// </param>
 		public static void AppendLog(string content)
 		{
-			System.IO.File.AppendAllText("Data/Activity.txt", content);
+			//string time = TimeZoneInfo.ConvertTimeFromUtc(DateTime.Now,
+			//	TimeZoneInfo.FindSystemTimeZoneById("Mountain Standard Time")).
+			//	ToString("yyyyMMdd.HHmm");
+			string time = DateTime.Now.ToString("yyyyMMdd.HHmm");
+			System.IO.File.AppendAllText("Data/Activity.txt",
+				$"{time} - {content}\r\n");
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -63,8 +69,12 @@ namespace ScaffoldSlackPack
 		/// </summary>
 		public static void ClearLog()
 		{
+			//string time = TimeZoneInfo.ConvertTimeFromUtc(DateTime.Now,
+			//	TimeZoneInfo.FindSystemTimeZoneById("Mountain Standard Time")).
+			//	ToString("yyyyMMdd.HHmm");
+			string time = DateTime.Now.ToString("yyyyMMdd.HHmm");
 			System.IO.File.WriteAllText("Data/Activity.txt",
-				$"Created: {DateTime.Now.ToString("yyyyMMdd.HHmm")}");
+				$"Created: {time}\r\n");
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -499,18 +509,23 @@ namespace ScaffoldSlackPack
 		/// <returns>
 		/// Formatted JSON message body for Slack message hook.
 		/// </returns>
-		public static string GetBlockQuestion(string slackUserID,
+		public async static Task<string> GetBlockQuestion(string slackUserID,
 			string nodeItemTicket)
 		{
 			SlackBlockItemActions actions = null;
 			SlackBlockItemButton button = null;
 			SlackBlockContainer container = null;
 			string content = "";
+			//float delay = 0f;
 			DNodeItem dNode = null;
 			DSocketCollection dSockets = null;
+			//DSocketItem dSocket = null;
 			SlackBlockItemImage image = null;
+			Scaffold.PropertyCollection properties =
+				new Scaffold.PropertyCollection();
 			SlackBlockItemSection section = null;
 			string text = "";
+			//string ticket = "";
 
 			if(slackUserID?.Length > 0 && nodeItemTicket?.Length > 0)
 			{
@@ -518,11 +533,14 @@ namespace ScaffoldSlackPack
 				if(dNode != null)
 				{
 					//	Record found.
+					//	Node text.
 					dSockets = DSocketCollection.LoadFromDatabase(dNode.NodeItemTicket);
-					text = dNode.NodeText;
+					text =
+						await ResolveVariables(slackUserID, dNode.NodeText, properties);
 					container = new SlackBlockContainer();
 					container.SlackUserID = slackUserID;
 					container.Blocks.Add(new SlackBlockItemDivider());
+					//	Image.
 					if(dNode.NodeImageUrl?.Length > 0)
 					{
 						image = new SlackBlockItemImage();
@@ -535,30 +553,69 @@ namespace ScaffoldSlackPack
 					section.Text.Value = text;
 					container.Blocks.Add(section);
 					container.Blocks.Add(new SlackBlockItemDivider());
-					foreach(DSocketItem dSocket in dSockets)
+					if(dNode.NodeType != "Delay")
 					{
-						if(dSocket.SocketType == "Output")
+						foreach(DSocketItem dSocketItem in dSockets)
 						{
-							section = new SlackBlockItemSection();
-							section.Text.TextType = "mrkdwn";
-							section.Text.Value = dSocket.SocketText;
-							if(dSocket.SocketImageUrl?.Length > 0)
+							if(dSocketItem.SocketType == "Output")
 							{
-								image = new SlackBlockItemImage();
-								image.AltText = "choice image";
-								image.ImageURL = $"{GetBaseUrl()}/{dSocket.SocketImageUrl}";
-								section.Accessory = image;
+								section = new SlackBlockItemSection();
+								section.Text.TextType = "mrkdwn";
+								section.Text.Value =
+									await ResolveVariables(slackUserID,
+									dSocketItem.SocketText, properties);
+								if(dSocketItem.SocketImageUrl?.Length > 0)
+								{
+									image = new SlackBlockItemImage();
+									image.AltText = "choice image";
+									image.ImageURL =
+										$"{GetBaseUrl()}/{dSocketItem.SocketImageUrl}";
+									section.Accessory = image;
+								}
+								container.Blocks.Add(section);
+								actions = new SlackBlockItemActions();
+								button = new SlackBlockItemButton();
+								button.Text.Value = "Click to select";
+								button.ActionID = dSocketItem.NextNodeItemTicket;
+								actions.Elements.Add(button);
+								container.Blocks.Add(actions);
+								container.Blocks.Add(new SlackBlockItemDivider());
 							}
-							container.Blocks.Add(section);
-							actions = new SlackBlockItemActions();
-							button = new SlackBlockItemButton();
-							button.Text.Value = "Click to select";
-							button.ActionID = dSocket.NextNodeItemTicket;
-							actions.Elements.Add(button);
-							container.Blocks.Add(actions);
-							container.Blocks.Add(new SlackBlockItemDivider());
 						}
 					}
+					//else
+					//{
+					//	//	Wait for a specified amount of time, then send the next
+					//	//	message.
+					//	//	Get the next node.
+					//	AppendLog("GetBlockQuestion. Delay node found...");
+					//	while(dNode != null && dNode.NodeType == "Delay" &&
+					//		dSockets?.Count > 0)
+					//	{
+					//		dSocket = dSockets.FirstOrDefault(x => x.SocketType == "Output");
+					//		if(dSocket != null)
+					//		{
+					//			ticket = dSocket.NextNodeItemTicket;
+					//			delay = (dNode.NodeDelay != 0f ? dNode.NodeDelay : 0.1f);
+					//			await Task.Run(() =>
+					//				SendQuestionAfterDelay(slackUserID, ticket, delay));
+					//		}
+					//		if(ticket?.Length > 0)
+					//		{
+					//			dNode = DNodeItem.LoadFromDatabase(ticket);
+					//			if(dNode != null && dNode.NodeType == "Delay")
+					//			{
+					//				dSockets =
+					//					DSocketCollection.LoadFromDatabase(dNode.NodeItemTicket);
+					//			}
+					//		}
+					//		else
+					//		{
+					//			dNode = null;
+					//			dSockets = null;
+					//		}
+					//	}
+					//}
 				}
 				content = JsonConvert.SerializeObject(container);
 			}
@@ -582,8 +639,8 @@ namespace ScaffoldSlackPack
 		/// <returns>
 		/// Formatted JSON message body for Slack message hook.
 		/// </returns>
-		public static string GetBlockQuestionStart(string slackUserID,
-			string conversationTicket)
+		public async static Task<string> GetBlockQuestionStart(
+			string slackUserID, string conversationTicket)
 		{
 			string content = "";
 			DNodeItem dNode = null;
@@ -593,7 +650,7 @@ namespace ScaffoldSlackPack
 				dNode = DNodeCollection.LoadStartFromDatabase(conversationTicket);
 				if(dNode != null)
 				{
-					content = GetBlockQuestion(slackUserID, dNode.NodeItemTicket);
+					content = await GetBlockQuestion(slackUserID, dNode.NodeItemTicket);
 				}
 			}
 			return content;
@@ -924,8 +981,7 @@ namespace ScaffoldSlackPack
 			{
 				content = HttpUtility.UrlDecode(content);
 			}
-			AppendLog("Received: Interaction - " +
-				$"{DateTime.Now.ToString("yyyyMMdd.HHmm")}\r\n" +
+			AppendLog("Received: Interaction -\r\n" +
 				$"{content}\r\n\r\n");
 			//	Find the first { and discard anything to the left.
 			if(content.IndexOf('{') > 0)
@@ -962,11 +1018,12 @@ namespace ScaffoldSlackPack
 									if(property2.TryGetProperty("action_id", out property3))
 									{
 										courseContent =
-											GetBlockQuestion(userID, property3.GetString());
+											await GetBlockQuestion(userID, property3.GetString());
 										if(courseContent?.Length > 0)
 										{
 											await Task.Run(() => SendMessageBlock(courseContent));
 										}
+										_ = SendDelays(userID, property3.GetString());
 									}
 									break;
 							}
@@ -1142,9 +1199,13 @@ namespace ScaffoldSlackPack
 									"Which course would you like to *resume*?");
 							}
 							break;
+						case "play":
+						case "show":
 						case "start":
 							courses =
 								ConversationCourseCollection.LoadFromDatabase(slackUserID);
+							words.Remove("play");
+							words.Remove("show");
 							words.Remove("start");
 							if(words.Count > 0)
 							{
@@ -1159,7 +1220,7 @@ namespace ScaffoldSlackPack
 										content = GetBlockMessage(slackUserID,
 											$"Course `{course.ConversationTitle}` has been started " +
 											$"from the beginning.");
-										courseContent = GetBlockQuestionStart(slackUserID,
+										courseContent = await GetBlockQuestionStart(slackUserID,
 											course.ConversationTicket);
 										bFound = true;
 										break;
@@ -1268,7 +1329,6 @@ namespace ScaffoldSlackPack
 		/// </returns>
 		public static string RemoveNodeFile(string content)
 		{
-			//	TODO: !1 - Stopped here. Test course deletion.
 			NodeFileDescriptor nodeFile = null;
 			string result = "OK";
 
@@ -1291,6 +1351,133 @@ namespace ScaffoldSlackPack
 				}
 			}
 			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* ResolveVariables																											*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Resolve any variables that may be lurking.
+		/// </summary>
+		/// <param name="slackUserID">
+		/// Unique identification of the Slack user.
+		/// </param>
+		/// <param name="rawText">
+		/// The text to be inspected.
+		/// </param>
+		/// <param name="properties">
+		/// Collection of properties available for resolution.
+		/// </param>
+		/// <returns>
+		/// The caller's text, where any recognizable properties have been
+		/// resolved.
+		/// </returns>
+		public async static Task<string> ResolveVariables(
+			string slackUserID,
+			string rawText,
+			Scaffold.PropertyCollection properties)
+		{
+			string result = "";
+			string value = "";
+
+			if(rawText?.Length > 0 && properties != null)
+			{
+				result = rawText;
+				if(result.IndexOf("${user.name}") > -1)
+				{
+					if(properties.Exists(x => x.Name == "Username"))
+					{
+						value = properties["Username"].ToString();
+					}
+					else
+					{
+						value = await GetSlackUsername(slackUserID);
+						properties.Add(new PropertyItem()
+						{
+							Name = "Username",
+							Value = value
+						});
+					}
+					result = result.Replace("${user.name}", value);
+				}
+				if(result.IndexOf("${checkin.resched}") > -1)
+				{
+					//	Check-in reschedule.
+					//	TODO: The purpose of this entry will be to set a notification
+					//	for the bot to reawaken for the user at a specific time.
+					//	However, this would probably be better handled by the
+					//	background system by sending a separate command to resume
+					//	at a later but specific date and time.
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* SendDelays																														*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Send one or more delays, followed by the item immediately following
+		/// them.
+		/// </summary>
+		/// <param name="slackUserID">
+		/// Unique Slack user ID.
+		/// </param>
+		/// <param name="nodeItemTicket">
+		/// Node ticket to test for delay status.
+		/// </param>
+		/// <returns>
+		/// Awaitable task.
+		/// </returns>
+		public static async Task SendDelays(string slackUserID,
+			string nodeItemTicket)
+		{
+			string courseContent = "";
+			DNodeItem dNode = null;
+			DSocketItem dSocket = null;
+			DSocketCollection dSockets = null;
+
+			//	Get the starting node to see if it is a delay.
+			AppendLog($"Checking for delays at {nodeItemTicket}");
+			dNode = DNodeItem.LoadFromDatabase(nodeItemTicket);
+			while(dNode != null && dNode.NodeType == "Delay")
+			{
+				//	The first item was a delay. Issue that delay before continuing.
+				AppendLog($"Delay after {nodeItemTicket}");
+				if(dNode.NodeDelay != 0f)
+				{
+					Thread.Sleep((int)(dNode.NodeDelay * 1000));
+				}
+				dSockets = DSocketCollection.LoadFromDatabase(
+					dNode.NodeItemTicket);
+				dSocket = dSockets.FirstOrDefault(x =>
+					x.SocketType == "Output");
+				if(dSocket != null &&
+					dSocket.NextNodeItemTicket?.Length > 0)
+				{
+					//	Output found.
+					courseContent =
+						await GetBlockQuestion(slackUserID,
+						dSocket.NextNodeItemTicket);
+					if(courseContent?.Length > 0)
+					{
+						await Task.Run(() =>
+							SendMessageBlock(courseContent));
+						dNode = DNodeItem.LoadFromDatabase(
+							dSocket.NextNodeItemTicket);
+					}
+					else
+					{
+						dNode = null;
+					}
+				}
+				else
+				{
+					dNode = null;
+				}
+			}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1369,6 +1556,45 @@ namespace ScaffoldSlackPack
 			}
 		}
 		//*-----------------------------------------------------------------------*
+
+		////*-----------------------------------------------------------------------*
+		////* SendQuestionAfterDelay																								*
+		////*-----------------------------------------------------------------------*
+		///// <summary>
+		///// Send the specified question separately after the specified delay.
+		///// </summary>
+		///// <param name="slackUserID">
+		///// </param>
+		///// <param name="nodeItemTicket">
+		///// </param>
+		///// <param name="delay">
+		///// </param>
+		//public async static Task SendQuestionAfterDelay(string slackUserID,
+		//	string nodeItemTicket, float delay)
+		//{
+		//	string courseContent = "";
+
+		//	AppendLog($"Send after delay. " +
+		//		$"Prepare to send node {nodeItemTicket} " +
+		//		$"to {slackUserID} " +
+		//		$"after delay of {delay}...");
+		//	if(delay > 0f)
+		//	{
+		//		//AppendLog("Entering delay chamber...");
+		//		//await Task.Delay(TimeSpan.FromSeconds(delay));
+		//		Thread.Sleep((int)(delay * 1000));
+		//	}
+		//	courseContent =
+		//		await GetBlockQuestion(slackUserID, nodeItemTicket);
+		//	AppendLog("Send after delay. " +
+		//		$"Delay completed. Send content {courseContent}..");
+		//	if(courseContent?.Length > 0)
+		//	{
+		//		await Task.Run(() => SendMessageBlock(courseContent));
+		//	}
+		//	AppendLog("Send after delay. Method finished...");
+		//}
+		////*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
 		//* SetBaseUrl																														*
@@ -1548,7 +1774,7 @@ namespace ScaffoldSlackPack
 							{
 								//	Image property found.
 								resource = nodeFile.Resources.FirstOrDefault(x =>
-									x.Ticket == property.StringValue());
+									x.Ticket == property.ToString());
 								if(resource != null)
 								{
 									//	Transfer the link directly to the node property.
@@ -1568,7 +1794,7 @@ namespace ScaffoldSlackPack
 								{
 									//	Image property found.
 									resource = nodeFile.Resources.FirstOrDefault(x =>
-										x.Ticket == property.StringValue());
+										x.Ticket == property.ToString());
 									if(resource != null)
 									{
 										//	Transfer the link directly to the socket property.
@@ -1670,7 +1896,7 @@ namespace ScaffoldSlackPack
 				}
 				catch(Exception ex)
 				{
-					AppendLog($"Received: {DateTime.Now.ToString("yyyyMMdd.HHmm")}\r\n" +
+					AppendLog($"Received:\r\n" +
 						$"Error while uploading data: {ex.Message}\r\n\r\n");
 					bContinue = false;
 				}

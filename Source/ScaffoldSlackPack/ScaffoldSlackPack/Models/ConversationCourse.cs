@@ -208,10 +208,10 @@ namespace ScaffoldSlackPack.Models
 						dNode = new DNodeItem();
 						dNode.ConversationTicket = nodeFile.Ticket;
 						dNode.NodeDelay = node.Delay;
-						dNode.NodeImageUrl = node.Properties["MediaImage"].StringValue();
+						dNode.NodeImageUrl = node.Properties["MediaImage"].ToString();
 						dNode.NodeItemTicket = node.Ticket;
-						dNode.NodeLinkUrl = node.Properties["MediaLink"].StringValue();
-						dNode.NodeText = node.Properties[node.TitleProperty].StringValue();
+						dNode.NodeLinkUrl = node.Properties["MediaLink"].ToString();
+						dNode.NodeText = node.Properties[node.TitleProperty].ToString();
 						dNode.NodeType = node.NodeType;
 						dNodes.Add(dNode);
 						foreach(SocketItem socket in node.Sockets)
@@ -231,12 +231,12 @@ namespace ScaffoldSlackPack.Models
 							}
 							dSocket.NodeItemTicket = node.Ticket;
 							dSocket.SocketImageUrl =
-								socket.Properties["MediaImage"].StringValue();
+								socket.Properties["MediaImage"].ToString();
 							dSocket.SocketItemTicket = socket.Ticket;
 							dSocket.SocketLinkUrl =
-								socket.Properties["MediaLink"].StringValue();
+								socket.Properties["MediaLink"].ToString();
 							dSocket.SocketText =
-								socket.Properties[socket.TitleProperty].StringValue();
+								socket.Properties[socket.TitleProperty].ToString();
 							dSocket.SocketType = socket.SocketMode.ToString();
 							dSockets.Add(dSocket);
 						}

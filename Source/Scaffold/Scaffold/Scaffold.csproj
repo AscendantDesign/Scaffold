@@ -518,7 +518,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ScaffoldNodes\ScaffoldNodes\ScaffoldNodes.csproj">
-      <Project>{7b40804a-c08a-482e-8aec-1f20a85f3e7e}</Project>
+      <Project>{74ae1ccf-b031-4fc7-b53d-80e836e5a3a4}</Project>
       <Name>ScaffoldNodes</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\SkiaSharpSvg\SkiaSharpSvg\SkiaSharpSvg.csproj">

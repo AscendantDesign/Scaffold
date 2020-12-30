@@ -339,7 +339,7 @@ namespace Scaffold
 				Verbose("    Sheet number...", 2);
 				font = new Font(this.Font.FontFamily, mTitleFontSize + 2f);
 				brush = new SolidBrush(FromHex("#F977E6"));
-				g.DrawString(ToInt(node["StoryPageNumber"].StringValue()).ToString(),
+				g.DrawString(ToInt(node["StoryPageNumber"].ToString()).ToString(),
 					font, brush, node.X + node.Width + 16f, node.Y - 16f);
 
 				//	Sockets.
@@ -586,7 +586,7 @@ namespace Scaffold
 					sf = new StringFormat();
 					sf.Alignment = StringAlignment.Far;
 					sf.LineAlignment = StringAlignment.Center;
-					g.DrawString(socket[socket.TitleProperty].Value.ToString(),
+					g.DrawString(socket[socket.TitleProperty].ToString(),
 						font, textBrush, textArea, sf);
 
 					if(icon != null)
@@ -760,7 +760,7 @@ namespace Scaffold
 			foreach(NodeItem node in mNodes)
 			{
 				//	Caption.
-				text = node[node.TitleProperty].StringValue();
+				text = node[node.TitleProperty].ToString();
 				if(mNodeMaxWidth > 0)
 				{
 					//	Fit title within node bounds.
@@ -860,7 +860,7 @@ namespace Scaffold
 					{
 						//	Fit title within node bounds.
 						socketTextSize =
-							g.MeasureString(socket[socket.TitleProperty].StringValue(),
+							g.MeasureString(socket[socket.TitleProperty].ToString(),
 							fontSocket,
 							mNodeMaxWidth - (int)socket.Width - (int)iconSize.Width);
 					}
@@ -868,7 +868,7 @@ namespace Scaffold
 					{
 						//	Allow socket to take unlimited width.
 						socketTextSize =
-							g.MeasureString(socket[socket.TitleProperty].StringValue(),
+							g.MeasureString(socket[socket.TitleProperty].ToString(),
 							fontSocket);
 						socketTextSize.Width += (socket.Width + iconSize.Width);
 					}

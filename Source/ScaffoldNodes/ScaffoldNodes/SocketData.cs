@@ -1,4 +1,4 @@
-﻿//	SocketData.cs
+//	SocketData.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -85,7 +85,7 @@ namespace Scaffold
 				{
 					if(property.Static)
 					{
-						target.mProperties.Add(property.Name, property.StringValue());
+						target.mProperties.Add(property.Name, property.ToString());
 					}
 				}
 			}

@@ -602,7 +602,7 @@ namespace Scaffold
 			message = EnsurePowerPointRunning(false);
 			if(message == "OK")
 			{
-				page = nodes.Max(n => ToInt(n["StoryPageNumber"].StringValue()));
+				page = nodes.Max(n => ToInt(n["StoryPageNumber"].ToString()));
 				if(createFile)
 				{
 					//	A new file will be created.
@@ -630,19 +630,19 @@ namespace Scaffold
 				}
 				foreach(NodeItem node in nodes)
 				{
-					page = ToInt(node["StoryPageNumber"].StringValue());
-					ph = node["StoryPageHorizontalPlacement"].StringValue();
-					pv = node["StoryPageVerticalPlacement"].StringValue();
-					x = ToFloat(node["StoryPageX"].StringValue());
-					y = ToFloat(node["StoryPageY"].StringValue());
-					text = node["Question"].StringValue();
-					width = ToInt(node["StoryPageWidth"].StringValue());
+					page = ToInt(node["StoryPageNumber"].ToString());
+					ph = node["StoryPageHorizontalPlacement"].ToString();
+					pv = node["StoryPageVerticalPlacement"].ToString();
+					x = ToFloat(node["StoryPageX"].ToString());
+					y = ToFloat(node["StoryPageY"].ToString());
+					text = node["Question"].ToString();
+					width = ToInt(node["StoryPageWidth"].ToString());
 					objSlide = objPres.Slides[page];
 					objShapeRange = objSlide.Shapes.Paste();
 					size = MeasureString(
 							text,
-							node["StoryPageFontName"].StringValue(),
-							ToFloat(node["StoryPageFontSize"].StringValue()),
+							node["StoryPageFontName"].ToString(),
+							ToFloat(node["StoryPageFontSize"].ToString()),
 							width - 20);
 					size.Width = Math.Max(size.Width, 64);
 					objShapeRange.Width = size.Width;
@@ -682,23 +682,23 @@ namespace Scaffold
 						s.SocketMode == SocketModeEnum.Output);
 					foreach(SocketItem socket in sockets)
 					{
-						page = ToInt(socket["StoryPageNumber"].StringValue());
+						page = ToInt(socket["StoryPageNumber"].ToString());
 						if(page == 0)
 						{
-							page = ToInt(node["StoryPageNumber"].StringValue());
+							page = ToInt(node["StoryPageNumber"].ToString());
 						}
-						ph = socket["StoryPageHorizontalPlacement"].StringValue();
-						pv = socket["StoryPageVerticalPlacement"].StringValue();
-						x = ToFloat(socket["StoryPageX"].StringValue());
-						y = ToFloat(socket["StoryPageY"].StringValue());
-						text = socket["Answer"].StringValue();
-						width = ToInt(socket["StoryPageWidth"].StringValue());
+						ph = socket["StoryPageHorizontalPlacement"].ToString();
+						pv = socket["StoryPageVerticalPlacement"].ToString();
+						x = ToFloat(socket["StoryPageX"].ToString());
+						y = ToFloat(socket["StoryPageY"].ToString());
+						text = socket["Answer"].ToString();
+						width = ToInt(socket["StoryPageWidth"].ToString());
 						objSlide = objPres.Slides[page];
 						objShapeRange = objSlide.Shapes.Paste();
 						size = MeasureString(
 								text,
-								socket["StoryPageFontName"].StringValue(),
-								ToFloat(socket["StoryPageFontSize"].StringValue()),
+								socket["StoryPageFontName"].ToString(),
+								ToFloat(socket["StoryPageFontSize"].ToString()),
 								width - 20);
 						size.Width = Math.Max(size.Width, 64);
 						objShapeRange.Width = size.Width;

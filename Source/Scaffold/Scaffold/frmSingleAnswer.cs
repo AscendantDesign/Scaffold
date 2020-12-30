@@ -836,12 +836,12 @@ namespace Scaffold
 			if(mSocketProperties != null)
 			{
 				//	Extended story properties.
-				text = mSocketProperties["StoryPageNumber"].StringValue();
+				text = mSocketProperties["StoryPageNumber"].ToString();
 				if(text.Length > 0)
 				{
 					txtStoryPageNumber.Text = text;
 				}
-				text = mSocketProperties["StoryPageWidth"].StringValue();
+				text = mSocketProperties["StoryPageWidth"].ToString();
 				if(text.Length > 0)
 				{
 					txtStoryWidth.Text = text;
@@ -850,12 +850,12 @@ namespace Scaffold
 				{
 					txtStoryWidth.Text = "256";
 				}
-				text = mSocketProperties["StoryPageX"].StringValue();
+				text = mSocketProperties["StoryPageX"].ToString();
 				if(text.Length > 0)
 				{
 					txtStoryPageX.Text = text;
 				}
-				text = mSocketProperties["StoryPageHorizontalPlacement"].StringValue();
+				text = mSocketProperties["StoryPageHorizontalPlacement"].ToString();
 				if(text.Length > 0)
 				{
 					cmboStoryFromX.SelectedItem = text;
@@ -864,12 +864,12 @@ namespace Scaffold
 				{
 					cmboStoryFromX.SelectedItem = "Right";
 				}
-				text = mSocketProperties["StoryPageY"].StringValue();
+				text = mSocketProperties["StoryPageY"].ToString();
 				if(text.Length > 0)
 				{
 					txtStoryPageY.Text = text;
 				}
-				text = mSocketProperties["StoryPageVerticalPlacement"].StringValue();
+				text = mSocketProperties["StoryPageVerticalPlacement"].ToString();
 				if(text.Length > 0)
 				{
 					cmboStoryFromY.SelectedItem = text;
@@ -878,28 +878,28 @@ namespace Scaffold
 				{
 					cmboStoryFromY.SelectedItem = "Top";
 				}
-				text = mSocketProperties["StoryShapeType"].StringValue();
+				text = mSocketProperties["StoryShapeType"].ToString();
 				if(text.Length > 0)
 				{
 					cmboStoryboardShapeType.SelectedItem = text;
 				}
-				text = mSocketProperties["StoryColorFill"].StringValue();
+				text = mSocketProperties["StoryColorFill"].ToString();
 				if(text.Length > 0)
 				{
 					btnStoryFillColor.BackColor = FromHex(text);
 				}
-				text = mSocketProperties["StoryColorOutline"].StringValue();
+				text = mSocketProperties["StoryColorOutline"].ToString();
 				if(text.Length > 0)
 				{
 					btnStoryLineColor.BackColor = FromHex(text);
 				}
-				text = mSocketProperties["StoryColorText"].StringValue();
+				text = mSocketProperties["StoryColorText"].ToString();
 				if(text.Length > 0)
 				{
 					btnStoryTextColor.BackColor = FromHex(text);
 				}
-				fontName = mSocketProperties["StoryFontName"].StringValue();
-				text = mSocketProperties["StoryFontSize"].StringValue();
+				fontName = mSocketProperties["StoryFontName"].ToString();
+				text = mSocketProperties["StoryFontSize"].ToString();
 				if(text.Length > 0)
 				{
 					float.TryParse(text, out fontSize);

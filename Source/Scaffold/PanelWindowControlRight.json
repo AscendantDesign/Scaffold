@@ -1,0 +1,12 @@
+{
+	"Name": "Right",
+	"AutoSize": true,
+	"Margin": 6,
+	"Controls":
+	[
+		{
+			"Name": "pnlProperties",
+			"Dock": "Fill"
+		}
+	]
+}

@@ -182,7 +182,7 @@ namespace Scaffold
 					//	Check to see if any nodes or sockets have empty page information.
 					foreach(NodeItem node in mNodes)
 					{
-						page = ToInt(node["StoryPageNumber"].StringValue());
+						page = ToInt(node["StoryPageNumber"].ToString());
 						if(page == 0)
 						{
 							//	Empty page information found.
@@ -195,7 +195,7 @@ namespace Scaffold
 								s.SocketMode == SocketModeEnum.Output);
 							foreach(SocketItem socket in sockets)
 							{
-								page = ToInt(socket["StoryPageNumber"].StringValue());
+								page = ToInt(socket["StoryPageNumber"].ToString());
 								if(page == 0)
 								{
 									//	Empty page information found.

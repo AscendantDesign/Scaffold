@@ -36,6 +36,7 @@ namespace Scaffold
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.menuMain = new System.Windows.Forms.MenuStrip();
 			this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -175,6 +176,9 @@ namespace Scaffold
 			this.btnDecisionTreeEditor = new Scaffold.LabelButtonControl();
 			this.panelWindowControl = new Scaffold.PanelWindowControl();
 			this.timerAutoSave = new System.Windows.Forms.Timer(this.components);
+			this.grdProperties = new System.Windows.Forms.DataGridView();
+			this.pnlProperties = new System.Windows.Forms.Panel();
+			this.lblbtnProperties = new Scaffold.LabelButtonControl();
 			this.menuMain.SuspendLayout();
 			this.statusMain.SuspendLayout();
 			this.tctlDocument.SuspendLayout();
@@ -195,6 +199,8 @@ namespace Scaffold
 			((System.ComponentModel.ISupportInitialize)(this.toolSlidePicEllipse)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.toolSlidePicRectangle)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.toolSlidePicCursor)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdProperties)).BeginInit();
+			this.pnlProperties.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuMain
@@ -1072,7 +1078,7 @@ namespace Scaffold
 			this.tctlDocument.SelectedTabIndex = 0;
 			this.tctlDocument.SelectedTabName = "Decision";
 			this.tctlDocument.ShowTabs = true;
-			this.tctlDocument.Size = new System.Drawing.Size(501, 382);
+			this.tctlDocument.Size = new System.Drawing.Size(465, 382);
 			this.tctlDocument.TabIndex = 13;
 			// 
 			// tpgDecisionTreeEditorDocument
@@ -1082,7 +1088,7 @@ namespace Scaffold
 			this.tpgDecisionTreeEditorDocument.Location = new System.Drawing.Point(4, 30);
 			this.tpgDecisionTreeEditorDocument.Margin = new System.Windows.Forms.Padding(0);
 			this.tpgDecisionTreeEditorDocument.Name = "tpgDecisionTreeEditorDocument";
-			this.tpgDecisionTreeEditorDocument.Size = new System.Drawing.Size(493, 348);
+			this.tpgDecisionTreeEditorDocument.Size = new System.Drawing.Size(457, 348);
 			this.tpgDecisionTreeEditorDocument.TabIndex = 0;
 			this.tpgDecisionTreeEditorDocument.Text = "Decision";
 			// 
@@ -1105,7 +1111,7 @@ namespace Scaffold
 			this.nodeControl.NodeLineWidth = 4;
 			this.nodeControl.NodeMaxWidth = 256;
 			this.nodeControl.NodeSelectColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(173)))), ((int)(((byte)(24)))));
-			this.nodeControl.Size = new System.Drawing.Size(493, 348);
+			this.nodeControl.Size = new System.Drawing.Size(457, 348);
 			this.nodeControl.SocketConnectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(227)))), ((int)(((byte)(24)))));
 			this.nodeControl.SocketConnectionLineWidth = 4;
 			this.nodeControl.SocketDragColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(103)))), ((int)(((byte)(107)))));
@@ -1125,7 +1131,7 @@ namespace Scaffold
 			this.tpgSlideEditorDocument.Location = new System.Drawing.Point(4, 30);
 			this.tpgSlideEditorDocument.Margin = new System.Windows.Forms.Padding(0);
 			this.tpgSlideEditorDocument.Name = "tpgSlideEditorDocument";
-			this.tpgSlideEditorDocument.Size = new System.Drawing.Size(493, 348);
+			this.tpgSlideEditorDocument.Size = new System.Drawing.Size(457, 348);
 			this.tpgSlideEditorDocument.TabIndex = 1;
 			this.tpgSlideEditorDocument.Text = "Slide";
 			// 
@@ -1136,7 +1142,7 @@ namespace Scaffold
 			this.skControl.Location = new System.Drawing.Point(0, 0);
 			this.skControl.Margin = new System.Windows.Forms.Padding(0);
 			this.skControl.Name = "skControl";
-			this.skControl.Size = new System.Drawing.Size(493, 348);
+			this.skControl.Size = new System.Drawing.Size(457, 348);
 			this.skControl.TabIndex = 0;
 			this.skControl.Text = "skControl";
 			// 
@@ -1145,7 +1151,7 @@ namespace Scaffold
 			this.tpgHTML.Location = new System.Drawing.Point(4, 30);
 			this.tpgHTML.Margin = new System.Windows.Forms.Padding(0);
 			this.tpgHTML.Name = "tpgHTML";
-			this.tpgHTML.Size = new System.Drawing.Size(493, 348);
+			this.tpgHTML.Size = new System.Drawing.Size(457, 348);
 			this.tpgHTML.TabIndex = 2;
 			this.tpgHTML.Text = "HTML";
 			this.tpgHTML.UseVisualStyleBackColor = true;
@@ -1397,7 +1403,8 @@ namespace Scaffold
     "\"}]}";
 			this.panelWindowControl.AssociationListLeft = "{\"Name\":\"Left\",\"AutoSize\":true,\"Margin\":6,\"Controls\":[{\"Name\":\"tctlTools\",\"Dock\":" +
     "\"Fill\"}]}";
-			this.panelWindowControl.AssociationListRight = "";
+			this.panelWindowControl.AssociationListRight = "{\"Name\": \"Right\",\"AutoSize\": true,\"Margin\": 6,\"Controls\":[{\"Name\": \"pnlProperties" +
+    "\",\"Dock\": \"Fill\"}]}";
 			this.panelWindowControl.AssociationListTop = resources.GetString("panelWindowControl.AssociationListTop");
 			this.panelWindowControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
 			this.panelWindowControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1406,7 +1413,7 @@ namespace Scaffold
 			this.panelWindowControl.Name = "panelWindowControl";
 			this.panelWindowControl.PanelBottom = 100;
 			this.panelWindowControl.PanelLeft = 200;
-			this.panelWindowControl.PanelRight = 100;
+			this.panelWindowControl.PanelRight = 200;
 			this.panelWindowControl.PanelTop = 32;
 			this.panelWindowControl.Size = new System.Drawing.Size(900, 536);
 			this.panelWindowControl.TabIndex = 11;
@@ -1417,12 +1424,65 @@ namespace Scaffold
 			this.timerAutoSave.Interval = 300000;
 			this.timerAutoSave.Tick += new System.EventHandler(this.timerAutoSave_Tick);
 			// 
+			// grdProperties
+			// 
+			this.grdProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.grdProperties.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.grdProperties.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+			this.grdProperties.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(51)))), ((int)(((byte)(85)))));
+			this.grdProperties.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Navy;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.grdProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this.grdProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.grdProperties.Location = new System.Drawing.Point(3, 29);
+			this.grdProperties.MultiSelect = false;
+			this.grdProperties.Name = "grdProperties";
+			this.grdProperties.RowHeadersVisible = false;
+			this.grdProperties.RowHeadersWidth = 51;
+			this.grdProperties.RowTemplate.Height = 24;
+			this.grdProperties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.grdProperties.Size = new System.Drawing.Size(194, 357);
+			this.grdProperties.TabIndex = 14;
+			// 
+			// pnlProperties
+			// 
+			this.pnlProperties.Controls.Add(this.lblbtnProperties);
+			this.pnlProperties.Controls.Add(this.grdProperties);
+			this.pnlProperties.Location = new System.Drawing.Point(700, 66);
+			this.pnlProperties.Name = "pnlProperties";
+			this.pnlProperties.Size = new System.Drawing.Size(200, 389);
+			this.pnlProperties.TabIndex = 15;
+			// 
+			// lblbtnProperties
+			// 
+			this.lblbtnProperties.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+			this.lblbtnProperties.ForeColor = System.Drawing.Color.Gainsboro;
+			this.lblbtnProperties.Location = new System.Drawing.Point(3, 3);
+			this.lblbtnProperties.Manager = null;
+			this.lblbtnProperties.Name = "lblbtnProperties";
+			this.lblbtnProperties.NormalColor = System.Drawing.Color.DarkGray;
+			this.lblbtnProperties.Selected = true;
+			this.lblbtnProperties.SelectedBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+			this.lblbtnProperties.SelectedTextColor = System.Drawing.Color.White;
+			this.lblbtnProperties.Size = new System.Drawing.Size(89, 23);
+			this.lblbtnProperties.TabIndex = 0;
+			this.lblbtnProperties.Text = "Properties";
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(900, 590);
+			this.Controls.Add(this.pnlProperties);
 			this.Controls.Add(this.tctlDocument);
 			this.Controls.Add(this.tctlTools);
 			this.Controls.Add(this.btnHTML);
@@ -1462,6 +1522,8 @@ namespace Scaffold
 			((System.ComponentModel.ISupportInitialize)(this.toolSlidePicEllipse)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.toolSlidePicRectangle)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.toolSlidePicCursor)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grdProperties)).EndInit();
+			this.pnlProperties.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1607,6 +1669,9 @@ namespace Scaffold
 		private ToolStripMenuItem mnuEditNodeOutSocketNext;
 		private ToolStripMenuItem mnuEditNodeAddMedia;
 		private ToolStripMenuItem mnuEditNodeRemoveMedia;
+		private DataGridView grdProperties;
+		private Panel pnlProperties;
+		private LabelButtonControl lblbtnProperties;
 	}
 }
 

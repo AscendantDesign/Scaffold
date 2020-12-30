@@ -2057,7 +2057,7 @@ namespace Scaffold
 			if(node != null && ticket?.Length > 0)
 			{
 				property = node.Properties.FirstOrDefault(x =>
-					x.StringValue().ToLower() == ticket.ToLower());
+					x.ToString().ToLower() == ticket.ToLower());
 				if(property != null)
 				{
 					propertyType = property.Name;
@@ -2110,7 +2110,7 @@ namespace Scaffold
 			if(properties?.Count > 0 && ticket?.Length > 0)
 			{
 				property = properties.FirstOrDefault(x =>
-					x.StringValue().ToLower() == ticket.ToLower());
+					x.ToString().ToLower() == ticket.ToLower());
 				if(property != null)
 				{
 					propertyType = property.Name;
@@ -2162,7 +2162,7 @@ namespace Scaffold
 			if(socket != null && ticket?.Length > 0)
 			{
 				property = socket.Properties.FirstOrDefault(x =>
-					x.StringValue().ToLower() == ticket.ToLower());
+					x.ToString().ToLower() == ticket.ToLower());
 				if(property != null)
 				{
 					propertyType = property.Name;
@@ -2381,7 +2381,7 @@ namespace Scaffold
 			{
 				if(PropertyExists(node, propertyName))
 				{
-					ticket = node[propertyName].StringValue().ToLower();
+					ticket = node[propertyName].ToString().ToLower();
 					match = Regex.Match(ticket, ResourceLib.rxIsGUID);
 					if(match.Success)
 					{
@@ -2419,7 +2419,7 @@ namespace Scaffold
 			{
 				if(PropertyExists(node, propertyName))
 				{
-					ticket = node[propertyName].StringValue().ToLower();
+					ticket = node[propertyName].ToString().ToLower();
 					match = Regex.Match(ticket, ResourceLib.rxIsGUID);
 					if(match.Success)
 					{
@@ -2458,7 +2458,7 @@ namespace Scaffold
 			{
 				if(PropertyExists(properties, propertyName))
 				{
-					ticket = properties[propertyName].StringValue().ToLower();
+					ticket = properties[propertyName].ToString().ToLower();
 					match = Regex.Match(ticket, ResourceLib.rxIsGUID);
 					if(match.Success)
 					{
@@ -2498,7 +2498,7 @@ namespace Scaffold
 			{
 				if(PropertyExists(socket, propertyName))
 				{
-					ticket = socket[propertyName].StringValue().ToLower();
+					ticket = socket[propertyName].ToString().ToLower();
 					match = Regex.Match(ticket, ResourceLib.rxIsGUID);
 					if(match.Success)
 					{
@@ -2537,7 +2537,7 @@ namespace Scaffold
 			{
 				if(PropertyExists(socket, propertyName))
 				{
-					ticket = socket[propertyName].StringValue().ToLower();
+					ticket = socket[propertyName].ToString().ToLower();
 					match = Regex.Match(ticket, ResourceLib.rxIsGUID);
 					if(match.Success)
 					{
@@ -2771,7 +2771,7 @@ namespace Scaffold
 					//	Property was specified.
 					if(PropertyExists(node, propertyName) &&
 						mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
-						node[propertyName].StringValue().ToLower()))
+						node[propertyName].ToString().ToLower()))
 					{
 						//	Specific media found.
 						result = true;
@@ -2784,7 +2784,7 @@ namespace Scaffold
 					{
 						if(PropertyExists(node, mediaType) &&
 							mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
-							node[mediaType].StringValue().ToLower()))
+							node[mediaType].ToString().ToLower()))
 						{
 							//	Specific media found.
 							result = true;
@@ -2822,7 +2822,7 @@ namespace Scaffold
 					//	Property was specified.
 					if(PropertyExists(properties, propertyName) &&
 						mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
-						properties[propertyName].StringValue().ToLower()))
+						properties[propertyName].ToString().ToLower()))
 					{
 						//	Specific media found.
 						result = true;
@@ -2835,7 +2835,7 @@ namespace Scaffold
 					{
 						if(PropertyExists(properties, mediaType) &&
 							mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
-							properties[mediaType].StringValue().ToLower()))
+							properties[mediaType].ToString().ToLower()))
 						{
 							//	Specific media found.
 							result = true;
@@ -2901,7 +2901,7 @@ namespace Scaffold
 					//	Property was specified.
 					if(PropertyExists(socket, propertyName) &&
 						mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
-						socket[propertyName].StringValue().ToLower()))
+						socket[propertyName].ToString().ToLower()))
 					{
 						//	Specific media found.
 						result = true;
@@ -2914,7 +2914,7 @@ namespace Scaffold
 					{
 						if(PropertyExists(socket, mediaType) &&
 							mNodeFileObject.Resources.Exists(x => x.Ticket.ToLower() ==
-							socket[mediaType].StringValue().ToLower()))
+							socket[mediaType].ToString().ToLower()))
 						{
 							//	Specific media found.
 							result = true;
@@ -4136,7 +4136,7 @@ namespace Scaffold
 								break;
 							case "MediaImage":
 								resource = mNodeFileObject.Resources.FirstOrDefault(x =>
-									x.Ticket == property.StringValue());
+									x.Ticket == property.ToString());
 								if(resource != null)
 								{
 									CreateImageThumbnail(node, resource);
@@ -4147,7 +4147,7 @@ namespace Scaffold
 								break;
 							case "MediaVideo":
 								resource = mNodeFileObject.Resources.FirstOrDefault(x =>
-									x.Ticket == property.StringValue());
+									x.Ticket == property.ToString());
 								if(resource != null)
 								{
 									CreateVideoThumbnail(node, resource);

@@ -472,7 +472,7 @@ namespace Scaffold
 				{
 					if(property.Static)
 					{
-						target.Properties.Add(property.Name, property.StringValue());
+						target.Properties.Add(property.Name, property.ToString());
 					}
 				}
 				foreach(SocketItem socket in source.Sockets)

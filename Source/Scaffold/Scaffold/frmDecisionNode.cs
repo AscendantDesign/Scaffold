@@ -1071,7 +1071,8 @@ namespace Scaffold
 								x.PropertyName.ToLower() == name.ToLower()))
 							{
 								//	Permanent property.
-								e.CellStyle.BackColor = SystemColors.Control;
+								e.CellStyle.BackColor =
+									FromHex(ResourceMain.colorBackgroundWritingDisabled);
 							}
 						}
 					}
@@ -1568,12 +1569,12 @@ namespace Scaffold
 				}
 				txtQuestion.Text = mNode["Question"].Value.ToString();
 				//	Extended story properties.
-				text = mNode["StoryPageNumber"].StringValue();
+				text = mNode["StoryPageNumber"].ToString();
 				if(text.Length > 0)
 				{
 					txtStoryPageNumber.Text = text;
 				}
-				text = mNode["StoryPageWidth"].StringValue();
+				text = mNode["StoryPageWidth"].ToString();
 				if(text.Length > 0)
 				{
 					txtStoryWidth.Text = text;
@@ -1582,12 +1583,12 @@ namespace Scaffold
 				{
 					txtStoryWidth.Text = "512";
 				}
-				text = mNode["StoryPageX"].StringValue();
+				text = mNode["StoryPageX"].ToString();
 				if(text.Length > 0)
 				{
 					txtStoryPageX.Text = text;
 				}
-				text = mNode["StoryPageHorizontalPlacement"].StringValue();
+				text = mNode["StoryPageHorizontalPlacement"].ToString();
 				if(text.Length > 0)
 				{
 					cmboStoryFromX.SelectedItem = text;
@@ -1596,12 +1597,12 @@ namespace Scaffold
 				{
 					cmboStoryFromX.SelectedItem = "Left";
 				}
-				text = mNode["StoryPageY"].StringValue();
+				text = mNode["StoryPageY"].ToString();
 				if(text.Length > 0)
 				{
 					txtStoryPageY.Text = text;
 				}
-				text = mNode["StoryPageVerticalPlacement"].StringValue();
+				text = mNode["StoryPageVerticalPlacement"].ToString();
 				if(text.Length > 0)
 				{
 					cmboStoryFromY.SelectedItem = text;
@@ -1610,7 +1611,7 @@ namespace Scaffold
 				{
 					cmboStoryFromY.SelectedItem = "Top";
 				}
-				text = mNode["StoryShapeType"].StringValue();
+				text = mNode["StoryShapeType"].ToString();
 				if(text.Length > 0)
 				{
 					cmboStoryboardShapeType.SelectedItem = text;
@@ -1619,23 +1620,23 @@ namespace Scaffold
 				{
 					cmboStoryboardShapeType.SelectedIndex = 0;
 				}
-				text = mNode["StoryColorFill"].StringValue();
+				text = mNode["StoryColorFill"].ToString();
 				if(text.Length > 0)
 				{
 					btnStoryFillColor.BackColor = FromHex(text);
 				}
-				text = mNode["StoryColorOutline"].StringValue();
+				text = mNode["StoryColorOutline"].ToString();
 				if(text.Length > 0)
 				{
 					btnStoryLineColor.BackColor = FromHex(text);
 				}
-				text = mNode["StoryColorText"].StringValue();
+				text = mNode["StoryColorText"].ToString();
 				if(text.Length > 0)
 				{
 					btnStoryTextColor.BackColor = FromHex(text);
 				}
-				fontName = mNode["StoryFontName"].StringValue();
-				text = mNode["StoryFontSize"].StringValue();
+				fontName = mNode["StoryFontName"].ToString();
+				text = mNode["StoryFontSize"].ToString();
 				if(text.Length > 0)
 				{
 					float.TryParse(text, out fontSize);
@@ -1715,8 +1716,8 @@ namespace Scaffold
 					}
 					row = mAnswerTable.NewRow();
 					row.SetField<string>("Ticket", socket.Ticket);
-					row.SetField<string>("Index", socket["Index"].StringValue());
-					row.SetField<string>("Answer", socket["Answer"].StringValue());
+					row.SetField<string>("Index", socket["Index"].ToString());
+					row.SetField<string>("Answer", socket["Answer"].ToString());
 					row.SetField<PropertyCollection>("Properties", socket.Properties);
 					mAnswerTable.Rows.Add(row);
 					row.AcceptChanges();

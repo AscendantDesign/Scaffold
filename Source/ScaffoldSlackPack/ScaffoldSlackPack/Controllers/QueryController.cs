@@ -83,7 +83,7 @@ namespace ScaffoldSlackPack.Controllers
 						parameters = request.Data.Split(',').ToList();
 						if(parameters.Count > 1)
 						{
-							result = GetBlockQuestion(
+							result = await GetBlockQuestion(
 								parameters[0].Trim(), parameters[1].Trim());
 						}
 						else

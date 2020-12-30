@@ -102,7 +102,7 @@ namespace Scaffold
 						{
 							found = false;
 							lText = txtSearch.Text.ToLower();
-							if(node.Properties[node.TitleProperty].StringValue().ToLower().
+							if(node.Properties[node.TitleProperty].ToString().ToLower().
 								IndexOf(lText) > -1)
 							{
 								found = true;
@@ -111,7 +111,7 @@ namespace Scaffold
 							{
 								foreach(SocketItem socket in node.Sockets)
 								{
-									if(socket.Properties[socket.TitleProperty].StringValue().
+									if(socket.Properties[socket.TitleProperty].ToString().
 										ToLower().IndexOf(lText) > -1)
 									{
 										found = true;
@@ -134,7 +134,7 @@ namespace Scaffold
 						lvItem = new ListViewItem(new string[]
 						{
 							"Node",
-							node.Properties[node.TitleProperty].StringValue()
+							node.Properties[node.TitleProperty].ToString()
 						});
 						lvItem.Tag = node;
 						lv.Items.Add(lvItem);

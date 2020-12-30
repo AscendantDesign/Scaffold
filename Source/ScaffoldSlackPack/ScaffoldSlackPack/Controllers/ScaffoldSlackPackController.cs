@@ -128,11 +128,13 @@ namespace ScaffoldSlackPack
 								break;
 							case "message":
 								//	The user has sent a message. Process as conversation.
+								if(!Regex.IsMatch(eventText,
+									@"(?i:(?s:this\s+content\s+can't\s+be\s+displayed))"))
 								//if(eventText.ToLower().IndexOf(
 								//	"this content can't be displayed") == -1)
-								//{
+								{
 									_ = ProcessUserMessage(userID, eventText, true);
-								//}
+								}
 								//else
 								//{
 								//	AppendLog("Received: Event - " +
@@ -143,7 +145,7 @@ namespace ScaffoldSlackPack
 							case "message.bot":
 								break;
 						}
-						Debug.WriteLine(
+						AppendLog(
 							"Event: " +
 							$"{appID}, {eventID}, {eventType}, {eventTime}, " +
 							$"{teamID}, {userID}");
@@ -193,7 +195,8 @@ namespace ScaffoldSlackPack
 		{
 			string content = "";
 
-			using(StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+			using(StreamReader reader =
+				new StreamReader(Request.Body, Encoding.UTF8))
 			{
 				content = await reader.ReadToEndAsync();
 			}
@@ -225,8 +228,7 @@ namespace ScaffoldSlackPack
 			}
 			if(content?.Length > 0)
 			{
-				AppendLog("Received: Event - " +
-					$"{DateTime.Now.ToString("yyyyMMdd.HHmm")}\r\n" +
+				AppendLog("Received: Event -\r\n" +
 					$"{content}\r\n\r\n");
 				using(JsonDocument doc = JsonDocument.Parse(content))
 				{
@@ -303,7 +305,8 @@ namespace ScaffoldSlackPack
 		{
 			string content = "";
 
-			using(StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+			using(StreamReader reader =
+				new StreamReader(Request.Body, Encoding.UTF8))
 			{
 				content = await reader.ReadToEndAsync();
 			}

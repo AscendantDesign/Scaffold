@@ -23,6 +23,7 @@ using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Net;
+using System.Data;
 
 namespace Scaffold
 {
@@ -77,6 +78,10 @@ namespace Scaffold
 		/// Tracking list for moving nodes.
 		/// </summary>
 		List<UndoItem> mNodeMoving = new List<UndoItem>();
+		/// <summary>
+		/// Properties of selected item.
+		/// </summary>
+		DataTable mPropertiesTable = new DataTable("Properties");
 		/// <summary>
 		/// SVG library.
 		/// </summary>
@@ -343,6 +348,66 @@ namespace Scaffold
 				nodeControl.VerticalScroll.Value - this.MainMenuHeight),
 				nodeControl.DrawingScale);
 			return Point.Round(controlLocation);
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
+		//* grdProperties_CellFormatting																					*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Cell formatting is taking place on an individual cell in the properties
+		/// grid.
+		/// </summary>
+		/// <param name="sender">
+		/// The object raising this event.
+		/// </param>
+		/// <param name="e">
+		///	Data grid view cell formatting event arguments.
+		/// </param>
+		private void grdProperties_CellFormatting(object sender,
+			DataGridViewCellFormattingEventArgs e)
+		{
+			DataGridViewRow gridRow = null;
+			string name = "";
+			int nameIndex = 0;
+			DataRow record = null;
+
+			//	Assuming columns can be rearranged,
+			//	find the index of the Name column.
+			nameIndex = 0;
+			foreach(DataGridViewColumn gridColumn in grdProperties.Columns)
+			{
+				if(gridColumn.Name == "Name")
+				{
+					break;
+				}
+				nameIndex++;
+			}
+			if(e.ColumnIndex == nameIndex)
+			{
+				//	Permanent property.
+				e.CellStyle.BackColor =
+					FromHex(ResourceMain.colorBackgroundWritingDisabled);
+				//gridRow = grdProperties.Rows[e.RowIndex];
+				//if(gridRow.DataBoundItem != null)
+				//{
+				//	record = ((DataRowView)gridRow.DataBoundItem).Row;
+				//	if(record != null)
+				//	{
+				//		name = record.Field<string>("Name");
+				//		if(name?.Length > 0)
+				//		{
+				//			if(mPropertyControls.Exists(x =>
+				//				x.PropertyName.ToLower() == name.ToLower()))
+				//			{
+				//				//	Permanent property.
+				//				e.CellStyle.BackColor =
+				//					FromHex(ResourceMain.colorBackgroundWritingDisabled);
+				//			}
+				//		}
+				//	}
+				//}
+			}
 		}
 		//*-----------------------------------------------------------------------*
 
@@ -1439,7 +1504,7 @@ namespace Scaffold
 						if(next != null && next.TitleProperty?.Length > 0)
 						{
 							socket[socket.TitleProperty].Value =
-								next[next.TitleProperty].StringValue();
+								next[next.TitleProperty].ToString();
 						}
 					}
 				}
@@ -1501,7 +1566,7 @@ namespace Scaffold
 										x == property.Value.ToString().ToLower()))
 									{
 										//	Keep a reference to this resource for 
-										resourceTickets.Add(property.StringValue().ToLower());
+										resourceTickets.Add(property.ToString().ToLower());
 									}
 								}
 								node.Properties.Remove(property);
@@ -1524,7 +1589,7 @@ namespace Scaffold
 								{
 									if(node.Properties.Exists(x =>
 										x.Name == "MediaAudio" &&
-										x.StringValue().ToLower() == ticket))
+										x.ToString().ToLower() == ticket))
 									{
 										//	This resource is still in use.
 										bDeleteResource = false;
@@ -1610,7 +1675,7 @@ namespace Scaffold
 										x == property.Value.ToString().ToLower()))
 									{
 										//	Keep a reference to this resource for 
-										resourceTickets.Add(property.StringValue().ToLower());
+										resourceTickets.Add(property.ToString().ToLower());
 									}
 								}
 								node.Properties.Remove(property);
@@ -1633,7 +1698,7 @@ namespace Scaffold
 								{
 									if(node.Properties.Exists(x =>
 										x.Name == "MediaImage" &&
-										x.StringValue().ToLower() == ticket))
+										x.ToString().ToLower() == ticket))
 									{
 										//	This resource is still in use.
 										bDeleteResource = false;
@@ -1719,7 +1784,7 @@ namespace Scaffold
 										x == property.Value.ToString().ToLower()))
 									{
 										//	Keep a reference to this resource for 
-										resourceTickets.Add(property.StringValue().ToLower());
+										resourceTickets.Add(property.ToString().ToLower());
 									}
 								}
 								node.Properties.Remove(property);
@@ -1742,7 +1807,7 @@ namespace Scaffold
 								{
 									if(node.Properties.Exists(x =>
 										x.Name == "MediaLink" &&
-										x.StringValue().ToLower() == ticket))
+										x.ToString().ToLower() == ticket))
 									{
 										//	This resource is still in use.
 										bDeleteResource = false;
@@ -1828,7 +1893,7 @@ namespace Scaffold
 										x == property.Value.ToString().ToLower()))
 									{
 										//	Keep a reference to this resource for 
-										resourceTickets.Add(property.StringValue().ToLower());
+										resourceTickets.Add(property.ToString().ToLower());
 									}
 								}
 								node.Properties.Remove(property);
@@ -1851,7 +1916,7 @@ namespace Scaffold
 								{
 									if(node.Properties.Exists(x =>
 										x.Name == "MediaVideo" &&
-										x.StringValue().ToLower() == ticket))
+										x.ToString().ToLower() == ticket))
 									{
 										//	This resource is still in use.
 										bDeleteResource = false;
@@ -2450,7 +2515,7 @@ namespace Scaffold
 					//	Check to see the highest known page reference.
 					foreach(NodeItem node in nodeControl.Nodes)
 					{
-						pg = ToInt(node["StoryPageNumber"].StringValue());
+						pg = ToInt(node["StoryPageNumber"].ToString());
 						page = Math.Max(page, pg);
 					}
 					//	Prepare the automatic node values.
@@ -2458,11 +2523,11 @@ namespace Scaffold
 					{
 						foreach(NodeItem node in nodeControl.Nodes)
 						{
-							pg = ToInt(node["StoryPageNumber"].StringValue());
-							//x = ToFloat(node["StoryPageX"].StringValue());
-							//y = ToFloat(node["StoryPageY"].StringValue());
-							//ph = node["StoryPageHorizontalPlacement"].StringValue();
-							//pv = node["StoryPageVerticalPlacement"].StringValue();
+							pg = ToInt(node["StoryPageNumber"].ToString());
+							//x = ToFloat(node["StoryPageX"].ToString());
+							//y = ToFloat(node["StoryPageY"].ToString());
+							//ph = node["StoryPageHorizontalPlacement"].ToString();
+							//pv = node["StoryPageVerticalPlacement"].ToString();
 							if(pg == 0)
 							{
 								//	New page for this item.
@@ -2483,7 +2548,7 @@ namespace Scaffold
 									s.SocketMode == SocketModeEnum.Output);
 								foreach(SocketItem socket in sockets)
 								{
-									pg = ToInt(socket["StoryPageNumber"].StringValue());
+									pg = ToInt(socket["StoryPageNumber"].ToString());
 									if(pg == 0)
 									{
 										pg = page;
@@ -4800,7 +4865,7 @@ namespace Scaffold
 			builder.Append("<h2>Node Measurement Information</h2>");
 			foreach(NodeItem node in nodeControl.Nodes)
 			{
-				text = node["Question"].StringValue();
+				text = node["Question"].ToString();
 				if(text.Length > 20)
 				{
 					text = text.Substring(0, 17) + "...";
@@ -5297,7 +5362,8 @@ namespace Scaffold
 		//* nodeControl_Click																											*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
-		/// Check to see if a tool is being dropped on the canvas.
+		/// Node control has been clicked. Check to see if a tool is being dropped
+		/// on the canvas.
 		/// </summary>
 		/// <param name="sender">
 		/// The object raising this event.
@@ -5778,6 +5844,12 @@ namespace Scaffold
 		/// </param>
 		private void nodeControl_SelectionChanged(object sender, NodeEventArgs e)
 		{
+			NodeItem node = null;
+			List<string> propertyNames = null;
+			DataRow row = null;
+
+			mPropertiesTable.Rows.Clear();
+			mPropertiesTable.AcceptChanges();
 			if(nodeControl.SelectionQueue.Count > 0)
 			{
 				//	Items are selected.
@@ -5800,6 +5872,36 @@ namespace Scaffold
 				mnuEditNodeRemoveImage.Enabled = true;
 				mnuEditNodeRemoveLink.Enabled = true;
 				mnuEditNodeRemoveVideo.Enabled = true;
+				if(nodeControl.SelectionQueue.Count == 1)
+				{
+					//	Display properties if one node is selected.
+					node = nodeControl.SelectionQueue[0];
+					propertyNames = NodeItem.GetPropertyNames(node);
+					propertyNames.Sort((x, y) => x.CompareTo(y));
+					foreach(string propertyName in propertyNames)
+					{
+						row = mPropertiesTable.NewRow();
+						row.SetField<string>("Name", propertyName);
+						row.SetField<string>("Value", node[propertyName].ToString());
+						mPropertiesTable.Rows.Add(row);
+						row.AcceptChanges();
+					}
+				}
+				else
+				{
+					//	Display only property names when a single node is selected.
+					node = nodeControl.SelectionQueue[0];
+					propertyNames = NodeItem.GetPropertyNames(node);
+					propertyNames.Sort((x, y) => x.CompareTo(y));
+					foreach(string propertyName in propertyNames)
+					{
+						row = mPropertiesTable.NewRow();
+						row.SetField<string>("Name", propertyName);
+						row.SetField<string>("Value", "");
+						mPropertiesTable.Rows.Add(row);
+						row.AcceptChanges();
+					}
+				}
 			}
 			else
 			{
@@ -6845,6 +6947,13 @@ namespace Scaffold
 				htmlGeneric.Dock = DockStyle.Fill;
 				htmlGeneric.SetBodyHTML("<p>&nbsp;</p>");
 			}
+
+			//	Node properties.
+			mPropertiesTable.Columns.Add("Name", typeof(string));
+			mPropertiesTable.Columns.Add("Value", typeof(string));
+			grdProperties.DataSource = mPropertiesTable;
+			grdProperties.CellFormatting += grdProperties_CellFormatting;
+
 			mUndoPack = new UndoPack();
 			mUndoPack.StackPopped += mUndo_StackPushPop;
 			mUndoPack.StackPushed += mUndo_StackPushPop;

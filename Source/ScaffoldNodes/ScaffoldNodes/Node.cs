@@ -1270,6 +1270,47 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
+		//* GetPropertyNames																											*
+		//*-----------------------------------------------------------------------*
+		/// <summary>
+		/// Return a list of all property names on the node; permanent and dynamic.
+		/// </summary>
+		/// <param name="node">
+		/// Reference to the node to be inspected.
+		/// </param>
+		/// <returns>
+		/// List of all permanent and dymamic property names that can be read
+		/// publicly.
+		/// </returns>
+		public static List<string> GetPropertyNames(NodeItem node)
+		{
+			PropertyInfo[] properties = null;
+			List<string> result = new List<string>();
+
+			if(node != null)
+			{
+				properties = typeof(NodeItem).GetProperties(
+					BindingFlags.Public | BindingFlags.Instance);
+				foreach(PropertyInfo property in properties)
+				{
+					if(property.Name != "Item")
+					{
+						result.Add(property.Name);
+					}
+				}
+				foreach(PropertyItem property in node.mProperties)
+				{
+					if(!result.Exists(x => x == property.Name))
+					{
+						result.Add(property.Name);
+					}
+				}
+			}
+			return result;
+		}
+		//*-----------------------------------------------------------------------*
+
+		//*-----------------------------------------------------------------------*
 		//*	Height																																*
 		//*-----------------------------------------------------------------------*
 		private float mHeight = 0f;

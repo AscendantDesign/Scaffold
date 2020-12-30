@@ -488,6 +488,10 @@ function handleResponse(node, ticket)
 		{
 			for(index = 0; index < count; index ++)
 			{
+				hasAudioResponse = false;
+				hasImageResponse = false;
+				hasLinkResponse = false;
+				hasVideoResponse = false;
 				button = buttons[index];
 				hasAudio = hasResource(button.Properties, "MediaAudio");
 				hasImage = hasResource(button.Properties, "MediaImage");
@@ -648,14 +652,21 @@ $(document).ready(function()
 {
 	var button = null;
 	var buttons = [];
+	var connections = [];
 	var content = "";
 	var count = 0;
 	var hasAudio = false;
+	var hasAudioResponse = false;
 	var hasImage = false;
+	var hasImageResponse = false;
 	var hasLink = false;
+	var hasLinkResponse = false;
 	var hasVideo = false;
+	var hasVideoResponse = false;
 	var index = 0;
 	var mediaList = [];
+	var nextNode = null;
+	var response = null;
 	var startNode = null;
 
 	//	Process.Start no longer supports URL query string.
@@ -766,10 +777,54 @@ $(document).ready(function()
 		{
 			for(index = 0; index < count; index ++)
 			{
+				hasAudioResponse = false;
+				hasImageResponse = false;
+				hasLinkResponse = false;
+				hasVideoResponse = false;
 				button = buttons[index];
+				hasAudio = hasResource(button.Properties, "MediaAudio");
+				hasImage = hasResource(button.Properties, "MediaImage");
+				hasLink = hasResource(button.Properties, "MediaLink");
+				hasVideo = hasResource(button.Properties, "MediaVideo");
+				connections = button.Connections;
+				if(connections.length > 0)
+				{
+					nextNode = getNodeByTicket(connections[0]);
+				}
+				if(nextNode)
+				{
+					//	Response node on next question has been found.
+					response = getSocketBySocketMode(nextNode, "Input")
+					if(response)
+					{
+						hasAudioResponse = hasResource(response.Properties, "MediaAudio");
+						hasImageResponse = hasResource(response.Properties, "MediaImage");
+						hasLinkResponse = hasResource(response.Properties, "MediaLink");
+						hasVideoResponse = hasResource(response.Properties, "MediaVideo");
+					}
+				}
+
+/*
+				Original.
 				$(`#buttons${entryID}`).append(
 					`<div class="button" ticket="${button.Ticket}">
 					${getPropertyValue(button, "Answer")}</div>`);
+*/
+				$(`#buttons${entryID}`).append(
+					`<div class="button" ticket="${button.Ticket}">` +
+					//	Image area.
+					(hasImage ?
+						`<div class="image">
+						<img src="${getResourceUri(button.Properties, "MediaImage")}" />
+						</div>` :
+						(hasImageResponse ?
+							`<div class="image">
+							<img src="${getResourceUri(response.Properties, "MediaImage")}" />
+							</div>` : "")) +
+						//	Text area.
+					`<div class="text">` +
+					`${getPropertyValue(button, "Answer")}</div></div>`);
+
 			}
 		}
 		else

@@ -1,4 +1,4 @@
-﻿//	PropertyCollection.cs
+//	PropertyCollection.cs
 //	Copyright(c) 2020. Ascendant Design and Training, LLC
 //	This file is licensed under the MIT License.
 //	Please see the LICENSE file in this project.
@@ -473,12 +473,12 @@ namespace Scaffold
 		//*-----------------------------------------------------------------------*
 
 		//*-----------------------------------------------------------------------*
-		//*	StringValue																														*
+		//*	ToString																															*
 		//*-----------------------------------------------------------------------*
 		/// <summary>
 		/// Return the string representation of the value of this item.
 		/// </summary>
-		public string StringValue()
+		public override string ToString()
 		{
 			string result = "";
 			if(mValue != null)
