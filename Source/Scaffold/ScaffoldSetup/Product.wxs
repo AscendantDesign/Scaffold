@@ -8,7 +8,7 @@
 <?define Name="Scaffold" ?>
 <?define Description="Open source e-learning authoring tool." ?>
 <?define Manufacturer="Ascendant" ?>
-<?define Version="0.0.2020.1230" ?>
+<?define Version="0.0.2021.0105" ?>
 <?define UpgradeCode="8a4327ec-d91f-4e73-9af0-a93da7453fa3" ?>
 <?define CabName="ScaffoldSetupPackage.cab" ?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">

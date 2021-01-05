@@ -498,7 +498,7 @@ function handleResponse(node, ticket)
 				hasLink = hasResource(button.Properties, "MediaLink");
 				hasVideo = hasResource(button.Properties, "MediaVideo");
 				connections = button.Connections;
-				if(connections.length > 0)
+				if(connections && connections.length > 0)
 				{
 					nextNode = getNodeByTicket(connections[0]);
 				}

@@ -367,10 +367,10 @@ namespace Scaffold
 		private void grdProperties_CellFormatting(object sender,
 			DataGridViewCellFormattingEventArgs e)
 		{
-			DataGridViewRow gridRow = null;
-			string name = "";
+			//DataGridViewRow gridRow = null;
+			//string name = "";
 			int nameIndex = 0;
-			DataRow record = null;
+			//DataRow record = null;
 
 			//	Assuming columns can be rearranged,
 			//	find the index of the Name column.
